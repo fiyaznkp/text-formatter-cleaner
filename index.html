@@ -1,10 +1,21 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-4PBH582QW4"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-4PBH582QW4'); </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Text Formatter & Cleaner</title>
+
+  <!-- Google Analytics (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4PBH582QW4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-4PBH582QW4');
+  </script>
+
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Font Awesome Icons CDN -->
@@ -106,8 +117,12 @@
             <span class="text-xs font-bold opacity-70">AA</span> UPPERCASE
           </button>
 
+          <button onclick="transformText('capitalizedCase')" class="btn-action bg-slate-100 hover:bg-blue-50 dark:bg-slate-700/60 dark:hover:bg-blue-900/30 text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 border border-slate-200/80 dark:border-slate-600/50 rounded-xl px-3.5 py-2 text-sm font-semibold transition-all duration-150 flex items-center gap-2 active:scale-95">
+            <span class="text-xs font-bold opacity-70">Aa</span> Capitalized Case
+          </button>
+
           <button onclick="transformText('titleCase')" class="btn-action bg-slate-100 hover:bg-blue-50 dark:bg-slate-700/60 dark:hover:bg-blue-900/30 text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 border border-slate-200/80 dark:border-slate-600/50 rounded-xl px-3.5 py-2 text-sm font-semibold transition-all duration-150 flex items-center gap-2 active:scale-95">
-            <span class="text-xs font-bold opacity-70">Aa</span> Title Case
+            <span class="text-xs font-bold opacity-70">aA</span> Title Case
           </button>
         </div>
 
@@ -225,7 +240,7 @@
     const MAX_HISTORY = 100;
     let isTypingDebounce = null;
 
-    // Theme Toggle Initialization
+    // Theme Toggle Initialization with Persistence
     const themeToggleBtn = document.getElementById('themeToggle');
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'dark' || (!savedTheme && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -267,11 +282,23 @@
       });
     }
 
+    function toCapitalizedCase(str) {
+      if (!str) return '';
+      // Capitalize the first letter of EVERY word
+      return str.toLowerCase().replace(/\b\w/g, function(c) {
+        return c.toUpperCase();
+      });
+    }
+
     function toTitleCase(str) {
       if (!str) return '';
-      // Capitalize first letter of every word
-      return str.toLowerCase().replace(/(?:^|\s|-|\/)\w/g, function(match) {
-        return match.toUpperCase();
+      // Capitalize first letter of words following minor word guidelines
+      const minorWords = new Set(['a', 'an', 'and', 'as', 'at', 'but', 'by', 'for', 'if', 'in', 'nor', 'of', 'on', 'or', 'so', 'the', 'to', 'up', 'yet', 'with']);
+      return str.toLowerCase().replace(/(?:[^\s\-/\u2014]+)/g, (word, index, fullStr) => {
+        if (index === 0 || !minorWords.has(word)) {
+          return word.charAt(0).toUpperCase() + word.slice(1);
+        }
+        return word;
       });
     }
 
@@ -313,6 +340,10 @@
         case 'uppercase':
           newText = currentText.toUpperCase();
           actionLabel = 'Converted to UPPERCASE';
+          break;
+        case 'capitalizedCase':
+          newText = toCapitalizedCase(currentText);
+          actionLabel = 'Converted to Capitalized Case';
           break;
         case 'titleCase':
           newText = toTitleCase(currentText);
