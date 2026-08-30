@@ -1,14 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Text Formatter & Cleaner – Free Online Text Tool</title>
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Text Formatter & Cleaner – Free Online Text Tool
+  </title>
 
   <meta
     name="description"
-    content="Free online text formatter and cleaner. Change text case, remove commas, extra spaces, and clean everyday text quickly."
+    content="Free online text formatter and cleaner. Change text case, remove commas, remove extra spaces, and clean everyday text quickly."
+  >
+
+  <meta
+    name="robots"
+    content="index, follow"
   >
 
   <link
@@ -16,33 +29,106 @@
     href="https://fiyaznkp.github.io/text-formatter-cleaner/"
   >
 
+
+  <!-- Open Graph -->
+
+  <meta
+    property="og:title"
+    content="Text Formatter & Cleaner – Free Online Text Tool"
+  >
+
+  <meta
+    property="og:description"
+    content="Free online text formatter and cleaner for changing text case and removing unwanted commas and extra spaces."
+  >
+
+  <meta
+    property="og:url"
+    content="https://fiyaznkp.github.io/text-formatter-cleaner/"
+  >
+
+  <meta
+    property="og:type"
+    content="website"
+  >
+
+
+  <!-- Twitter -->
+
+  <meta
+    name="twitter:card"
+    content="summary"
+  >
+
+  <meta
+    name="twitter:title"
+    content="Text Formatter & Cleaner – Free Online Text Tool"
+  >
+
+  <meta
+    name="twitter:description"
+    content="Free online text formatting and cleaning tool."
+  >
+
+
   <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4PBH582QW4"></script>
+
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-4PBH582QW4"
+  ></script>
 
   <script>
-    window.dataLayer = window.dataLayer || [];
+
+    window.dataLayer =
+      window.dataLayer || [];
 
     function gtag() {
       dataLayer.push(arguments);
     }
 
     gtag('js', new Date());
-    gtag('config', 'G-4PBH582QW4');
+
+    gtag(
+      'config',
+      'G-4PBH582QW4'
+    );
+
   </script>
 
+
   <!-- Font Awesome -->
+
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
   >
 
+
   <!-- Google Font -->
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
     rel="stylesheet"
   >
 
+
   <style>
+
+    /* ==========================================
+       GLOBAL
+    ========================================== */
 
     * {
       box-sizing: border-box;
@@ -53,622 +139,1457 @@
     }
 
     body {
+
       margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: #0f172a;
-      color: #f8fafc;
+
+      font-family:
+        'Inter',
+        sans-serif;
+
+      background:
+        #0f172a;
+
+      color:
+        #f8fafc;
+
       transition:
         background-color 0.25s ease,
         color 0.25s ease;
+
     }
 
-    /* ================= LIGHT MODE ================= */
+
+    /* ==========================================
+       LIGHT MODE
+    ========================================== */
 
     body.light {
-      background: #f8fafc;
-      color: #0f172a;
+
+      background:
+        #f8fafc;
+
+      color:
+        #0f172a;
+
     }
 
+
     body.light .header-inner {
-      border-color: #e2e8f0;
+      border-color:
+        #e2e8f0;
     }
+
 
     body.light .brand-text h1,
     body.light .page-heading h2,
-    body.light .footer-title {
-      color: #0f172a;
+    body.light .footer-title,
+    body.light .short-info h3 {
+
+      color:
+        #0f172a;
+
     }
+
 
     body.light .brand-text p,
     body.light .page-heading p,
     body.light .footer-description,
-    body.light .footer-links a {
-      color: #64748b;
+    body.light .footer-links a,
+    body.light .short-info p {
+
+      color:
+        #64748b;
+
     }
 
+
     body.light .navigation a {
-      color: #334155;
+
+      color:
+        #334155;
+
     }
+
 
     body.light .navigation a:hover,
     body.light .navigation a.active {
-      color: #2563eb;
+
+      color:
+        #2563eb;
+
     }
+
+
+    body.light .sample-button,
+    body.light .theme-button {
+
+      background:
+        #ffffff;
+
+      border-color:
+        #cbd5e1;
+
+      color:
+        #334155;
+
+    }
+
+
+    body.light .sample-button:hover,
+    body.light .theme-button:hover {
+
+      background:
+        #f1f5f9;
+
+      border-color:
+        #3b82f6;
+
+      color:
+        #1d4ed8;
+
+    }
+
 
     body.light .toolbar,
     body.light .editor,
     body.light .stat-box,
     body.light .short-info {
-      background: #ffffff;
-      border-color: #e2e8f0;
-      box-shadow: 0 5px 20px rgba(15, 23, 42, 0.06);
+
+      background:
+        #ffffff;
+
+      border-color:
+        #e2e8f0;
+
+      box-shadow:
+        0 5px 20px
+        rgba(15, 23, 42, 0.06);
+
     }
+
 
     body.light .tool-row + .tool-row,
     body.light .editor-top,
     body.light .copyright {
-      border-color: #e2e8f0;
+
+      border-color:
+        #e2e8f0;
+
     }
+
 
     body.light .tool-button {
-      background: #f1f5f9;
-      border-color: #cbd5e1;
-      color: #1e293b;
+
+      background:
+        #f1f5f9;
+
+      border-color:
+        #cbd5e1;
+
+      color:
+        #1e293b;
+
     }
+
 
     body.light .tool-button:hover {
-      background: #e2e8f0;
-      border-color: #3b82f6;
-      color: #1d4ed8;
+
+      background:
+        #e2e8f0;
+
+      border-color:
+        #3b82f6;
+
+      color:
+        #1d4ed8;
+
     }
+
 
     body.light #mainText {
-      background: #ffffff;
-      color: #0f172a;
+
+      background:
+        #ffffff;
+
+      color:
+        #0f172a;
+
     }
+
 
     body.light #mainText::placeholder {
-      color: #94a3b8;
+
+      color:
+        #94a3b8;
+
     }
+
 
     body.light .stat-value {
-      color: #0f172a;
+
+      color:
+        #0f172a;
+
     }
 
-    body.light .short-info h3 {
-      color: #0f172a;
-    }
-
-    body.light .short-info p {
-      color: #64748b;
-    }
 
     body.light footer {
-      border-color: #e2e8f0;
+
+      border-color:
+        #e2e8f0;
+
     }
 
-    body.light .copyright {
-      border-color: #e2e8f0;
-      color: #64748b;
-    }
 
-    body.light .sample-button,
-    body.light .theme-button {
-      background: #ffffff;
-      border-color: #cbd5e1;
-      color: #334155;
-    }
-
-    body.light .sample-button:hover,
-    body.light .theme-button:hover {
-      background: #f1f5f9;
-      border-color: #3b82f6;
-      color: #1d4ed8;
-    }
-
-    /* ================= HEADER ================= */
+    /* ==========================================
+       HEADER
+    ========================================== */
 
     .site-header {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 24px 20px 20px;
+
+      max-width:
+        1100px;
+
+      margin:
+        0 auto;
+
+      padding:
+        24px 20px 20px;
+
     }
+
 
     .header-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 28px;
-      padding-bottom: 20px;
-      border-bottom: 1px solid #1e293b;
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        space-between;
+
+      gap:
+        28px;
+
+      padding-bottom:
+        20px;
+
+      border-bottom:
+        1px solid #1e293b;
+
     }
+
 
     .brand {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      text-decoration: none;
-      color: inherit;
-      min-width: 0;
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      gap:
+        14px;
+
+      text-decoration:
+        none;
+
+      color:
+        inherit;
+
+      min-width:
+        0;
+
     }
+
 
     .brand-logo {
-      width: 52px;
-      height: 52px;
-      flex-shrink: 0;
-      border-radius: 15px;
-      background: linear-gradient(135deg, #2563eb, #4f46e5);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
+
+      width:
+        52px;
+
+      height:
+        52px;
+
+      flex-shrink:
+        0;
+
+      border-radius:
+        15px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #2563eb,
+          #4f46e5
+        );
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        center;
+
+      box-shadow:
+        0 8px 20px
+        rgba(37, 99, 235, 0.25);
+
     }
+
 
     .brand-logo span {
-      font-size: 27px;
-      font-weight: 700;
-      color: white;
+
+      color:
+        white;
+
+      font-size:
+        27px;
+
+      font-weight:
+        700;
+
     }
+
 
     .brand-text h1 {
-      margin: 0;
-      font-size: 24px;
-      line-height: 1.2;
-      font-weight: 700;
-      white-space: nowrap;
+
+      margin:
+        0;
+
+      font-size:
+        24px;
+
+      line-height:
+        1.2;
+
+      font-weight:
+        700;
+
+      white-space:
+        nowrap;
+
     }
+
 
     .brand-text p {
-      margin: 4px 0 0;
-      color: #94a3b8;
-      font-size: 14px;
+
+      margin:
+        4px 0 0;
+
+      color:
+        #94a3b8;
+
+      font-size:
+        14px;
+
     }
+
 
     .header-right {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      gap: 18px;
-      flex-wrap: wrap;
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        flex-end;
+
+      gap:
+        18px;
+
+      flex-wrap:
+        wrap;
+
     }
+
 
     .navigation {
-      display: flex;
-      align-items: center;
-      gap: 22px;
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      gap:
+        22px;
+
     }
 
+
     .navigation a {
-      color: #cbd5e1;
-      text-decoration: none;
-      font-size: 15px;
-      font-weight: 500;
-      white-space: nowrap;
-      transition: color 0.2s ease;
+
+      color:
+        #cbd5e1;
+
+      text-decoration:
+        none;
+
+      font-size:
+        15px;
+
+      font-weight:
+        500;
+
+      white-space:
+        nowrap;
+
+      transition:
+        color 0.2s ease;
+
     }
+
 
     .navigation a:hover,
     .navigation a.active {
-      color: #60a5fa;
+
+      color:
+        #60a5fa;
+
     }
 
+
     .header-actions {
-      display: flex;
-      align-items: center;
-      gap: 8px;
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      gap:
+        8px;
+
     }
+
 
     .sample-button,
     .theme-button {
-      border: 1px solid #334155;
-      background: #1e293b;
-      color: #e2e8f0;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: all 0.2s ease;
+
+      border:
+        1px solid #334155;
+
+      background:
+        #1e293b;
+
+      color:
+        #e2e8f0;
+
+      border-radius:
+        10px;
+
+      cursor:
+        pointer;
+
+      transition:
+        all 0.2s ease;
+
     }
+
 
     .sample-button {
-      padding: 10px 14px;
-      font-size: 14px;
-      font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
+
+      padding:
+        10px 14px;
+
+      font-size:
+        14px;
+
+      font-weight:
+        600;
+
+      display:
+        inline-flex;
+
+      align-items:
+        center;
+
+      gap:
+        8px;
+
     }
+
 
     .theme-button {
-      width: 42px;
-      height: 42px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 16px;
+
+      width:
+        42px;
+
+      height:
+        42px;
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        center;
+
+      font-size:
+        16px;
+
     }
 
-    /* ================= MAIN ================= */
+
+    /* ==========================================
+       MAIN
+    ========================================== */
 
     .main-container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 34px 20px 50px;
+
+      max-width:
+        1100px;
+
+      margin:
+        0 auto;
+
+      padding:
+        34px 20px 50px;
+
     }
+
 
     .page-heading {
-      margin-bottom: 22px;
+
+      margin-bottom:
+        22px;
+
     }
+
 
     .page-heading h2 {
-      margin: 0;
-      font-size: 32px;
-      line-height: 1.2;
-      font-weight: 700;
+
+      margin:
+        0;
+
+      font-size:
+        32px;
+
+      line-height:
+        1.2;
+
+      font-weight:
+        700;
+
+      letter-spacing:
+        -0.02em;
+
     }
+
 
     .page-heading p {
-      margin: 8px 0 0;
-      color: #94a3b8;
-      font-size: 15px;
+
+      margin:
+        8px 0 0;
+
+      color:
+        #94a3b8;
+
+      font-size:
+        15px;
+
     }
 
-    /* ================= TOOLBAR ================= */
+
+    /* ==========================================
+       TOOLBAR
+    ========================================== */
 
     .toolbar {
-      background: #1e293b;
-      border: 1px solid #334155;
-      border-radius: 17px;
-      padding: 18px;
+
+      background:
+        #1e293b;
+
+      border:
+        1px solid #334155;
+
+      border-radius:
+        17px;
+
+      padding:
+        18px;
+
     }
+
 
     .tool-row {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 9px;
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      flex-wrap:
+        wrap;
+
+      gap:
+        9px;
+
     }
+
 
     .tool-row + .tool-row {
-      margin-top: 15px;
-      padding-top: 15px;
-      border-top: 1px solid #334155;
+
+      margin-top:
+        15px;
+
+      padding-top:
+        15px;
+
+      border-top:
+        1px solid #334155;
+
     }
+
 
     .tool-label {
-      width: 62px;
-      flex-shrink: 0;
-      color: #94a3b8;
-      font-size: 12px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
+
+      width:
+        62px;
+
+      flex-shrink:
+        0;
+
+      color:
+        #94a3b8;
+
+      font-size:
+        12px;
+
+      font-weight:
+        700;
+
+      text-transform:
+        uppercase;
+
+      letter-spacing:
+        0.08em;
+
     }
+
 
     .tool-button {
-      border: 1px solid #475569;
-      background: #334155;
-      color: #f1f5f9;
-      border-radius: 10px;
-      padding: 10px 13px;
-      font-size: 14px;
-      font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      cursor: pointer;
-      transition: all 0.2s ease;
+
+      border:
+        1px solid #475569;
+
+      background:
+        #334155;
+
+      color:
+        #f1f5f9;
+
+      border-radius:
+        10px;
+
+      padding:
+        10px 13px;
+
+      font-size:
+        14px;
+
+      font-weight:
+        600;
+
+      display:
+        inline-flex;
+
+      align-items:
+        center;
+
+      gap:
+        8px;
+
+      cursor:
+        pointer;
+
+      transition:
+        all 0.2s ease;
+
     }
+
 
     .tool-button:hover {
-      border-color: #60a5fa;
-      background: #3b4b63;
-      color: #dbeafe;
+
+      border-color:
+        #60a5fa;
+
+      background:
+        #3b4b63;
+
+      color:
+        #dbeafe;
+
     }
+
 
     .tool-button:active {
-      transform: scale(0.98);
+
+      transform:
+        scale(0.98);
+
     }
 
-    /* ================= EDITOR ================= */
+
+    /* ==========================================
+       EDITOR
+    ========================================== */
 
     .editor {
-      margin-top: 18px;
-      background: #1e293b;
-      border: 1px solid #334155;
-      border-radius: 17px;
-      overflow: hidden;
+
+      margin-top:
+        18px;
+
+      background:
+        #1e293b;
+
+      border:
+        1px solid #334155;
+
+      border-radius:
+        17px;
+
+      overflow:
+        hidden;
+
     }
 
+
     .editor-top {
-      min-height: 55px;
-      padding: 10px 14px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-      border-bottom: 1px solid #334155;
+
+      min-height:
+        60px;
+
+      padding:
+        10px 14px;
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        space-between;
+
+      gap:
+        10px;
+
+      border-bottom:
+        1px solid #334155;
+
     }
+
 
     .editor-left,
     .editor-right {
-      display: flex;
-      align-items: center;
-      gap: 6px;
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      gap:
+        8px;
+
     }
 
-    .editor-button,
-    .clear-button {
-      border: 0;
-      background: transparent;
-      padding: 8px 9px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 13px;
-      transition: all 0.2s ease;
-    }
+
+    /* More noticeable Undo / Redo */
 
     .editor-button {
-      color: #94a3b8;
+
+      border:
+        1px solid #475569;
+
+      background:
+        #334155;
+
+      color:
+        #e2e8f0;
+
+      padding:
+        9px 13px;
+
+      border-radius:
+        9px;
+
+      cursor:
+        pointer;
+
+      font-size:
+        13px;
+
+      font-weight:
+        600;
+
+      display:
+        inline-flex;
+
+      align-items:
+        center;
+
+      gap:
+        7px;
+
+      transition:
+        all 0.2s ease;
+
     }
+
 
     .editor-button:hover:not(:disabled) {
-      color: #f8fafc;
-      background: #334155;
+
+      background:
+        #475569;
+
+      border-color:
+        #60a5fa;
+
+      color:
+        #ffffff;
+
     }
+
+
+    .editor-button:active:not(:disabled) {
+
+      transform:
+        scale(0.98);
+
+    }
+
 
     .editor-button:disabled {
-      opacity: 0.35;
-      cursor: not-allowed;
+
+      opacity:
+        0.4;
+
+      cursor:
+        not-allowed;
+
     }
+
+
+    body.light .editor-button {
+
+      background:
+        #f1f5f9;
+
+      border-color:
+        #cbd5e1;
+
+      color:
+        #334155;
+
+    }
+
+
+    body.light .editor-button:hover:not(:disabled) {
+
+      background:
+        #e2e8f0;
+
+      border-color:
+        #3b82f6;
+
+      color:
+        #1d4ed8;
+
+    }
+
 
     .clear-button {
-      color: #fb7185;
-      font-weight: 600;
+
+      border:
+        0;
+
+      background:
+        transparent;
+
+      color:
+        #fb7185;
+
+      padding:
+        8px 9px;
+
+      border-radius:
+        8px;
+
+      font-size:
+        13px;
+
+      font-weight:
+        600;
+
+      cursor:
+        pointer;
+
     }
+
 
     .clear-button:hover {
-      background: rgba(244, 63, 94, 0.1);
+
+      background:
+        rgba(244, 63, 94, 0.1);
+
     }
+
 
     .copy-button {
-      border: 0;
-      background: #2563eb;
-      color: white;
-      padding: 9px 15px;
-      border-radius: 9px;
-      font-size: 13px;
-      font-weight: 600;
-      cursor: pointer;
+
+      border:
+        0;
+
+      background:
+        #2563eb;
+
+      color:
+        white;
+
+      padding:
+        9px 15px;
+
+      border-radius:
+        9px;
+
+      font-size:
+        13px;
+
+      font-weight:
+        600;
+
+      cursor:
+        pointer;
+
+      transition:
+        background 0.2s ease;
+
     }
+
 
     .copy-button:hover {
-      background: #1d4ed8;
+
+      background:
+        #1d4ed8;
+
     }
+
 
     #mainText {
-      width: 100%;
-      min-height: 350px;
-      padding: 20px;
-      resize: vertical;
-      border: 0;
-      outline: 0;
-      background: #1e293b;
-      color: #f8fafc;
-      font-family: 'Inter', sans-serif;
-      font-size: 16px;
-      line-height: 1.75;
+
+      width:
+        100%;
+
+      min-height:
+        350px;
+
+      padding:
+        20px;
+
+      resize:
+        vertical;
+
+      border:
+        0;
+
+      outline:
+        0;
+
+      background:
+        #1e293b;
+
+      color:
+        #f8fafc;
+
+      font-family:
+        'Inter',
+        sans-serif;
+
+      font-size:
+        16px;
+
+      line-height:
+        1.75;
+
     }
+
 
     #mainText::placeholder {
-      color: #64748b;
+
+      color:
+        #64748b;
+
     }
 
-    /* ================= STATISTICS ================= */
+
+    /* ==========================================
+       STATISTICS
+    ========================================== */
 
     .statistics {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
-      margin-top: 18px;
+
+      display:
+        grid;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      gap:
+        12px;
+
+      margin-top:
+        18px;
+
     }
+
 
     .stat-box {
-      background: #1e293b;
-      border: 1px solid #334155;
-      border-radius: 13px;
-      padding: 15px;
+
+      background:
+        #1e293b;
+
+      border:
+        1px solid #334155;
+
+      border-radius:
+        13px;
+
+      padding:
+        15px;
+
     }
+
 
     .stat-label {
-      color: #94a3b8;
-      font-size: 11px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.07em;
+
+      color:
+        #94a3b8;
+
+      font-size:
+        11px;
+
+      font-weight:
+        600;
+
+      text-transform:
+        uppercase;
+
+      letter-spacing:
+        0.07em;
+
     }
+
 
     .stat-value {
-      display: block;
-      margin-top: 5px;
-      color: #f8fafc;
-      font-size: 21px;
-      font-weight: 700;
+
+      display:
+        block;
+
+      margin-top:
+        5px;
+
+      color:
+        #f8fafc;
+
+      font-size:
+        21px;
+
+      font-weight:
+        700;
+
     }
 
-    /* ================= SHORT INFO ================= */
+
+    /* ==========================================
+       SHORT INFORMATION
+    ========================================== */
 
     .short-info {
-      margin-top: 18px;
-      padding: 18px 20px;
-      background: #1e293b;
-      border: 1px solid #334155;
-      border-radius: 13px;
+
+      margin-top:
+        18px;
+
+      padding:
+        18px 20px;
+
+      background:
+        #1e293b;
+
+      border:
+        1px solid #334155;
+
+      border-radius:
+        13px;
+
     }
+
 
     .short-info h3 {
-      margin: 0 0 6px;
-      font-size: 16px;
+
+      margin:
+        0 0 6px;
+
+      font-size:
+        16px;
+
     }
+
 
     .short-info p {
-      margin: 0;
-      color: #94a3b8;
-      font-size: 14px;
-      line-height: 1.7;
+
+      margin:
+        0;
+
+      color:
+        #94a3b8;
+
+      font-size:
+        14px;
+
+      line-height:
+        1.7;
+
     }
 
-    /* ================= FOOTER ================= */
+
+    /* ==========================================
+       FOOTER
+    ========================================== */
 
     footer {
-      border-top: 1px solid #1e293b;
+
+      border-top:
+        1px solid #1e293b;
+
     }
+
 
     .footer-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 28px 20px;
-      text-align: center;
+
+      max-width:
+        1100px;
+
+      margin:
+        0 auto;
+
+      padding:
+        28px 20px;
+
+      text-align:
+        center;
+
     }
+
 
     .footer-title {
-      font-size: 16px;
-      font-weight: 700;
+
+      font-size:
+        16px;
+
+      font-weight:
+        700;
+
     }
+
 
     .footer-description {
-      margin-top: 5px;
-      color: #64748b;
-      font-size: 13px;
+
+      margin-top:
+        5px;
+
+      color:
+        #64748b;
+
+      font-size:
+        13px;
+
     }
+
 
     .footer-links {
-      margin-top: 16px;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 18px;
+
+      margin-top:
+        16px;
+
+      display:
+        flex;
+
+      justify-content:
+        center;
+
+      flex-wrap:
+        wrap;
+
+      gap:
+        18px;
+
     }
+
 
     .footer-links a {
-      color: #94a3b8;
-      text-decoration: none;
-      font-size: 13px;
+
+      color:
+        #94a3b8;
+
+      text-decoration:
+        none;
+
+      font-size:
+        13px;
+
     }
+
 
     .footer-links a:hover {
-      color: #60a5fa;
+
+      color:
+        #60a5fa;
+
     }
+
 
     .copyright {
-      margin-top: 18px;
-      padding-top: 17px;
-      border-top: 1px solid #1e293b;
-      color: #64748b;
-      font-size: 12px;
+
+      margin-top:
+        18px;
+
+      padding-top:
+        17px;
+
+      border-top:
+        1px solid #1e293b;
+
+      color:
+        #64748b;
+
+      font-size:
+        12px;
+
     }
 
-    /* ================= TOAST ================= */
+
+    /* ==========================================
+       TOAST
+    ========================================== */
 
     #toast {
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-      background: #020617;
-      border: 1px solid #334155;
-      color: white;
-      padding: 11px 15px;
-      border-radius: 10px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
-      font-size: 13px;
-      opacity: 0;
-      transform: translateY(15px);
-      pointer-events: none;
-      transition: all 0.25s ease;
-      z-index: 100;
+
+      position:
+        fixed;
+
+      right:
+        20px;
+
+      bottom:
+        20px;
+
+      background:
+        #020617;
+
+      border:
+        1px solid #334155;
+
+      color:
+        white;
+
+      padding:
+        11px 15px;
+
+      border-radius:
+        10px;
+
+      box-shadow:
+        0 10px 30px
+        rgba(0,0,0,0.35);
+
+      font-size:
+        13px;
+
+      opacity:
+        0;
+
+      transform:
+        translateY(15px);
+
+      pointer-events:
+        none;
+
+      transition:
+        all 0.25s ease;
+
+      z-index:
+        100;
+
     }
+
 
     #toast.show {
-      opacity: 1;
-      transform: translateY(0);
+
+      opacity:
+        1;
+
+      transform:
+        translateY(0);
+
     }
 
-    /* ================= MOBILE ================= */
+
+    /* ==========================================
+       MOBILE
+    ========================================== */
 
     @media (max-width: 900px) {
 
       .header-inner {
-        flex-direction: column;
-        align-items: flex-start;
+
+        flex-direction:
+          column;
+
+        align-items:
+          flex-start;
+
       }
 
+
       .header-right {
-        width: 100%;
-        justify-content: space-between;
+
+        width:
+          100%;
+
+        justify-content:
+          space-between;
+
       }
 
     }
+
 
     @media (max-width: 650px) {
 
       .site-header,
       .main-container {
-        padding-left: 15px;
-        padding-right: 15px;
+
+        padding-left:
+          15px;
+
+        padding-right:
+          15px;
+
       }
+
 
       .brand-text h1 {
-        white-space: normal;
-        font-size: 21px;
+
+        white-space:
+          normal;
+
+        font-size:
+          21px;
+
       }
+
 
       .brand-text p {
-        font-size: 13px;
+
+        font-size:
+          13px;
+
       }
+
 
       .header-right {
-        align-items: flex-start;
-        flex-direction: column;
+
+        align-items:
+          flex-start;
+
+        flex-direction:
+          column;
+
       }
+
 
       .navigation {
-        gap: 14px;
-        flex-wrap: wrap;
+
+        gap:
+          14px;
+
+        flex-wrap:
+          wrap;
+
       }
+
 
       .page-heading h2 {
-        font-size: 27px;
+
+        font-size:
+          27px;
+
       }
+
 
       .tool-label {
-        width: 100%;
+
+        width:
+          100%;
+
       }
+
 
       .statistics {
-        grid-template-columns: repeat(2, 1fr);
+
+        grid-template-columns:
+          repeat(2, 1fr);
+
       }
 
+
       .editor-top {
-        flex-wrap: wrap;
+
+        flex-wrap:
+          wrap;
+
       }
 
     }
 
   </style>
+
 </head>
 
 
 <body>
 
-  <!-- ================= HEADER ================= -->
+
+  <!-- ==========================================
+       HEADER
+  ========================================== -->
 
   <header class="site-header">
 
     <div class="header-inner">
 
-      <a href="index.html" class="brand">
+
+      <a
+        href="index.html"
+        class="brand"
+      >
 
         <div class="brand-logo">
           <span>A</span>
         </div>
+
 
         <div class="brand-text">
 
@@ -677,7 +1598,7 @@
           </h1>
 
           <p>
-            Convert, format, clean, and prepare text faster
+            Simple tools for everyday text
           </p>
 
         </div>
@@ -687,23 +1608,31 @@
 
       <div class="header-right">
 
+
         <nav class="navigation">
 
-          <a href="index.html" class="active">
+          <a
+            href="index.html"
+            class="active"
+          >
             Home
           </a>
+
 
           <a href="about.html">
             About
           </a>
 
+
           <a href="how-to-use.html">
             How to Use
           </a>
 
+
           <a href="faq.html">
             FAQ
           </a>
+
 
           <a href="contact.html">
             Contact
@@ -714,23 +1643,31 @@
 
         <div class="header-actions">
 
+
           <button
             id="sampleBtn"
+            type="button"
             class="sample-button"
             title="Load sample text"
           >
+
             <i class="fa-solid fa-lightbulb"></i>
+
             Sample Text
+
           </button>
 
 
           <button
             id="themeToggle"
+            type="button"
             class="theme-button"
-            title="Toggle light/dark mode"
-            aria-label="Toggle light/dark mode"
+            title="Switch to light mode"
+            aria-label="Switch to light mode"
           >
+
             <i class="fa-solid fa-sun"></i>
+
           </button>
 
         </div>
@@ -742,7 +1679,9 @@
   </header>
 
 
-  <!-- ================= MAIN ================= -->
+  <!-- ==========================================
+       MAIN
+  ========================================== -->
 
   <main class="main-container">
 
@@ -760,7 +1699,9 @@
     </section>
 
 
-    <!-- ================= TOOLBAR ================= -->
+    <!-- ==========================================
+         TOOLBAR
+    ========================================== -->
 
     <section class="toolbar">
 
@@ -775,47 +1716,67 @@
 
 
         <button
+          type="button"
           onclick="transformText('sentenceCase')"
           class="tool-button"
         >
+
           <i class="fa-solid fa-align-left"></i>
+
           Sentence Case
+
         </button>
 
 
         <button
+          type="button"
           onclick="transformText('lowercase')"
           class="tool-button"
         >
+
           <strong>aa</strong>
+
           lowercase
+
         </button>
 
 
         <button
+          type="button"
           onclick="transformText('uppercase')"
           class="tool-button"
         >
+
           <strong>AA</strong>
+
           UPPERCASE
+
         </button>
 
 
         <button
+          type="button"
           onclick="transformText('capitalizedCase')"
           class="tool-button"
         >
+
           <strong>Aa</strong>
+
           Capitalized Case
+
         </button>
 
 
         <button
+          type="button"
           onclick="transformText('titleCase')"
           class="tool-button"
         >
+
           <strong>aA</strong>
+
           Title Case
+
         </button>
 
       </div>
@@ -831,20 +1792,28 @@
 
 
         <button
+          type="button"
           onclick="transformText('removeCommas')"
           class="tool-button"
         >
+
           <i class="fa-solid fa-ban"></i>
+
           Remove Commas
+
         </button>
 
 
         <button
+          type="button"
           onclick="transformText('removeExtraSpaces')"
           class="tool-button"
         >
+
           <i class="fa-solid fa-compress"></i>
+
           Remove Extra Spaces
+
         </button>
 
       </div>
@@ -852,55 +1821,85 @@
     </section>
 
 
-    <!-- ================= EDITOR ================= -->
+    <!-- ==========================================
+         TEXT EDITOR
+    ========================================== -->
 
     <section class="editor">
 
+
       <div class="editor-top">
+
+
+        <!-- UNDO / REDO -->
 
         <div class="editor-left">
 
+
           <button
             id="undoBtn"
+            type="button"
             onclick="undo()"
             disabled
+            title="Undo (Ctrl+Z)"
             class="editor-button"
           >
+
             <i class="fa-solid fa-rotate-left"></i>
+
             Undo
+
           </button>
 
 
           <button
             id="redoBtn"
+            type="button"
             onclick="redo()"
             disabled
+            title="Redo (Ctrl+Y)"
             class="editor-button"
           >
+
             <i class="fa-solid fa-rotate-right"></i>
+
             Redo
+
           </button>
 
         </div>
 
 
+        <!-- CLEAR / COPY -->
+
         <div class="editor-right">
 
+
           <button
+            type="button"
             onclick="clearText()"
             class="clear-button"
+            title="Clear text"
           >
+
             <i class="fa-solid fa-trash-can"></i>
+
             Clear
+
           </button>
 
 
           <button
+            type="button"
             onclick="copyText()"
             class="copy-button"
+            title="Copy text"
           >
+
             <i class="fa-regular fa-copy"></i>
+
             Copy
+
           </button>
 
         </div>
@@ -914,10 +1913,13 @@
         spellcheck="true"
       ></textarea>
 
+
     </section>
 
 
-    <!-- ================= STATISTICS ================= -->
+    <!-- ==========================================
+         STATISTICS
+    ========================================== -->
 
     <section class="statistics">
 
@@ -988,7 +1990,9 @@
     </section>
 
 
-    <!-- ================= SHORT INFO ================= -->
+    <!-- ==========================================
+         SHORT INFORMATION
+    ========================================== -->
 
     <section class="short-info">
 
@@ -997,24 +2001,30 @@
       </h3>
 
       <p>
-        Change capitalization, remove commas, and clean unnecessary
-        spaces quickly. Everything works directly in your browser.
+        Change capitalization, remove commas, and clean
+        unnecessary spaces quickly. Everything works directly
+        in your browser.
       </p>
 
     </section>
 
+
   </main>
 
 
-  <!-- ================= FOOTER ================= -->
+  <!-- ==========================================
+       FOOTER
+  ========================================== -->
 
   <footer>
 
     <div class="footer-inner">
 
+
       <div class="footer-title">
         Text Formatter & Cleaner
       </div>
+
 
       <div class="footer-description">
         A simple online tool for formatting and cleaning text.
@@ -1055,19 +2065,28 @@
 
 
       <div class="copyright">
-        © 2026 Convert Case. All rights reserved.
+
+        © 2026 Text Formatter & Cleaner.
+        All rights reserved.
+
       </div>
+
 
     </div>
 
   </footer>
 
 
-  <!-- ================= TOAST ================= -->
+  <!-- ==========================================
+       TOAST
+  ========================================== -->
 
   <div id="toast">
 
-    <i id="toastIcon" class="fa-solid fa-circle-check"></i>
+    <i
+      id="toastIcon"
+      class="fa-solid fa-circle-check"
+    ></i>
 
     <span id="toastMessage">
       Done
@@ -1076,45 +2095,86 @@
   </div>
 
 
-  <!-- ================= JAVASCRIPT ================= -->
+  <!-- ==========================================
+       JAVASCRIPT
+  ========================================== -->
 
   <script>
 
+
+    /* ==========================================
+       ELEMENTS
+    ========================================== */
+
     const textarea =
-      document.getElementById('mainText');
+      document.getElementById(
+        'mainText'
+      );
+
 
     const undoBtn =
-      document.getElementById('undoBtn');
+      document.getElementById(
+        'undoBtn'
+      );
+
 
     const redoBtn =
-      document.getElementById('redoBtn');
+      document.getElementById(
+        'redoBtn'
+      );
+
 
     const wordCountEl =
-      document.getElementById('wordCount');
+      document.getElementById(
+        'wordCount'
+      );
+
 
     const charCountEl =
-      document.getElementById('charCount');
+      document.getElementById(
+        'charCount'
+      );
+
 
     const sentenceCountEl =
-      document.getElementById('sentenceCount');
+      document.getElementById(
+        'sentenceCount'
+      );
+
 
     const readingTimeEl =
-      document.getElementById('readingTime');
+      document.getElementById(
+        'readingTime'
+      );
+
 
     const themeToggle =
-      document.getElementById('themeToggle');
+      document.getElementById(
+        'themeToggle'
+      );
+
 
     const toast =
-      document.getElementById('toast');
+      document.getElementById(
+        'toast'
+      );
+
 
     const toastMessage =
-      document.getElementById('toastMessage');
+      document.getElementById(
+        'toastMessage'
+      );
+
 
     const toastIcon =
-      document.getElementById('toastIcon');
+      document.getElementById(
+        'toastIcon'
+      );
 
 
-    /* ================= HISTORY ================= */
+    /* ==========================================
+       HISTORY
+    ========================================== */
 
     let historyStack = [''];
 
@@ -1129,9 +2189,12 @@
 
       if (typingTimer) {
 
-        clearTimeout(typingTimer);
+        clearTimeout(
+          typingTimer
+        );
 
         typingTimer = null;
+
 
         if (
           historyStack[historyIndex] !==
@@ -1144,9 +2207,11 @@
               historyIndex + 1
             );
 
+
           historyStack.push(
             textarea.value
           );
+
 
           historyIndex++;
 
@@ -1161,11 +2226,21 @@
 
       flushTypingBuffer();
 
+
       if (
-        historyStack[historyIndex] === value
+        historyStack[historyIndex] ===
+        value
       ) {
+
+        textarea.value =
+          value;
+
+        updateUI();
+
         return;
+
       }
+
 
       historyStack =
         historyStack.slice(
@@ -1173,12 +2248,18 @@
           historyIndex + 1
         );
 
-      historyStack.push(value);
+
+      historyStack.push(
+        value
+      );
+
 
       historyIndex++;
 
+
       if (
-        historyStack.length > MAX_HISTORY
+        historyStack.length >
+        MAX_HISTORY
       ) {
 
         historyStack.shift();
@@ -1187,7 +2268,10 @@
 
       }
 
-      textarea.value = value;
+
+      textarea.value =
+        value;
+
 
       updateUI();
 
@@ -1198,14 +2282,22 @@
 
       flushTypingBuffer();
 
-      if (historyIndex > 0) {
+
+      if (
+        historyIndex > 0
+      ) {
 
         historyIndex--;
 
+
         textarea.value =
-          historyStack[historyIndex];
+          historyStack[
+            historyIndex
+          ];
+
 
         updateUI();
+
 
         showToast(
           'Undone',
@@ -1221,6 +2313,7 @@
 
       flushTypingBuffer();
 
+
       if (
         historyIndex <
         historyStack.length - 1
@@ -1228,10 +2321,15 @@
 
         historyIndex++;
 
+
         textarea.value =
-          historyStack[historyIndex];
+          historyStack[
+            historyIndex
+          ];
+
 
         updateUI();
+
 
         showToast(
           'Redone',
@@ -1243,7 +2341,9 @@
     }
 
 
-    /* ================= CASE FUNCTIONS ================= */
+    /* ==========================================
+       TEXT TRANSFORMATIONS
+    ========================================== */
 
     function toSentenceCase(text) {
 
@@ -1251,7 +2351,11 @@
         .toLowerCase()
         .replace(
           /(^\s*\w|[.!?]\s+\w)/gm,
-          c => c.toUpperCase()
+          function(c) {
+
+            return c.toUpperCase();
+
+          }
         );
 
     }
@@ -1263,7 +2367,11 @@
         .toLowerCase()
         .replace(
           /\b\w/g,
-          c => c.toUpperCase()
+          function(c) {
+
+            return c.toUpperCase();
+
+          }
         );
 
     }
@@ -1300,23 +2408,30 @@
         .toLowerCase()
         .split(/(\s+)/)
         .map(
-          (word, index) => {
+          function(word, index) {
 
             if (
               /^\s+$/.test(word)
             ) {
+
               return word;
+
             }
+
 
             const lower =
               word.toLowerCase();
+
 
             if (
               index !== 0 &&
               smallWords.has(lower)
             ) {
+
               return lower;
+
             }
+
 
             return (
               lower.charAt(0).toUpperCase() +
@@ -1345,10 +2460,16 @@
       return text
         .split('\n')
         .map(
-          line =>
-            line
-              .replace(/[ \t]+/g, ' ')
-              .trim()
+          function(line) {
+
+            return line
+              .replace(
+                /[ \t]+/g,
+                ' '
+              )
+              .trim();
+
+          }
         )
         .join('\n')
         .replace(
@@ -1363,10 +2484,14 @@
 
       flushTypingBuffer();
 
+
       const current =
         textarea.value;
 
-      if (!current.trim()) {
+
+      if (
+        !current.trim()
+      ) {
 
         showToast(
           'Text box is empty',
@@ -1387,10 +2512,13 @@
 
       switch (type) {
 
+
         case 'sentenceCase':
 
           result =
-            toSentenceCase(current);
+            toSentenceCase(
+              current
+            );
 
           message =
             'Converted to Sentence Case';
@@ -1423,7 +2551,9 @@
         case 'capitalizedCase':
 
           result =
-            toCapitalizedCase(current);
+            toCapitalizedCase(
+              current
+            );
 
           message =
             'Converted to Capitalized Case';
@@ -1434,7 +2564,9 @@
         case 'titleCase':
 
           result =
-            toTitleCase(current);
+            toTitleCase(
+              current
+            );
 
           message =
             'Converted to Title Case';
@@ -1445,7 +2577,9 @@
         case 'removeCommas':
 
           result =
-            removeCommas(current);
+            removeCommas(
+              current
+            );
 
           message =
             'Removed commas';
@@ -1456,7 +2590,9 @@
         case 'removeExtraSpaces':
 
           result =
-            removeExtraSpaces(current);
+            removeExtraSpaces(
+              current
+            );
 
           message =
             'Removed extra spaces';
@@ -1466,9 +2602,14 @@
       }
 
 
-      if (result !== current) {
+      if (
+        result !== current
+      ) {
 
-        pushState(result);
+        pushState(
+          result
+        );
+
 
         showToast(
           message,
@@ -1487,12 +2628,15 @@
     }
 
 
-    /* ================= COPY ================= */
+    /* ==========================================
+       COPY
+    ========================================== */
 
     async function copyText() {
 
       const text =
         textarea.value;
+
 
       if (!text) {
 
@@ -1512,6 +2656,7 @@
           text
         );
 
+
         showToast(
           'Copied to clipboard',
           'fa-copy'
@@ -1521,7 +2666,10 @@
 
         textarea.select();
 
-        document.execCommand('copy');
+        document.execCommand(
+          'copy'
+        );
+
 
         showToast(
           'Copied to clipboard',
@@ -1533,13 +2681,31 @@
     }
 
 
-    /* ================= CLEAR ================= */
+    /* ==========================================
+       CLEAR
+    ========================================== */
 
     function clearText() {
 
       flushTypingBuffer();
 
+
+      if (
+        !textarea.value
+      ) {
+
+        showToast(
+          'Text box is already empty',
+          'fa-circle-info'
+        );
+
+        return;
+
+      }
+
+
       pushState('');
+
 
       showToast(
         'Text cleared',
@@ -1549,12 +2715,15 @@
     }
 
 
-    /* ================= STATISTICS ================= */
+    /* ==========================================
+       STATISTICS
+    ========================================== */
 
     function updateUI() {
 
       const text =
         textarea.value;
+
 
       const trimmed =
         text.trim();
@@ -1562,7 +2731,9 @@
 
       const words =
         trimmed
-          ? trimmed.split(/\s+/).length
+          ? trimmed.split(
+              /\s+/
+            ).length
           : 0;
 
 
@@ -1590,13 +2761,19 @@
         '0s';
 
 
-      if (seconds >= 60) {
+      if (
+        seconds >= 60
+      ) {
 
         const minutes =
-          Math.floor(seconds / 60);
+          Math.floor(
+            seconds / 60
+          );
+
 
         const remainingSeconds =
           seconds % 60;
+
 
         readingTime =
           `${minutes}m ${remainingSeconds}s`;
@@ -1612,11 +2789,14 @@
       wordCountEl.textContent =
         words.toLocaleString();
 
+
       charCountEl.textContent =
         characters.toLocaleString();
 
+
       sentenceCountEl.textContent =
         sentences.toLocaleString();
+
 
       readingTimeEl.textContent =
         readingTime;
@@ -1625,6 +2805,7 @@
       undoBtn.disabled =
         historyIndex <= 0;
 
+
       redoBtn.disabled =
         historyIndex >=
         historyStack.length - 1;
@@ -1632,13 +2813,16 @@
     }
 
 
-    /* ================= TYPING HISTORY ================= */
+    /* ==========================================
+       TYPING HISTORY
+    ========================================== */
 
     textarea.addEventListener(
       'input',
-      () => {
+      function() {
 
         updateUI();
+
 
         clearTimeout(
           typingTimer
@@ -1647,12 +2831,14 @@
 
         typingTimer =
           setTimeout(
-            () => {
+            function() {
+
 
               if (
                 historyStack[historyIndex] !==
                 textarea.value
               ) {
+
 
                 historyStack =
                   historyStack.slice(
@@ -1660,9 +2846,11 @@
                     historyIndex + 1
                   );
 
+
                 historyStack.push(
                   textarea.value
                 );
+
 
                 historyIndex++;
 
@@ -1678,9 +2866,11 @@
 
                 }
 
+
                 updateUI();
 
               }
+
 
             },
             700
@@ -1690,16 +2880,22 @@
     );
 
 
-    /* ================= SAMPLE TEXT ================= */
+    /* ==========================================
+       SAMPLE TEXT
+    ========================================== */
 
     document
-      .getElementById('sampleBtn')
+      .getElementById(
+        'sampleBtn'
+      )
       .addEventListener(
         'click',
-        () => {
+        function() {
+
 
           const sample =
             `hello world! THIS IS A SAMPLE TEXT, meant to demonstrate how easy it is to format text. It also includes EXTRA    SPACES, mixed cases, and commas.`;
+
 
           pushState(
             sample
@@ -1715,35 +2911,60 @@
       );
 
 
-    /* ================= THEME ================= */
+    /* ==========================================
+       THEME
+    ========================================== */
 
     function setTheme(theme) {
 
-      if (theme === 'light') {
+
+      if (
+        theme === 'light'
+      ) {
+
 
         document.body.classList.add(
           'light'
         );
 
+
         themeToggle.innerHTML =
           '<i class="fa-solid fa-moon"></i>';
+
 
         themeToggle.title =
           'Switch to dark mode';
 
+
+        themeToggle.setAttribute(
+          'aria-label',
+          'Switch to dark mode'
+        );
+
+
       } else {
+
 
         document.body.classList.remove(
           'light'
         );
 
+
         themeToggle.innerHTML =
           '<i class="fa-solid fa-sun"></i>';
+
 
         themeToggle.title =
           'Switch to light mode';
 
+
+        themeToggle.setAttribute(
+          'aria-label',
+          'Switch to light mode'
+        );
+
       }
+
 
       localStorage.setItem(
         'textFormatterTheme',
@@ -1755,27 +2976,26 @@
 
     themeToggle.addEventListener(
       'click',
-      () => {
+      function() {
+
 
         const isLight =
           document.body.classList.contains(
             'light'
           );
 
-        const newTheme =
-          isLight
-            ? 'dark'
-            : 'light';
 
         setTheme(
-          newTheme
+          isLight
+            ? 'dark'
+            : 'light'
         );
 
 
         showToast(
-          newTheme === 'light'
-            ? 'Light mode enabled'
-            : 'Dark mode enabled',
+          isLight
+            ? 'Dark mode enabled'
+            : 'Light mode enabled',
           'fa-circle-half-stroke'
         );
 
@@ -1783,20 +3003,27 @@
     );
 
 
-    /* ================= KEYBOARD SHORTCUTS ================= */
+    /* ==========================================
+       KEYBOARD SHORTCUTS
+    ========================================== */
 
     document.addEventListener(
       'keydown',
-      event => {
+      function(event) {
+
 
         if (
           (event.ctrlKey || event.metaKey) &&
           event.key.toLowerCase() === 'z'
         ) {
 
+
           event.preventDefault();
 
-          if (event.shiftKey) {
+
+          if (
+            event.shiftKey
+          ) {
 
             redo();
 
@@ -1814,7 +3041,9 @@
           event.key.toLowerCase() === 'y'
         ) {
 
+
           event.preventDefault();
+
 
           redo();
 
@@ -1824,7 +3053,9 @@
     );
 
 
-    /* ================= TOAST ================= */
+    /* ==========================================
+       TOAST
+    ========================================== */
 
     let toastTimer;
 
@@ -1833,6 +3064,7 @@
       message,
       icon = 'fa-circle-check'
     ) {
+
 
       clearTimeout(
         toastTimer
@@ -1854,7 +3086,7 @@
 
       toastTimer =
         setTimeout(
-          () => {
+          function() {
 
             toast.classList.remove(
               'show'
@@ -1867,7 +3099,9 @@
     }
 
 
-    /* ================= START ================= */
+    /* ==========================================
+       INITIALIZATION
+    ========================================== */
 
     const savedTheme =
       localStorage.getItem(
@@ -1886,5 +3120,7 @@
 
   </script>
 
+
 </body>
+
 </html>
