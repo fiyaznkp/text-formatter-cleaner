@@ -1,100 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>How to Use Convert Case – Text Formatter & Cleaner</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-  <meta name="description" content="Learn how to use Convert Case to change text case, clean formatting, convert emails and URLs to hyperlinks, extract text from hyperlinks, and check text statistics.">
+  <title>
+    How to Use Text Formatter & Cleaner
+  </title>
 
-  <link rel="canonical" href="https://fiyaznkp.github.io/text-formatter-cleaner/how-to-use.html">
+  <meta
+    name="description"
+    content="Learn how to use Text Formatter & Cleaner to change text case, clean formatting, and check basic text statistics."
+  >
 
-  <meta property="og:title" content="How to Use Convert Case">
-  <meta property="og:description" content="Learn how to use the text formatting, cleaning, hyperlink, and text statistics features in Convert Case.">
-  <meta property="og:url" content="https://fiyaznkp.github.io/text-formatter-cleaner/how-to-use.html">
-  <meta property="og:type" content="website">
+  <link
+    rel="canonical"
+    href="https://fiyaznkp.github.io/text-formatter-cleaner/how-to-use.html"
+  >
 
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="How to Use Convert Case">
-  <meta name="twitter:description" content="Learn how to use Convert Case's text formatting and cleaning features.">
+  <meta
+    property="og:title"
+    content="How to Use Text Formatter & Cleaner"
+  >
+
+  <meta
+    property="og:description"
+    content="Learn how to use the text formatting, cleaning, and text statistics features in Text Formatter & Cleaner."
+  >
+
+  <meta
+    property="og:url"
+    content="https://fiyaznkp.github.io/text-formatter-cleaner/how-to-use.html"
+  >
+
+  <meta
+    property="og:type"
+    content="website"
+  >
+
+  <meta
+    name="twitter:card"
+    content="summary"
+  >
+
+  <meta
+    name="twitter:title"
+    content="How to Use Text Formatter & Cleaner"
+  >
+
+  <meta
+    name="twitter:description"
+    content="Learn how to use Text Formatter & Cleaner's text formatting and cleaning features."
+  >
+
 
   <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4PBH582QW4"></script>
+
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-4PBH582QW4"
+  ></script>
+
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+
+    window.dataLayer =
+      window.dataLayer || [];
+
+    function gtag(){
+      dataLayer.push(arguments);
+    }
+
     gtag('js', new Date());
-    gtag('config', 'G-4PBH582QW4');
+
+    gtag(
+      'config',
+      'G-4PBH582QW4'
+    );
+
   </script>
 
+
   <!-- Tailwind CSS -->
+
   <script src="https://cdn.tailwindcss.com"></script>
 
+
   <!-- Font Awesome -->
+
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
   >
 
+
   <!-- Google Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
 
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
     rel="stylesheet"
   >
 
+
   <script>
+
     tailwind.config = {
+
       darkMode: 'class',
+
       theme: {
+
         extend: {
+
           fontFamily: {
-            sans: ['Inter', 'sans-serif'],
+
+            sans: [
+              'Inter',
+              'sans-serif'
+            ],
+
           }
+
         }
+
       }
-    }
+
+    };
+
   </script>
 
+
   <style>
+
     body {
-      font-family: 'Inter', sans-serif;
+      font-family:
+        'Inter',
+        sans-serif;
     }
+
   </style>
+
 </head>
+
 
 <body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100 min-h-screen">
 
+
   <div class="w-full max-w-5xl mx-auto px-4 py-6 sm:px-6 lg:px-8">
 
+
     <!-- Header -->
+
     <header class="flex flex-col sm:flex-row items-center justify-between gap-4 mb-8 pb-6 border-b border-slate-200 dark:border-slate-800">
 
+
       <!-- Logo / Home -->
-      <a href="index.html" class="flex items-center gap-3">
+
+      <a
+        href="index.html"
+        class="flex items-center gap-3"
+      >
 
         <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center text-white shadow-md">
+
           <i class="fa-solid fa-font font-bold text-lg"></i>
+
         </div>
 
+
         <div>
+
           <div class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">
+
             Text Formatter & Cleaner
+
           </div>
 
+
           <div class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">
-            Convert, format, clean, and prepare text faster
+
+            Simple tools for everyday text
+
           </div>
+
         </div>
 
       </a>
 
 
       <!-- Navigation -->
+
       <nav class="flex flex-wrap items-center justify-center gap-4 text-sm">
+
 
         <a
           href="index.html"
@@ -103,12 +216,14 @@
           Home
         </a>
 
+
         <a
           href="about.html"
           class="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition"
         >
           About
         </a>
+
 
         <a
           href="how-to-use.html"
@@ -117,12 +232,14 @@
           How to Use
         </a>
 
+
         <a
           href="faq.html"
           class="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition"
         >
           FAQ
         </a>
+
 
         <a
           href="contact.html"
@@ -137,84 +254,131 @@
 
 
     <!-- Main Content -->
+
     <main>
 
       <article class="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6 sm:p-8 lg:p-10 shadow-sm">
 
+
         <!-- Page Introduction -->
+
         <header class="mb-10">
 
           <h1 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-4">
-            How to Use Convert Case
+
+            How to Use Text Formatter & Cleaner
+
           </h1>
 
+
           <p class="text-lg leading-8 text-slate-600 dark:text-slate-300">
-            Convert Case provides simple tools for changing text capitalization,
-            cleaning common formatting problems, working with hyperlinks, and
-            checking basic text statistics. Follow the steps below to get the
-            most from the tool.
+
+            Text Formatter & Cleaner provides simple tools for changing text
+            capitalization, cleaning common formatting problems, and checking
+            basic text statistics. Follow the steps below to get the most
+            from the tool.
+
           </p>
 
         </header>
 
 
         <!-- Getting Started -->
+
         <section class="mb-10">
 
           <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">
+
             Getting Started
+
           </h2>
+
 
           <ol class="space-y-4 text-slate-600 dark:text-slate-300">
 
+
             <li class="flex gap-3">
+
               <span class="flex-shrink-0 w-7 h-7 rounded-full bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400 flex items-center justify-center font-semibold text-sm">
+
                 1
+
               </span>
 
+
               <span class="leading-7">
+
                 Open the
+
                 <a
                   href="index.html"
                   class="text-blue-600 dark:text-blue-400 hover:underline font-medium"
                 >
                   Home
                 </a>
+
                 page.
+
               </span>
+
             </li>
 
+
             <li class="flex gap-3">
+
               <span class="flex-shrink-0 w-7 h-7 rounded-full bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400 flex items-center justify-center font-semibold text-sm">
+
                 2
+
               </span>
 
+
               <span class="leading-7">
+
                 Type your text into the editor or paste text from another
                 application.
+
               </span>
+
             </li>
 
+
             <li class="flex gap-3">
+
               <span class="flex-shrink-0 w-7 h-7 rounded-full bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400 flex items-center justify-center font-semibold text-sm">
+
                 3
+
               </span>
 
+
               <span class="leading-7">
+
                 Choose the formatting or cleaning operation you need.
+
               </span>
+
             </li>
+
 
             <li class="flex gap-3">
+
               <span class="flex-shrink-0 w-7 h-7 rounded-full bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400 flex items-center justify-center font-semibold text-sm">
+
                 4
+
               </span>
 
+
               <span class="leading-7">
+
                 Review the result and use the Copy button when you are ready
-                to use the converted text.
+                to use the formatted text.
+
               </span>
+
             </li>
+
 
           </ol>
 
@@ -222,116 +386,185 @@
 
 
         <!-- Case Conversion -->
+
         <section class="mb-10">
 
           <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-5">
+
             Text Case Conversion
+
           </h2>
+
 
           <div class="space-y-4">
 
+
             <!-- Sentence Case -->
+
             <div class="rounded-xl bg-slate-50 dark:bg-slate-700/50 p-5">
 
               <h3 class="font-semibold text-slate-900 dark:text-white mb-2">
+
                 Sentence Case
+
               </h3>
 
+
               <p class="text-sm leading-6 text-slate-600 dark:text-slate-300">
+
                 Use Sentence Case when you want the beginning of sentences
                 capitalized while converting the remaining letters to
                 lowercase.
+
               </p>
 
+
               <p class="text-sm leading-6 text-slate-500 dark:text-slate-400 mt-2">
-                Example: <strong>hello WORLD. THIS IS TEXT.</strong>
+
+                Example:
+                <strong>hello WORLD. THIS IS TEXT.</strong>
+
                 becomes
+
                 <strong>Hello world. This is text.</strong>
+
               </p>
 
             </div>
 
 
             <!-- lowercase -->
+
             <div class="rounded-xl bg-slate-50 dark:bg-slate-700/50 p-5">
 
               <h3 class="font-semibold text-slate-900 dark:text-white mb-2">
+
                 lowercase
+
               </h3>
 
+
               <p class="text-sm leading-6 text-slate-600 dark:text-slate-300">
+
                 Use lowercase to convert all alphabetic characters in the
                 text to small letters.
+
               </p>
 
+
               <p class="text-sm leading-6 text-slate-500 dark:text-slate-400 mt-2">
-                Example: <strong>Hello WORLD</strong> becomes
+
+                Example:
+                <strong>Hello WORLD</strong>
+
+                becomes
+
                 <strong>hello world</strong>.
+
               </p>
 
             </div>
 
 
             <!-- UPPERCASE -->
+
             <div class="rounded-xl bg-slate-50 dark:bg-slate-700/50 p-5">
 
               <h3 class="font-semibold text-slate-900 dark:text-white mb-2">
+
                 UPPERCASE
+
               </h3>
 
+
               <p class="text-sm leading-6 text-slate-600 dark:text-slate-300">
+
                 Use UPPERCASE to convert all alphabetic characters to capital
                 letters.
+
               </p>
 
+
               <p class="text-sm leading-6 text-slate-500 dark:text-slate-400 mt-2">
-                Example: <strong>Hello world</strong> becomes
+
+                Example:
+                <strong>Hello world</strong>
+
+                becomes
+
                 <strong>HELLO WORLD</strong>.
+
               </p>
 
             </div>
 
 
             <!-- Capitalized Case -->
+
             <div class="rounded-xl bg-slate-50 dark:bg-slate-700/50 p-5">
 
               <h3 class="font-semibold text-slate-900 dark:text-white mb-2">
+
                 Capitalized Case
+
               </h3>
 
+
               <p class="text-sm leading-6 text-slate-600 dark:text-slate-300">
+
                 Use Capitalized Case to capitalize the first letter of each
                 word.
+
               </p>
 
+
               <p class="text-sm leading-6 text-slate-500 dark:text-slate-400 mt-2">
-                Example: <strong>hello world from convert case</strong>
+
+                Example:
+                <strong>hello world from text formatter</strong>
+
                 becomes
-                <strong>Hello World From Convert Case</strong>.
+
+                <strong>Hello World From Text Formatter</strong>.
+
               </p>
 
             </div>
 
 
             <!-- Title Case -->
+
             <div class="rounded-xl bg-slate-50 dark:bg-slate-700/50 p-5">
 
               <h3 class="font-semibold text-slate-900 dark:text-white mb-2">
+
                 Title Case
+
               </h3>
 
+
               <p class="text-sm leading-6 text-slate-600 dark:text-slate-300">
+
                 Use Title Case when preparing headings or titles. Common
                 short connecting words may remain lowercase according to
                 the tool's title-case rules.
+
               </p>
 
+
               <p class="text-sm leading-6 text-slate-500 dark:text-slate-400 mt-2">
-                Example: <strong>the quick brown fox</strong> becomes
+
+                Example:
+                <strong>the quick brown fox</strong>
+
+                becomes
+
                 <strong>The Quick Brown Fox</strong>.
+
               </p>
 
             </div>
+
 
           </div>
 
@@ -339,112 +572,86 @@
 
 
         <!-- Cleaning -->
+
         <section class="mb-10">
 
           <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-5">
+
             Cleaning Text
+
           </h2>
+
 
           <div class="space-y-4">
 
+
             <!-- Remove Commas -->
+
             <div class="rounded-xl bg-slate-50 dark:bg-slate-700/50 p-5">
 
               <h3 class="font-semibold text-slate-900 dark:text-white mb-2">
+
                 Remove Commas
+
               </h3>
 
+
               <p class="text-sm leading-6 text-slate-600 dark:text-slate-300">
+
                 Use Remove Commas to remove comma characters from your text.
                 This can be useful when preparing lists or text copied from
                 another source.
+
               </p>
 
+
               <p class="text-sm leading-6 text-slate-500 dark:text-slate-400 mt-2">
-                Example: <strong>John, Mary, David</strong> becomes
+
+                Example:
+                <strong>John, Mary, David</strong>
+
+                becomes
+
                 <strong>John Mary David</strong>.
+
               </p>
 
             </div>
 
 
             <!-- Extra Spaces -->
+
             <div class="rounded-xl bg-slate-50 dark:bg-slate-700/50 p-5">
 
               <h3 class="font-semibold text-slate-900 dark:text-white mb-2">
+
                 Remove Extra Spaces
+
               </h3>
 
+
               <p class="text-sm leading-6 text-slate-600 dark:text-slate-300">
+
                 Use Remove Extra Spaces to reduce repeated spaces and tabs.
                 The operation keeps the text's line structure while cleaning
                 unnecessary spacing.
+
               </p>
+
 
               <p class="text-sm leading-6 text-slate-500 dark:text-slate-400 mt-2">
-                Example: <strong>Hello&nbsp;&nbsp;&nbsp;&nbsp;world</strong>
-                becomes
-                <strong>Hello world</strong>.
-              </p>
 
-            </div>
-
-          </div>
-
-        </section>
-
-
-        <!-- Hyperlinks -->
-        <section class="mb-10">
-
-          <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-5">
-            Working With Hyperlinks
-          </h2>
-
-          <div class="space-y-4">
-
-            <!-- Text to Hyperlinks -->
-            <div class="rounded-xl bg-slate-50 dark:bg-slate-700/50 p-5">
-
-              <h3 class="font-semibold text-slate-900 dark:text-white mb-2">
-                Text to Hyperlinks
-              </h3>
-
-              <p class="text-sm leading-6 text-slate-600 dark:text-slate-300">
-                Use this feature to turn supported email addresses and web
-                addresses into clickable HTML hyperlink markup. This can
-                save time when preparing text for emails, websites, documents,
-                or other systems that accept HTML.
-              </p>
-
-              <p class="text-sm leading-6 text-slate-500 dark:text-slate-400 mt-2">
                 Example:
-                <strong>ali@gmail.com</strong>
-                can be converted into an HTML email link.
+                <strong>Hello&nbsp;&nbsp;&nbsp;&nbsp;world</strong>
+
+                becomes
+
+                <strong>Hello world</strong>.
+
               </p>
 
             </div>
 
-
-            <!-- Hyperlinks to Text -->
-            <div class="rounded-xl bg-slate-50 dark:bg-slate-700/50 p-5">
-
-              <h3 class="font-semibold text-slate-900 dark:text-white mb-2">
-                Hyperlinks to Text
-              </h3>
-
-              <p class="text-sm leading-6 text-slate-600 dark:text-slate-300">
-                Use this feature when you have HTML hyperlink markup and
-                need to extract the readable link text or URL into a simpler
-                text format.
-              </p>
-
-              <p class="text-sm leading-6 text-slate-500 dark:text-slate-400 mt-2">
-                This can be useful when copying content from HTML-based
-                documents or cleaning text before reusing it elsewhere.
-              </p>
-
-            </div>
 
           </div>
 
@@ -452,59 +659,99 @@
 
 
         <!-- Statistics -->
+
         <section class="mb-10">
 
           <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-5">
+
             Text Statistics
+
           </h2>
 
+
           <p class="leading-7 text-slate-600 dark:text-slate-300 mb-4">
+
             The editor automatically updates basic statistics while you type
             or paste text.
+
           </p>
+
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
 
+
             <div class="rounded-xl bg-slate-50 dark:bg-slate-700/50 p-5">
+
               <h3 class="font-semibold text-slate-900 dark:text-white mb-2">
+
                 Words
+
               </h3>
 
+
               <p class="text-sm leading-6 text-slate-600 dark:text-slate-300">
+
                 Shows the number of words detected in the text.
+
               </p>
+
             </div>
 
+
             <div class="rounded-xl bg-slate-50 dark:bg-slate-700/50 p-5">
+
               <h3 class="font-semibold text-slate-900 dark:text-white mb-2">
+
                 Characters
+
               </h3>
 
+
               <p class="text-sm leading-6 text-slate-600 dark:text-slate-300">
+
                 Shows the total number of characters in the editor.
+
               </p>
+
             </div>
 
+
             <div class="rounded-xl bg-slate-50 dark:bg-slate-700/50 p-5">
+
               <h3 class="font-semibold text-slate-900 dark:text-white mb-2">
+
                 Sentences
+
               </h3>
 
+
               <p class="text-sm leading-6 text-slate-600 dark:text-slate-300">
+
                 Provides an estimate of the number of sentences in the text.
+
               </p>
+
             </div>
 
+
             <div class="rounded-xl bg-slate-50 dark:bg-slate-700/50 p-5">
+
               <h3 class="font-semibold text-slate-900 dark:text-white mb-2">
+
                 Reading Time
+
               </h3>
 
+
               <p class="text-sm leading-6 text-slate-600 dark:text-slate-300">
+
                 Provides an estimated reading time based on the text's word
                 count.
+
               </p>
+
             </div>
+
 
           </div>
 
@@ -512,23 +759,33 @@
 
 
         <!-- Editing Controls -->
+
         <section class="mb-10">
 
           <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-5">
+
             Editing Controls
+
           </h2>
+
 
           <div class="space-y-4">
 
+
             <div class="rounded-xl bg-slate-50 dark:bg-slate-700/50 p-5">
 
               <h3 class="font-semibold text-slate-900 dark:text-white mb-2">
+
                 Copy
+
               </h3>
 
+
               <p class="text-sm leading-6 text-slate-600 dark:text-slate-300">
+
                 Click Copy after completing your formatting or cleaning
                 operation to copy the current text to your clipboard.
+
               </p>
 
             </div>
@@ -537,12 +794,17 @@
             <div class="rounded-xl bg-slate-50 dark:bg-slate-700/50 p-5">
 
               <h3 class="font-semibold text-slate-900 dark:text-white mb-2">
+
                 Clear
+
               </h3>
 
+
               <p class="text-sm leading-6 text-slate-600 dark:text-slate-300">
+
                 Click Clear when you want to remove the current text from
                 the editor.
+
               </p>
 
             </div>
@@ -551,13 +813,18 @@
             <div class="rounded-xl bg-slate-50 dark:bg-slate-700/50 p-5">
 
               <h3 class="font-semibold text-slate-900 dark:text-white mb-2">
+
                 Undo and Redo
+
               </h3>
 
+
               <p class="text-sm leading-6 text-slate-600 dark:text-slate-300">
+
                 Use Undo to reverse a recent change and Redo to restore a
                 change that was undone. Keyboard shortcuts are also supported
                 for common undo and redo actions.
+
               </p>
 
             </div>
@@ -566,12 +833,17 @@
             <div class="rounded-xl bg-slate-50 dark:bg-slate-700/50 p-5">
 
               <h3 class="font-semibold text-slate-900 dark:text-white mb-2">
+
                 Sample Text
+
               </h3>
 
+
               <p class="text-sm leading-6 text-slate-600 dark:text-slate-300">
+
                 Use Sample Text when you want to quickly load example content
                 into the editor and test the available formatting features.
+
               </p>
 
             </div>
@@ -580,16 +852,22 @@
             <div class="rounded-xl bg-slate-50 dark:bg-slate-700/50 p-5">
 
               <h3 class="font-semibold text-slate-900 dark:text-white mb-2">
+
                 Light and Dark Mode
+
               </h3>
 
+
               <p class="text-sm leading-6 text-slate-600 dark:text-slate-300">
+
                 Use the theme button on the main page to switch between
                 light and dark appearance. Your selected theme can be saved
                 in your browser for future visits.
+
               </p>
 
             </div>
+
 
           </div>
 
@@ -597,46 +875,62 @@
 
 
         <!-- Tips -->
+
         <section>
 
           <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-5">
+
             Tips for Faster Text Formatting
+
           </h2>
+
 
           <ul class="list-disc pl-6 space-y-3 text-slate-600 dark:text-slate-300">
 
+
             <li>
+
               Paste the complete block of text into the editor before choosing
               a formatting operation.
+
             </li>
 
+
             <li>
+
               Use the case conversion buttons when you need to standardize
               capitalization across a larger block of text.
+
             </li>
 
+
             <li>
+
               Use Remove Extra Spaces after copying text from documents or
               other sources that contain inconsistent spacing.
+
             </li>
 
-            <li>
-              Use the hyperlink conversion feature when preparing email
-              addresses or supported web addresses for HTML-based content.
-            </li>
 
             <li>
+
               Check the statistics displayed below the editor when you need
               a quick estimate of the text length.
+
             </li>
 
+
             <li>
+
               Use Undo if a conversion produces a result you do not want.
+
             </li>
+
 
           </ul>
 
         </section>
+
 
       </article>
 
@@ -644,20 +938,29 @@
 
 
     <!-- Footer -->
+
     <footer class="border-t border-slate-200 dark:border-slate-800 mt-10 pt-8 pb-4">
+
 
       <div class="text-center">
 
+
         <div class="font-bold text-slate-900 dark:text-white mb-2">
-          Convert Case
+
+          Text Formatter & Cleaner
+
         </div>
 
+
         <p class="text-sm text-slate-500 dark:text-slate-400 mb-5">
+
           A simple online tool for formatting and cleaning text.
+
         </p>
 
 
         <nav class="flex flex-wrap items-center justify-center gap-x-5 gap-y-3 text-sm mb-6">
+
 
           <a
             href="index.html"
@@ -666,12 +969,14 @@
             Home
           </a>
 
+
           <a
             href="about.html"
             class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition"
           >
             About
           </a>
+
 
           <a
             href="how-to-use.html"
@@ -680,12 +985,14 @@
             How to Use
           </a>
 
+
           <a
             href="faq.html"
             class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition"
           >
             FAQ
           </a>
+
 
           <a
             href="privacy.html"
@@ -694,12 +1001,14 @@
             Privacy Policy
           </a>
 
+
           <a
             href="terms.html"
             class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition"
           >
             Terms
           </a>
+
 
           <a
             href="contact.html"
@@ -708,41 +1017,61 @@
             Contact
           </a>
 
+
         </nav>
 
 
         <div class="border-t border-slate-200 dark:border-slate-800 pt-5">
 
+
           <p class="text-xs text-slate-500 dark:text-slate-500">
-            © 2026 Convert Case. All rights reserved.
+
+            © 2026 Text Formatter & Cleaner.
+            All rights reserved.
+
           </p>
 
+
         </div>
+
 
       </div>
 
     </footer>
 
+
   </div>
 
 
   <!-- Theme initialization -->
+
   <script>
-    const savedTheme = localStorage.getItem('theme');
+
+    const savedTheme =
+      localStorage.getItem(
+        'textFormatterTheme'
+      );
+
 
     if (
-      savedTheme === 'dark' ||
-      (
-        !savedTheme &&
-        window.matchMedia &&
-        window.matchMedia('(prefers-color-scheme: dark)').matches
-      )
+      savedTheme === 'light'
     ) {
-      document.documentElement.classList.add('dark');
+
+      document.documentElement.classList.remove(
+        'dark'
+      );
+
     } else {
-      document.documentElement.classList.remove('dark');
+
+      document.documentElement.classList.add(
+        'dark'
+      );
+
     }
+
   </script>
 
+
 </body>
+
 </html>
