@@ -6,63 +6,148 @@
 
   <title>Text Formatter & Cleaner – Free Online Text Tool</title>
 
-  <meta name="description" content="Free online text formatter and cleaner. Convert text to sentence case, lowercase, UPPERCASE, Capitalized Case, and Title Case, remove commas and extra spaces, and check useful text statistics.">
+  <meta name="description" content="Free online text formatter and cleaner. Convert text to Sentence Case, lowercase, UPPERCASE, Capitalized Case, and Title Case. Remove commas and extra spaces and check text statistics.">
+
+  <meta name="robots" content="index, follow">
 
   <link rel="canonical" href="https://fiyaznkp.github.io/text-formatter-cleaner/">
 
+  <!-- Open Graph -->
   <meta property="og:title" content="Text Formatter & Cleaner – Free Online Text Tool">
-  <meta property="og:description" content="Free online text formatter and cleaner for converting text cases, cleaning text, and checking useful text statistics.">
+  <meta property="og:description" content="Free online tool for changing text case, cleaning text, and checking word, character, sentence, and reading-time statistics.">
   <meta property="og:url" content="https://fiyaznkp.github.io/text-formatter-cleaner/">
   <meta property="og:type" content="website">
 
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Text Formatter & Cleaner – Free Online Text Tool">
-  <meta name="twitter:description" content="Free online text formatter and cleaner for converting text cases, cleaning text, and checking useful text statistics.">
+  <meta name="twitter:description" content="Free online tool for changing text case, cleaning text, and checking useful text statistics.">
 
-  <!-- Google Analytics (gtag.js) -->
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-4PBH582QW4"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
 
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
     gtag('config', 'G-4PBH582QW4');
   </script>
 
-  <!-- Tailwind CSS CDN -->
+  <!-- WebApplication Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Text Formatter & Cleaner",
+    "url": "https://fiyaznkp.github.io/text-formatter-cleaner/",
+    "description": "Free online tool for formatting and cleaning text.",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires a modern web browser",
+    "isAccessibleForFree": true
+  }
+  </script>
+
+  <!-- FAQ Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is Sentence Case?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sentence Case changes text so that the beginning of sentences starts with a capital letter while the remaining letters are converted to lowercase."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is UPPERCASE?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "UPPERCASE converts all letters in the selected text to capital letters."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is lowercase?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "lowercase converts all letters in the selected text to small letters."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I remove extra spaces?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The Remove Extra Spaces option removes repeated spaces and tabs while maintaining the text's line structure."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I copy the converted text?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. After converting or cleaning your text, use the Copy button to copy the result to your clipboard."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Font Awesome Icons CDN -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  >
 
-  <!-- Google Fonts: Inter -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
 
   <script>
     tailwind.config = {
       darkMode: 'class',
+
       theme: {
         extend: {
           fontFamily: {
-            sans: ['Inter', 'sans-serif'],
+            sans: ['Inter', 'sans-serif']
           },
+
           colors: {
             brand: {
               50: '#f0f7ff',
               100: '#e0effe',
               500: '#3b82f6',
               600: '#2563eb',
-              700: '#1d4ed8',
+              700: '#1d4ed8'
             }
           }
         }
       }
-    }
+    };
   </script>
 
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: 'Inter', sans-serif;
       transition: background-color 0.3s ease, color 0.3s ease;
@@ -84,236 +169,479 @@
     textarea::-webkit-scrollbar-thumb:hover {
       background-color: rgba(156, 163, 175, 0.7);
     }
+
+    a:focus-visible,
+    button:focus-visible,
+    textarea:focus-visible {
+      outline: 3px solid rgba(59, 130, 246, 0.45);
+      outline-offset: 2px;
+    }
   </style>
 </head>
 
-<body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100 min-h-screen flex flex-col justify-between transition-colors duration-200">
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100 min-h-screen transition-colors duration-200">
 
+  <!-- Main Container -->
   <div class="w-full max-w-5xl mx-auto px-4 py-6 sm:px-6 lg:px-8">
 
-    <!-- Top Bar Header -->
-    <header class="flex flex-col sm:flex-row items-center justify-between gap-4 mb-6 pb-6 border-b border-slate-200 dark:border-slate-800">
+    <!-- HEADER -->
+    <header class="mb-8">
 
-      <div class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center text-white shadow-md shadow-blue-500/20">
-          <i class="fa-solid font-bold text-lg fa-font"></i>
+      <div class="flex flex-col lg:flex-row items-center justify-between gap-5 pb-6 border-b border-slate-200 dark:border-slate-800">
+
+        <!-- Logo / Brand -->
+        <div class="flex items-center gap-3">
+
+          <div
+            class="w-11 h-11 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center text-white shadow-md shadow-blue-500/20"
+            aria-hidden="true"
+          >
+            <i class="fa-solid fa-font text-lg"></i>
+          </div>
+
+          <div>
+            <h1 class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">
+              Text Formatter & Cleaner
+            </h1>
+
+            <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">
+              Convert, format, and clean text directly in one place
+            </p>
+          </div>
+
         </div>
 
-        <div>
-          <h1 class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">
-            Text Formatter & Cleaner
-          </h1>
+        <!-- Navigation + Controls -->
+        <div class="flex flex-col sm:flex-row items-center gap-3">
 
-          <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">
-            Convert, format, and clean text directly in one place
-          </p>
+          <nav
+            aria-label="Main navigation"
+            class="flex flex-wrap justify-center gap-3 text-sm"
+          >
+            <a
+              href="#tool"
+              class="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition"
+            >
+              Tool
+            </a>
+
+            <a
+              href="#about"
+              class="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition"
+            >
+              About
+            </a>
+
+            <a
+              href="#how-to-use"
+              class="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition"
+            >
+              How to Use
+            </a>
+
+            <a
+              href="#faq"
+              class="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition"
+            >
+              FAQ
+            </a>
+
+            <a
+              href="#contact"
+              class="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition"
+            >
+              Contact
+            </a>
+          </nav>
+
+          <div class="flex items-center gap-2">
+
+            <button
+              id="sampleBtn"
+              type="button"
+              aria-label="Load sample text"
+              class="px-3 py-1.5 text-xs font-medium text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg hover:border-blue-300 dark:hover:border-blue-500 transition-all shadow-sm flex items-center gap-1.5"
+            >
+              <i class="fa-solid fa-lightbulb text-amber-500"></i>
+              Sample Text
+            </button>
+
+            <button
+              id="themeToggle"
+              type="button"
+              aria-label="Toggle dark mode"
+              class="p-2 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg shadow-sm transition-all"
+            >
+              <i class="fa-solid fa-moon dark:hidden text-slate-600"></i>
+              <i class="fa-solid fa-sun hidden dark:block text-amber-400"></i>
+            </button>
+
+          </div>
+
         </div>
-      </div>
-
-      <!-- Quick Action Utility Header Controls -->
-      <div class="flex items-center gap-2">
-
-        <button id="sampleBtn" class="px-3 py-1.5 text-xs font-medium text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg hover:border-blue-300 dark:hover:border-blue-500 transition-all shadow-sm flex items-center gap-1.5">
-          <i class="fa-solid fa-lightbulb text-amber-500"></i>
-          Sample Text
-        </button>
-
-        <button id="themeToggle" class="p-2 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg shadow-sm transition-all">
-          <i class="fa-solid fa-moon dark:hidden text-slate-600"></i>
-          <i class="fa-solid fa-sun hidden dark:block text-amber-400"></i>
-        </button>
 
       </div>
+
     </header>
 
 
-    <main class="space-y-4">
+    <!-- MAIN CONTENT -->
+    <main>
 
-      <!-- Action Toolbar Box -->
-      <div class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700/80 rounded-2xl p-4 shadow-sm space-y-3">
+      <!-- TOOL SECTION -->
+      <section id="tool" aria-labelledby="tool-heading" class="space-y-4">
 
-        <!-- Row 1: Text Case Conversions -->
-        <div class="flex flex-wrap items-center gap-2">
+        <div class="mb-5">
 
-          <span class="text-xs font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-wider w-full sm:w-auto mr-1">
-            Case:
-          </span>
-
-          <button onclick="transformText('sentenceCase')" class="btn-action bg-slate-100 hover:bg-blue-50 dark:bg-slate-700/60 dark:hover:bg-blue-900/30 text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 border border-slate-200/80 dark:border-slate-600/50 rounded-xl px-3.5 py-2 text-sm font-semibold transition-all duration-150 flex items-center gap-2 active:scale-95">
-            <i class="fa-solid fa-align-left text-xs opacity-70"></i>
-            Sentence Case
-          </button>
-
-          <button onclick="transformText('lowercase')" class="btn-action bg-slate-100 hover:bg-blue-50 dark:bg-slate-700/60 dark:hover:bg-blue-900/30 text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 border border-slate-200/80 dark:border-slate-600/50 rounded-xl px-3.5 py-2 text-sm font-semibold transition-all duration-150 flex items-center gap-2 active:scale-95">
-            <span class="text-xs font-bold opacity-70">aa</span>
-            lowercase
-          </button>
-
-          <button onclick="transformText('uppercase')" class="btn-action bg-slate-100 hover:bg-blue-50 dark:bg-slate-700/60 dark:hover:bg-blue-900/30 text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 border border-slate-200/80 dark:border-slate-600/50 rounded-xl px-3.5 py-2 text-sm font-semibold transition-all duration-150 flex items-center gap-2 active:scale-95">
-            <span class="text-xs font-bold opacity-70">AA</span>
-            UPPERCASE
-          </button>
-
-          <button onclick="transformText('capitalizedCase')" class="btn-action bg-slate-100 hover:bg-blue-50 dark:bg-slate-700/60 dark:hover:bg-blue-900/30 text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 border border-slate-200/80 dark:border-slate-600/50 rounded-xl px-3.5 py-2 text-sm font-semibold transition-all duration-150 flex items-center gap-2 active:scale-95">
-            <span class="text-xs font-bold opacity-70">Aa</span>
-            Capitalized Case
-          </button>
-
-          <button onclick="transformText('titleCase')" class="btn-action bg-slate-100 hover:bg-blue-50 dark:bg-slate-700/60 dark:hover:bg-blue-900/30 text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 border border-slate-200/80 dark:border-slate-600/50 rounded-xl px-3.5 py-2 text-sm font-semibold transition-all duration-150 flex items-center gap-2 active:scale-95">
-            <span class="text-xs font-bold opacity-70">aA</span>
-            Title Case
-          </button>
-
-        </div>
-
-        <hr class="border-slate-100 dark:border-slate-700/50 my-2">
-
-        <!-- Row 2: Text Cleaning Operations -->
-        <div class="flex flex-wrap items-center gap-2">
-
-          <span class="text-xs font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-wider w-full sm:w-auto mr-1">
-            Clean:
-          </span>
-
-          <button onclick="transformText('removeCommas')" class="btn-action bg-slate-100 hover:bg-emerald-50 dark:bg-slate-700/60 dark:hover:bg-emerald-900/30 text-slate-700 dark:text-slate-200 hover:text-emerald-600 dark:hover:text-emerald-400 border border-slate-200/80 dark:border-slate-600/50 rounded-xl px-3.5 py-2 text-sm font-semibold transition-all duration-150 flex items-center gap-2 active:scale-95">
-            <i class="fa-solid fa-ban text-xs opacity-70"></i>
-            Remove Commas
-          </button>
-
-          <button onclick="transformText('removeExtraSpaces')" class="btn-action bg-slate-100 hover:bg-emerald-50 dark:bg-slate-700/60 dark:hover:bg-emerald-900/30 text-slate-700 dark:text-slate-200 hover:text-emerald-600 dark:hover:text-emerald-400 border border-slate-200/80 dark:border-slate-600/50 rounded-xl px-3.5 py-2 text-sm font-semibold transition-all duration-150 flex items-center gap-2 active:scale-95">
-            <i class="fa-solid fa-compress text-xs opacity-70"></i>
-            Remove Extra Spaces
-          </button>
-
-        </div>
-      </div>
-
-
-      <!-- Main Single Text Box Card -->
-      <div class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl shadow-sm overflow-hidden flex flex-col focus-within:ring-2 focus-within:ring-blue-500/50 transition-all">
-
-        <!-- Editor Header Bar -->
-        <div class="bg-slate-50/80 dark:bg-slate-800/80 px-4 py-2.5 border-b border-slate-200 dark:border-slate-700/80 flex items-center justify-between gap-2 flex-wrap">
-
-          <!-- History Actions -->
-          <div class="flex items-center gap-1.5">
-
-            <button id="undoBtn" onclick="undo()" disabled title="Undo (Ctrl+Z)" class="px-2.5 py-1.5 text-xs font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-200/60 dark:hover:bg-slate-700 rounded-lg transition-all disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-1.5">
-              <i class="fa-solid fa-rotate-left"></i>
-              Undo
-            </button>
-
-            <button id="redoBtn" onclick="redo()" disabled title="Redo (Ctrl+Y)" class="px-2.5 py-1.5 text-xs font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-200/60 dark:hover:bg-slate-700 rounded-lg transition-all disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-1.5">
-              <i class="fa-solid fa-rotate-right"></i>
-              Redo
-            </button>
-
-          </div>
-
-          <!-- Utility Clipboard & Clear Actions -->
-          <div class="flex items-center gap-2">
-
-            <button onclick="clearText()" title="Clear text" class="px-3 py-1.5 text-xs font-medium text-rose-600 dark:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-950/40 rounded-lg transition-all flex items-center gap-1.5 border border-transparent hover:border-rose-200 dark:hover:border-rose-900">
-              <i class="fa-solid fa-trash-can"></i>
-              Clear
-            </button>
-
-            <button onclick="copyText()" title="Copy text to clipboard" class="px-3.5 py-1.5 text-xs font-semibold text-white bg-blue-600 hover:bg-blue-700 active:bg-blue-800 rounded-lg shadow-sm transition-all flex items-center gap-1.5 active:scale-95">
-              <i class="fa-regular fa-copy"></i>
-              Copy
-            </button>
-
-          </div>
-        </div>
-
-
-        <!-- The Single Text Box -->
-        <div class="relative w-full">
-
-          <textarea
-            id="mainText"
-            placeholder="Type or paste your text here to convert and format directly..."
-            class="w-full h-80 sm:h-96 p-4 sm:p-5 text-slate-800 dark:text-slate-100 bg-transparent resize-y outline-none font-sans text-base leading-relaxed placeholder-slate-400 dark:placeholder-slate-500 border-none"
-            spellcheck="true"
-          ></textarea>
-
-        </div>
-
-      </div>
-
-
-      <!-- Live Text Statistics Grid -->
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
-
-        <div class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-3.5 text-center shadow-sm">
-          <span class="block text-xs font-medium text-slate-400 dark:text-slate-500 uppercase tracking-wider">
-            Words
-          </span>
-          <span id="wordCount" class="text-xl sm:text-2xl font-bold text-slate-800 dark:text-white mt-0.5 block">
-            0
-          </span>
-        </div>
-
-        <div class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-3.5 text-center shadow-sm">
-          <span class="block text-xs font-medium text-slate-400 dark:text-slate-500 uppercase tracking-wider">
-            Characters
-          </span>
-          <span id="charCount" class="text-xl sm:text-2xl font-bold text-slate-800 dark:text-white mt-0.5 block">
-            0
-          </span>
-        </div>
-
-        <div class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-3.5 text-center shadow-sm">
-          <span class="block text-xs font-medium text-slate-400 dark:text-slate-500 uppercase tracking-wider">
-            Sentences
-          </span>
-          <span id="sentenceCount" class="text-xl sm:text-2xl font-bold text-slate-800 dark:text-white mt-0.5 block">
-            0
-          </span>
-        </div>
-
-        <div class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-3.5 text-center shadow-sm">
-          <span class="block text-xs font-medium text-slate-400 dark:text-slate-500 uppercase tracking-wider">
-            Reading Time
-          </span>
-          <span id="readingTime" class="text-xl sm:text-2xl font-bold text-slate-800 dark:text-white mt-0.5 block">
-            0s
-          </span>
-        </div>
-
-      </div>
-
-
-      <!-- Helpful Information -->
-      <section class="mt-10 space-y-6">
-
-        <!-- About Convert Case -->
-        <div class="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6 sm:p-8">
-
-          <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">
-            About Convert Case
+          <h2
+            id="tool-heading"
+            class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white"
+          >
+            Free Online Text Formatter and Cleaner
           </h2>
 
-          <p class="text-slate-600 dark:text-slate-300 leading-7">
-            Convert Case is a free online text formatting and cleaning tool
-            designed to help you quickly change the capitalization of text,
-            clean common formatting issues, and check useful text statistics
-            in one place.
+          <p class="mt-2 text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-7">
+            Paste or type your text below to change capitalization, remove
+            common formatting issues, and view useful text statistics.
+            Everything is available directly in the browser.
           </p>
 
         </div>
 
 
-        <!-- Features -->
-        <div class="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6 sm:p-8">
+        <!-- ACTION TOOLBAR -->
+        <div
+          class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700/80 rounded-2xl p-4 shadow-sm space-y-3"
+        >
 
-          <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-5">
+          <!-- CASE CONVERSIONS -->
+          <div class="flex flex-wrap items-center gap-2">
+
+            <span
+              class="text-xs font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-wider w-full sm:w-auto mr-1"
+            >
+              Case:
+            </span>
+
+            <button
+              type="button"
+              onclick="transformText('sentenceCase')"
+              class="btn-action bg-slate-100 hover:bg-blue-50 dark:bg-slate-700/60 dark:hover:bg-blue-900/30 text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 border border-slate-200/80 dark:border-slate-600/50 rounded-xl px-3.5 py-2 text-sm font-semibold transition-all duration-150 flex items-center gap-2 active:scale-95"
+            >
+              <i class="fa-solid fa-align-left text-xs opacity-70"></i>
+              Sentence Case
+            </button>
+
+            <button
+              type="button"
+              onclick="transformText('lowercase')"
+              class="btn-action bg-slate-100 hover:bg-blue-50 dark:bg-slate-700/60 dark:hover:bg-blue-900/30 text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 border border-slate-200/80 dark:border-slate-600/50 rounded-xl px-3.5 py-2 text-sm font-semibold transition-all duration-150 flex items-center gap-2 active:scale-95"
+            >
+              <span class="text-xs font-bold opacity-70">aa</span>
+              lowercase
+            </button>
+
+            <button
+              type="button"
+              onclick="transformText('uppercase')"
+              class="btn-action bg-slate-100 hover:bg-blue-50 dark:bg-slate-700/60 dark:hover:bg-blue-900/30 text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 border border-slate-200/80 dark:border-slate-600/50 rounded-xl px-3.5 py-2 text-sm font-semibold transition-all duration-150 flex items-center gap-2 active:scale-95"
+            >
+              <span class="text-xs font-bold opacity-70">AA</span>
+              UPPERCASE
+            </button>
+
+            <button
+              type="button"
+              onclick="transformText('capitalizedCase')"
+              class="btn-action bg-slate-100 hover:bg-blue-50 dark:bg-slate-700/60 dark:hover:bg-blue-900/30 text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 border border-slate-200/80 dark:border-slate-600/50 rounded-xl px-3.5 py-2 text-sm font-semibold transition-all duration-150 flex items-center gap-2 active:scale-95"
+            >
+              <span class="text-xs font-bold opacity-70">Aa</span>
+              Capitalized Case
+            </button>
+
+            <button
+              type="button"
+              onclick="transformText('titleCase')"
+              class="btn-action bg-slate-100 hover:bg-blue-50 dark:bg-slate-700/60 dark:hover:bg-blue-900/30 text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 border border-slate-200/80 dark:border-slate-600/50 rounded-xl px-3.5 py-2 text-sm font-semibold transition-all duration-150 flex items-center gap-2 active:scale-95"
+            >
+              <span class="text-xs font-bold opacity-70">aA</span>
+              Title Case
+            </button>
+
+          </div>
+
+
+          <hr class="border-slate-100 dark:border-slate-700/50 my-2">
+
+
+          <!-- CLEANING -->
+          <div class="flex flex-wrap items-center gap-2">
+
+            <span
+              class="text-xs font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-wider w-full sm:w-auto mr-1"
+            >
+              Clean:
+            </span>
+
+            <button
+              type="button"
+              onclick="transformText('removeCommas')"
+              class="btn-action bg-slate-100 hover:bg-emerald-50 dark:bg-slate-700/60 dark:hover:bg-emerald-900/30 text-slate-700 dark:text-slate-200 hover:text-emerald-600 dark:hover:text-emerald-400 border border-slate-200/80 dark:border-slate-600/50 rounded-xl px-3.5 py-2 text-sm font-semibold transition-all duration-150 flex items-center gap-2 active:scale-95"
+            >
+              <i class="fa-solid fa-ban text-xs opacity-70"></i>
+              Remove Commas
+            </button>
+
+            <button
+              type="button"
+              onclick="transformText('removeExtraSpaces')"
+              class="btn-action bg-slate-100 hover:bg-emerald-50 dark:bg-slate-700/60 dark:hover:bg-emerald-900/30 text-slate-700 dark:text-slate-200 hover:text-emerald-600 dark:hover:text-emerald-400 border border-slate-200/80 dark:border-slate-600/50 rounded-xl px-3.5 py-2 text-sm font-semibold transition-all duration-150 flex items-center gap-2 active:scale-95"
+            >
+              <i class="fa-solid fa-compress text-xs opacity-70"></i>
+              Remove Extra Spaces
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <!-- TEXT EDITOR -->
+        <div
+          class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl shadow-sm overflow-hidden flex flex-col focus-within:ring-2 focus-within:ring-blue-500/50 transition-all"
+        >
+
+          <!-- EDITOR HEADER -->
+          <div
+            class="bg-slate-50/80 dark:bg-slate-800/80 px-4 py-2.5 border-b border-slate-200 dark:border-slate-700/80 flex items-center justify-between gap-2 flex-wrap"
+          >
+
+            <div class="flex items-center gap-1.5">
+
+              <button
+                id="undoBtn"
+                type="button"
+                onclick="undo()"
+                disabled
+                title="Undo (Ctrl+Z)"
+                aria-label="Undo last change"
+                class="px-2.5 py-1.5 text-xs font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-200/60 dark:hover:bg-slate-700 rounded-lg transition-all disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-1.5"
+              >
+                <i class="fa-solid fa-rotate-left"></i>
+                Undo
+              </button>
+
+              <button
+                id="redoBtn"
+                type="button"
+                onclick="redo()"
+                disabled
+                title="Redo (Ctrl+Y)"
+                aria-label="Redo last change"
+                class="px-2.5 py-1.5 text-xs font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-200/60 dark:hover:bg-slate-700 rounded-lg transition-all disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-1.5"
+              >
+                <i class="fa-solid fa-rotate-right"></i>
+                Redo
+              </button>
+
+            </div>
+
+
+            <div class="flex items-center gap-2">
+
+              <button
+                type="button"
+                onclick="clearText()"
+                title="Clear text"
+                aria-label="Clear text"
+                class="px-3 py-1.5 text-xs font-medium text-rose-600 dark:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-950/40 rounded-lg transition-all flex items-center gap-1.5 border border-transparent hover:border-rose-200 dark:hover:border-rose-900"
+              >
+                <i class="fa-solid fa-trash-can"></i>
+                Clear
+              </button>
+
+              <button
+                type="button"
+                onclick="copyText()"
+                title="Copy text to clipboard"
+                aria-label="Copy text"
+                class="px-3.5 py-1.5 text-xs font-semibold text-white bg-blue-600 hover:bg-blue-700 active:bg-blue-800 rounded-lg shadow-sm transition-all flex items-center gap-1.5 active:scale-95"
+              >
+                <i class="fa-regular fa-copy"></i>
+                Copy
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <!-- TEXTAREA -->
+          <div class="relative w-full">
+
+            <label for="mainText" class="sr-only">
+              Text input
+            </label>
+
+            <textarea
+              id="mainText"
+              name="text"
+              placeholder="Type or paste your text here to convert and format..."
+              aria-label="Text to format or clean"
+              autocomplete="off"
+              class="w-full h-80 sm:h-96 p-4 sm:p-5 text-slate-800 dark:text-slate-100 bg-transparent resize-y outline-none font-sans text-base leading-relaxed placeholder-slate-400 dark:placeholder-slate-500 border-none"
+              spellcheck="true"
+            ></textarea>
+
+          </div>
+
+        </div>
+
+
+        <!-- STATISTICS -->
+        <div
+          class="grid grid-cols-2 sm:grid-cols-4 gap-3"
+          aria-label="Text statistics"
+        >
+
+          <div class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-3.5 text-center shadow-sm">
+
+            <span class="block text-xs font-medium text-slate-400 dark:text-slate-500 uppercase tracking-wider">
+              Words
+            </span>
+
+            <span
+              id="wordCount"
+              class="text-xl sm:text-2xl font-bold text-slate-800 dark:text-white mt-0.5 block"
+            >
+              0
+            </span>
+
+          </div>
+
+
+          <div class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-3.5 text-center shadow-sm">
+
+            <span class="block text-xs font-medium text-slate-400 dark:text-slate-500 uppercase tracking-wider">
+              Characters
+            </span>
+
+            <span
+              id="charCount"
+              class="text-xl sm:text-2xl font-bold text-slate-800 dark:text-white mt-0.5 block"
+            >
+              0
+            </span>
+
+          </div>
+
+
+          <div class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-3.5 text-center shadow-sm">
+
+            <span class="block text-xs font-medium text-slate-400 dark:text-slate-500 uppercase tracking-wider">
+              Sentences
+            </span>
+
+            <span
+              id="sentenceCount"
+              class="text-xl sm:text-2xl font-bold text-slate-800 dark:text-white mt-0.5 block"
+            >
+              0
+            </span>
+
+          </div>
+
+
+          <div class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-3.5 text-center shadow-sm">
+
+            <span class="block text-xs font-medium text-slate-400 dark:text-slate-500 uppercase tracking-wider">
+              Reading Time
+            </span>
+
+            <span
+              id="readingTime"
+              class="text-xl sm:text-2xl font-bold text-slate-800 dark:text-white mt-0.5 block"
+            >
+              0s
+            </span>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- INFORMATIONAL CONTENT -->
+      <section class="mt-12 space-y-6">
+
+
+        <!-- ABOUT -->
+        <section
+          id="about"
+          aria-labelledby="about-heading"
+          class="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6 sm:p-8 scroll-mt-6"
+        >
+
+          <h2
+            id="about-heading"
+            class="text-2xl font-bold text-slate-900 dark:text-white mb-4"
+          >
+            About Convert Case
+          </h2>
+
+          <div class="space-y-4 text-slate-600 dark:text-slate-300 leading-7">
+
+            <p>
+              Convert Case is a free online text formatting and cleaning tool
+              designed to make common text-editing tasks faster and easier.
+              It brings several useful text operations together in one
+              browser-based editor.
+            </p>
+
+            <p>
+              You can use the tool to change capitalization, clean common
+              formatting issues, and review basic text statistics. The goal is
+              to provide a simple interface for people who regularly work with
+              written text and need quick formatting tools.
+            </p>
+
+            <p>
+              Convert Case does not require an account for the basic text
+              formatting features. Text transformations are performed directly
+              in the browser.
+            </p>
+
+          </div>
+
+        </section>
+
+
+        <!-- FEATURES -->
+        <section
+          aria-labelledby="features-heading"
+          class="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6 sm:p-8"
+        >
+
+          <h2
+            id="features-heading"
+            class="text-2xl font-bold text-slate-900 dark:text-white mb-5"
+          >
             What can you do with Convert Case?
           </h2>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
 
-            <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-700/50">
+
+            <article class="p-5 rounded-xl bg-slate-50 dark:bg-slate-700/50">
+
+              <div
+                class="w-9 h-9 rounded-lg bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400 flex items-center justify-center mb-3"
+                aria-hidden="true"
+              >
+                <i class="fa-solid fa-font"></i>
+              </div>
+
               <h3 class="font-semibold text-slate-800 dark:text-white mb-2">
                 Change Text Case
               </h3>
@@ -322,22 +650,40 @@
                 Convert text to Sentence Case, lowercase, UPPERCASE,
                 Capitalized Case, or Title Case.
               </p>
-            </div>
+
+            </article>
 
 
-            <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-700/50">
+            <article class="p-5 rounded-xl bg-slate-50 dark:bg-slate-700/50">
+
+              <div
+                class="w-9 h-9 rounded-lg bg-emerald-100 dark:bg-emerald-900/40 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mb-3"
+                aria-hidden="true"
+              >
+                <i class="fa-solid fa-broom"></i>
+              </div>
+
               <h3 class="font-semibold text-slate-800 dark:text-white mb-2">
                 Clean Text
               </h3>
 
               <p class="text-sm leading-6 text-slate-600 dark:text-slate-300">
-                Remove commas and extra spaces to make text cleaner and
-                easier to work with.
+                Remove commas and repeated spaces to make text cleaner and
+                easier to reuse.
               </p>
-            </div>
+
+            </article>
 
 
-            <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-700/50">
+            <article class="p-5 rounded-xl bg-slate-50 dark:bg-slate-700/50">
+
+              <div
+                class="w-9 h-9 rounded-lg bg-violet-100 dark:bg-violet-900/40 text-violet-600 dark:text-violet-400 flex items-center justify-center mb-3"
+                aria-hidden="true"
+              >
+                <i class="fa-solid fa-chart-simple"></i>
+              </div>
+
               <h3 class="font-semibold text-slate-800 dark:text-white mb-2">
                 Check Text Statistics
               </h3>
@@ -346,118 +692,270 @@
                 View word count, character count, sentence count, and
                 estimated reading time.
               </p>
-            </div>
+
+            </article>
+
+
+            <article class="p-5 rounded-xl bg-slate-50 dark:bg-slate-700/50">
+
+              <div
+                class="w-9 h-9 rounded-lg bg-amber-100 dark:bg-amber-900/40 text-amber-600 dark:text-amber-400 flex items-center justify-center mb-3"
+                aria-hidden="true"
+              >
+                <i class="fa-solid fa-copy"></i>
+              </div>
+
+              <h3 class="font-semibold text-slate-800 dark:text-white mb-2">
+                Copy Results
+              </h3>
+
+              <p class="text-sm leading-6 text-slate-600 dark:text-slate-300">
+                Copy your converted or cleaned text directly to your
+                clipboard.
+              </p>
+
+            </article>
+
+
+            <article class="p-5 rounded-xl bg-slate-50 dark:bg-slate-700/50">
+
+              <div
+                class="w-9 h-9 rounded-lg bg-rose-100 dark:bg-rose-900/40 text-rose-600 dark:text-rose-400 flex items-center justify-center mb-3"
+                aria-hidden="true"
+              >
+                <i class="fa-solid fa-rotate-left"></i>
+              </div>
+
+              <h3 class="font-semibold text-slate-800 dark:text-white mb-2">
+                Undo and Redo
+              </h3>
+
+              <p class="text-sm leading-6 text-slate-600 dark:text-slate-300">
+                Undo previous changes or redo an action while working with
+                your text.
+              </p>
+
+            </article>
+
+
+            <article class="p-5 rounded-xl bg-slate-50 dark:bg-slate-700/50">
+
+              <div
+                class="w-9 h-9 rounded-lg bg-cyan-100 dark:bg-cyan-900/40 text-cyan-600 dark:text-cyan-400 flex items-center justify-center mb-3"
+                aria-hidden="true"
+              >
+                <i class="fa-solid fa-moon"></i>
+              </div>
+
+              <h3 class="font-semibold text-slate-800 dark:text-white mb-2">
+                Light and Dark Mode
+              </h3>
+
+              <p class="text-sm leading-6 text-slate-600 dark:text-slate-300">
+                Switch between light and dark appearance modes according to
+                your preference.
+              </p>
+
+            </article>
 
           </div>
 
-        </div>
+        </section>
 
 
-        <!-- How to Use -->
-        <div class="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6 sm:p-8">
+        <!-- HOW TO USE -->
+        <section
+          id="how-to-use"
+          aria-labelledby="how-heading"
+          class="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6 sm:p-8 scroll-mt-6"
+        >
 
-          <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">
+          <h2
+            id="how-heading"
+            class="text-2xl font-bold text-slate-900 dark:text-white mb-5"
+          >
             How to use Convert Case
           </h2>
 
-          <ol class="space-y-3 text-slate-600 dark:text-slate-300">
+          <ol class="space-y-4 text-slate-600 dark:text-slate-300">
 
-            <li class="flex gap-3">
-              <span class="font-semibold text-blue-600 dark:text-blue-400">1.</span>
-              <span>Type or paste your text into the editor.</span>
+            <li class="flex gap-4">
+
+              <span
+                class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400 flex items-center justify-center font-bold text-sm"
+              >
+                1
+              </span>
+
+              <div>
+                <h3 class="font-semibold text-slate-800 dark:text-white">
+                  Enter your text
+                </h3>
+
+                <p class="text-sm leading-6 mt-1">
+                  Type or paste the text you want to format or clean into the
+                  editor.
+                </p>
+              </div>
+
             </li>
 
-            <li class="flex gap-3">
-              <span class="font-semibold text-blue-600 dark:text-blue-400">2.</span>
-              <span>Choose the case conversion or cleaning option you need.</span>
+
+            <li class="flex gap-4">
+
+              <span
+                class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400 flex items-center justify-center font-bold text-sm"
+              >
+                2
+              </span>
+
+              <div>
+                <h3 class="font-semibold text-slate-800 dark:text-white">
+                  Choose an operation
+                </h3>
+
+                <p class="text-sm leading-6 mt-1">
+                  Select the case conversion or cleaning option that matches
+                  what you want to do.
+                </p>
+              </div>
+
             </li>
 
-            <li class="flex gap-3">
-              <span class="font-semibold text-blue-600 dark:text-blue-400">3.</span>
-              <span>Review the converted or cleaned text.</span>
+
+            <li class="flex gap-4">
+
+              <span
+                class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400 flex items-center justify-center font-bold text-sm"
+              >
+                3
+              </span>
+
+              <div>
+                <h3 class="font-semibold text-slate-800 dark:text-white">
+                  Review the result
+                </h3>
+
+                <p class="text-sm leading-6 mt-1">
+                  Check the converted text and use the statistics below the
+                  editor to review the updated text.
+                </p>
+              </div>
+
             </li>
 
-            <li class="flex gap-3">
-              <span class="font-semibold text-blue-600 dark:text-blue-400">4.</span>
-              <span>Click Copy to copy the result.</span>
+
+            <li class="flex gap-4">
+
+              <span
+                class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400 flex items-center justify-center font-bold text-sm"
+              >
+                4
+              </span>
+
+              <div>
+                <h3 class="font-semibold text-slate-800 dark:text-white">
+                  Copy your result
+                </h3>
+
+                <p class="text-sm leading-6 mt-1">
+                  When you are satisfied with the result, click Copy to copy
+                  the text to your clipboard.
+                </p>
+              </div>
+
             </li>
 
           </ol>
 
-        </div>
+        </section>
 
 
-        <!-- Who Can Use It -->
-        <div class="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6 sm:p-8">
+        <!-- WHO CAN USE -->
+        <section
+          aria-labelledby="audience-heading"
+          class="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6 sm:p-8"
+        >
 
-          <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">
+          <h2
+            id="audience-heading"
+            class="text-2xl font-bold text-slate-900 dark:text-white mb-4"
+          >
             Who can use Convert Case?
           </h2>
 
-          <p class="text-slate-600 dark:text-slate-300 leading-7 mb-4">
+          <p class="text-slate-600 dark:text-slate-300 leading-7 mb-5">
             Convert Case can be useful for anyone who regularly works with
             text and needs a quick way to format or clean it.
           </p>
 
           <div class="flex flex-wrap gap-2">
 
-            <span class="px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-700 text-sm text-slate-700 dark:text-slate-200">
+            <span class="px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-700 text-sm">
               Students
             </span>
 
-            <span class="px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-700 text-sm text-slate-700 dark:text-slate-200">
+            <span class="px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-700 text-sm">
               Writers
             </span>
 
-            <span class="px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-700 text-sm text-slate-700 dark:text-slate-200">
+            <span class="px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-700 text-sm">
               Office Workers
             </span>
 
-            <span class="px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-700 text-sm text-slate-700 dark:text-slate-200">
+            <span class="px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-700 text-sm">
               Virtual Assistants
             </span>
 
-            <span class="px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-700 text-sm text-slate-700 dark:text-slate-200">
+            <span class="px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-700 text-sm">
               Content Creators
             </span>
 
-            <span class="px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-700 text-sm text-slate-700 dark:text-slate-200">
+            <span class="px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-700 text-sm">
               Researchers
             </span>
 
-            <span class="px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-700 text-sm text-slate-700 dark:text-slate-200">
+            <span class="px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-700 text-sm">
               Developers
             </span>
 
           </div>
 
-        </div>
+        </section>
 
 
         <!-- FAQ -->
-        <div class="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6 sm:p-8">
+        <section
+          id="faq"
+          aria-labelledby="faq-heading"
+          class="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6 sm:p-8 scroll-mt-6"
+        >
 
-          <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-5">
+          <h2
+            id="faq-heading"
+            class="text-2xl font-bold text-slate-900 dark:text-white mb-6"
+          >
             Frequently Asked Questions
           </h2>
 
-          <div class="space-y-5">
+          <div class="space-y-6">
+
 
             <div>
-              <h3 class="font-semibold text-slate-800 dark:text-white mb-1">
+              <h3 class="font-semibold text-slate-800 dark:text-white mb-2">
                 What is Sentence Case?
               </h3>
 
               <p class="text-sm leading-6 text-slate-600 dark:text-slate-300">
-                Sentence Case changes the text so that the beginning of
-                sentences starts with a capital letter while the remaining
-                letters are converted to lowercase.
+                Sentence Case changes text so that the beginning of sentences
+                starts with a capital letter while the remaining letters are
+                converted to lowercase.
               </p>
             </div>
 
 
             <div>
-              <h3 class="font-semibold text-slate-800 dark:text-white mb-1">
+              <h3 class="font-semibold text-slate-800 dark:text-white mb-2">
                 What is UPPERCASE?
               </h3>
 
@@ -469,7 +967,7 @@
 
 
             <div>
-              <h3 class="font-semibold text-slate-800 dark:text-white mb-1">
+              <h3 class="font-semibold text-slate-800 dark:text-white mb-2">
                 What is lowercase?
               </h3>
 
@@ -481,7 +979,31 @@
 
 
             <div>
-              <h3 class="font-semibold text-slate-800 dark:text-white mb-1">
+              <h3 class="font-semibold text-slate-800 dark:text-white mb-2">
+                What is Capitalized Case?
+              </h3>
+
+              <p class="text-sm leading-6 text-slate-600 dark:text-slate-300">
+                Capitalized Case converts the text to lowercase first and then
+                capitalizes the beginning of each word.
+              </p>
+            </div>
+
+
+            <div>
+              <h3 class="font-semibold text-slate-800 dark:text-white mb-2">
+                What is Title Case?
+              </h3>
+
+              <p class="text-sm leading-6 text-slate-600 dark:text-slate-300">
+                Title Case applies title-style capitalization to words while
+                keeping certain common short words lowercase when appropriate.
+              </p>
+            </div>
+
+
+            <div>
+              <h3 class="font-semibold text-slate-800 dark:text-white mb-2">
                 Can I remove extra spaces?
               </h3>
 
@@ -493,7 +1015,31 @@
 
 
             <div>
-              <h3 class="font-semibold text-slate-800 dark:text-white mb-1">
+              <h3 class="font-semibold text-slate-800 dark:text-white mb-2">
+                Can I remove commas?
+              </h3>
+
+              <p class="text-sm leading-6 text-slate-600 dark:text-slate-300">
+                Yes. The Remove Commas option removes comma characters from
+                the text currently in the editor.
+              </p>
+            </div>
+
+
+            <div>
+              <h3 class="font-semibold text-slate-800 dark:text-white mb-2">
+                Can I undo a conversion?
+              </h3>
+
+              <p class="text-sm leading-6 text-slate-600 dark:text-slate-300">
+                Yes. Use the Undo button or press Ctrl+Z on Windows and Linux,
+                or Command+Z on macOS.
+              </p>
+            </div>
+
+
+            <div>
+              <h3 class="font-semibold text-slate-800 dark:text-white mb-2">
                 Can I copy the converted text?
               </h3>
 
@@ -503,49 +1049,331 @@
               </p>
             </div>
 
+
+            <div>
+              <h3 class="font-semibold text-slate-800 dark:text-white mb-2">
+                Do I need an account?
+              </h3>
+
+              <p class="text-sm leading-6 text-slate-600 dark:text-slate-300">
+                No account is required to use the basic text formatting and
+                cleaning features.
+              </p>
+            </div>
+
           </div>
 
-        </div>
+        </section>
+
+
+        <!-- PRIVACY -->
+        <section
+          id="privacy"
+          aria-labelledby="privacy-heading"
+          class="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6 sm:p-8 scroll-mt-6"
+        >
+
+          <h2
+            id="privacy-heading"
+            class="text-2xl font-bold text-slate-900 dark:text-white mb-4"
+          >
+            Privacy Policy
+          </h2>
+
+          <p class="text-sm text-slate-500 dark:text-slate-400 mb-6">
+            Last updated: August 30, 2026
+          </p>
+
+          <div class="space-y-5 text-slate-600 dark:text-slate-300 leading-7">
+
+
+            <div>
+              <h3 class="font-semibold text-slate-900 dark:text-white mb-2">
+                Introduction
+              </h3>
+
+              <p>
+                Convert Case respects your privacy. This section explains the
+                general information practices associated with this website.
+              </p>
+            </div>
+
+
+            <div>
+              <h3 class="font-semibold text-slate-900 dark:text-white mb-2">
+                Text entered into the tool
+              </h3>
+
+              <p>
+                The basic text formatting operations are performed directly
+                in your web browser. The tool does not require an account or
+                a server submission for these basic transformations.
+              </p>
+            </div>
+
+
+            <div>
+              <h3 class="font-semibold text-slate-900 dark:text-white mb-2">
+                Google Analytics
+              </h3>
+
+              <p>
+                Convert Case uses Google Analytics to understand general
+                website usage, such as page activity and usage patterns.
+                Google Analytics may use cookies or similar technologies.
+              </p>
+            </div>
+
+
+            <div>
+              <h3 class="font-semibold text-slate-900 dark:text-white mb-2">
+                Browser storage
+              </h3>
+
+              <p>
+                The website uses browser storage to remember the user's light
+                or dark mode preference. This preference is stored locally in
+                the browser.
+              </p>
+            </div>
+
+
+            <div>
+              <h3 class="font-semibold text-slate-900 dark:text-white mb-2">
+                Advertising
+              </h3>
+
+              <p>
+                If advertising services such as Google AdSense are added in
+                the future, this privacy information will be updated to
+                describe the relevant advertising technologies and data
+                practices.
+              </p>
+            </div>
+
+
+            <div>
+              <h3 class="font-semibold text-slate-900 dark:text-white mb-2">
+                Changes to this policy
+              </h3>
+
+              <p>
+                This privacy information may be updated when website
+                functionality, analytics, advertising, or other services
+                change.
+              </p>
+            </div>
+
+          </div>
+
+        </section>
+
+
+        <!-- TERMS -->
+        <section
+          id="terms"
+          aria-labelledby="terms-heading"
+          class="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6 sm:p-8 scroll-mt-6"
+        >
+
+          <h2
+            id="terms-heading"
+            class="text-2xl font-bold text-slate-900 dark:text-white mb-4"
+          >
+            Terms of Use
+          </h2>
+
+          <p class="text-sm text-slate-500 dark:text-slate-400 mb-6">
+            Last updated: August 30, 2026
+          </p>
+
+          <div class="space-y-5 text-slate-600 dark:text-slate-300 leading-7">
+
+
+            <div>
+              <h3 class="font-semibold text-slate-900 dark:text-white mb-2">
+                Use of the service
+              </h3>
+
+              <p>
+                Convert Case provides browser-based text formatting and
+                cleaning tools. You may use the service for lawful personal,
+                educational, professional, and other legitimate purposes.
+              </p>
+            </div>
+
+
+            <div>
+              <h3 class="font-semibold text-slate-900 dark:text-white mb-2">
+                User responsibility
+              </h3>
+
+              <p>
+                You are responsible for the text you choose to enter into the
+                tool and for how you use the resulting text.
+              </p>
+            </div>
+
+
+            <div>
+              <h3 class="font-semibold text-slate-900 dark:text-white mb-2">
+                Accuracy of results
+              </h3>
+
+              <p>
+                Text transformations are automated. You should review the
+                output before using it in important documents, publications,
+                communications, or other situations where accuracy matters.
+              </p>
+            </div>
+
+
+            <div>
+              <h3 class="font-semibold text-slate-900 dark:text-white mb-2">
+                Availability
+              </h3>
+
+              <p>
+                We aim to keep the website available and functional, but we
+                cannot guarantee uninterrupted or error-free availability.
+              </p>
+            </div>
+
+
+            <div>
+              <h3 class="font-semibold text-slate-900 dark:text-white mb-2">
+                Changes
+              </h3>
+
+              <p>
+                Features, functionality, design, and availability may change
+                over time as the website develops.
+              </p>
+            </div>
+
+          </div>
+
+        </section>
+
+
+        <!-- CONTACT -->
+        <section
+          id="contact"
+          aria-labelledby="contact-heading"
+          class="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6 sm:p-8 scroll-mt-6"
+        >
+
+          <h2
+            id="contact-heading"
+            class="text-2xl font-bold text-slate-900 dark:text-white mb-4"
+          >
+            Contact
+          </h2>
+
+          <p class="text-slate-600 dark:text-slate-300 leading-7 mb-5">
+            If you have feedback, suggestions, questions, or find a technical
+            problem with Convert Case, you can report it through the project's
+            GitHub repository.
+          </p>
+
+          <a
+            href="https://github.com/fiyaznkp/text-formatter-cleaner/issues"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-slate-900 hover:bg-slate-700 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200 text-white font-semibold transition"
+          >
+            <i class="fa-brands fa-github"></i>
+            Open GitHub Issues
+          </a>
+
+        </section>
+
 
       </section>
 
     </main>
 
 
-    <!-- Footer -->
-    <footer class="border-t border-slate-200 dark:border-slate-800 mt-10">
+    <!-- FOOTER -->
+    <footer class="border-t border-slate-200 dark:border-slate-800 mt-12 pt-8 pb-4">
 
-      <div class="max-w-6xl mx-auto px-4 py-6">
+      <div class="flex flex-col gap-6">
 
-        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-500 dark:text-slate-400">
+        <div class="text-center">
 
-          <p>
-            © 2026 Convert Case. All rights reserved.
+          <p class="text-sm font-semibold text-slate-700 dark:text-slate-200">
+            Convert Case
           </p>
 
-          <nav class="flex flex-wrap items-center justify-center gap-4">
+          <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">
+            A simple online tool for formatting and cleaning text.
+          </p>
 
-            <a href="index.html" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">
-              Home
-            </a>
+        </div>
 
-            <a href="about.html" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">
-              About
-            </a>
 
-            <a href="privacy.html" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">
-              Privacy Policy
-            </a>
+        <nav
+          aria-label="Footer navigation"
+          class="flex flex-wrap items-center justify-center gap-x-5 gap-y-3 text-sm"
+        >
 
-            <a href="terms.html" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">
-              Terms
-            </a>
+          <a
+            href="#tool"
+            class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition"
+          >
+            Tool
+          </a>
 
-            <a href="contact.html" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">
-              Contact
-            </a>
+          <a
+            href="#about"
+            class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition"
+          >
+            About
+          </a>
 
-          </nav>
+          <a
+            href="#how-to-use"
+            class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition"
+          >
+            How to Use
+          </a>
+
+          <a
+            href="#faq"
+            class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition"
+          >
+            FAQ
+          </a>
+
+          <a
+            href="#privacy"
+            class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition"
+          >
+            Privacy Policy
+          </a>
+
+          <a
+            href="#terms"
+            class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition"
+          >
+            Terms
+          </a>
+
+          <a
+            href="#contact"
+            class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition"
+          >
+            Contact
+          </a>
+
+        </nav>
+
+
+        <div class="text-center border-t border-slate-200 dark:border-slate-800 pt-5">
+
+          <p class="text-xs text-slate-400 dark:text-slate-500">
+            © 2026 Convert Case. All rights reserved.
+          </p>
 
         </div>
 
@@ -556,10 +1384,18 @@
   </div>
 
 
-  <!-- Toast Notification element -->
-  <div id="toast" class="fixed bottom-5 right-5 transform translate-y-20 opacity-0 bg-slate-900 text-white dark:bg-white dark:text-slate-900 px-4 py-2.5 rounded-xl shadow-xl text-sm font-medium transition-all duration-300 flex items-center gap-2 z-50 pointer-events-none">
+  <!-- TOAST NOTIFICATION -->
+  <div
+    id="toast"
+    role="status"
+    aria-live="polite"
+    class="fixed bottom-5 right-5 transform translate-y-20 opacity-0 bg-slate-900 text-white dark:bg-white dark:text-slate-900 px-4 py-2.5 rounded-xl shadow-xl text-sm font-medium transition-all duration-300 flex items-center gap-2 z-50 pointer-events-none"
+  >
 
-    <i id="toastIcon" class="fa-solid fa-circle-check text-emerald-400 dark:text-emerald-600"></i>
+    <i
+      id="toastIcon"
+      class="fa-solid fa-circle-check text-emerald-400 dark:text-emerald-600"
+    ></i>
 
     <span id="toastMessage">
       Text modified
@@ -568,31 +1404,57 @@
   </div>
 
 
+  <!-- JAVASCRIPT -->
   <script>
 
-    // DOM Elements
+    // ==========================================
+    // DOM ELEMENTS
+    // ==========================================
+
     const textarea = document.getElementById('mainText');
+
     const undoBtn = document.getElementById('undoBtn');
+
     const redoBtn = document.getElementById('redoBtn');
+
     const wordCountEl = document.getElementById('wordCount');
+
     const charCountEl = document.getElementById('charCount');
+
     const sentenceCountEl = document.getElementById('sentenceCount');
+
     const readingTimeEl = document.getElementById('readingTime');
+
     const toast = document.getElementById('toast');
+
     const toastMessage = document.getElementById('toastMessage');
+
     const toastIcon = document.getElementById('toastIcon');
 
 
-    // Undo/Redo State Management
+    // ==========================================
+    // UNDO / REDO STATE
+    // ==========================================
+
     let historyStack = [''];
+
     let historyIndex = 0;
+
     const MAX_HISTORY = 100;
+
     let isTypingDebounce = null;
 
 
-    // Theme Toggle Initialization with Persistence
-    const themeToggleBtn = document.getElementById('themeToggle');
-    const savedTheme = localStorage.getItem('theme');
+    // ==========================================
+    // THEME TOGGLE
+    // ==========================================
+
+    const themeToggleBtn =
+      document.getElementById('themeToggle');
+
+    const savedTheme =
+      localStorage.getItem('theme');
+
 
     if (
       savedTheme === 'dark' ||
@@ -602,14 +1464,20 @@
         window.matchMedia('(prefers-color-scheme: dark)').matches
       )
     ) {
+
       document.documentElement.classList.add('dark');
+
     } else {
+
       document.documentElement.classList.remove('dark');
+
     }
+
 
     themeToggleBtn.addEventListener('click', () => {
 
-      const isDark = document.documentElement.classList.toggle('dark');
+      const isDark =
+        document.documentElement.classList.toggle('dark');
 
       localStorage.setItem(
         'theme',
@@ -619,28 +1487,55 @@
     });
 
 
-    // Helper: Flush pending typing debounce into history stack
+    // ==========================================
+    // FLUSH TYPING BUFFER
+    // ==========================================
+
     function flushTypingBuffer() {
 
       if (isTypingDebounce !== null) {
 
         clearTimeout(isTypingDebounce);
+
         isTypingDebounce = null;
 
-        const currentVal = textarea.value;
+        const currentVal =
+          textarea.value;
 
-        if (historyStack[historyIndex] !== currentVal) {
 
-          if (historyIndex < historyStack.length - 1) {
-            historyStack = historyStack.slice(0, historyIndex + 1);
+        if (
+          historyStack[historyIndex] !==
+          currentVal
+        ) {
+
+          if (
+            historyIndex <
+            historyStack.length - 1
+          ) {
+
+            historyStack =
+              historyStack.slice(
+                0,
+                historyIndex + 1
+              );
+
           }
+
 
           historyStack.push(currentVal);
 
-          if (historyStack.length > MAX_HISTORY) {
+
+          if (
+            historyStack.length >
+            MAX_HISTORY
+          ) {
+
             historyStack.shift();
+
           } else {
+
             historyIndex++;
+
           }
 
         }
@@ -650,7 +1545,9 @@
     }
 
 
-    // Transformation Algorithms
+    // ==========================================
+    // TEXT TRANSFORMATION FUNCTIONS
+    // ==========================================
 
     function toSentenceCase(str) {
 
@@ -688,34 +1585,36 @@
 
       if (!str) return '';
 
-      const minorWords = new Set([
-        'a',
-        'an',
-        'and',
-        'as',
-        'at',
-        'but',
-        'by',
-        'for',
-        'if',
-        'in',
-        'nor',
-        'of',
-        'on',
-        'or',
-        'so',
-        'the',
-        'to',
-        'up',
-        'yet',
-        'with'
-      ]);
+      const minorWords =
+        new Set([
+          'a',
+          'an',
+          'and',
+          'as',
+          'at',
+          'but',
+          'by',
+          'for',
+          'if',
+          'in',
+          'nor',
+          'of',
+          'on',
+          'or',
+          'so',
+          'the',
+          'to',
+          'up',
+          'yet',
+          'with'
+        ]);
+
 
       return str
         .toLowerCase()
         .replace(
           /(?:[^\s\-/\u2014]+)/g,
-          (word, index, fullStr) => {
+          (word, index) => {
 
             if (
               index === 0 ||
@@ -762,12 +1661,17 @@
     }
 
 
-    // Main Transformation Dispatcher
+    // ==========================================
+    // MAIN TRANSFORMATION
+    // ==========================================
+
     function transformText(actionType) {
 
       flushTypingBuffer();
 
-      const currentText = textarea.value;
+      const currentText =
+        textarea.value;
+
 
       if (
         !currentText &&
@@ -785,71 +1689,88 @@
       }
 
 
-      let newText = currentText;
-      let actionLabel = '';
+      let newText =
+        currentText;
+
+      let actionLabel =
+        '';
 
 
       switch (actionType) {
 
         case 'sentenceCase':
 
-          newText = toSentenceCase(currentText);
+          newText =
+            toSentenceCase(currentText);
 
-          actionLabel = 'Converted to Sentence Case';
+          actionLabel =
+            'Converted to Sentence Case';
 
           break;
 
 
         case 'lowercase':
 
-          newText = currentText.toLowerCase();
+          newText =
+            currentText.toLowerCase();
 
-          actionLabel = 'Converted to lowercase';
+          actionLabel =
+            'Converted to lowercase';
 
           break;
 
 
         case 'uppercase':
 
-          newText = currentText.toUpperCase();
+          newText =
+            currentText.toUpperCase();
 
-          actionLabel = 'Converted to UPPERCASE';
+          actionLabel =
+            'Converted to UPPERCASE';
 
           break;
 
 
         case 'capitalizedCase':
 
-          newText = toCapitalizedCase(currentText);
+          newText =
+            toCapitalizedCase(currentText);
 
-          actionLabel = 'Converted to Capitalized Case';
+          actionLabel =
+            'Converted to Capitalized Case';
 
           break;
 
 
         case 'titleCase':
 
-          newText = toTitleCase(currentText);
+          newText =
+            toTitleCase(currentText);
 
-          actionLabel = 'Converted to Title Case';
+          actionLabel =
+            'Converted to Title Case';
 
           break;
 
 
         case 'removeCommas':
 
-          newText = removeCommas(currentText);
+          newText =
+            removeCommas(currentText);
 
-          actionLabel = 'Removed all commas';
+          actionLabel =
+            'Removed all commas';
 
           break;
 
 
         case 'removeExtraSpaces':
 
-          newText = removeExtraSpaces(currentText);
+          newText =
+            removeExtraSpaces(currentText);
 
-          actionLabel = 'Removed extra spaces';
+          actionLabel =
+            'Removed extra spaces';
 
           break;
 
@@ -879,15 +1800,26 @@
     }
 
 
-    // History & Undo / Redo Functions
+    // ==========================================
+    // HISTORY
+    // ==========================================
+
     function pushState(newText) {
 
-      if (historyStack[historyIndex] === newText) {
+      if (
+        historyStack[historyIndex] ===
+        newText
+      ) {
+
         return;
+
       }
 
 
-      if (historyIndex < historyStack.length - 1) {
+      if (
+        historyIndex <
+        historyStack.length - 1
+      ) {
 
         historyStack =
           historyStack.slice(
@@ -901,7 +1833,10 @@
       historyStack.push(newText);
 
 
-      if (historyStack.length > MAX_HISTORY) {
+      if (
+        historyStack.length >
+        MAX_HISTORY
+      ) {
 
         historyStack.shift();
 
@@ -912,7 +1847,8 @@
       }
 
 
-      textarea.value = newText;
+      textarea.value =
+        newText;
 
       updateUI();
 
@@ -987,11 +1923,15 @@
     }
 
 
-    // Clipboard Copy
+    // ==========================================
+    // COPY
+    // ==========================================
+
     function copyText() {
 
       const textToCopy =
         textarea.value;
+
 
       if (!textToCopy) {
 
@@ -1062,7 +2002,10 @@
     }
 
 
-    // Toast Notification Display
+    // ==========================================
+    // TOAST
+    // ==========================================
+
     let toastTimeout = null;
 
 
@@ -1085,6 +2028,7 @@
         'translate-y-20',
         'opacity-0'
       );
+
 
       toast.classList.add(
         'translate-y-0',
@@ -1110,26 +2054,26 @@
     }
 
 
-    // Live Text Statistics Calculator
+    // ==========================================
+    // TEXT STATISTICS
+    // ==========================================
+
     function calculateStats(text) {
 
       const trimmed =
         text.trim();
 
 
-      // Word count
       const words =
         trimmed
           ? trimmed.split(/\s+/).length
           : 0;
 
 
-      // Character count
       const chars =
         text.length;
 
 
-      // Sentence count
       const sentences =
         trimmed
           ? (
@@ -1140,8 +2084,9 @@
           : 0;
 
 
-      // Reading time
-      const wpm = 200;
+      const wpm =
+        200;
+
 
       const totalSeconds =
         Math.ceil(
@@ -1162,6 +2107,7 @@
 
         const secs =
           totalSeconds % 60;
+
 
         timeFormatted =
           `${mins}m ${secs}s`;
@@ -1186,7 +2132,6 @@
 
     function updateUI() {
 
-      // Update statistics
       const stats =
         calculateStats(
           textarea.value
@@ -1209,7 +2154,6 @@
         stats.timeFormatted;
 
 
-      // Enable/disable undo/redo buttons
       undoBtn.disabled =
         historyIndex <= 0;
 
@@ -1221,7 +2165,10 @@
     }
 
 
-    // Event Listeners for Manual Typing Input
+    // ==========================================
+    // TEXT INPUT
+    // ==========================================
+
     textarea.addEventListener(
       'input',
       () => {
@@ -1229,7 +2176,6 @@
         updateUI();
 
 
-        // Debounce typing entries
         clearTimeout(
           isTypingDebounce
         );
@@ -1286,7 +2232,10 @@
     );
 
 
-    // Keyboard Shortcuts
+    // ==========================================
+    // KEYBOARD SHORTCUTS
+    // ==========================================
+
     document.addEventListener(
       'keydown',
       (e) => {
@@ -1325,7 +2274,10 @@
     );
 
 
-    // Sample Text Loader
+    // ==========================================
+    // SAMPLE TEXT
+    // ==========================================
+
     document
       .getElementById('sampleBtn')
       .addEventListener(
@@ -1352,7 +2304,10 @@
       );
 
 
-    // Initial setup
+    // ==========================================
+    // INITIAL SETUP
+    // ==========================================
+
     updateUI();
 
   </script>
