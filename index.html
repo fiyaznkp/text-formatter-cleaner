@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Free Online Text Formatter and Cleaner | Convert Case</title>
+  <title>Text Formatter & Cleaner – Free Online Text Tool</title>
 
   <meta
     name="description"
-    content="Free online text formatter and cleaner. Convert text to different cases, remove commas and extra spaces, convert emails and URLs to hyperlinks, extract links from HTML, and check text statistics."
+    content="Free online text formatter and cleaner. Convert text cases, clean formatting, create clickable email hyperlinks, convert hyperlinks to plain text, and check useful text statistics."
   >
 
   <link
@@ -16,10 +16,10 @@
     href="https://fiyaznkp.github.io/text-formatter-cleaner/"
   >
 
-  <meta property="og:title" content="Free Online Text Formatter and Cleaner | Convert Case">
+  <meta property="og:title" content="Text Formatter & Cleaner – Free Online Text Tool">
   <meta
     property="og:description"
-    content="Format, clean, and convert text online for free with Convert Case."
+    content="Free online text formatter and cleaner for text case conversion, cleaning, email hyperlinks, and text statistics."
   >
   <meta
     property="og:url"
@@ -30,15 +30,19 @@
   <meta name="twitter:card" content="summary">
   <meta
     name="twitter:title"
-    content="Free Online Text Formatter and Cleaner | Convert Case"
+    content="Text Formatter & Cleaner – Free Online Text Tool"
   >
   <meta
     name="twitter:description"
-    content="Format, clean, and convert text online for free with Convert Case."
+    content="Free online text formatter and cleaner."
   >
 
   <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4PBH582QW4"></script>
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-4PBH582QW4"
+  ></script>
+
   <script>
     window.dataLayer = window.dataLayer || [];
 
@@ -59,7 +63,7 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
   >
 
-  <!-- Google Font -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -75,7 +79,7 @@
       theme: {
         extend: {
           fontFamily: {
-            sans: ['Inter', 'sans-serif']
+            sans: ['Inter', 'sans-serif'],
           },
 
           colors: {
@@ -84,7 +88,7 @@
               100: '#e0effe',
               500: '#3b82f6',
               600: '#2563eb',
-              700: '#1d4ed8'
+              700: '#1d4ed8',
             }
           }
         }
@@ -98,584 +102,737 @@
       transition: background-color 0.3s ease, color 0.3s ease;
     }
 
-    textarea::-webkit-scrollbar {
+    textarea::-webkit-scrollbar,
+    .rich-preview::-webkit-scrollbar {
       width: 8px;
     }
 
-    textarea::-webkit-scrollbar-track {
+    textarea::-webkit-scrollbar-track,
+    .rich-preview::-webkit-scrollbar-track {
       background: transparent;
     }
 
-    textarea::-webkit-scrollbar-thumb {
+    textarea::-webkit-scrollbar-thumb,
+    .rich-preview::-webkit-scrollbar-thumb {
       background-color: rgba(156, 163, 175, 0.4);
       border-radius: 4px;
     }
 
-    textarea::-webkit-scrollbar-thumb:hover {
+    textarea::-webkit-scrollbar-thumb:hover,
+    .rich-preview::-webkit-scrollbar-thumb:hover {
       background-color: rgba(156, 163, 175, 0.7);
     }
 
-    a {
-      transition: color 0.2s ease;
+    .rich-preview a {
+      color: #2563eb;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    .dark .rich-preview a {
+      color: #60a5fa;
+    }
+
+    .rich-preview:empty::before {
+      content: attr(data-placeholder);
+      color: #94a3b8;
+      pointer-events: none;
     }
   </style>
 </head>
 
-<body
-  class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100 min-h-screen flex flex-col"
->
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100 min-h-screen flex flex-col justify-between">
 
-  <!-- =========================================================
-       HEADER
-       ========================================================= -->
+  <div class="w-full max-w-5xl mx-auto px-4 py-6 sm:px-6 lg:px-8">
 
-  <header
-    class="w-full border-b border-slate-200 dark:border-slate-800"
-  >
-    <div
-      class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-5"
-    >
+    <!-- Header -->
+    <header class="flex flex-col sm:flex-row items-center justify-between gap-4 mb-6 pb-6 border-b border-slate-200 dark:border-slate-800">
 
-      <div
-        class="flex flex-col lg:flex-row items-center justify-between gap-5"
-      >
+      <div class="flex items-center gap-3">
 
-        <!-- Brand -->
-        <a
-          href="index.html"
-          class="flex items-center gap-3"
-          aria-label="Convert Case Home"
-        >
+        <a href="index.html" class="flex items-center gap-3">
 
-          <div
-            class="w-11 h-11 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center text-white shadow-md shadow-blue-500/20"
-          >
-            <i class="fa-solid fa-font text-lg"></i>
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center text-white shadow-md shadow-blue-500/20">
+
+            <i class="fa-solid fa-font font-bold text-lg"></i>
+
           </div>
 
           <div>
-            <div
-              class="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 dark:text-white"
-            >
-              Convert Case
-            </div>
 
-            <div
-              class="text-xs sm:text-sm text-slate-500 dark:text-slate-400"
-            >
-              Free online text formatter and cleaner
-            </div>
+            <h1 class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">
+              Text Formatter & Cleaner
+            </h1>
+
+            <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">
+              Convert, format, clean, and prepare text faster
+            </p>
+
           </div>
 
         </a>
 
-
-        <!-- Main Navigation -->
-        <nav
-          class="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm font-medium"
-          aria-label="Main navigation"
-        >
-
-          <a
-            href="index.html"
-            class="text-blue-600 dark:text-blue-400 font-semibold"
-          >
-            Home
-          </a>
-
-          <a
-            href="about.html"
-            class="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400"
-          >
-            About
-          </a>
-
-          <a
-            href="how-to-use.html"
-            class="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400"
-          >
-            How to Use
-          </a>
-
-          <a
-            href="faq.html"
-            class="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400"
-          >
-            FAQ
-          </a>
-
-          <a
-            href="contact.html"
-            class="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400"
-          >
-            Contact
-          </a>
-
-          <!-- Sample -->
-          <button
-            id="sampleBtn"
-            class="px-3 py-1.5 text-xs font-medium text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg hover:border-blue-300 dark:hover:border-blue-500 transition-all shadow-sm flex items-center gap-1.5"
-          >
-            <i class="fa-solid fa-lightbulb text-amber-500"></i>
-            Sample Text
-          </button>
-
-          <!-- Theme -->
-          <button
-            id="themeToggle"
-            aria-label="Toggle dark mode"
-            class="p-2 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg shadow-sm"
-          >
-            <i class="fa-solid fa-moon dark:hidden text-slate-600"></i>
-            <i class="fa-solid fa-sun hidden dark:block text-amber-400"></i>
-          </button>
-
-        </nav>
-
       </div>
 
-    </div>
-  </header>
 
-
-  <!-- =========================================================
-       MAIN CONTENT
-       ========================================================= -->
-
-  <main
-    class="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10"
-  >
-
-    <!-- Page Introduction -->
-    <section class="mb-7">
-
-      <h1
-        class="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 dark:text-white"
-      >
-        Free Online Text Formatter and Cleaner
-      </h1>
-
-      <p
-        class="mt-3 text-base sm:text-lg leading-7 text-slate-600 dark:text-slate-300 max-w-4xl"
-      >
-        Paste or type text below to change capitalization, clean common
-        formatting problems, convert emails and URLs to HTML hyperlinks,
-        extract URLs from hyperlinks, and view useful text statistics.
-      </p>
-
-    </section>
-
-
-    <!-- =========================================================
-         TOOLBAR
-         ========================================================= -->
-
-    <section
-      class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-4 sm:p-5 shadow-sm"
-      aria-label="Text formatting tools"
-    >
-
-      <!-- CASE -->
-      <div class="flex flex-wrap items-center gap-2">
-
-        <span
-          class="text-xs font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-wider w-full sm:w-auto mr-1"
-        >
-          Case:
-        </span>
+      <!-- Header Controls -->
+      <div class="flex items-center gap-2">
 
         <button
-          onclick="transformText('sentenceCase')"
-          class="btn-action"
+          id="sampleBtn"
+          class="px-3 py-1.5 text-xs font-medium text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg hover:border-blue-300 dark:hover:border-blue-500 transition-all shadow-sm flex items-center gap-1.5"
         >
-          <i class="fa-solid fa-align-left text-xs opacity-70"></i>
-          Sentence Case
+          <i class="fa-solid fa-lightbulb text-amber-500"></i>
+          Sample Text
         </button>
 
         <button
-          onclick="transformText('lowercase')"
-          class="btn-action"
+          id="themeToggle"
+          class="p-2 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg shadow-sm transition-all"
+          title="Toggle dark mode"
         >
-          <span class="text-xs font-bold opacity-70">aa</span>
-          lowercase
-        </button>
-
-        <button
-          onclick="transformText('uppercase')"
-          class="btn-action"
-        >
-          <span class="text-xs font-bold opacity-70">AA</span>
-          UPPERCASE
-        </button>
-
-        <button
-          onclick="transformText('capitalizedCase')"
-          class="btn-action"
-        >
-          <span class="text-xs font-bold opacity-70">Aa</span>
-          Capitalized Case
-        </button>
-
-        <button
-          onclick="transformText('titleCase')"
-          class="btn-action"
-        >
-          <span class="text-xs font-bold opacity-70">aA</span>
-          Title Case
+          <i class="fa-solid fa-moon dark:hidden text-slate-600"></i>
+          <i class="fa-solid fa-sun hidden dark:block text-amber-400"></i>
         </button>
 
       </div>
 
-
-      <hr class="border-slate-100 dark:border-slate-700/60 my-4">
-
-
-      <!-- CLEAN -->
-      <div class="flex flex-wrap items-center gap-2">
-
-        <span
-          class="text-xs font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-wider w-full sm:w-auto mr-1"
-        >
-          Clean:
-        </span>
-
-        <button
-          onclick="transformText('removeCommas')"
-          class="btn-action hover:text-emerald-600 dark:hover:text-emerald-400"
-        >
-          <i class="fa-solid fa-ban text-xs opacity-70"></i>
-          Remove Commas
-        </button>
-
-        <button
-          onclick="transformText('removeExtraSpaces')"
-          class="btn-action hover:text-emerald-600 dark:hover:text-emerald-400"
-        >
-          <i class="fa-solid fa-compress text-xs opacity-70"></i>
-          Remove Extra Spaces
-        </button>
-
-      </div>
+    </header>
 
 
-      <hr class="border-slate-100 dark:border-slate-700/60 my-4">
+    <main class="space-y-4">
 
 
-      <!-- LINKS -->
-      <div class="flex flex-wrap items-center gap-2">
+      <!-- Formatting Toolbar -->
+      <div class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700/80 rounded-2xl p-4 shadow-sm space-y-3">
 
-        <span
-          class="text-xs font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-wider w-full sm:w-auto mr-1"
-        >
-          Links:
-        </span>
+        <!-- Case -->
+        <div class="flex flex-wrap items-center gap-2">
 
-        <button
-          onclick="transformText('textToHyperlinks')"
-          class="btn-action hover:text-blue-600 dark:hover:text-blue-400"
-        >
-          <i class="fa-solid fa-link text-xs opacity-70"></i>
-          Text to Hyperlinks
-        </button>
-
-        <button
-          onclick="transformText('hyperlinksToText')"
-          class="btn-action hover:text-blue-600 dark:hover:text-blue-400"
-        >
-          <i class="fa-solid fa-link-slash text-xs opacity-70"></i>
-          Hyperlinks to Text
-        </button>
-
-      </div>
-
-
-      <!-- Link Explanation -->
-      <div
-        class="mt-4 text-xs sm:text-sm text-slate-500 dark:text-slate-400 leading-6"
-      >
-        <strong>Text to Hyperlinks</strong> converts email addresses and
-        website URLs into HTML hyperlinks.
-        <strong>Hyperlinks to Text</strong> extracts the URLs from HTML
-        hyperlinks.
-      </div>
-
-    </section>
-
-
-    <!-- =========================================================
-         EDITOR
-         ========================================================= -->
-
-    <section
-      class="mt-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl shadow-sm overflow-hidden focus-within:ring-2 focus-within:ring-blue-500/50"
-    >
-
-      <!-- Editor Toolbar -->
-      <div
-        class="bg-slate-50/80 dark:bg-slate-800/80 px-4 py-3 border-b border-slate-200 dark:border-slate-700 flex items-center justify-between gap-2 flex-wrap"
-      >
-
-        <!-- Undo / Redo -->
-        <div class="flex items-center gap-1.5">
+          <span class="text-xs font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-wider w-full sm:w-auto mr-1">
+            Case:
+          </span>
 
           <button
-            id="undoBtn"
-            onclick="undo()"
-            disabled
-            title="Undo (Ctrl+Z)"
-            class="px-2.5 py-1.5 text-xs font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-200/60 dark:hover:bg-slate-700 rounded-lg transition-all disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-1.5"
+            onclick="transformText('sentenceCase')"
+            class="btn-action bg-slate-100 hover:bg-blue-50 dark:bg-slate-700/60 dark:hover:bg-blue-900/30 text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 border border-slate-200/80 dark:border-slate-600/50 rounded-xl px-3.5 py-2 text-sm font-semibold transition-all flex items-center gap-2 active:scale-95"
           >
-            <i class="fa-solid fa-rotate-left"></i>
-            Undo
+            <i class="fa-solid fa-align-left text-xs opacity-70"></i>
+            Sentence Case
           </button>
 
           <button
-            id="redoBtn"
-            onclick="redo()"
-            disabled
-            title="Redo (Ctrl+Y)"
-            class="px-2.5 py-1.5 text-xs font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-200/60 dark:hover:bg-slate-700 rounded-lg transition-all disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-1.5"
+            onclick="transformText('lowercase')"
+            class="btn-action bg-slate-100 hover:bg-blue-50 dark:bg-slate-700/60 dark:hover:bg-blue-900/30 text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 border border-slate-200/80 dark:border-slate-600/50 rounded-xl px-3.5 py-2 text-sm font-semibold transition-all flex items-center gap-2 active:scale-95"
           >
-            <i class="fa-solid fa-rotate-right"></i>
-            Redo
+            <span class="text-xs font-bold opacity-70">aa</span>
+            lowercase
+          </button>
+
+          <button
+            onclick="transformText('uppercase')"
+            class="btn-action bg-slate-100 hover:bg-blue-50 dark:bg-slate-700/60 dark:hover:bg-blue-900/30 text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 border border-slate-200/80 dark:border-slate-600/50 rounded-xl px-3.5 py-2 text-sm font-semibold transition-all flex items-center gap-2 active:scale-95"
+          >
+            <span class="text-xs font-bold opacity-70">AA</span>
+            UPPERCASE
+          </button>
+
+          <button
+            onclick="transformText('capitalizedCase')"
+            class="btn-action bg-slate-100 hover:bg-blue-50 dark:bg-slate-700/60 dark:hover:bg-blue-900/30 text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 border border-slate-200/80 dark:border-slate-600/50 rounded-xl px-3.5 py-2 text-sm font-semibold transition-all flex items-center gap-2 active:scale-95"
+          >
+            <span class="text-xs font-bold opacity-70">Aa</span>
+            Capitalized Case
+          </button>
+
+          <button
+            onclick="transformText('titleCase')"
+            class="btn-action bg-slate-100 hover:bg-blue-50 dark:bg-slate-700/60 dark:hover:bg-blue-900/30 text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 border border-slate-200/80 dark:border-slate-600/50 rounded-xl px-3.5 py-2 text-sm font-semibold transition-all flex items-center gap-2 active:scale-95"
+          >
+            <span class="text-xs font-bold opacity-70">aA</span>
+            Title Case
           </button>
 
         </div>
 
 
-        <!-- Clear / Copy -->
-        <div class="flex items-center gap-2">
+        <hr class="border-slate-100 dark:border-slate-700/50 my-2">
+
+
+        <!-- Cleaning -->
+        <div class="flex flex-wrap items-center gap-2">
+
+          <span class="text-xs font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-wider w-full sm:w-auto mr-1">
+            Clean:
+          </span>
 
           <button
-            onclick="clearText()"
-            title="Clear text"
-            class="px-3 py-1.5 text-xs font-medium text-rose-600 dark:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-950/40 rounded-lg transition-all flex items-center gap-1.5"
+            onclick="transformText('removeCommas')"
+            class="btn-action bg-slate-100 hover:bg-emerald-50 dark:bg-slate-700/60 dark:hover:bg-emerald-900/30 text-slate-700 dark:text-slate-200 hover:text-emerald-600 dark:hover:text-emerald-400 border border-slate-200/80 dark:border-slate-600/50 rounded-xl px-3.5 py-2 text-sm font-semibold transition-all flex items-center gap-2 active:scale-95"
           >
-            <i class="fa-solid fa-trash-can"></i>
-            Clear
+            <i class="fa-solid fa-ban text-xs opacity-70"></i>
+            Remove Commas
           </button>
 
           <button
-            onclick="copyText()"
-            title="Copy text"
-            class="px-3.5 py-1.5 text-xs font-semibold text-white bg-blue-600 hover:bg-blue-700 active:bg-blue-800 rounded-lg shadow-sm transition-all flex items-center gap-1.5"
+            onclick="transformText('removeExtraSpaces')"
+            class="btn-action bg-slate-100 hover:bg-emerald-50 dark:bg-slate-700/60 dark:hover:bg-emerald-900/30 text-slate-700 dark:text-slate-200 hover:text-emerald-600 dark:hover:text-emerald-400 border border-slate-200/80 dark:border-slate-600/50 rounded-xl px-3.5 py-2 text-sm font-semibold transition-all flex items-center gap-2 active:scale-95"
+          >
+            <i class="fa-solid fa-compress text-xs opacity-70"></i>
+            Remove Extra Spaces
+          </button>
+
+        </div>
+
+
+        <hr class="border-slate-100 dark:border-slate-700/50 my-2">
+
+
+        <!-- Email / Link Tools -->
+        <div class="flex flex-wrap items-center gap-2">
+
+          <span class="text-xs font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-wider w-full sm:w-auto mr-1">
+            Links:
+          </span>
+
+          <button
+            onclick="emailToHyperlinks()"
+            class="btn-action bg-slate-100 hover:bg-indigo-50 dark:bg-slate-700/60 dark:hover:bg-indigo-900/30 text-slate-700 dark:text-slate-200 hover:text-indigo-600 dark:hover:text-indigo-400 border border-slate-200/80 dark:border-slate-600/50 rounded-xl px-3.5 py-2 text-sm font-semibold transition-all flex items-center gap-2 active:scale-95"
+          >
+            <i class="fa-solid fa-envelope text-xs opacity-70"></i>
+            Email → Hyperlink
+          </button>
+
+          <button
+            onclick="hyperlinksToText()"
+            class="btn-action bg-slate-100 hover:bg-indigo-50 dark:bg-slate-700/60 dark:hover:bg-indigo-900/30 text-slate-700 dark:text-slate-200 hover:text-indigo-600 dark:hover:text-indigo-400 border border-slate-200/80 dark:border-slate-600/50 rounded-xl px-3.5 py-2 text-sm font-semibold transition-all flex items-center gap-2 active:scale-95"
+          >
+            <i class="fa-solid fa-link-slash text-xs opacity-70"></i>
+            Hyperlink → Text
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- Main Text Editor -->
+      <div class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl shadow-sm overflow-hidden flex flex-col focus-within:ring-2 focus-within:ring-blue-500/50 transition-all">
+
+        <!-- Editor Header -->
+        <div class="bg-slate-50/80 dark:bg-slate-800/80 px-4 py-2.5 border-b border-slate-200 dark:border-slate-700/80 flex items-center justify-between gap-2 flex-wrap">
+
+          <div class="flex items-center gap-1.5">
+
+            <button
+              id="undoBtn"
+              onclick="undo()"
+              disabled
+              title="Undo (Ctrl+Z)"
+              class="px-2.5 py-1.5 text-xs font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-200/60 dark:hover:bg-slate-700 rounded-lg transition-all disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-1.5"
+            >
+              <i class="fa-solid fa-rotate-left"></i>
+              Undo
+            </button>
+
+            <button
+              id="redoBtn"
+              onclick="redo()"
+              disabled
+              title="Redo (Ctrl+Y)"
+              class="px-2.5 py-1.5 text-xs font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-200/60 dark:hover:bg-slate-700 rounded-lg transition-all disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-1.5"
+            >
+              <i class="fa-solid fa-rotate-right"></i>
+              Redo
+            </button>
+
+          </div>
+
+
+          <div class="flex items-center gap-2">
+
+            <button
+              onclick="clearText()"
+              title="Clear text"
+              class="px-3 py-1.5 text-xs font-medium text-rose-600 dark:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-950/40 rounded-lg transition-all flex items-center gap-1.5 border border-transparent hover:border-rose-200 dark:hover:border-rose-900"
+            >
+              <i class="fa-solid fa-trash-can"></i>
+              Clear
+            </button>
+
+            <button
+              onclick="copyText()"
+              title="Copy plain text"
+              class="px-3.5 py-1.5 text-xs font-semibold text-white bg-blue-600 hover:bg-blue-700 active:bg-blue-800 rounded-lg shadow-sm transition-all flex items-center gap-1.5 active:scale-95"
+            >
+              <i class="fa-regular fa-copy"></i>
+              Copy
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <!-- Textarea -->
+        <div class="relative w-full">
+
+          <textarea
+            id="mainText"
+            placeholder="Type or paste your text here..."
+            class="w-full h-80 sm:h-96 p-4 sm:p-5 text-slate-800 dark:text-slate-100 bg-transparent resize-y outline-none font-sans text-base leading-relaxed placeholder-slate-400 dark:placeholder-slate-500 border-none"
+            spellcheck="true"
+          ></textarea>
+
+        </div>
+
+      </div>
+
+
+      <!-- Hyperlink Preview -->
+      <section
+        id="linkPreviewSection"
+        class="hidden bg-white dark:bg-slate-800 border border-indigo-200 dark:border-indigo-900/60 rounded-2xl shadow-sm overflow-hidden"
+      >
+
+        <div class="bg-indigo-50/70 dark:bg-indigo-950/30 px-4 py-3 border-b border-indigo-100 dark:border-indigo-900/50 flex items-center justify-between gap-3 flex-wrap">
+
+          <div>
+
+            <h2 class="text-sm font-bold text-indigo-900 dark:text-indigo-200">
+              Clickable Email Preview
+            </h2>
+
+            <p class="text-xs text-indigo-700/70 dark:text-indigo-300/70 mt-0.5">
+              Email addresses below are real clickable links.
+            </p>
+
+          </div>
+
+
+          <button
+            onclick="copyRichText()"
+            class="px-3.5 py-1.5 text-xs font-semibold text-white bg-indigo-600 hover:bg-indigo-700 rounded-lg shadow-sm transition-all flex items-center gap-1.5"
           >
             <i class="fa-regular fa-copy"></i>
-            Copy
+            Copy Rich Text
           </button>
+
+        </div>
+
+
+        <div
+          id="richPreview"
+          class="rich-preview min-h-32 max-h-80 overflow-y-auto p-4 sm:p-5 text-slate-800 dark:text-slate-100 text-base leading-relaxed outline-none"
+          contenteditable="true"
+          data-placeholder="Your clickable email preview will appear here..."
+          spellcheck="true"
+        ></div>
+
+      </section>
+
+
+      <!-- Statistics -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+
+        <div class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-3.5 text-center shadow-sm">
+
+          <span class="block text-xs font-medium text-slate-400 dark:text-slate-500 uppercase tracking-wider">
+            Words
+          </span>
+
+          <span
+            id="wordCount"
+            class="text-xl sm:text-2xl font-bold text-slate-800 dark:text-white mt-0.5 block"
+          >
+            0
+          </span>
+
+        </div>
+
+
+        <div class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-3.5 text-center shadow-sm">
+
+          <span class="block text-xs font-medium text-slate-400 dark:text-slate-500 uppercase tracking-wider">
+            Characters
+          </span>
+
+          <span
+            id="charCount"
+            class="text-xl sm:text-2xl font-bold text-slate-800 dark:text-white mt-0.5 block"
+          >
+            0
+          </span>
+
+        </div>
+
+
+        <div class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-3.5 text-center shadow-sm">
+
+          <span class="block text-xs font-medium text-slate-400 dark:text-slate-500 uppercase tracking-wider">
+            Sentences
+          </span>
+
+          <span
+            id="sentenceCount"
+            class="text-xl sm:text-2xl font-bold text-slate-800 dark:text-white mt-0.5 block"
+          >
+            0
+          </span>
+
+        </div>
+
+
+        <div class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-3.5 text-center shadow-sm">
+
+          <span class="block text-xs font-medium text-slate-400 dark:text-slate-500 uppercase tracking-wider">
+            Reading Time
+          </span>
+
+          <span
+            id="readingTime"
+            class="text-xl sm:text-2xl font-bold text-slate-800 dark:text-white mt-0.5 block"
+          >
+            0s
+          </span>
 
         </div>
 
       </div>
 
 
-      <!-- Text Area -->
-      <textarea
-        id="mainText"
-        placeholder="Type or paste your text here..."
-        class="w-full h-80 sm:h-96 p-5 text-slate-800 dark:text-slate-100 bg-transparent resize-y outline-none font-sans text-base leading-relaxed placeholder-slate-400 dark:placeholder-slate-500 border-none"
-        spellcheck="true"
-        aria-label="Text editor"
-      ></textarea>
-
-    </section>
+      <!-- Helpful Information -->
+      <section class="mt-10 space-y-6">
 
 
-    <!-- =========================================================
-         STATISTICS
-         ========================================================= -->
+        <!-- About -->
+        <div class="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6 sm:p-8">
 
-    <section
-      class="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-5"
-      aria-label="Text statistics"
-    >
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">
+            Text Formatter & Cleaner
+          </h2>
 
-      <div class="stat-card">
-        <span class="stat-label">Words</span>
-        <span id="wordCount" class="stat-number">0</span>
+          <p class="text-slate-600 dark:text-slate-300 leading-7">
+            Convert Case is a free online text formatting and cleaning tool
+            designed to help you quickly change text capitalization, clean
+            common formatting issues, create clickable email hyperlinks, and
+            check useful text statistics in one place.
+          </p>
+
+        </div>
+
+
+        <!-- Features -->
+        <div class="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6 sm:p-8">
+
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-5">
+            What can you do with Convert Case?
+          </h2>
+
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+
+
+            <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-700/50">
+
+              <h3 class="font-semibold text-slate-800 dark:text-white mb-2">
+                Change Text Case
+              </h3>
+
+              <p class="text-sm leading-6 text-slate-600 dark:text-slate-300">
+                Convert text to Sentence Case, lowercase, UPPERCASE,
+                Capitalized Case, or Title Case.
+              </p>
+
+            </div>
+
+
+            <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-700/50">
+
+              <h3 class="font-semibold text-slate-800 dark:text-white mb-2">
+                Clean Text
+              </h3>
+
+              <p class="text-sm leading-6 text-slate-600 dark:text-slate-300">
+                Remove commas and extra spaces to make text cleaner and
+                easier to work with.
+              </p>
+
+            </div>
+
+
+            <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-700/50">
+
+              <h3 class="font-semibold text-slate-800 dark:text-white mb-2">
+                Email Hyperlinks
+              </h3>
+
+              <p class="text-sm leading-6 text-slate-600 dark:text-slate-300">
+                Turn email addresses into clickable links and convert
+                hyperlinks back into ordinary text.
+              </p>
+
+            </div>
+
+
+            <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-700/50">
+
+              <h3 class="font-semibold text-slate-800 dark:text-white mb-2">
+                Check Text Statistics
+              </h3>
+
+              <p class="text-sm leading-6 text-slate-600 dark:text-slate-300">
+                View word count, character count, sentence count, and
+                estimated reading time.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- How to Use -->
+        <div class="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6 sm:p-8">
+
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">
+            How to use Convert Case
+          </h2>
+
+          <ol class="space-y-3 text-slate-600 dark:text-slate-300">
+
+            <li class="flex gap-3">
+              <span class="font-semibold text-blue-600 dark:text-blue-400">1.</span>
+              <span>Type or paste your text into the editor.</span>
+            </li>
+
+            <li class="flex gap-3">
+              <span class="font-semibold text-blue-600 dark:text-blue-400">2.</span>
+              <span>Choose a case conversion or cleaning option.</span>
+            </li>
+
+            <li class="flex gap-3">
+              <span class="font-semibold text-blue-600 dark:text-blue-400">3.</span>
+              <span>Use Email → Hyperlink to create clickable email addresses.</span>
+            </li>
+
+            <li class="flex gap-3">
+              <span class="font-semibold text-blue-600 dark:text-blue-400">4.</span>
+              <span>Use Hyperlink → Text to remove links and keep plain text.</span>
+            </li>
+
+            <li class="flex gap-3">
+              <span class="font-semibold text-blue-600 dark:text-blue-400">5.</span>
+              <span>Click Copy or Copy Rich Text depending on what you need.</span>
+            </li>
+
+          </ol>
+
+        </div>
+
+
+        <!-- Who Can Use It -->
+        <div class="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6 sm:p-8">
+
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">
+            Who can use Convert Case?
+          </h2>
+
+          <p class="text-slate-600 dark:text-slate-300 leading-7 mb-4">
+            Convert Case can be useful for anyone who regularly works with
+            text and needs a quick way to format, clean, or prepare text.
+          </p>
+
+
+          <div class="flex flex-wrap gap-2">
+
+            <span class="px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-700 text-sm text-slate-700 dark:text-slate-200">
+              Students
+            </span>
+
+            <span class="px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-700 text-sm text-slate-700 dark:text-slate-200">
+              Writers
+            </span>
+
+            <span class="px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-700 text-sm text-slate-700 dark:text-slate-200">
+              Office Workers
+            </span>
+
+            <span class="px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-700 text-sm text-slate-700 dark:text-slate-200">
+              Virtual Assistants
+            </span>
+
+            <span class="px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-700 text-sm text-slate-700 dark:text-slate-200">
+              Content Creators
+            </span>
+
+            <span class="px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-700 text-sm text-slate-700 dark:text-slate-200">
+              Researchers
+            </span>
+
+            <span class="px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-700 text-sm text-slate-700 dark:text-slate-200">
+              Developers
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- FAQ -->
+        <div class="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6 sm:p-8">
+
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-5">
+            Frequently Asked Questions
+          </h2>
+
+
+          <div class="space-y-5">
+
+
+            <div>
+
+              <h3 class="font-semibold text-slate-800 dark:text-white mb-1">
+                What is Sentence Case?
+              </h3>
+
+              <p class="text-sm leading-6 text-slate-600 dark:text-slate-300">
+                Sentence Case changes the text so that the beginning of
+                sentences starts with a capital letter while the remaining
+                letters are converted to lowercase.
+              </p>
+
+            </div>
+
+
+            <div>
+
+              <h3 class="font-semibold text-slate-800 dark:text-white mb-1">
+                Can I turn email addresses into clickable links?
+              </h3>
+
+              <p class="text-sm leading-6 text-slate-600 dark:text-slate-300">
+                Yes. Paste text containing email addresses and select
+                Email → Hyperlink. The email addresses will appear as
+                clickable links in the preview.
+              </p>
+
+            </div>
+
+
+            <div>
+
+              <h3 class="font-semibold text-slate-800 dark:text-white mb-1">
+                Can I convert hyperlinks back to text?
+              </h3>
+
+              <p class="text-sm leading-6 text-slate-600 dark:text-slate-300">
+                Yes. Paste or edit linked content in the hyperlink preview
+                and select Hyperlink → Text to remove the links and keep
+                ordinary text.
+              </p>
+
+            </div>
+
+
+            <div>
+
+              <h3 class="font-semibold text-slate-800 dark:text-white mb-1">
+                Can I remove extra spaces?
+              </h3>
+
+              <p class="text-sm leading-6 text-slate-600 dark:text-slate-300">
+                Yes. The Remove Extra Spaces option removes repeated spaces
+                and tabs while maintaining the text's line structure.
+              </p>
+
+            </div>
+
+
+            <div>
+
+              <h3 class="font-semibold text-slate-800 dark:text-white mb-1">
+                Can I copy the converted text?
+              </h3>
+
+              <p class="text-sm leading-6 text-slate-600 dark:text-slate-300">
+                Yes. Use Copy for ordinary text or Copy Rich Text when you
+                want to preserve clickable email hyperlinks.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-200 dark:border-slate-800 mt-10">
+
+      <div class="max-w-6xl mx-auto px-4 py-6">
+
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-500 dark:text-slate-400">
+
+          <p>
+            © 2026 Convert Case. All rights reserved.
+          </p>
+
+
+          <nav class="flex flex-wrap items-center justify-center gap-4">
+
+            <a
+              href="index.html"
+              class="hover:text-indigo-600 dark:hover:text-indigo-400 transition"
+            >
+              Home
+            </a>
+
+            <a
+              href="about.html"
+              class="hover:text-indigo-600 dark:hover:text-indigo-400 transition"
+            >
+              About
+            </a>
+
+            <a
+              href="privacy.html"
+              class="hover:text-indigo-600 dark:hover:text-indigo-400 transition"
+            >
+              Privacy Policy
+            </a>
+
+            <a
+              href="terms.html"
+              class="hover:text-indigo-600 dark:hover:text-indigo-400 transition"
+            >
+              Terms
+            </a>
+
+            <a
+              href="contact.html"
+              class="hover:text-indigo-600 dark:hover:text-indigo-400 transition"
+            >
+              Contact
+            </a>
+
+          </nav>
+
+        </div>
+
       </div>
 
-      <div class="stat-card">
-        <span class="stat-label">Characters</span>
-        <span id="charCount" class="stat-number">0</span>
-      </div>
+    </footer>
 
-      <div class="stat-card">
-        <span class="stat-label">Sentences</span>
-        <span id="sentenceCount" class="stat-number">0</span>
-      </div>
-
-      <div class="stat-card">
-        <span class="stat-label">Reading Time</span>
-        <span id="readingTime" class="stat-number">0s</span>
-      </div>
-
-    </section>
+  </div>
 
 
-    <!-- =========================================================
-         SHORT HOW-TO
-         ========================================================= -->
-
-    <section
-      class="mt-8 rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6 sm:p-8"
-    >
-
-      <h2
-        class="text-2xl font-bold text-slate-900 dark:text-white mb-4"
-      >
-        How to use the text formatter
-      </h2>
-
-      <ol
-        class="space-y-3 text-slate-600 dark:text-slate-300"
-      >
-
-        <li class="flex gap-3">
-          <span class="font-semibold text-blue-600 dark:text-blue-400">1.</span>
-          <span>Type or paste your text into the editor.</span>
-        </li>
-
-        <li class="flex gap-3">
-          <span class="font-semibold text-blue-600 dark:text-blue-400">2.</span>
-          <span>Choose a case, cleaning, or link conversion tool.</span>
-        </li>
-
-        <li class="flex gap-3">
-          <span class="font-semibold text-blue-600 dark:text-blue-400">3.</span>
-          <span>Review the result in the editor.</span>
-        </li>
-
-        <li class="flex gap-3">
-          <span class="font-semibold text-blue-600 dark:text-blue-400">4.</span>
-          <span>Click Copy to copy the result.</span>
-        </li>
-
-      </ol>
-
-      <p class="mt-5 text-sm text-slate-500 dark:text-slate-400">
-        Need more information?
-        <a
-          href="how-to-use.html"
-          class="text-blue-600 dark:text-blue-400 hover:underline"
-        >
-          View the complete How to Use guide.
-        </a>
-      </p>
-
-    </section>
-
-  </main>
-
-
-  <!-- =========================================================
-       FOOTER
-       ========================================================= -->
-
-  <footer
-    class="mt-auto border-t border-slate-200 dark:border-slate-800"
-  >
-
-    <div
-      class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8"
-    >
-
-      <div class="text-center">
-
-        <h2
-          class="font-bold text-slate-900 dark:text-white"
-        >
-          Convert Case
-        </h2>
-
-        <p
-          class="mt-2 text-sm text-slate-500 dark:text-slate-400"
-        >
-          A simple online tool for formatting and cleaning text.
-        </p>
-
-
-        <!-- Footer Navigation -->
-        <nav
-          class="mt-5 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm"
-          aria-label="Footer navigation"
-        >
-
-          <a
-            href="index.html"
-            class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400"
-          >
-            Home
-          </a>
-
-          <a
-            href="about.html"
-            class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400"
-          >
-            About
-          </a>
-
-          <a
-            href="how-to-use.html"
-            class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400"
-          >
-            How to Use
-          </a>
-
-          <a
-            href="faq.html"
-            class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400"
-          >
-            FAQ
-          </a>
-
-          <a
-            href="privacy.html"
-            class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400"
-          >
-            Privacy Policy
-          </a>
-
-          <a
-            href="terms.html"
-            class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400"
-          >
-            Terms
-          </a>
-
-          <a
-            href="contact.html"
-            class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400"
-          >
-            Contact
-          </a>
-
-        </nav>
-
-      </div>
-
-
-      <div
-        class="mt-7 pt-6 border-t border-slate-200 dark:border-slate-800 text-center"
-      >
-
-        <p
-          class="text-xs text-slate-500 dark:text-slate-500"
-        >
-          © 2026 Convert Case. All rights reserved.
-        </p>
-
-      </div>
-
-    </div>
-
-  </footer>
-
-
-  <!-- =========================================================
-       TOAST
-       ========================================================= -->
-
+  <!-- Toast -->
   <div
     id="toast"
     class="fixed bottom-5 right-5 transform translate-y-20 opacity-0 bg-slate-900 text-white dark:bg-white dark:text-slate-900 px-4 py-2.5 rounded-xl shadow-xl text-sm font-medium transition-all duration-300 flex items-center gap-2 z-50 pointer-events-none"
@@ -693,15 +850,11 @@
   </div>
 
 
-  <!-- =========================================================
-       JAVASCRIPT
-       ========================================================= -->
-
   <script>
 
-    /* ---------------------------------------------------------
+    /* =========================================================
        DOM ELEMENTS
-       --------------------------------------------------------- */
+    ========================================================= */
 
     const textarea = document.getElementById('mainText');
 
@@ -717,10 +870,13 @@
     const toastMessage = document.getElementById('toastMessage');
     const toastIcon = document.getElementById('toastIcon');
 
+    const richPreview = document.getElementById('richPreview');
+    const linkPreviewSection = document.getElementById('linkPreviewSection');
 
-    /* ---------------------------------------------------------
+
+    /* =========================================================
        HISTORY
-       --------------------------------------------------------- */
+    ========================================================= */
 
     let historyStack = [''];
     let historyIndex = 0;
@@ -730,9 +886,9 @@
     let isTypingDebounce = null;
 
 
-    /* ---------------------------------------------------------
+    /* =========================================================
        THEME
-       --------------------------------------------------------- */
+    ========================================================= */
 
     const themeToggleBtn = document.getElementById('themeToggle');
 
@@ -746,9 +902,13 @@
         window.matchMedia('(prefers-color-scheme: dark)').matches
       )
     ) {
+
       document.documentElement.classList.add('dark');
+
     } else {
+
       document.documentElement.classList.remove('dark');
+
     }
 
 
@@ -765,9 +925,9 @@
     });
 
 
-    /* ---------------------------------------------------------
-       FLUSH TYPING HISTORY
-       --------------------------------------------------------- */
+    /* =========================================================
+       HISTORY HELPERS
+    ========================================================= */
 
     function flushTypingBuffer() {
 
@@ -783,18 +943,24 @@
         ) {
 
           if (
-            historyIndex < historyStack.length - 1
+            historyIndex <
+            historyStack.length - 1
           ) {
+
             historyStack =
               historyStack.slice(
                 0,
                 historyIndex + 1
               );
+
           }
 
           historyStack.push(currentVal);
 
-          if (historyStack.length > MAX_HISTORY) {
+          if (
+            historyStack.length >
+            MAX_HISTORY
+          ) {
 
             historyStack.shift();
 
@@ -811,9 +977,9 @@
     }
 
 
-    /* ---------------------------------------------------------
-       CASE CONVERSIONS
-       --------------------------------------------------------- */
+    /* =========================================================
+       CASE TRANSFORMATIONS
+    ========================================================= */
 
     function toSentenceCase(str) {
 
@@ -874,40 +1040,31 @@
         'with'
       ]);
 
-      const words = str.toLowerCase().split(/\b/);
+      return str
+        .toLowerCase()
+        .replace(
+          /(?:[^\s\-/\u2014]+)/g,
+          (word, index) => {
 
-      let wordNumber = 0;
+            if (
+              index === 0 ||
+              !minorWords.has(word)
+            ) {
 
-      return words.map(part => {
+              return (
+                word.charAt(0).toUpperCase() +
+                word.slice(1)
+              );
 
-        if (!/[a-z0-9]/i.test(part)) {
-          return part;
-        }
+            }
 
-        const lower = part.toLowerCase();
+            return word;
 
-        wordNumber++;
-
-        if (
-          wordNumber === 1 ||
-          !minorWords.has(lower)
-        ) {
-          return (
-            lower.charAt(0).toUpperCase() +
-            lower.slice(1)
-          );
-        }
-
-        return lower;
-
-      }).join('');
+          }
+        );
 
     }
 
-
-    /* ---------------------------------------------------------
-       CLEANING
-       --------------------------------------------------------- */
 
     function removeCommas(str) {
 
@@ -922,10 +1079,11 @@
 
       return str
         .split('\n')
-        .map(line =>
-          line
-            .replace(/[ \t]+/g, ' ')
-            .trim()
+        .map(
+          line =>
+            line
+              .replace(/[ \t]+/g, ' ')
+              .trim()
         )
         .join('\n')
         .replace(/\n{3,}/g, '\n\n');
@@ -933,155 +1091,9 @@
     }
 
 
-    /* ---------------------------------------------------------
-       TEXT → HYPERLINKS
-       --------------------------------------------------------- */
-
-    function textToHyperlinks(str) {
-
-      if (!str) return '';
-
-      let result = str;
-
-      /*
-       * Convert email addresses.
-       *
-       * Example:
-       * john@gmail.com
-       *
-       * becomes:
-       * <a href="mailto:john@gmail.com">john@gmail.com</a>
-       */
-
-      result = result.replace(
-        /([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/g,
-        '<a href="mailto:$1">$1</a>'
-      );
-
-
-      /*
-       * Convert URLs beginning with http:// or https://
-       */
-
-      result = result.replace(
-        /(?<!["'>])(https?:\/\/[^\s<]+)/gi,
-        function(url) {
-
-          let cleanUrl = url;
-
-          let ending = '';
-
-          while (
-            /[.,!?;:]$/.test(cleanUrl)
-          ) {
-            ending =
-              cleanUrl.slice(-1) +
-              ending;
-
-            cleanUrl =
-              cleanUrl.slice(0, -1);
-          }
-
-          return (
-            '<a href="' +
-            cleanUrl +
-            '">' +
-            cleanUrl +
-            '</a>' +
-            ending
-          );
-
-        }
-      );
-
-
-      /*
-       * Convert www.example.com
-       */
-
-      result = result.replace(
-        /(?<!["'>])(www\.[^\s<]+)/gi,
-        function(url) {
-
-          let cleanUrl = url;
-
-          let ending = '';
-
-          while (
-            /[.,!?;:]$/.test(cleanUrl)
-          ) {
-            ending =
-              cleanUrl.slice(-1) +
-              ending;
-
-            cleanUrl =
-              cleanUrl.slice(0, -1);
-          }
-
-          return (
-            '<a href="https://' +
-            cleanUrl +
-            '">' +
-            cleanUrl +
-            '</a>' +
-            ending
-          );
-
-        }
-      );
-
-
-      return result;
-
-    }
-
-
-    /* ---------------------------------------------------------
-       HYPERLINKS → TEXT
-       --------------------------------------------------------- */
-
-    function hyperlinksToText(str) {
-
-      if (!str) return '';
-
-      /*
-       * First extract href values from HTML links.
-       */
-
-      let result = str.replace(
-        /<a\b[^>]*href\s*=\s*["']([^"']+)["'][^>]*>[\s\S]*?<\/a>/gi,
-        function(match, href) {
-
-          if (
-            href.toLowerCase().startsWith('mailto:')
-          ) {
-            return href.substring(7);
-          }
-
-          return href;
-
-        }
-      );
-
-
-      /*
-       * Remove remaining HTML tags.
-       */
-
-      result = result.replace(
-        /<[^>]*>/g,
-        ''
-      );
-
-
-      return result;
-
-    }
-
-
-    /* ---------------------------------------------------------
-       MAIN TRANSFORMATION
-       --------------------------------------------------------- */
+    /* =========================================================
+       MAIN TEXT TRANSFORMATIONS
+    ========================================================= */
 
     function transformText(actionType) {
 
@@ -1101,8 +1113,8 @@
 
       }
 
-
       let newText = currentText;
+
       let actionLabel = '';
 
 
@@ -1184,28 +1196,6 @@
 
           break;
 
-
-        case 'textToHyperlinks':
-
-          newText =
-            textToHyperlinks(currentText);
-
-          actionLabel =
-            'Converted emails and URLs to hyperlinks';
-
-          break;
-
-
-        case 'hyperlinksToText':
-
-          newText =
-            hyperlinksToText(currentText);
-
-          actionLabel =
-            'Converted hyperlinks to text';
-
-          break;
-
       }
 
 
@@ -1232,21 +1222,387 @@
     }
 
 
-    /* ---------------------------------------------------------
-       HISTORY FUNCTIONS
-       --------------------------------------------------------- */
+    /* =========================================================
+       EMAIL DETECTION
+    ========================================================= */
+
+    const emailRegex =
+      /[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/gi;
+
+
+    /*
+      Escape HTML so user text cannot be interpreted as HTML.
+    */
+
+    function escapeHTML(text) {
+
+      return text
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+
+    }
+
+
+    /*
+      Converts ordinary text into safe HTML and makes
+      detected email addresses clickable.
+    */
+
+    function convertEmailsToHTML(text) {
+
+      const escaped =
+        escapeHTML(text);
+
+      return escaped.replace(
+        emailRegex,
+        function(email) {
+
+          const safeEmail =
+            email.replace(/"/g, '&quot;');
+
+          return (
+            '<a href="mailto:' +
+            safeEmail +
+            '">' +
+            safeEmail +
+            '</a>'
+          );
+
+        }
+      );
+
+    }
+
+
+    /* =========================================================
+       EMAIL → HYPERLINK
+    ========================================================= */
+
+    function emailToHyperlinks() {
+
+      flushTypingBuffer();
+
+      const text =
+        textarea.value;
+
+      if (!text.trim()) {
+
+        showToast(
+          'Text box is empty',
+          'fa-circle-info',
+          'text-amber-400'
+        );
+
+        return;
+
+      }
+
+
+      const matches =
+        text.match(emailRegex);
+
+
+      if (!matches || matches.length === 0) {
+
+        showToast(
+          'No email addresses found',
+          'fa-circle-info',
+          'text-amber-400'
+        );
+
+        return;
+
+      }
+
+
+      richPreview.innerHTML =
+        convertEmailsToHTML(text);
+
+
+      linkPreviewSection.classList.remove(
+        'hidden'
+      );
+
+
+      showToast(
+        matches.length === 1
+          ? 'Created 1 clickable email'
+          : `Created ${matches.length} clickable emails`,
+        'fa-envelope',
+        'text-indigo-400'
+      );
+
+    }
+
+
+    /* =========================================================
+       HYPERLINK → TEXT
+    ========================================================= */
+
+    function hyperlinksToText() {
+
+      flushTypingBuffer();
+
+
+      let sourceHTML =
+        richPreview.innerHTML.trim();
+
+
+      /*
+        If the preview is empty, check whether the
+        textarea contains HTML pasted by the user.
+      */
+
+      if (!sourceHTML) {
+
+        const sourceText =
+          textarea.value.trim();
+
+        if (!sourceText) {
+
+          showToast(
+            'No hyperlink content found',
+            'fa-circle-info',
+            'text-amber-400'
+          );
+
+          return;
+
+        }
+
+
+        if (
+          /<a[\s>]/i.test(sourceText) ||
+          /<[^>]+>/.test(sourceText)
+        ) {
+
+          sourceHTML =
+            sourceText;
+
+        } else {
+
+          showToast(
+            'No hyperlinks found',
+            'fa-circle-info',
+            'text-amber-400'
+          );
+
+          return;
+
+        }
+
+      }
+
+
+      /*
+        Use a temporary DOM element to safely extract
+        the visible text from hyperlinks/HTML.
+      */
+
+      const temp =
+        document.createElement('div');
+
+      temp.innerHTML =
+        sourceHTML;
+
+
+      const plainText =
+        temp.innerText ||
+        temp.textContent ||
+        '';
+
+
+      if (!plainText.trim()) {
+
+        showToast(
+          'No text found',
+          'fa-circle-info',
+          'text-amber-400'
+        );
+
+        return;
+
+      }
+
+
+      pushState(
+        plainText
+      );
+
+
+      richPreview.innerHTML = '';
+
+      linkPreviewSection.classList.add(
+        'hidden'
+      );
+
+
+      showToast(
+        'Converted hyperlinks to plain text',
+        'fa-link-slash',
+        'text-indigo-400'
+      );
+
+    }
+
+
+    /* =========================================================
+       COPY RICH TEXT
+    ========================================================= */
+
+    async function copyRichText() {
+
+      const html =
+        richPreview.innerHTML.trim();
+
+      const text =
+        richPreview.innerText.trim();
+
+
+      if (!html || !text) {
+
+        showToast(
+          'Nothing to copy',
+          'fa-circle-exclamation',
+          'text-amber-400'
+        );
+
+        return;
+
+      }
+
+
+      /*
+        Modern browsers support copying both
+        HTML and plain text to the clipboard.
+      */
+
+      if (
+        navigator.clipboard &&
+        window.ClipboardItem &&
+        window.isSecureContext
+      ) {
+
+        try {
+
+          const blobHTML =
+            new Blob(
+              [html],
+              {
+                type: 'text/html'
+              }
+            );
+
+
+          const blobText =
+            new Blob(
+              [text],
+              {
+                type: 'text/plain'
+              }
+            );
+
+
+          const item =
+            new ClipboardItem({
+              'text/html': blobHTML,
+              'text/plain': blobText
+            });
+
+
+          await navigator.clipboard.write([
+            item
+          ]);
+
+
+          showToast(
+            'Copied clickable text!',
+            'fa-circle-check',
+            'text-emerald-400'
+          );
+
+
+          return;
+
+        } catch (error) {
+
+          /*
+            Fall through to the selection method.
+          */
+
+        }
+
+      }
+
+
+      /*
+        Fallback:
+        select the rich preview so the user can
+        copy the formatted content normally.
+      */
+
+      const selection =
+        window.getSelection();
+
+      const range =
+        document.createRange();
+
+      range.selectNodeContents(
+        richPreview
+      );
+
+      selection.removeAllRanges();
+
+      selection.addRange(range);
+
+
+      try {
+
+        document.execCommand('copy');
+
+        selection.removeAllRanges();
+
+        showToast(
+          'Copied clickable text!',
+          'fa-circle-check',
+          'text-emerald-400'
+        );
+
+      } catch (error) {
+
+        showToast(
+          'Please select and copy the preview',
+          'fa-circle-info',
+          'text-amber-400'
+        );
+
+      }
+
+    }
+
+
+    /* =========================================================
+       HISTORY
+    ========================================================= */
 
     function pushState(newText) {
 
       if (
-        historyStack[historyIndex] === newText
+        historyStack[historyIndex] ===
+        newText
       ) {
+
         return;
+
       }
 
 
       if (
-        historyIndex < historyStack.length - 1
+        historyIndex <
+        historyStack.length - 1
       ) {
 
         historyStack =
@@ -1258,11 +1614,14 @@
       }
 
 
-      historyStack.push(newText);
+      historyStack.push(
+        newText
+      );
 
 
       if (
-        historyStack.length > MAX_HISTORY
+        historyStack.length >
+        MAX_HISTORY
       ) {
 
         historyStack.shift();
@@ -1274,7 +1633,9 @@
       }
 
 
-      textarea.value = newText;
+      textarea.value =
+        newText;
+
 
       updateUI();
 
@@ -1336,9 +1697,21 @@
 
       flushTypingBuffer();
 
-      if (!textarea.value) return;
+      if (!textarea.value) {
+
+        return;
+
+      }
+
 
       pushState('');
+
+      richPreview.innerHTML = '';
+
+      linkPreviewSection.classList.add(
+        'hidden'
+      );
+
 
       showToast(
         'Text cleared',
@@ -1349,14 +1722,15 @@
     }
 
 
-    /* ---------------------------------------------------------
-       COPY
-       --------------------------------------------------------- */
+    /* =========================================================
+       COPY PLAIN TEXT
+    ========================================================= */
 
     function copyText() {
 
       const textToCopy =
         textarea.value;
+
 
       if (!textToCopy) {
 
@@ -1387,8 +1761,9 @@
             );
 
           })
-          .catch(() =>
-            fallbackCopy(textToCopy)
+          .catch(
+            () =>
+              fallbackCopy(textToCopy)
           );
 
       } else {
@@ -1427,9 +1802,9 @@
     }
 
 
-    /* ---------------------------------------------------------
+    /* =========================================================
        TOAST
-       --------------------------------------------------------- */
+    ========================================================= */
 
     let toastTimeout = null;
 
@@ -1440,10 +1815,14 @@
       iconColor = 'text-emerald-400'
     ) {
 
-      clearTimeout(toastTimeout);
+      clearTimeout(
+        toastTimeout
+      );
+
 
       toastMessage.textContent =
         message;
+
 
       toastIcon.className =
         `fa-solid ${iconClass} ${iconColor}`;
@@ -1453,6 +1832,7 @@
         'translate-y-20',
         'opacity-0'
       );
+
 
       toast.classList.add(
         'translate-y-0',
@@ -1478,9 +1858,9 @@
     }
 
 
-    /* ---------------------------------------------------------
+    /* =========================================================
        STATISTICS
-       --------------------------------------------------------- */
+    ========================================================= */
 
     function calculateStats(text) {
 
@@ -1521,12 +1901,15 @@
         '0s';
 
 
-      if (totalSeconds >= 60) {
+      if (
+        totalSeconds >= 60
+      ) {
 
         const mins =
           Math.floor(
             totalSeconds / 60
           );
+
 
         const secs =
           totalSeconds % 60;
@@ -1588,15 +1971,16 @@
     }
 
 
-    /* ---------------------------------------------------------
-       TYPING
-       --------------------------------------------------------- */
+    /* =========================================================
+       TEXT INPUT
+    ========================================================= */
 
     textarea.addEventListener(
       'input',
       () => {
 
         updateUI();
+
 
         clearTimeout(
           isTypingDebounce
@@ -1654,9 +2038,27 @@
     );
 
 
-    /* ---------------------------------------------------------
+    /* =========================================================
+       RICH PREVIEW INPUT
+    ========================================================= */
+
+    richPreview.addEventListener(
+      'input',
+      () => {
+
+        /*
+          The preview is intentionally editable.
+          This allows users to paste existing
+          hyperlinks directly into it.
+        */
+
+      }
+    );
+
+
+    /* =========================================================
        KEYBOARD SHORTCUTS
-       --------------------------------------------------------- */
+    ========================================================= */
 
     document.addEventListener(
       'keydown',
@@ -1667,13 +2069,15 @@
           e.key.toLowerCase() === 'z'
         ) {
 
-          e.preventDefault();
-
           if (e.shiftKey) {
+
+            e.preventDefault();
 
             redo();
 
           } else {
+
+            e.preventDefault();
 
             undo();
 
@@ -1694,9 +2098,9 @@
     );
 
 
-    /* ---------------------------------------------------------
+    /* =========================================================
        SAMPLE TEXT
-       --------------------------------------------------------- */
+    ========================================================= */
 
     document
       .getElementById('sampleBtn')
@@ -1708,10 +2112,12 @@
 
 
           const sample =
-            'hello world! THIS IS A SAMPLE TEXT, meant to demonstrate how easy it is to convert text. Contact us at example@gmail.com or visit https://example.com for more information. It also includes EXTRA    SPACES, mixed cases, and commas.';
+            "hello world! THIS IS A SAMPLE TEXT, meant to demonstrate how easy it is to convert text. it includes EXTRA    SPACES, mixed cases, and commas, which can all be cleaned with a single click. Contact ali@gmail.com or support@example.com for more information.";
 
 
-          pushState(sample);
+          pushState(
+            sample
+          );
 
 
           showToast(
@@ -1724,102 +2130,9 @@
       );
 
 
-    /* ---------------------------------------------------------
-       TOOLBAR BUTTON STYLES
-       --------------------------------------------------------- */
-
-    document
-      .querySelectorAll('.btn-action')
-      .forEach(button => {
-
-        button.classList.add(
-          'bg-slate-100',
-          'hover:bg-blue-50',
-          'dark:bg-slate-700/60',
-          'dark:hover:bg-blue-900/30',
-          'text-slate-700',
-          'dark:text-slate-200',
-          'hover:text-blue-600',
-          'dark:hover:text-blue-400',
-          'border',
-          'border-slate-200/80',
-          'dark:border-slate-600/50',
-          'rounded-xl',
-          'px-3.5',
-          'py-2',
-          'text-sm',
-          'font-semibold',
-          'transition-all',
-          'duration-150',
-          'flex',
-          'items-center',
-          'gap-2',
-          'active:scale-95'
-        );
-
-      });
-
-
-    /* ---------------------------------------------------------
-       STAT CARD STYLES
-       --------------------------------------------------------- */
-
-    document
-      .querySelectorAll('.stat-card')
-      .forEach(card => {
-
-        card.classList.add(
-          'bg-white',
-          'dark:bg-slate-800',
-          'border',
-          'border-slate-200',
-          'dark:border-slate-700',
-          'rounded-xl',
-          'p-4',
-          'text-center',
-          'shadow-sm'
-        );
-
-      });
-
-
-    document
-      .querySelectorAll('.stat-label')
-      .forEach(label => {
-
-        label.classList.add(
-          'block',
-          'text-xs',
-          'font-medium',
-          'text-slate-400',
-          'dark:text-slate-500',
-          'uppercase',
-          'tracking-wider'
-        );
-
-      });
-
-
-    document
-      .querySelectorAll('.stat-number')
-      .forEach(number => {
-
-        number.classList.add(
-          'text-xl',
-          'sm:text-2xl',
-          'font-bold',
-          'text-slate-800',
-          'dark:text-white',
-          'mt-1',
-          'block'
-        );
-
-      });
-
-
-    /* ---------------------------------------------------------
-       INITIAL SETUP
-       --------------------------------------------------------- */
+    /* =========================================================
+       INITIALIZATION
+    ========================================================= */
 
     updateUI();
 
