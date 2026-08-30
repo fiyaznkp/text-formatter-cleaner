@@ -8,7 +8,7 @@
 
   <meta
     name="description"
-    content="Free online text formatter and cleaner. Convert text cases, remove extra spaces and commas, turn email addresses into clickable hyperlinks, and convert hyperlinks back to text."
+    content="Free online text formatter and cleaner. Change text case, remove commas, extra spaces, and clean everyday text quickly."
   >
 
   <link
@@ -30,9 +30,6 @@
     gtag('config', 'G-4PBH582QW4');
   </script>
 
-  <!-- Tailwind -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
   <!-- Font Awesome -->
   <link
     rel="stylesheet"
@@ -40,92 +37,646 @@
   >
 
   <!-- Google Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
     rel="stylesheet"
   >
 
-  <script>
-    tailwind.config = {
-      darkMode: 'class'
-    };
-  </script>
-
   <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
+      margin: 0;
       font-family: 'Inter', sans-serif;
-      transition: background-color 0.3s ease, color 0.3s ease;
+      background: #0f172a;
+      color: #f8fafc;
+      transition:
+        background-color 0.25s ease,
+        color 0.25s ease;
     }
 
-    textarea::-webkit-scrollbar,
-    .rich-preview::-webkit-scrollbar {
-      width: 8px;
+    /* ================= LIGHT MODE ================= */
+
+    body.light {
+      background: #f8fafc;
+      color: #0f172a;
     }
 
-    textarea::-webkit-scrollbar-track,
-    .rich-preview::-webkit-scrollbar-track {
-      background: transparent;
+    body.light .header-inner {
+      border-color: #e2e8f0;
     }
 
-    textarea::-webkit-scrollbar-thumb,
-    .rich-preview::-webkit-scrollbar-thumb {
-      background: rgba(148, 163, 184, 0.4);
-      border-radius: 5px;
+    body.light .brand-text h1,
+    body.light .page-heading h2,
+    body.light .footer-title {
+      color: #0f172a;
     }
 
-    .rich-preview a {
-      color: #60a5fa;
-      text-decoration: underline;
-      cursor: pointer;
+    body.light .brand-text p,
+    body.light .page-heading p,
+    body.light .footer-description,
+    body.light .footer-links a {
+      color: #64748b;
     }
 
-    .nav-link {
+    body.light .navigation a {
+      color: #334155;
+    }
+
+    body.light .navigation a:hover,
+    body.light .navigation a.active {
+      color: #2563eb;
+    }
+
+    body.light .toolbar,
+    body.light .editor,
+    body.light .stat-box,
+    body.light .short-info {
+      background: #ffffff;
+      border-color: #e2e8f0;
+      box-shadow: 0 5px 20px rgba(15, 23, 42, 0.06);
+    }
+
+    body.light .tool-row + .tool-row,
+    body.light .editor-top,
+    body.light .copyright {
+      border-color: #e2e8f0;
+    }
+
+    body.light .tool-button {
+      background: #f1f5f9;
+      border-color: #cbd5e1;
+      color: #1e293b;
+    }
+
+    body.light .tool-button:hover {
+      background: #e2e8f0;
+      border-color: #3b82f6;
+      color: #1d4ed8;
+    }
+
+    body.light #mainText {
+      background: #ffffff;
+      color: #0f172a;
+    }
+
+    body.light #mainText::placeholder {
+      color: #94a3b8;
+    }
+
+    body.light .stat-value {
+      color: #0f172a;
+    }
+
+    body.light .short-info h3 {
+      color: #0f172a;
+    }
+
+    body.light .short-info p {
+      color: #64748b;
+    }
+
+    body.light footer {
+      border-color: #e2e8f0;
+    }
+
+    body.light .copyright {
+      border-color: #e2e8f0;
+      color: #64748b;
+    }
+
+    body.light .sample-button,
+    body.light .theme-button {
+      background: #ffffff;
+      border-color: #cbd5e1;
+      color: #334155;
+    }
+
+    body.light .sample-button:hover,
+    body.light .theme-button:hover {
+      background: #f1f5f9;
+      border-color: #3b82f6;
+      color: #1d4ed8;
+    }
+
+    /* ================= HEADER ================= */
+
+    .site-header {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px 20px 20px;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #1e293b;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      color: inherit;
+      min-width: 0;
+    }
+
+    .brand-logo {
+      width: 52px;
+      height: 52px;
+      flex-shrink: 0;
+      border-radius: 15px;
+      background: linear-gradient(135deg, #2563eb, #4f46e5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
+    }
+
+    .brand-logo span {
+      font-size: 27px;
+      font-weight: 700;
+      color: white;
+    }
+
+    .brand-text h1 {
+      margin: 0;
+      font-size: 24px;
+      line-height: 1.2;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .brand-text p {
+      margin: 4px 0 0;
+      color: #94a3b8;
+      font-size: 14px;
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .navigation {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .navigation a {
+      color: #cbd5e1;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 500;
+      white-space: nowrap;
       transition: color 0.2s ease;
     }
 
-    .nav-link:hover {
+    .navigation a:hover,
+    .navigation a.active {
       color: #60a5fa;
     }
 
-    .rich-preview:empty::before {
-      content: attr(data-placeholder);
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .sample-button,
+    .theme-button {
+      border: 1px solid #334155;
+      background: #1e293b;
+      color: #e2e8f0;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .sample-button {
+      padding: 10px 14px;
+      font-size: 14px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .theme-button {
+      width: 42px;
+      height: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+    }
+
+    /* ================= MAIN ================= */
+
+    .main-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 34px 20px 50px;
+    }
+
+    .page-heading {
+      margin-bottom: 22px;
+    }
+
+    .page-heading h2 {
+      margin: 0;
+      font-size: 32px;
+      line-height: 1.2;
+      font-weight: 700;
+    }
+
+    .page-heading p {
+      margin: 8px 0 0;
+      color: #94a3b8;
+      font-size: 15px;
+    }
+
+    /* ================= TOOLBAR ================= */
+
+    .toolbar {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 17px;
+      padding: 18px;
+    }
+
+    .tool-row {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 9px;
+    }
+
+    .tool-row + .tool-row {
+      margin-top: 15px;
+      padding-top: 15px;
+      border-top: 1px solid #334155;
+    }
+
+    .tool-label {
+      width: 62px;
+      flex-shrink: 0;
+      color: #94a3b8;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .tool-button {
+      border: 1px solid #475569;
+      background: #334155;
+      color: #f1f5f9;
+      border-radius: 10px;
+      padding: 10px 13px;
+      font-size: 14px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .tool-button:hover {
+      border-color: #60a5fa;
+      background: #3b4b63;
+      color: #dbeafe;
+    }
+
+    .tool-button:active {
+      transform: scale(0.98);
+    }
+
+    /* ================= EDITOR ================= */
+
+    .editor {
+      margin-top: 18px;
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 17px;
+      overflow: hidden;
+    }
+
+    .editor-top {
+      min-height: 55px;
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      border-bottom: 1px solid #334155;
+    }
+
+    .editor-left,
+    .editor-right {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .editor-button,
+    .clear-button {
+      border: 0;
+      background: transparent;
+      padding: 8px 9px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 13px;
+      transition: all 0.2s ease;
+    }
+
+    .editor-button {
+      color: #94a3b8;
+    }
+
+    .editor-button:hover:not(:disabled) {
+      color: #f8fafc;
+      background: #334155;
+    }
+
+    .editor-button:disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+    }
+
+    .clear-button {
+      color: #fb7185;
+      font-weight: 600;
+    }
+
+    .clear-button:hover {
+      background: rgba(244, 63, 94, 0.1);
+    }
+
+    .copy-button {
+      border: 0;
+      background: #2563eb;
+      color: white;
+      padding: 9px 15px;
+      border-radius: 9px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .copy-button:hover {
+      background: #1d4ed8;
+    }
+
+    #mainText {
+      width: 100%;
+      min-height: 350px;
+      padding: 20px;
+      resize: vertical;
+      border: 0;
+      outline: 0;
+      background: #1e293b;
+      color: #f8fafc;
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    #mainText::placeholder {
       color: #64748b;
     }
+
+    /* ================= STATISTICS ================= */
+
+    .statistics {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .stat-box {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 13px;
+      padding: 15px;
+    }
+
+    .stat-label {
+      color: #94a3b8;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+    }
+
+    .stat-value {
+      display: block;
+      margin-top: 5px;
+      color: #f8fafc;
+      font-size: 21px;
+      font-weight: 700;
+    }
+
+    /* ================= SHORT INFO ================= */
+
+    .short-info {
+      margin-top: 18px;
+      padding: 18px 20px;
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 13px;
+    }
+
+    .short-info h3 {
+      margin: 0 0 6px;
+      font-size: 16px;
+    }
+
+    .short-info p {
+      margin: 0;
+      color: #94a3b8;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer {
+      border-top: 1px solid #1e293b;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 28px 20px;
+      text-align: center;
+    }
+
+    .footer-title {
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .footer-description {
+      margin-top: 5px;
+      color: #64748b;
+      font-size: 13px;
+    }
+
+    .footer-links {
+      margin-top: 16px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    .footer-links a {
+      color: #94a3b8;
+      text-decoration: none;
+      font-size: 13px;
+    }
+
+    .footer-links a:hover {
+      color: #60a5fa;
+    }
+
+    .copyright {
+      margin-top: 18px;
+      padding-top: 17px;
+      border-top: 1px solid #1e293b;
+      color: #64748b;
+      font-size: 12px;
+    }
+
+    /* ================= TOAST ================= */
+
+    #toast {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      background: #020617;
+      border: 1px solid #334155;
+      color: white;
+      padding: 11px 15px;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+      font-size: 13px;
+      opacity: 0;
+      transform: translateY(15px);
+      pointer-events: none;
+      transition: all 0.25s ease;
+      z-index: 100;
+    }
+
+    #toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ================= MOBILE ================= */
+
+    @media (max-width: 900px) {
+
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .header-right {
+        width: 100%;
+        justify-content: space-between;
+      }
+
+    }
+
+    @media (max-width: 650px) {
+
+      .site-header,
+      .main-container {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+
+      .brand-text h1 {
+        white-space: normal;
+        font-size: 21px;
+      }
+
+      .brand-text p {
+        font-size: 13px;
+      }
+
+      .header-right {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .navigation {
+        gap: 14px;
+        flex-wrap: wrap;
+      }
+
+      .page-heading h2 {
+        font-size: 27px;
+      }
+
+      .tool-label {
+        width: 100%;
+      }
+
+      .statistics {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .editor-top {
+        flex-wrap: wrap;
+      }
+
+    }
+
   </style>
 </head>
 
 
-<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col">
+<body>
 
   <!-- ================= HEADER ================= -->
 
-  <header class="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
+  <header class="site-header">
 
-    <div class="flex flex-col lg:flex-row items-center justify-between gap-5 pb-6 border-b border-slate-800">
+    <div class="header-inner">
 
-      <!-- Logo / Brand -->
+      <a href="index.html" class="brand">
 
-      <a
-        href="index.html"
-        class="flex items-center gap-3"
-      >
-
-        <div
-          class="w-12 h-12 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center text-white shadow-lg shadow-blue-500/20"
-        >
-          <span class="text-2xl font-bold">A</span>
+        <div class="brand-logo">
+          <span>A</span>
         </div>
 
-        <div>
+        <div class="brand-text">
 
-          <h1 class="text-2xl sm:text-3xl font-bold tracking-tight">
+          <h1>
             Text Formatter & Cleaner
           </h1>
 
-          <p class="text-sm sm:text-base text-slate-400">
+          <p>
             Convert, format, clean, and prepare text faster
           </p>
 
@@ -134,63 +685,57 @@
       </a>
 
 
-      <!-- Navigation -->
+      <div class="header-right">
 
-      <nav class="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm sm:text-base">
+        <nav class="navigation">
 
-        <a
-          href="index.html"
-          class="nav-link text-blue-400 font-semibold"
-        >
-          Home
-        </a>
+          <a href="index.html" class="active">
+            Home
+          </a>
 
-        <a
-          href="about.html"
-          class="nav-link text-slate-300"
-        >
-          About
-        </a>
+          <a href="about.html">
+            About
+          </a>
 
-        <a
-          href="how-to-use.html"
-          class="nav-link text-slate-300"
-        >
-          How to Use
-        </a>
+          <a href="how-to-use.html">
+            How to Use
+          </a>
 
-        <a
-          href="faq.html"
-          class="nav-link text-slate-300"
-        >
-          FAQ
-        </a>
+          <a href="faq.html">
+            FAQ
+          </a>
 
-        <a
-          href="contact.html"
-          class="nav-link text-slate-300"
-        >
-          Contact
-        </a>
+          <a href="contact.html">
+            Contact
+          </a>
 
-        <button
-          id="sampleBtn"
-          class="px-3 py-2 rounded-lg bg-slate-800 border border-slate-700 text-slate-200 hover:border-blue-500 hover:text-blue-400 transition flex items-center gap-2"
-          title="Load sample text"
-        >
-          <i class="fa-solid fa-lightbulb text-amber-400"></i>
-          Sample Text
-        </button>
+        </nav>
 
-        <button
-          id="themeToggle"
-          class="p-2 rounded-lg bg-slate-800 border border-slate-700 text-slate-300 hover:text-white transition"
-          title="Toggle dark mode"
-        >
-          <i class="fa-solid fa-sun"></i>
-        </button>
 
-      </nav>
+        <div class="header-actions">
+
+          <button
+            id="sampleBtn"
+            class="sample-button"
+            title="Load sample text"
+          >
+            <i class="fa-solid fa-lightbulb"></i>
+            Sample Text
+          </button>
+
+
+          <button
+            id="themeToggle"
+            class="theme-button"
+            title="Toggle light/dark mode"
+            aria-label="Toggle light/dark mode"
+          >
+            <i class="fa-solid fa-sun"></i>
+          </button>
+
+        </div>
+
+      </div>
 
     </div>
 
@@ -199,22 +744,17 @@
 
   <!-- ================= MAIN ================= -->
 
-  <main class="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-1">
+  <main class="main-container">
 
 
-    <!-- Introduction -->
+    <section class="page-heading">
 
-    <section class="mb-7">
-
-      <h2 class="text-3xl sm:text-4xl font-bold text-white mb-3">
-        Free Online Text Formatter and Cleaner
+      <h2>
+        Free Text Formatter & Cleaner
       </h2>
 
-      <p class="text-base sm:text-lg text-slate-300 leading-7">
-        Paste or type text below to change capitalization, clean common
-        formatting problems, convert email addresses into clickable
-        hyperlinks, convert hyperlinks back to text, and check useful
-        text statistics.
+      <p>
+        Simple tools for formatting and cleaning text.
       </p>
 
     </section>
@@ -222,19 +762,15 @@
 
     <!-- ================= TOOLBAR ================= -->
 
-    <section
-      class="bg-slate-800 border border-slate-700 rounded-2xl p-4 sm:p-5 shadow-sm space-y-4"
-    >
+    <section class="toolbar">
 
 
       <!-- CASE -->
 
-      <div class="flex flex-wrap items-center gap-2">
+      <div class="tool-row">
 
-        <span
-          class="text-xs font-semibold text-slate-400 uppercase tracking-wider w-full sm:w-auto mr-1"
-        >
-          Case:
+        <span class="tool-label">
+          Case
         </span>
 
 
@@ -242,7 +778,7 @@
           onclick="transformText('sentenceCase')"
           class="tool-button"
         >
-          <i class="fa-solid fa-align-left text-xs"></i>
+          <i class="fa-solid fa-align-left"></i>
           Sentence Case
         </button>
 
@@ -251,7 +787,7 @@
           onclick="transformText('lowercase')"
           class="tool-button"
         >
-          <span class="font-bold text-xs">aa</span>
+          <strong>aa</strong>
           lowercase
         </button>
 
@@ -260,7 +796,7 @@
           onclick="transformText('uppercase')"
           class="tool-button"
         >
-          <span class="font-bold text-xs">AA</span>
+          <strong>AA</strong>
           UPPERCASE
         </button>
 
@@ -269,7 +805,7 @@
           onclick="transformText('capitalizedCase')"
           class="tool-button"
         >
-          <span class="font-bold text-xs">Aa</span>
+          <strong>Aa</strong>
           Capitalized Case
         </button>
 
@@ -278,24 +814,19 @@
           onclick="transformText('titleCase')"
           class="tool-button"
         >
-          <span class="font-bold text-xs">aA</span>
+          <strong>aA</strong>
           Title Case
         </button>
 
       </div>
 
 
-      <div class="border-t border-slate-700"></div>
-
-
       <!-- CLEAN -->
 
-      <div class="flex flex-wrap items-center gap-2">
+      <div class="tool-row">
 
-        <span
-          class="text-xs font-semibold text-slate-400 uppercase tracking-wider w-full sm:w-auto mr-1"
-        >
-          Clean:
+        <span class="tool-label">
+          Clean
         </span>
 
 
@@ -303,7 +834,7 @@
           onclick="transformText('removeCommas')"
           class="tool-button"
         >
-          <i class="fa-solid fa-ban text-xs"></i>
+          <i class="fa-solid fa-ban"></i>
           Remove Commas
         </button>
 
@@ -312,85 +843,28 @@
           onclick="transformText('removeExtraSpaces')"
           class="tool-button"
         >
-          <i class="fa-solid fa-compress text-xs"></i>
+          <i class="fa-solid fa-compress"></i>
           Remove Extra Spaces
         </button>
 
       </div>
-
-
-      <div class="border-t border-slate-700"></div>
-
-
-      <!-- LINKS -->
-
-      <div class="flex flex-wrap items-center gap-2">
-
-        <span
-          class="text-xs font-semibold text-slate-400 uppercase tracking-wider w-full sm:w-auto mr-1"
-        >
-          Links:
-        </span>
-
-
-        <button
-          onclick="emailToHyperlinks()"
-          class="tool-button"
-        >
-          <i class="fa-solid fa-envelope text-xs"></i>
-          Email → Hyperlink
-        </button>
-
-
-        <button
-          onclick="hyperlinksToText()"
-          class="tool-button"
-        >
-          <i class="fa-solid fa-link-slash text-xs"></i>
-          Hyperlink → Text
-        </button>
-
-      </div>
-
-
-      <p class="text-xs sm:text-sm text-slate-400 pt-1">
-
-        <strong class="text-slate-300">
-          Email → Hyperlink
-        </strong>
-        turns email addresses into clickable links.
-
-        <strong class="text-slate-300">
-          Hyperlink → Text
-        </strong>
-        removes links and keeps ordinary text.
-
-      </p>
 
     </section>
 
 
     <!-- ================= EDITOR ================= -->
 
-    <section
-      class="mt-5 bg-slate-800 border border-slate-700 rounded-2xl shadow-sm overflow-hidden"
-    >
+    <section class="editor">
 
+      <div class="editor-top">
 
-      <!-- Editor Controls -->
-
-      <div
-        class="px-4 py-3 border-b border-slate-700 flex items-center justify-between gap-3"
-      >
-
-        <div class="flex items-center gap-2">
+        <div class="editor-left">
 
           <button
             id="undoBtn"
             onclick="undo()"
             disabled
             class="editor-button"
-            title="Undo"
           >
             <i class="fa-solid fa-rotate-left"></i>
             Undo
@@ -402,7 +876,6 @@
             onclick="redo()"
             disabled
             class="editor-button"
-            title="Redo"
           >
             <i class="fa-solid fa-rotate-right"></i>
             Redo
@@ -411,22 +884,22 @@
         </div>
 
 
-        <div class="flex items-center gap-2">
+        <div class="editor-right">
 
           <button
             onclick="clearText()"
-            class="text-rose-400 hover:text-rose-300 text-sm font-medium px-2 py-1.5"
+            class="clear-button"
           >
-            <i class="fa-solid fa-trash-can mr-1"></i>
+            <i class="fa-solid fa-trash-can"></i>
             Clear
           </button>
 
 
           <button
             onclick="copyText()"
-            class="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg text-sm font-semibold text-white transition"
+            class="copy-button"
           >
-            <i class="fa-regular fa-copy mr-1"></i>
+            <i class="fa-regular fa-copy"></i>
             Copy
           </button>
 
@@ -435,11 +908,8 @@
       </div>
 
 
-      <!-- Text Area -->
-
       <textarea
         id="mainText"
-        class="w-full h-80 sm:h-96 p-5 bg-transparent text-slate-100 text-base leading-relaxed resize-y outline-none placeholder-slate-500"
         placeholder="Type or paste your text here..."
         spellcheck="true"
       ></textarea>
@@ -447,54 +917,9 @@
     </section>
 
 
-    <!-- ================= HYPERLINK PREVIEW ================= -->
-
-    <section
-      id="linkPreviewSection"
-      class="hidden mt-5 bg-slate-800 border border-indigo-900 rounded-2xl overflow-hidden shadow-sm"
-    >
-
-      <div
-        class="px-4 py-3 border-b border-indigo-900 bg-indigo-950/30 flex items-center justify-between gap-3 flex-wrap"
-      >
-
-        <div>
-
-          <h3 class="font-semibold text-indigo-200">
-            Clickable Email Preview
-          </h3>
-
-          <p class="text-xs text-indigo-300/70 mt-1">
-            Email addresses are now real clickable links.
-          </p>
-
-        </div>
-
-
-        <button
-          onclick="copyRichText()"
-          class="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 rounded-lg text-sm font-semibold text-white transition"
-        >
-          <i class="fa-regular fa-copy mr-1"></i>
-          Copy Rich Text
-        </button>
-
-      </div>
-
-
-      <div
-        id="richPreview"
-        class="rich-preview min-h-32 max-h-80 overflow-y-auto p-5 text-slate-100 leading-relaxed outline-none"
-        contenteditable="true"
-        data-placeholder="Your clickable email preview will appear here..."
-      ></div>
-
-    </section>
-
-
     <!-- ================= STATISTICS ================= -->
 
-    <section class="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-5">
+    <section class="statistics">
 
 
       <div class="stat-box">
@@ -563,21 +988,17 @@
     </section>
 
 
-    <!-- Short feature explanation only -->
+    <!-- ================= SHORT INFO ================= -->
 
-    <section
-      class="mt-8 bg-slate-800 border border-slate-700 rounded-2xl p-5 sm:p-6"
-    >
+    <section class="short-info">
 
-      <h2 class="text-xl font-bold text-white mb-3">
-        Simple tools for everyday text work
-      </h2>
+      <h3>
+        Simple text tools, all in one place
+      </h3>
 
-      <p class="text-slate-300 leading-7">
-        Quickly change text capitalization, remove unnecessary formatting,
-        convert email addresses into clickable hyperlinks, or turn linked
-        content back into ordinary text. Everything works directly in your
-        browser.
+      <p>
+        Change capitalization, remove commas, and clean unnecessary
+        spaces quickly. Everything works directly in your browser.
       </p>
 
     </section>
@@ -587,82 +1008,53 @@
 
   <!-- ================= FOOTER ================= -->
 
-  <footer class="border-t border-slate-800 mt-8">
+  <footer>
 
-    <div class="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-7">
+    <div class="footer-inner">
 
-      <div class="text-center">
+      <div class="footer-title">
+        Text Formatter & Cleaner
+      </div>
 
-        <h3 class="font-bold text-white text-lg">
-          Text Formatter & Cleaner
-        </h3>
-
-        <p class="text-slate-400 text-sm mt-1">
-          A simple online tool for formatting and cleaning text.
-        </p>
-
-
-        <nav
-          class="flex flex-wrap justify-center gap-x-5 gap-y-2 mt-5 text-sm"
-        >
-
-          <a
-            href="index.html"
-            class="text-blue-400 hover:text-blue-300"
-          >
-            Home
-          </a>
-
-          <a
-            href="about.html"
-            class="text-slate-400 hover:text-blue-400"
-          >
-            About
-          </a>
-
-          <a
-            href="how-to-use.html"
-            class="text-slate-400 hover:text-blue-400"
-          >
-            How to Use
-          </a>
-
-          <a
-            href="faq.html"
-            class="text-slate-400 hover:text-blue-400"
-          >
-            FAQ
-          </a>
-
-          <a
-            href="privacy.html"
-            class="text-slate-400 hover:text-blue-400"
-          >
-            Privacy Policy
-          </a>
-
-          <a
-            href="terms.html"
-            class="text-slate-400 hover:text-blue-400"
-          >
-            Terms
-          </a>
-
-          <a
-            href="contact.html"
-            class="text-slate-400 hover:text-blue-400"
-          >
-            Contact
-          </a>
-
-        </nav>
-
+      <div class="footer-description">
+        A simple online tool for formatting and cleaning text.
       </div>
 
 
-      <div
-        class="border-t border-slate-800 mt-6 pt-5 text-center text-sm text-slate-500"
-      >
+      <nav class="footer-links">
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="about.html">
+          About
+        </a>
+
+        <a href="how-to-use.html">
+          How to Use
+        </a>
+
+        <a href="faq.html">
+          FAQ
+        </a>
+
+        <a href="privacy.html">
+          Privacy Policy
+        </a>
+
+        <a href="terms.html">
+          Terms
+        </a>
+
+        <a href="contact.html">
+          Contact
+        </a>
+
+      </nav>
+
+
+      <div class="copyright">
         © 2026 Convert Case. All rights reserved.
       </div>
 
@@ -673,12 +1065,14 @@
 
   <!-- ================= TOAST ================= -->
 
-  <div
-    id="toast"
-    class="fixed bottom-5 right-5 translate-y-20 opacity-0 bg-slate-900 border border-slate-700 text-white px-4 py-3 rounded-xl shadow-xl text-sm font-medium transition-all duration-300 z-50"
-  >
-    <i id="toastIcon" class="fa-solid fa-circle-check mr-2"></i>
-    <span id="toastMessage">Done</span>
+  <div id="toast">
+
+    <i id="toastIcon" class="fa-solid fa-circle-check"></i>
+
+    <span id="toastMessage">
+      Done
+    </span>
+
   </div>
 
 
@@ -707,11 +1101,8 @@
     const readingTimeEl =
       document.getElementById('readingTime');
 
-    const richPreview =
-      document.getElementById('richPreview');
-
-    const linkPreviewSection =
-      document.getElementById('linkPreviewSection');
+    const themeToggle =
+      document.getElementById('themeToggle');
 
     const toast =
       document.getElementById('toast');
@@ -773,9 +1164,7 @@
       if (
         historyStack[historyIndex] === value
       ) {
-
         return;
-
       }
 
       historyStack =
@@ -854,7 +1243,7 @@
     }
 
 
-    /* ================= CASE TOOLS ================= */
+    /* ================= CASE FUNCTIONS ================= */
 
     function toSentenceCase(text) {
 
@@ -916,9 +1305,7 @@
             if (
               /^\s+$/.test(word)
             ) {
-
               return word;
-
             }
 
             const lower =
@@ -928,9 +1315,7 @@
               index !== 0 &&
               smallWords.has(lower)
             ) {
-
               return lower;
-
             }
 
             return (
@@ -993,9 +1378,11 @@
       }
 
 
-      let result = current;
+      let result =
+        current;
 
-      let message = '';
+      let message =
+        '';
 
 
       switch (type) {
@@ -1100,192 +1487,6 @@
     }
 
 
-    /* ================= EMAIL TO HYPERLINK ================= */
-
-    const emailRegex =
-      /[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/gi;
-
-
-    function escapeHTML(text) {
-
-      return text
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;')
-        .replace(/'/g, '&#039;');
-
-    }
-
-
-    function emailToHyperlinks() {
-
-      const text =
-        textarea.value;
-
-      if (!text.trim()) {
-
-        showToast(
-          'Text box is empty',
-          'fa-circle-info'
-        );
-
-        return;
-
-      }
-
-
-      const matches =
-        text.match(emailRegex);
-
-
-      if (!matches) {
-
-        showToast(
-          'No email addresses found',
-          'fa-circle-info'
-        );
-
-        return;
-
-      }
-
-
-      const safeText =
-        escapeHTML(text);
-
-
-      const html =
-        safeText.replace(
-          emailRegex,
-          email => {
-
-            const safeEmail =
-              escapeHTML(email);
-
-            return `
-              <a
-                href="mailto:${safeEmail}"
-                title="Email ${safeEmail}"
-              >${safeEmail}</a>
-            `;
-
-          }
-        );
-
-
-      richPreview.innerHTML =
-        html;
-
-
-      linkPreviewSection.classList.remove(
-        'hidden'
-      );
-
-
-      showToast(
-        `${matches.length} email link${matches.length === 1 ? '' : 's'} created`,
-        'fa-envelope'
-      );
-
-    }
-
-
-    /* ================= HYPERLINK TO TEXT ================= */
-
-    function hyperlinksToText() {
-
-      let html =
-        richPreview.innerHTML.trim();
-
-
-      /*
-        If the preview is empty, check the
-        main text area for pasted HTML.
-      */
-
-      if (!html) {
-
-        const source =
-          textarea.value.trim();
-
-        if (
-          !/<a[\s>]/i.test(source)
-        ) {
-
-          showToast(
-            'No hyperlinks found',
-            'fa-circle-info'
-          );
-
-          return;
-
-        }
-
-        html = source;
-
-      }
-
-
-      const temp =
-        document.createElement('div');
-
-      temp.innerHTML =
-        html;
-
-
-      /*
-        Convert links to their visible text.
-      */
-
-      const links =
-        temp.querySelectorAll('a');
-
-      links.forEach(
-        link => {
-
-          const text =
-            document.createTextNode(
-              link.textContent
-            );
-
-          link.replaceWith(text);
-
-        }
-      );
-
-
-      /*
-        Remove any remaining HTML tags.
-      */
-
-      const plainText =
-        temp.innerText ||
-        temp.textContent ||
-        '';
-
-
-      pushState(
-        plainText
-      );
-
-
-      richPreview.innerHTML =
-        '';
-
-      linkPreviewSection.classList.add(
-        'hidden'
-      );
-
-
-      showToast(
-        'Converted hyperlinks to text',
-        'fa-link-slash'
-      );
-
-    }
-
-
     /* ================= COPY ================= */
 
     async function copyText() {
@@ -1332,113 +1533,6 @@
     }
 
 
-    async function copyRichText() {
-
-      const html =
-        richPreview.innerHTML;
-
-      const text =
-        richPreview.innerText;
-
-
-      if (!text.trim()) {
-
-        showToast(
-          'Nothing to copy',
-          'fa-circle-info'
-        );
-
-        return;
-
-      }
-
-
-      if (
-        navigator.clipboard &&
-        window.ClipboardItem &&
-        window.isSecureContext
-      ) {
-
-        try {
-
-          const item =
-            new ClipboardItem({
-
-              'text/html':
-                new Blob(
-                  [html],
-                  { type: 'text/html' }
-                ),
-
-              'text/plain':
-                new Blob(
-                  [text],
-                  { type: 'text/plain' }
-                )
-
-            });
-
-
-          await navigator.clipboard.write([
-            item
-          ]);
-
-
-          showToast(
-            'Copied clickable text',
-            'fa-copy'
-          );
-
-          return;
-
-        } catch {
-
-          // fallback below
-
-        }
-
-      }
-
-
-      const range =
-        document.createRange();
-
-      range.selectNodeContents(
-        richPreview
-      );
-
-
-      const selection =
-        window.getSelection();
-
-      selection.removeAllRanges();
-
-      selection.addRange(range);
-
-
-      try {
-
-        document.execCommand('copy');
-
-        selection.removeAllRanges();
-
-        showToast(
-          'Copied clickable text',
-          'fa-copy'
-        );
-
-      } catch {
-
-        showToast(
-          'Please select and copy the preview',
-          'fa-circle-info'
-        );
-
-      }
-
-    }
-
-
     /* ================= CLEAR ================= */
 
     function clearText() {
@@ -1446,14 +1540,6 @@
       flushTypingBuffer();
 
       pushState('');
-
-      richPreview.innerHTML =
-        '';
-
-      linkPreviewSection.classList.add(
-        'hidden'
-      );
-
 
       showToast(
         'Text cleared',
@@ -1613,7 +1699,7 @@
         () => {
 
           const sample =
-            `hello world! THIS IS A SAMPLE TEXT, meant to demonstrate how easy it is to convert text. Visit https://example.com/ for more information. Contact ali@gmail.com or support@example.com if you have questions. It also includes EXTRA    SPACES, mixed cases, and commas.`;
+            `hello world! THIS IS A SAMPLE TEXT, meant to demonstrate how easy it is to format text. It also includes EXTRA    SPACES, mixed cases, and commas.`;
 
           pushState(
             sample
@@ -1631,28 +1717,66 @@
 
     /* ================= THEME ================= */
 
-    const themeToggle =
-      document.getElementById(
-        'themeToggle'
+    function setTheme(theme) {
+
+      if (theme === 'light') {
+
+        document.body.classList.add(
+          'light'
+        );
+
+        themeToggle.innerHTML =
+          '<i class="fa-solid fa-moon"></i>';
+
+        themeToggle.title =
+          'Switch to dark mode';
+
+      } else {
+
+        document.body.classList.remove(
+          'light'
+        );
+
+        themeToggle.innerHTML =
+          '<i class="fa-solid fa-sun"></i>';
+
+        themeToggle.title =
+          'Switch to light mode';
+
+      }
+
+      localStorage.setItem(
+        'textFormatterTheme',
+        theme
       );
 
+    }
 
-    /*
-      The site is designed primarily around
-      the dark appearance.
-    */
 
     themeToggle.addEventListener(
       'click',
       () => {
 
-        document.documentElement.classList.toggle(
-          'light'
+        const isLight =
+          document.body.classList.contains(
+            'light'
+          );
+
+        const newTheme =
+          isLight
+            ? 'dark'
+            : 'light';
+
+        setTheme(
+          newTheme
         );
 
+
         showToast(
-          'Theme setting changed',
-          'fa-sun'
+          newTheme === 'light'
+            ? 'Light mode enabled'
+            : 'Dark mode enabled',
+          'fa-circle-half-stroke'
         );
 
       }
@@ -1720,18 +1844,11 @@
 
 
       toastIcon.className =
-        `fa-solid ${icon} mr-2`;
-
-
-      toast.classList.remove(
-        'translate-y-20',
-        'opacity-0'
-      );
+        `fa-solid ${icon}`;
 
 
       toast.classList.add(
-        'translate-y-0',
-        'opacity-100'
+        'show'
       );
 
 
@@ -1740,13 +1857,7 @@
           () => {
 
             toast.classList.remove(
-              'translate-y-0',
-              'opacity-100'
-            );
-
-            toast.classList.add(
-              'translate-y-20',
-              'opacity-0'
+              'show'
             );
 
           },
@@ -1756,84 +1867,19 @@
     }
 
 
-    /* ================= INITIALIZATION ================= */
+    /* ================= START ================= */
 
-    const style =
-      document.createElement('style');
+    const savedTheme =
+      localStorage.getItem(
+        'textFormatterTheme'
+      );
 
-    style.textContent = `
 
-      .tool-button {
-        background: #334155;
-        color: #f1f5f9;
-        border: 1px solid #475569;
-        border-radius: 12px;
-        padding: 10px 14px;
-        font-size: 14px;
-        font-weight: 600;
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        transition: all 0.2s ease;
-      }
-
-      .tool-button:hover {
-        background: #3f4f67;
-        border-color: #60a5fa;
-        color: #bfdbfe;
-      }
-
-      .tool-button:active {
-        transform: scale(0.97);
-      }
-
-      .editor-button {
-        background: transparent;
-        color: #94a3b8;
-        padding: 7px 10px;
-        border-radius: 8px;
-        font-size: 13px;
-        transition: all 0.2s ease;
-      }
-
-      .editor-button:hover:not(:disabled) {
-        color: #f8fafc;
-        background: #334155;
-      }
-
-      .editor-button:disabled {
-        opacity: 0.4;
-        cursor: not-allowed;
-      }
-
-      .stat-box {
-        background: #1e293b;
-        border: 1px solid #334155;
-        border-radius: 12px;
-        padding: 14px;
-        text-align: center;
-      }
-
-      .stat-label {
-        display: block;
-        color: #94a3b8;
-        font-size: 11px;
-        text-transform: uppercase;
-        letter-spacing: 0.08em;
-        font-weight: 600;
-      }
-
-      .stat-value {
-        display: block;
-        margin-top: 4px;
-        color: #f8fafc;
-        font-size: 22px;
-        font-weight: 700;
-      }
-
-    `;
-
-    document.head.appendChild(style);
+    setTheme(
+      savedTheme === 'light'
+        ? 'light'
+        : 'dark'
+    );
 
 
     updateUI();
