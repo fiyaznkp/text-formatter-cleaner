@@ -23,12 +23,14 @@
   >
 
   <!-- Font Awesome -->
+
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
   >
 
   <!-- Google Font -->
+
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
     rel="stylesheet"
@@ -90,7 +92,6 @@
       color: #2563eb;
     }
 
-    body.light .sample-button,
     body.light .theme-button {
       background: #ffffff;
       border-color: #cbd5e1;
@@ -98,6 +99,12 @@
     }
 
     body.light .contact-card {
+      background: #ffffff;
+      border-color: #e2e8f0;
+      box-shadow: 0 5px 20px rgba(15, 23, 42, 0.06);
+    }
+
+    body.light .email-card {
       background: #ffffff;
       border-color: #e2e8f0;
       box-shadow: 0 5px 20px rgba(15, 23, 42, 0.06);
@@ -212,27 +219,14 @@
       gap: 8px;
     }
 
-    .sample-button,
     .theme-button {
+      width: 42px;
+      height: 42px;
       border: 1px solid #334155;
       background: #1e293b;
       color: #e2e8f0;
       border-radius: 10px;
       cursor: pointer;
-    }
-
-    .sample-button {
-      padding: 10px 14px;
-      font-size: 14px;
-      font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .theme-button {
-      width: 42px;
-      height: 42px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -531,7 +525,7 @@
           </h1>
 
           <p>
-            Convert, format, clean, and prepare text faster
+            Simple tools for everyday text
           </p>
 
         </div>
@@ -572,22 +566,15 @@
 
         <div class="header-actions">
 
-          <a
-            href="index.html"
-            class="sample-button"
-          >
-            <i class="fa-solid fa-lightbulb"></i>
-            Sample Text
-          </a>
-
-
           <button
             id="themeToggle"
             class="theme-button"
             title="Switch to light mode"
             aria-label="Switch to light mode"
           >
+
             <i class="fa-solid fa-sun"></i>
+
           </button>
 
         </div>
@@ -674,8 +661,6 @@
         bug reports, please send us an email.
       </p>
 
-
-      <!-- Gmail compose link -->
 
       <a
         href="https://mail.google.com/mail/?view=cm&fs=1&to=bestdeal4indians@gmail.com"
