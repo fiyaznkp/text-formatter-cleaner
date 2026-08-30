@@ -1,114 +1,1829 @@
-function textToHyperlinks(str) {
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  if (!str) return '';
+  <title>Free Online Text Formatter and Cleaner | Convert Case</title>
 
-  /*
-    Convert email addresses and website URLs
-    into HTML hyperlinks.
+  <meta
+    name="description"
+    content="Free online text formatter and cleaner. Convert text to different cases, remove commas and extra spaces, convert emails and URLs to hyperlinks, extract links from HTML, and check text statistics."
+  >
 
-    Supported:
-    - https://example.com
-    - http://example.com
-    - www.example.com
-    - email@example.com
-  */
+  <link
+    rel="canonical"
+    href="https://fiyaznkp.github.io/text-formatter-cleaner/"
+  >
 
-  const combinedPattern =
-    /(?:https?:\/\/[^\s<>"']+|www\.[^\s<>"']+|[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,})/gi;
+  <meta property="og:title" content="Free Online Text Formatter and Cleaner | Convert Case">
+  <meta
+    property="og:description"
+    content="Format, clean, and convert text online for free with Convert Case."
+  >
+  <meta
+    property="og:url"
+    content="https://fiyaznkp.github.io/text-formatter-cleaner/"
+  >
+  <meta property="og:type" content="website">
 
+  <meta name="twitter:card" content="summary">
+  <meta
+    name="twitter:title"
+    content="Free Online Text Formatter and Cleaner | Convert Case"
+  >
+  <meta
+    name="twitter:description"
+    content="Format, clean, and convert text online for free with Convert Case."
+  >
 
-  return str
-    .split(
-      /(<a\b[^>]*>[\s\S]*?<\/a>)/gi
-    )
-    .map(part => {
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4PBH582QW4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
 
-      /*
-        Leave existing HTML hyperlinks unchanged.
-      */
+    function gtag() {
+      dataLayer.push(arguments);
+    }
 
-      if (/^<a\b/i.test(part)) {
-        return part;
+    gtag('js', new Date());
+    gtag('config', 'G-4PBH582QW4');
+  </script>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  >
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif']
+          },
+
+          colors: {
+            brand: {
+              50: '#f0f7ff',
+              100: '#e0effe',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8'
+            }
+          }
+        }
       }
+    };
+  </script>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    textarea::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    textarea::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    textarea::-webkit-scrollbar-thumb {
+      background-color: rgba(156, 163, 175, 0.4);
+      border-radius: 4px;
+    }
+
+    textarea::-webkit-scrollbar-thumb:hover {
+      background-color: rgba(156, 163, 175, 0.7);
+    }
+
+    a {
+      transition: color 0.2s ease;
+    }
+  </style>
+</head>
+
+<body
+  class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100 min-h-screen flex flex-col"
+>
+
+  <!-- =========================================================
+       HEADER
+       ========================================================= -->
+
+  <header
+    class="w-full border-b border-slate-200 dark:border-slate-800"
+  >
+    <div
+      class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-5"
+    >
+
+      <div
+        class="flex flex-col lg:flex-row items-center justify-between gap-5"
+      >
+
+        <!-- Brand -->
+        <a
+          href="index.html"
+          class="flex items-center gap-3"
+          aria-label="Convert Case Home"
+        >
+
+          <div
+            class="w-11 h-11 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center text-white shadow-md shadow-blue-500/20"
+          >
+            <i class="fa-solid fa-font text-lg"></i>
+          </div>
+
+          <div>
+            <div
+              class="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 dark:text-white"
+            >
+              Convert Case
+            </div>
+
+            <div
+              class="text-xs sm:text-sm text-slate-500 dark:text-slate-400"
+            >
+              Free online text formatter and cleaner
+            </div>
+          </div>
+
+        </a>
 
 
-      return part.replace(
-        combinedPattern,
-        match => {
+        <!-- Main Navigation -->
+        <nav
+          class="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm font-medium"
+          aria-label="Main navigation"
+        >
 
-          /*
-            Keep punctuation outside the hyperlink.
-          */
+          <a
+            href="index.html"
+            class="text-blue-600 dark:text-blue-400 font-semibold"
+          >
+            Home
+          </a>
 
-          const trailingMatch =
-            match.match(/[.,!?;:)\]}]+$/);
+          <a
+            href="about.html"
+            class="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400"
+          >
+            About
+          </a>
+
+          <a
+            href="how-to-use.html"
+            class="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400"
+          >
+            How to Use
+          </a>
+
+          <a
+            href="faq.html"
+            class="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400"
+          >
+            FAQ
+          </a>
+
+          <a
+            href="contact.html"
+            class="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400"
+          >
+            Contact
+          </a>
+
+          <!-- Sample -->
+          <button
+            id="sampleBtn"
+            class="px-3 py-1.5 text-xs font-medium text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg hover:border-blue-300 dark:hover:border-blue-500 transition-all shadow-sm flex items-center gap-1.5"
+          >
+            <i class="fa-solid fa-lightbulb text-amber-500"></i>
+            Sample Text
+          </button>
+
+          <!-- Theme -->
+          <button
+            id="themeToggle"
+            aria-label="Toggle dark mode"
+            class="p-2 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg shadow-sm"
+          >
+            <i class="fa-solid fa-moon dark:hidden text-slate-600"></i>
+            <i class="fa-solid fa-sun hidden dark:block text-amber-400"></i>
+          </button>
+
+        </nav>
+
+      </div>
+
+    </div>
+  </header>
 
 
-          const trailing =
-            trailingMatch
-              ? trailingMatch[0]
-              : '';
+  <!-- =========================================================
+       MAIN CONTENT
+       ========================================================= -->
+
+  <main
+    class="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10"
+  >
+
+    <!-- Page Introduction -->
+    <section class="mb-7">
+
+      <h1
+        class="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 dark:text-white"
+      >
+        Free Online Text Formatter and Cleaner
+      </h1>
+
+      <p
+        class="mt-3 text-base sm:text-lg leading-7 text-slate-600 dark:text-slate-300 max-w-4xl"
+      >
+        Paste or type text below to change capitalization, clean common
+        formatting problems, convert emails and URLs to HTML hyperlinks,
+        extract URLs from hyperlinks, and view useful text statistics.
+      </p>
+
+    </section>
 
 
-          const value =
-            trailing
-              ? match.slice(0, -trailing.length)
-              : match;
+    <!-- =========================================================
+         TOOLBAR
+         ========================================================= -->
+
+    <section
+      class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-4 sm:p-5 shadow-sm"
+      aria-label="Text formatting tools"
+    >
+
+      <!-- CASE -->
+      <div class="flex flex-wrap items-center gap-2">
+
+        <span
+          class="text-xs font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-wider w-full sm:w-auto mr-1"
+        >
+          Case:
+        </span>
+
+        <button
+          onclick="transformText('sentenceCase')"
+          class="btn-action"
+        >
+          <i class="fa-solid fa-align-left text-xs opacity-70"></i>
+          Sentence Case
+        </button>
+
+        <button
+          onclick="transformText('lowercase')"
+          class="btn-action"
+        >
+          <span class="text-xs font-bold opacity-70">aa</span>
+          lowercase
+        </button>
+
+        <button
+          onclick="transformText('uppercase')"
+          class="btn-action"
+        >
+          <span class="text-xs font-bold opacity-70">AA</span>
+          UPPERCASE
+        </button>
+
+        <button
+          onclick="transformText('capitalizedCase')"
+          class="btn-action"
+        >
+          <span class="text-xs font-bold opacity-70">Aa</span>
+          Capitalized Case
+        </button>
+
+        <button
+          onclick="transformText('titleCase')"
+          class="btn-action"
+        >
+          <span class="text-xs font-bold opacity-70">aA</span>
+          Title Case
+        </button>
+
+      </div>
 
 
-          /*
-            Email address
-            → mailto hyperlink
-          */
-
-          if (value.includes('@') && !/^https?:\/\//i.test(value)) {
-
-            const safeEmail =
-              value.replace(/"/g, '&quot;');
+      <hr class="border-slate-100 dark:border-slate-700/60 my-4">
 
 
-            return (
-              '<a href="mailto:' +
-              safeEmail +
-              '">' +
-              value +
-              '</a>' +
-              trailing
-            );
+      <!-- CLEAN -->
+      <div class="flex flex-wrap items-center gap-2">
+
+        <span
+          class="text-xs font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-wider w-full sm:w-auto mr-1"
+        >
+          Clean:
+        </span>
+
+        <button
+          onclick="transformText('removeCommas')"
+          class="btn-action hover:text-emerald-600 dark:hover:text-emerald-400"
+        >
+          <i class="fa-solid fa-ban text-xs opacity-70"></i>
+          Remove Commas
+        </button>
+
+        <button
+          onclick="transformText('removeExtraSpaces')"
+          class="btn-action hover:text-emerald-600 dark:hover:text-emerald-400"
+        >
+          <i class="fa-solid fa-compress text-xs opacity-70"></i>
+          Remove Extra Spaces
+        </button>
+
+      </div>
+
+
+      <hr class="border-slate-100 dark:border-slate-700/60 my-4">
+
+
+      <!-- LINKS -->
+      <div class="flex flex-wrap items-center gap-2">
+
+        <span
+          class="text-xs font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-wider w-full sm:w-auto mr-1"
+        >
+          Links:
+        </span>
+
+        <button
+          onclick="transformText('textToHyperlinks')"
+          class="btn-action hover:text-blue-600 dark:hover:text-blue-400"
+        >
+          <i class="fa-solid fa-link text-xs opacity-70"></i>
+          Text to Hyperlinks
+        </button>
+
+        <button
+          onclick="transformText('hyperlinksToText')"
+          class="btn-action hover:text-blue-600 dark:hover:text-blue-400"
+        >
+          <i class="fa-solid fa-link-slash text-xs opacity-70"></i>
+          Hyperlinks to Text
+        </button>
+
+      </div>
+
+
+      <!-- Link Explanation -->
+      <div
+        class="mt-4 text-xs sm:text-sm text-slate-500 dark:text-slate-400 leading-6"
+      >
+        <strong>Text to Hyperlinks</strong> converts email addresses and
+        website URLs into HTML hyperlinks.
+        <strong>Hyperlinks to Text</strong> extracts the URLs from HTML
+        hyperlinks.
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         EDITOR
+         ========================================================= -->
+
+    <section
+      class="mt-5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl shadow-sm overflow-hidden focus-within:ring-2 focus-within:ring-blue-500/50"
+    >
+
+      <!-- Editor Toolbar -->
+      <div
+        class="bg-slate-50/80 dark:bg-slate-800/80 px-4 py-3 border-b border-slate-200 dark:border-slate-700 flex items-center justify-between gap-2 flex-wrap"
+      >
+
+        <!-- Undo / Redo -->
+        <div class="flex items-center gap-1.5">
+
+          <button
+            id="undoBtn"
+            onclick="undo()"
+            disabled
+            title="Undo (Ctrl+Z)"
+            class="px-2.5 py-1.5 text-xs font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-200/60 dark:hover:bg-slate-700 rounded-lg transition-all disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-1.5"
+          >
+            <i class="fa-solid fa-rotate-left"></i>
+            Undo
+          </button>
+
+          <button
+            id="redoBtn"
+            onclick="redo()"
+            disabled
+            title="Redo (Ctrl+Y)"
+            class="px-2.5 py-1.5 text-xs font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-200/60 dark:hover:bg-slate-700 rounded-lg transition-all disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-1.5"
+          >
+            <i class="fa-solid fa-rotate-right"></i>
+            Redo
+          </button>
+
+        </div>
+
+
+        <!-- Clear / Copy -->
+        <div class="flex items-center gap-2">
+
+          <button
+            onclick="clearText()"
+            title="Clear text"
+            class="px-3 py-1.5 text-xs font-medium text-rose-600 dark:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-950/40 rounded-lg transition-all flex items-center gap-1.5"
+          >
+            <i class="fa-solid fa-trash-can"></i>
+            Clear
+          </button>
+
+          <button
+            onclick="copyText()"
+            title="Copy text"
+            class="px-3.5 py-1.5 text-xs font-semibold text-white bg-blue-600 hover:bg-blue-700 active:bg-blue-800 rounded-lg shadow-sm transition-all flex items-center gap-1.5"
+          >
+            <i class="fa-regular fa-copy"></i>
+            Copy
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- Text Area -->
+      <textarea
+        id="mainText"
+        placeholder="Type or paste your text here..."
+        class="w-full h-80 sm:h-96 p-5 text-slate-800 dark:text-slate-100 bg-transparent resize-y outline-none font-sans text-base leading-relaxed placeholder-slate-400 dark:placeholder-slate-500 border-none"
+        spellcheck="true"
+        aria-label="Text editor"
+      ></textarea>
+
+    </section>
+
+
+    <!-- =========================================================
+         STATISTICS
+         ========================================================= -->
+
+    <section
+      class="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-5"
+      aria-label="Text statistics"
+    >
+
+      <div class="stat-card">
+        <span class="stat-label">Words</span>
+        <span id="wordCount" class="stat-number">0</span>
+      </div>
+
+      <div class="stat-card">
+        <span class="stat-label">Characters</span>
+        <span id="charCount" class="stat-number">0</span>
+      </div>
+
+      <div class="stat-card">
+        <span class="stat-label">Sentences</span>
+        <span id="sentenceCount" class="stat-number">0</span>
+      </div>
+
+      <div class="stat-card">
+        <span class="stat-label">Reading Time</span>
+        <span id="readingTime" class="stat-number">0s</span>
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         SHORT HOW-TO
+         ========================================================= -->
+
+    <section
+      class="mt-8 rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6 sm:p-8"
+    >
+
+      <h2
+        class="text-2xl font-bold text-slate-900 dark:text-white mb-4"
+      >
+        How to use the text formatter
+      </h2>
+
+      <ol
+        class="space-y-3 text-slate-600 dark:text-slate-300"
+      >
+
+        <li class="flex gap-3">
+          <span class="font-semibold text-blue-600 dark:text-blue-400">1.</span>
+          <span>Type or paste your text into the editor.</span>
+        </li>
+
+        <li class="flex gap-3">
+          <span class="font-semibold text-blue-600 dark:text-blue-400">2.</span>
+          <span>Choose a case, cleaning, or link conversion tool.</span>
+        </li>
+
+        <li class="flex gap-3">
+          <span class="font-semibold text-blue-600 dark:text-blue-400">3.</span>
+          <span>Review the result in the editor.</span>
+        </li>
+
+        <li class="flex gap-3">
+          <span class="font-semibold text-blue-600 dark:text-blue-400">4.</span>
+          <span>Click Copy to copy the result.</span>
+        </li>
+
+      </ol>
+
+      <p class="mt-5 text-sm text-slate-500 dark:text-slate-400">
+        Need more information?
+        <a
+          href="how-to-use.html"
+          class="text-blue-600 dark:text-blue-400 hover:underline"
+        >
+          View the complete How to Use guide.
+        </a>
+      </p>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================================================
+       FOOTER
+       ========================================================= -->
+
+  <footer
+    class="mt-auto border-t border-slate-200 dark:border-slate-800"
+  >
+
+    <div
+      class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8"
+    >
+
+      <div class="text-center">
+
+        <h2
+          class="font-bold text-slate-900 dark:text-white"
+        >
+          Convert Case
+        </h2>
+
+        <p
+          class="mt-2 text-sm text-slate-500 dark:text-slate-400"
+        >
+          A simple online tool for formatting and cleaning text.
+        </p>
+
+
+        <!-- Footer Navigation -->
+        <nav
+          class="mt-5 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm"
+          aria-label="Footer navigation"
+        >
+
+          <a
+            href="index.html"
+            class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400"
+          >
+            Home
+          </a>
+
+          <a
+            href="about.html"
+            class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400"
+          >
+            About
+          </a>
+
+          <a
+            href="how-to-use.html"
+            class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400"
+          >
+            How to Use
+          </a>
+
+          <a
+            href="faq.html"
+            class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400"
+          >
+            FAQ
+          </a>
+
+          <a
+            href="privacy.html"
+            class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400"
+          >
+            Privacy Policy
+          </a>
+
+          <a
+            href="terms.html"
+            class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400"
+          >
+            Terms
+          </a>
+
+          <a
+            href="contact.html"
+            class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400"
+          >
+            Contact
+          </a>
+
+        </nav>
+
+      </div>
+
+
+      <div
+        class="mt-7 pt-6 border-t border-slate-200 dark:border-slate-800 text-center"
+      >
+
+        <p
+          class="text-xs text-slate-500 dark:text-slate-500"
+        >
+          © 2026 Convert Case. All rights reserved.
+        </p>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =========================================================
+       TOAST
+       ========================================================= -->
+
+  <div
+    id="toast"
+    class="fixed bottom-5 right-5 transform translate-y-20 opacity-0 bg-slate-900 text-white dark:bg-white dark:text-slate-900 px-4 py-2.5 rounded-xl shadow-xl text-sm font-medium transition-all duration-300 flex items-center gap-2 z-50 pointer-events-none"
+  >
+
+    <i
+      id="toastIcon"
+      class="fa-solid fa-circle-check text-emerald-400 dark:text-emerald-600"
+    ></i>
+
+    <span id="toastMessage">
+      Text modified
+    </span>
+
+  </div>
+
+
+  <!-- =========================================================
+       JAVASCRIPT
+       ========================================================= -->
+
+  <script>
+
+    /* ---------------------------------------------------------
+       DOM ELEMENTS
+       --------------------------------------------------------- */
+
+    const textarea = document.getElementById('mainText');
+
+    const undoBtn = document.getElementById('undoBtn');
+    const redoBtn = document.getElementById('redoBtn');
+
+    const wordCountEl = document.getElementById('wordCount');
+    const charCountEl = document.getElementById('charCount');
+    const sentenceCountEl = document.getElementById('sentenceCount');
+    const readingTimeEl = document.getElementById('readingTime');
+
+    const toast = document.getElementById('toast');
+    const toastMessage = document.getElementById('toastMessage');
+    const toastIcon = document.getElementById('toastIcon');
+
+
+    /* ---------------------------------------------------------
+       HISTORY
+       --------------------------------------------------------- */
+
+    let historyStack = [''];
+    let historyIndex = 0;
+
+    const MAX_HISTORY = 100;
+
+    let isTypingDebounce = null;
+
+
+    /* ---------------------------------------------------------
+       THEME
+       --------------------------------------------------------- */
+
+    const themeToggleBtn = document.getElementById('themeToggle');
+
+    const savedTheme = localStorage.getItem('theme');
+
+    if (
+      savedTheme === 'dark' ||
+      (
+        !savedTheme &&
+        window.matchMedia &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+      )
+    ) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+
+
+    themeToggleBtn.addEventListener('click', () => {
+
+      const isDark =
+        document.documentElement.classList.toggle('dark');
+
+      localStorage.setItem(
+        'theme',
+        isDark ? 'dark' : 'light'
+      );
+
+    });
+
+
+    /* ---------------------------------------------------------
+       FLUSH TYPING HISTORY
+       --------------------------------------------------------- */
+
+    function flushTypingBuffer() {
+
+      if (isTypingDebounce !== null) {
+
+        clearTimeout(isTypingDebounce);
+        isTypingDebounce = null;
+
+        const currentVal = textarea.value;
+
+        if (
+          historyStack[historyIndex] !== currentVal
+        ) {
+
+          if (
+            historyIndex < historyStack.length - 1
+          ) {
+            historyStack =
+              historyStack.slice(
+                0,
+                historyIndex + 1
+              );
+          }
+
+          historyStack.push(currentVal);
+
+          if (historyStack.length > MAX_HISTORY) {
+
+            historyStack.shift();
+
+          } else {
+
+            historyIndex++;
 
           }
 
+        }
 
-          /*
-            Website URL
-            → normal hyperlink
+      }
 
-            www.example.com gets https://
-          */
-
-          const href =
-            /^https?:\/\//i.test(value)
-              ? value
-              : 'https://' + value;
+    }
 
 
-          const safeHref =
-            href.replace(/"/g, '&quot;');
+    /* ---------------------------------------------------------
+       CASE CONVERSIONS
+       --------------------------------------------------------- */
 
+    function toSentenceCase(str) {
+
+      if (!str) return '';
+
+      return str
+        .toLowerCase()
+        .replace(
+          /(^\s*\w|[.!?]\s+\w)/gm,
+          function(c) {
+            return c.toUpperCase();
+          }
+        );
+
+    }
+
+
+    function toCapitalizedCase(str) {
+
+      if (!str) return '';
+
+      return str
+        .toLowerCase()
+        .replace(
+          /\b\w/g,
+          function(c) {
+            return c.toUpperCase();
+          }
+        );
+
+    }
+
+
+    function toTitleCase(str) {
+
+      if (!str) return '';
+
+      const minorWords = new Set([
+        'a',
+        'an',
+        'and',
+        'as',
+        'at',
+        'but',
+        'by',
+        'for',
+        'if',
+        'in',
+        'nor',
+        'of',
+        'on',
+        'or',
+        'so',
+        'the',
+        'to',
+        'up',
+        'yet',
+        'with'
+      ]);
+
+      const words = str.toLowerCase().split(/\b/);
+
+      let wordNumber = 0;
+
+      return words.map(part => {
+
+        if (!/[a-z0-9]/i.test(part)) {
+          return part;
+        }
+
+        const lower = part.toLowerCase();
+
+        wordNumber++;
+
+        if (
+          wordNumber === 1 ||
+          !minorWords.has(lower)
+        ) {
+          return (
+            lower.charAt(0).toUpperCase() +
+            lower.slice(1)
+          );
+        }
+
+        return lower;
+
+      }).join('');
+
+    }
+
+
+    /* ---------------------------------------------------------
+       CLEANING
+       --------------------------------------------------------- */
+
+    function removeCommas(str) {
+
+      return str.replace(/,/g, '');
+
+    }
+
+
+    function removeExtraSpaces(str) {
+
+      if (!str) return '';
+
+      return str
+        .split('\n')
+        .map(line =>
+          line
+            .replace(/[ \t]+/g, ' ')
+            .trim()
+        )
+        .join('\n')
+        .replace(/\n{3,}/g, '\n\n');
+
+    }
+
+
+    /* ---------------------------------------------------------
+       TEXT → HYPERLINKS
+       --------------------------------------------------------- */
+
+    function textToHyperlinks(str) {
+
+      if (!str) return '';
+
+      let result = str;
+
+      /*
+       * Convert email addresses.
+       *
+       * Example:
+       * john@gmail.com
+       *
+       * becomes:
+       * <a href="mailto:john@gmail.com">john@gmail.com</a>
+       */
+
+      result = result.replace(
+        /([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/g,
+        '<a href="mailto:$1">$1</a>'
+      );
+
+
+      /*
+       * Convert URLs beginning with http:// or https://
+       */
+
+      result = result.replace(
+        /(?<!["'>])(https?:\/\/[^\s<]+)/gi,
+        function(url) {
+
+          let cleanUrl = url;
+
+          let ending = '';
+
+          while (
+            /[.,!?;:]$/.test(cleanUrl)
+          ) {
+            ending =
+              cleanUrl.slice(-1) +
+              ending;
+
+            cleanUrl =
+              cleanUrl.slice(0, -1);
+          }
 
           return (
             '<a href="' +
-            safeHref +
-            '" target="_blank" rel="noopener noreferrer">' +
-            value +
+            cleanUrl +
+            '">' +
+            cleanUrl +
             '</a>' +
-            trailing
+            ending
           );
 
         }
       );
 
-    })
-    .join('');
 
-}
+      /*
+       * Convert www.example.com
+       */
+
+      result = result.replace(
+        /(?<!["'>])(www\.[^\s<]+)/gi,
+        function(url) {
+
+          let cleanUrl = url;
+
+          let ending = '';
+
+          while (
+            /[.,!?;:]$/.test(cleanUrl)
+          ) {
+            ending =
+              cleanUrl.slice(-1) +
+              ending;
+
+            cleanUrl =
+              cleanUrl.slice(0, -1);
+          }
+
+          return (
+            '<a href="https://' +
+            cleanUrl +
+            '">' +
+            cleanUrl +
+            '</a>' +
+            ending
+          );
+
+        }
+      );
+
+
+      return result;
+
+    }
+
+
+    /* ---------------------------------------------------------
+       HYPERLINKS → TEXT
+       --------------------------------------------------------- */
+
+    function hyperlinksToText(str) {
+
+      if (!str) return '';
+
+      /*
+       * First extract href values from HTML links.
+       */
+
+      let result = str.replace(
+        /<a\b[^>]*href\s*=\s*["']([^"']+)["'][^>]*>[\s\S]*?<\/a>/gi,
+        function(match, href) {
+
+          if (
+            href.toLowerCase().startsWith('mailto:')
+          ) {
+            return href.substring(7);
+          }
+
+          return href;
+
+        }
+      );
+
+
+      /*
+       * Remove remaining HTML tags.
+       */
+
+      result = result.replace(
+        /<[^>]*>/g,
+        ''
+      );
+
+
+      return result;
+
+    }
+
+
+    /* ---------------------------------------------------------
+       MAIN TRANSFORMATION
+       --------------------------------------------------------- */
+
+    function transformText(actionType) {
+
+      flushTypingBuffer();
+
+      const currentText = textarea.value;
+
+      if (!currentText) {
+
+        showToast(
+          'Text box is empty',
+          'fa-circle-info',
+          'text-amber-400'
+        );
+
+        return;
+
+      }
+
+
+      let newText = currentText;
+      let actionLabel = '';
+
+
+      switch (actionType) {
+
+        case 'sentenceCase':
+
+          newText =
+            toSentenceCase(currentText);
+
+          actionLabel =
+            'Converted to Sentence Case';
+
+          break;
+
+
+        case 'lowercase':
+
+          newText =
+            currentText.toLowerCase();
+
+          actionLabel =
+            'Converted to lowercase';
+
+          break;
+
+
+        case 'uppercase':
+
+          newText =
+            currentText.toUpperCase();
+
+          actionLabel =
+            'Converted to UPPERCASE';
+
+          break;
+
+
+        case 'capitalizedCase':
+
+          newText =
+            toCapitalizedCase(currentText);
+
+          actionLabel =
+            'Converted to Capitalized Case';
+
+          break;
+
+
+        case 'titleCase':
+
+          newText =
+            toTitleCase(currentText);
+
+          actionLabel =
+            'Converted to Title Case';
+
+          break;
+
+
+        case 'removeCommas':
+
+          newText =
+            removeCommas(currentText);
+
+          actionLabel =
+            'Removed all commas';
+
+          break;
+
+
+        case 'removeExtraSpaces':
+
+          newText =
+            removeExtraSpaces(currentText);
+
+          actionLabel =
+            'Removed extra spaces';
+
+          break;
+
+
+        case 'textToHyperlinks':
+
+          newText =
+            textToHyperlinks(currentText);
+
+          actionLabel =
+            'Converted emails and URLs to hyperlinks';
+
+          break;
+
+
+        case 'hyperlinksToText':
+
+          newText =
+            hyperlinksToText(currentText);
+
+          actionLabel =
+            'Converted hyperlinks to text';
+
+          break;
+
+      }
+
+
+      if (newText !== currentText) {
+
+        pushState(newText);
+
+        showToast(
+          actionLabel,
+          'fa-wand-magic-sparkles',
+          'text-blue-400'
+        );
+
+      } else {
+
+        showToast(
+          'No changes needed',
+          'fa-circle-info',
+          'text-slate-400'
+        );
+
+      }
+
+    }
+
+
+    /* ---------------------------------------------------------
+       HISTORY FUNCTIONS
+       --------------------------------------------------------- */
+
+    function pushState(newText) {
+
+      if (
+        historyStack[historyIndex] === newText
+      ) {
+        return;
+      }
+
+
+      if (
+        historyIndex < historyStack.length - 1
+      ) {
+
+        historyStack =
+          historyStack.slice(
+            0,
+            historyIndex + 1
+          );
+
+      }
+
+
+      historyStack.push(newText);
+
+
+      if (
+        historyStack.length > MAX_HISTORY
+      ) {
+
+        historyStack.shift();
+
+      } else {
+
+        historyIndex++;
+
+      }
+
+
+      textarea.value = newText;
+
+      updateUI();
+
+    }
+
+
+    function undo() {
+
+      flushTypingBuffer();
+
+      if (historyIndex > 0) {
+
+        historyIndex--;
+
+        textarea.value =
+          historyStack[historyIndex];
+
+        updateUI();
+
+        showToast(
+          'Undone action',
+          'fa-rotate-left',
+          'text-blue-400'
+        );
+
+      }
+
+    }
+
+
+    function redo() {
+
+      flushTypingBuffer();
+
+      if (
+        historyIndex <
+        historyStack.length - 1
+      ) {
+
+        historyIndex++;
+
+        textarea.value =
+          historyStack[historyIndex];
+
+        updateUI();
+
+        showToast(
+          'Redone action',
+          'fa-rotate-right',
+          'text-blue-400'
+        );
+
+      }
+
+    }
+
+
+    function clearText() {
+
+      flushTypingBuffer();
+
+      if (!textarea.value) return;
+
+      pushState('');
+
+      showToast(
+        'Text cleared',
+        'fa-trash-can',
+        'text-rose-400'
+      );
+
+    }
+
+
+    /* ---------------------------------------------------------
+       COPY
+       --------------------------------------------------------- */
+
+    function copyText() {
+
+      const textToCopy =
+        textarea.value;
+
+      if (!textToCopy) {
+
+        showToast(
+          'Nothing to copy',
+          'fa-circle-exclamation',
+          'text-amber-400'
+        );
+
+        return;
+
+      }
+
+
+      if (
+        navigator.clipboard &&
+        window.isSecureContext
+      ) {
+
+        navigator.clipboard
+          .writeText(textToCopy)
+          .then(() => {
+
+            showToast(
+              'Copied to clipboard!',
+              'fa-circle-check',
+              'text-emerald-400'
+            );
+
+          })
+          .catch(() =>
+            fallbackCopy(textToCopy)
+          );
+
+      } else {
+
+        fallbackCopy(textToCopy);
+
+      }
+
+    }
+
+
+    function fallbackCopy(text) {
+
+      textarea.select();
+
+      try {
+
+        document.execCommand('copy');
+
+        showToast(
+          'Copied to clipboard!',
+          'fa-circle-check',
+          'text-emerald-400'
+        );
+
+      } catch (err) {
+
+        showToast(
+          'Failed to copy',
+          'fa-circle-xmark',
+          'text-rose-400'
+        );
+
+      }
+
+    }
+
+
+    /* ---------------------------------------------------------
+       TOAST
+       --------------------------------------------------------- */
+
+    let toastTimeout = null;
+
+
+    function showToast(
+      message,
+      iconClass = 'fa-circle-check',
+      iconColor = 'text-emerald-400'
+    ) {
+
+      clearTimeout(toastTimeout);
+
+      toastMessage.textContent =
+        message;
+
+      toastIcon.className =
+        `fa-solid ${iconClass} ${iconColor}`;
+
+
+      toast.classList.remove(
+        'translate-y-20',
+        'opacity-0'
+      );
+
+      toast.classList.add(
+        'translate-y-0',
+        'opacity-100'
+      );
+
+
+      toastTimeout =
+        setTimeout(() => {
+
+          toast.classList.remove(
+            'translate-y-0',
+            'opacity-100'
+          );
+
+          toast.classList.add(
+            'translate-y-20',
+            'opacity-0'
+          );
+
+        }, 2200);
+
+    }
+
+
+    /* ---------------------------------------------------------
+       STATISTICS
+       --------------------------------------------------------- */
+
+    function calculateStats(text) {
+
+      const trimmed =
+        text.trim();
+
+
+      const words =
+        trimmed
+          ? trimmed.split(/\s+/).length
+          : 0;
+
+
+      const chars =
+        text.length;
+
+
+      const sentences =
+        trimmed
+          ? (
+              trimmed.match(
+                /[^.!?]+[.!?]+/g
+              ) || [trimmed]
+            ).length
+          : 0;
+
+
+      const wpm = 200;
+
+
+      const totalSeconds =
+        Math.ceil(
+          (words / wpm) * 60
+        );
+
+
+      let timeFormatted =
+        '0s';
+
+
+      if (totalSeconds >= 60) {
+
+        const mins =
+          Math.floor(
+            totalSeconds / 60
+          );
+
+        const secs =
+          totalSeconds % 60;
+
+
+        timeFormatted =
+          `${mins}m ${secs}s`;
+
+      } else {
+
+        timeFormatted =
+          `${totalSeconds}s`;
+
+      }
+
+
+      return {
+        words,
+        chars,
+        sentences,
+        timeFormatted
+      };
+
+    }
+
+
+    function updateUI() {
+
+      const stats =
+        calculateStats(
+          textarea.value
+        );
+
+
+      wordCountEl.textContent =
+        stats.words.toLocaleString();
+
+
+      charCountEl.textContent =
+        stats.chars.toLocaleString();
+
+
+      sentenceCountEl.textContent =
+        stats.sentences.toLocaleString();
+
+
+      readingTimeEl.textContent =
+        stats.timeFormatted;
+
+
+      undoBtn.disabled =
+        historyIndex <= 0;
+
+
+      redoBtn.disabled =
+        historyIndex >=
+        historyStack.length - 1;
+
+    }
+
+
+    /* ---------------------------------------------------------
+       TYPING
+       --------------------------------------------------------- */
+
+    textarea.addEventListener(
+      'input',
+      () => {
+
+        updateUI();
+
+        clearTimeout(
+          isTypingDebounce
+        );
+
+
+        isTypingDebounce =
+          setTimeout(() => {
+
+            if (
+              historyStack[historyIndex] !==
+              textarea.value
+            ) {
+
+              if (
+                historyIndex <
+                historyStack.length - 1
+              ) {
+
+                historyStack =
+                  historyStack.slice(
+                    0,
+                    historyIndex + 1
+                  );
+
+              }
+
+
+              historyStack.push(
+                textarea.value
+              );
+
+
+              if (
+                historyStack.length >
+                MAX_HISTORY
+              ) {
+
+                historyStack.shift();
+
+              } else {
+
+                historyIndex++;
+
+              }
+
+
+              updateUI();
+
+            }
+
+          }, 750);
+
+      }
+    );
+
+
+    /* ---------------------------------------------------------
+       KEYBOARD SHORTCUTS
+       --------------------------------------------------------- */
+
+    document.addEventListener(
+      'keydown',
+      (e) => {
+
+        if (
+          (e.ctrlKey || e.metaKey) &&
+          e.key.toLowerCase() === 'z'
+        ) {
+
+          e.preventDefault();
+
+          if (e.shiftKey) {
+
+            redo();
+
+          } else {
+
+            undo();
+
+          }
+
+        } else if (
+          (e.ctrlKey || e.metaKey) &&
+          e.key.toLowerCase() === 'y'
+        ) {
+
+          e.preventDefault();
+
+          redo();
+
+        }
+
+      }
+    );
+
+
+    /* ---------------------------------------------------------
+       SAMPLE TEXT
+       --------------------------------------------------------- */
+
+    document
+      .getElementById('sampleBtn')
+      .addEventListener(
+        'click',
+        () => {
+
+          flushTypingBuffer();
+
+
+          const sample =
+            'hello world! THIS IS A SAMPLE TEXT, meant to demonstrate how easy it is to convert text. Contact us at example@gmail.com or visit https://example.com for more information. It also includes EXTRA    SPACES, mixed cases, and commas.';
+
+
+          pushState(sample);
+
+
+          showToast(
+            'Loaded sample text',
+            'fa-lightbulb',
+            'text-amber-400'
+          );
+
+        }
+      );
+
+
+    /* ---------------------------------------------------------
+       TOOLBAR BUTTON STYLES
+       --------------------------------------------------------- */
+
+    document
+      .querySelectorAll('.btn-action')
+      .forEach(button => {
+
+        button.classList.add(
+          'bg-slate-100',
+          'hover:bg-blue-50',
+          'dark:bg-slate-700/60',
+          'dark:hover:bg-blue-900/30',
+          'text-slate-700',
+          'dark:text-slate-200',
+          'hover:text-blue-600',
+          'dark:hover:text-blue-400',
+          'border',
+          'border-slate-200/80',
+          'dark:border-slate-600/50',
+          'rounded-xl',
+          'px-3.5',
+          'py-2',
+          'text-sm',
+          'font-semibold',
+          'transition-all',
+          'duration-150',
+          'flex',
+          'items-center',
+          'gap-2',
+          'active:scale-95'
+        );
+
+      });
+
+
+    /* ---------------------------------------------------------
+       STAT CARD STYLES
+       --------------------------------------------------------- */
+
+    document
+      .querySelectorAll('.stat-card')
+      .forEach(card => {
+
+        card.classList.add(
+          'bg-white',
+          'dark:bg-slate-800',
+          'border',
+          'border-slate-200',
+          'dark:border-slate-700',
+          'rounded-xl',
+          'p-4',
+          'text-center',
+          'shadow-sm'
+        );
+
+      });
+
+
+    document
+      .querySelectorAll('.stat-label')
+      .forEach(label => {
+
+        label.classList.add(
+          'block',
+          'text-xs',
+          'font-medium',
+          'text-slate-400',
+          'dark:text-slate-500',
+          'uppercase',
+          'tracking-wider'
+        );
+
+      });
+
+
+    document
+      .querySelectorAll('.stat-number')
+      .forEach(number => {
+
+        number.classList.add(
+          'text-xl',
+          'sm:text-2xl',
+          'font-bold',
+          'text-slate-800',
+          'dark:text-white',
+          'mt-1',
+          'block'
+        );
+
+      });
+
+
+    /* ---------------------------------------------------------
+       INITIAL SETUP
+       --------------------------------------------------------- */
+
+    updateUI();
+
+  </script>
+
+</body>
+</html>
