@@ -6,6 +6,30 @@
 
   <title>Fiyaz NKP - Free Online Tools</title>
 
+  <meta
+    name="description"
+    content="Fiyaz NKP provides free browser-based online tools for everyday writing, text formatting, and simple tasks."
+  >
+
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="https://fiyaznkp.com/">
+
+  <meta property="og:title" content="Fiyaz NKP - Free Online Tools">
+  <meta
+    property="og:description"
+    content="Free browser-based tools for everyday writing, text formatting, and simple tasks."
+  >
+  <meta property="og:url" content="https://fiyaznkp.com/">
+  <meta property="og:type" content="website">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Fiyaz NKP - Free Online Tools">
+  <meta
+    name="twitter:description"
+    content="Free browser-based tools for everyday writing, text formatting, and simple tasks."
+  >
+
   <!-- Google AdSense -->
   <script
     async
@@ -13,47 +37,379 @@
     crossorigin="anonymous"
   ></script>
 
-  <meta name="description" content="Free online tools by Fiyaz NKP.">
-
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
+      margin: 0;
       font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 60px 20px;
       background: #ffffff;
       color: #222222;
-    }
-
-    h1 {
-      margin-bottom: 15px;
-    }
-
-    p {
-      margin-bottom: 30px;
+      line-height: 1.6;
     }
 
     a {
+      color: inherit;
+    }
+
+    .container {
+      width: min(100% - 40px, 1000px);
+      margin: 0 auto;
+    }
+
+    header {
+      border-bottom: 1px solid #e5e5e5;
+      background: #ffffff;
+    }
+
+    .header-inner {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .site-name {
+      text-decoration: none;
+      font-size: 22px;
+      font-weight: 700;
+      color: #222222;
+    }
+
+    .site-name:hover {
+      text-decoration: none;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 18px;
+      font-size: 14px;
+    }
+
+    nav a {
+      color: #555555;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      color: #222222;
+      text-decoration: underline;
+    }
+
+    main {
+      padding: 70px 0 60px;
+    }
+
+    .hero {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 60px;
+    }
+
+    .hero h1 {
+      margin: 0 0 18px;
+      font-size: clamp(32px, 6vw, 48px);
+      line-height: 1.15;
+    }
+
+    .hero p {
+      margin: 0 auto;
+      max-width: 680px;
+      color: #555555;
+      font-size: 18px;
+    }
+
+    section {
+      margin-bottom: 55px;
+    }
+
+    section h2 {
+      margin: 0 0 24px;
+      text-align: center;
+      font-size: 28px;
+      line-height: 1.25;
+    }
+
+    .tool-card {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 30px;
+      border: 1px solid #e2e2e2;
+      border-radius: 12px;
+      background: #fafafa;
+    }
+
+    .tool-card h3 {
+      margin: 0 0 12px;
+      font-size: 22px;
+    }
+
+    .tool-card p {
+      margin: 0 0 22px;
+      color: #555555;
+    }
+
+    .button {
       display: inline-block;
       padding: 12px 22px;
       background: #222222;
       color: #ffffff;
       text-decoration: none;
       border-radius: 6px;
+      font-weight: 600;
     }
 
-    a:hover {
+    .button:hover {
       opacity: 0.9;
+    }
+
+    .benefits {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .benefit {
+      padding: 22px;
+      border: 1px solid #e5e5e5;
+      border-radius: 10px;
+      background: #ffffff;
+    }
+
+    .benefit h3 {
+      margin: 0 0 8px;
+      font-size: 17px;
+    }
+
+    .benefit p {
+      margin: 0;
+      color: #555555;
+      font-size: 15px;
+    }
+
+    footer {
+      border-top: 1px solid #e5e5e5;
+      padding: 32px 0;
+      text-align: center;
+    }
+
+    .footer-description {
+      margin: 0 0 18px;
+      color: #666666;
+      font-size: 14px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px 20px;
+      margin-bottom: 18px;
+      font-size: 14px;
+    }
+
+    .footer-links a {
+      color: #555555;
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      color: #222222;
+      text-decoration: underline;
+    }
+
+    .copyright {
+      margin: 0;
+      color: #777777;
+      font-size: 13px;
+    }
+
+    @media (max-width: 700px) {
+      .container {
+        width: min(100% - 28px, 1000px);
+      }
+
+      .header-inner {
+        padding: 18px 0;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        justify-content: flex-start;
+      }
+
+      main {
+        padding: 50px 0 45px;
+      }
+
+      .hero {
+        margin-bottom: 45px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .benefits {
+        grid-template-columns: 1fr;
+      }
+
+      .tool-card {
+        padding: 24px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <h1>Fiyaz NKP</h1>
+  <header>
+    <div class="container header-inner">
 
-  <p>Free online tools to make everyday tasks easier.</p>
+      <a class="site-name" href="/">
+        Fiyaz NKP
+      </a>
 
-  <a href="/text-formatter/">Text Formatter & Cleaner</a>
+      <nav aria-label="Main navigation">
+        <a href="/">Home</a>
+        <a href="/text-formatter/">Text Formatter &amp; Cleaner</a>
+        <a href="/text-formatter/about.html">About</a>
+        <a href="/text-formatter/contact.html">Contact</a>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <main>
+
+    <div class="container">
+
+      <section class="hero">
+
+        <h1>Fiyaz NKP - Free Online Tools</h1>
+
+        <p>
+          Fiyaz NKP provides free browser-based tools designed to help with
+          everyday writing, text formatting, and other simple tasks.
+          The tools are designed to be easy to use directly in your browser
+          without requiring software installation.
+        </p>
+
+      </section>
+
+
+      <section aria-labelledby="available-tools">
+
+        <h2 id="available-tools">Available Tools</h2>
+
+        <div class="tool-card">
+
+          <h3>Text Formatter &amp; Cleaner</h3>
+
+          <p>
+            Format and clean text directly in your browser. Change text case,
+            remove unnecessary spaces or commas, and check basic text
+            statistics such as words, characters, sentences, and estimated
+            reading time.
+          </p>
+
+          <a
+            class="button"
+            href="/text-formatter/"
+          >
+            Open Text Formatter &amp; Cleaner
+          </a>
+
+        </div>
+
+      </section>
+
+
+      <section aria-labelledby="why-use-tools">
+
+        <h2 id="why-use-tools">Why Use Our Tools?</h2>
+
+        <div class="benefits">
+
+          <div class="benefit">
+            <h3>Free to Use</h3>
+            <p>
+              The available tools are provided for everyday use without
+              requiring a paid subscription.
+            </p>
+          </div>
+
+          <div class="benefit">
+            <h3>Works in Your Browser</h3>
+            <p>
+              Use the tools directly from a modern web browser without
+              installing additional software.
+            </p>
+          </div>
+
+          <div class="benefit">
+            <h3>Simple and Practical</h3>
+            <p>
+              The tools focus on straightforward features that help with
+              common everyday tasks.
+            </p>
+          </div>
+
+          <div class="benefit">
+            <h3>Easy to Access</h3>
+            <p>
+              Open a tool from the website and start using it without
+              unnecessary steps.
+            </p>
+          </div>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+
+  <footer>
+
+    <div class="container">
+
+      <p class="footer-description">
+        Fiyaz NKP provides free online tools for everyday tasks.
+      </p>
+
+      <nav
+        class="footer-links"
+        aria-label="Footer navigation"
+      >
+        <a href="/">Home</a>
+        <a href="/text-formatter/">Text Formatter &amp; Cleaner</a>
+        <a href="/text-formatter/about.html">About</a>
+        <a href="/text-formatter/how-to-use.html">How to Use</a>
+        <a href="/text-formatter/faq.html">FAQ</a>
+        <a href="/text-formatter/privacy.html">Privacy Policy</a>
+        <a href="/text-formatter/terms.html">Terms</a>
+        <a href="/text-formatter/contact.html">Contact</a>
+      </nav>
+
+      <p class="copyright">
+        &copy; 2026 Fiyaz NKP. All rights reserved.
+      </p>
+
+    </div>
+
+  </footer>
 
 </body>
 </html>
