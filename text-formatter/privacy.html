@@ -86,6 +86,25 @@
   </script>
 
 
+  <!-- Theme initialization -->
+  <script>
+    let savedTheme = null;
+
+    try {
+      savedTheme = localStorage.getItem('textFormatterTheme');
+    } catch (error) {
+      savedTheme = null;
+    }
+
+    if (savedTheme === 'light') {
+      document.documentElement.classList.remove('dark');
+    } else if (savedTheme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+
   <!-- Tailwind CSS -->
 
   <script src="https://cdn.tailwindcss.com"></script>
@@ -245,6 +264,16 @@
         >
           Contact
         </a>
+
+        <button
+          id="themeToggle"
+          type="button"
+          aria-label="Toggle dark mode"
+          title="Toggle dark mode"
+          class="w-9 h-9 rounded-lg border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition flex items-center justify-center"
+        >
+          <i id="themeIcon" class="fa-solid fa-moon"></i>
+        </button>
 
       </nav>
 
@@ -690,32 +719,61 @@
   </div>
 
 
-  <!-- Theme initialization -->
-
+  <!-- Theme Toggle -->
   <script>
+    (function () {
+      const themeToggle = document.getElementById('themeToggle');
+      const themeIcon = document.getElementById('themeIcon');
 
-    const savedTheme =
-      localStorage.getItem(
-        'textFormatterTheme'
-      );
+      function getCurrentTheme() {
+        return document.documentElement.classList.contains('dark')
+          ? 'dark'
+          : 'light';
+      }
 
+      function updateThemeIcon() {
+        if (!themeIcon || !themeToggle) return;
 
-    if (
-      savedTheme === 'light'
-    ) {
+        const isDark = getCurrentTheme() === 'dark';
 
-      document.documentElement.classList.remove(
-        'dark'
-      );
+        themeIcon.className = isDark
+          ? 'fa-solid fa-sun'
+          : 'fa-solid fa-moon';
 
-    } else {
+        themeToggle.setAttribute(
+          'aria-label',
+          isDark ? 'Switch to light mode' : 'Switch to dark mode'
+        );
 
-      document.documentElement.classList.add(
-        'dark'
-      );
+        themeToggle.setAttribute(
+          'title',
+          isDark ? 'Switch to light mode' : 'Switch to dark mode'
+        );
+      }
 
-    }
+      function setTheme(theme) {
+        document.documentElement.classList.toggle('dark', theme === 'dark');
 
+        try {
+          localStorage.setItem('textFormatterTheme', theme);
+        } catch (error) {
+          // Ignore storage errors and keep the theme for the current page.
+        }
+
+        updateThemeIcon();
+      }
+
+      updateThemeIcon();
+
+      if (themeToggle) {
+        themeToggle.addEventListener('click', function () {
+          const nextTheme =
+            getCurrentTheme() === 'dark' ? 'light' : 'dark';
+
+          setTheme(nextTheme);
+        });
+      }
+    })();
   </script>
 
 
