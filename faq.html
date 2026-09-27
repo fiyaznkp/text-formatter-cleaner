@@ -25,6 +25,11 @@
   >
 
   <meta
+    name="robots"
+    content="index, follow"
+  >
+
+  <meta
     property="og:title"
     content="FAQ – Text Formatter & Cleaner"
   >
@@ -977,10 +982,15 @@
 
   <script>
 
-    const savedTheme =
-      localStorage.getItem(
+    let savedTheme = null;
+
+    try {
+      savedTheme = localStorage.getItem(
         'textFormatterTheme'
       );
+    } catch (error) {
+      savedTheme = null;
+    }
 
 
     if (
