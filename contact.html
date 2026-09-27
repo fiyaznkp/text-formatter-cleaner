@@ -660,6 +660,7 @@
 
       </div>
 
+
     </div>
 
   </header>
@@ -723,6 +724,7 @@
         </p>
 
       </article>
+
 
     </section>
 
@@ -912,10 +914,14 @@
       }
 
 
-      localStorage.setItem(
-        'textFormatterTheme',
-        theme
-      );
+      try {
+        localStorage.setItem(
+          'textFormatterTheme',
+          theme
+        );
+      } catch (error) {
+        // Continue without saving the theme if browser storage is unavailable.
+      }
 
     }
 
@@ -939,10 +945,15 @@
     );
 
 
-    const savedTheme =
-      localStorage.getItem(
+    let savedTheme = null;
+
+    try {
+      savedTheme = localStorage.getItem(
         'textFormatterTheme'
       );
+    } catch (error) {
+      savedTheme = null;
+    }
 
 
     setTheme(
