@@ -19,6 +19,8 @@
     content="Learn about Text Formatter & Cleaner, a free online tool for formatting, cleaning, and preparing text quickly and easily."
   >
 
+  <meta name="robots" content="index, follow">
+
   <link
     rel="canonical"
     href="https://fiyaznkp.com/text-formatter/about.html"
@@ -641,10 +643,15 @@
 
   <script>
 
-    const savedTheme =
-      localStorage.getItem(
+    let savedTheme = null;
+
+    try {
+      savedTheme = localStorage.getItem(
         'textFormatterTheme'
       );
+    } catch (error) {
+      savedTheme = null;
+    }
 
 
     if (
