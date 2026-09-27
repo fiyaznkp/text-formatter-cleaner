@@ -272,6 +272,16 @@
           Contact
         </a>
 
+        <button
+          id="themeToggle"
+          type="button"
+          aria-label="Toggle dark mode"
+          title="Toggle dark mode"
+          class="w-9 h-9 rounded-lg border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition flex items-center justify-center"
+        >
+          <i id="themeIcon" class="fa-solid fa-moon"></i>
+        </button>
+
       </nav>
 
     </header>
@@ -978,37 +988,61 @@
   </div>
 
 
-  <!-- Theme initialization -->
-
+  <!-- Theme Toggle -->
   <script>
+    (function () {
+      const themeToggle = document.getElementById('themeToggle');
+      const themeIcon = document.getElementById('themeIcon');
 
-    let savedTheme = null;
+      function getCurrentTheme() {
+        return document.documentElement.classList.contains('dark')
+          ? 'dark'
+          : 'light';
+      }
 
-    try {
-      savedTheme = localStorage.getItem(
-        'textFormatterTheme'
-      );
-    } catch (error) {
-      savedTheme = null;
-    }
+      function updateThemeIcon() {
+        if (!themeIcon || !themeToggle) return;
 
+        const isDark = getCurrentTheme() === 'dark';
 
-    if (
-      savedTheme === 'light'
-    ) {
+        themeIcon.className = isDark
+          ? 'fa-solid fa-sun'
+          : 'fa-solid fa-moon';
 
-      document.documentElement.classList.remove(
-        'dark'
-      );
+        themeToggle.setAttribute(
+          'aria-label',
+          isDark ? 'Switch to light mode' : 'Switch to dark mode'
+        );
 
-    } else {
+        themeToggle.setAttribute(
+          'title',
+          isDark ? 'Switch to light mode' : 'Switch to dark mode'
+        );
+      }
 
-      document.documentElement.classList.add(
-        'dark'
-      );
+      function setTheme(theme) {
+        document.documentElement.classList.toggle('dark', theme === 'dark');
 
-    }
+        try {
+          localStorage.setItem('textFormatterTheme', theme);
+        } catch (error) {
+          // Ignore storage errors and keep the theme for the current page.
+        }
 
+        updateThemeIcon();
+      }
+
+      updateThemeIcon();
+
+      if (themeToggle) {
+        themeToggle.addEventListener('click', function () {
+          const nextTheme =
+            getCurrentTheme() === 'dark' ? 'light' : 'dark';
+
+          setTheme(nextTheme);
+        });
+      }
+    })();
   </script>
 
 
