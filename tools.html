@@ -274,6 +274,86 @@
       outline: none;
     }
 
+
+    body.theme-dark {
+      --bg: #0b1220;
+      --surface: #111827;
+      --text: #e5e7eb;
+      --muted: #94a3b8;
+      --border: #263244;
+      --accent: #60a5fa;
+      --accent-dark: #93c5fd;
+      --soft: #172554;
+      --shadow: 0 14px 34px rgba(0, 0, 0, .22);
+      background:
+        radial-gradient(circle at 50% -15%, rgba(96, 165, 250, .10), transparent 35%),
+        var(--bg);
+    }
+
+    body.theme-dark .site-header,
+    body.theme-dark .site-footer {
+      background: rgba(11, 18, 32, .92);
+      border-color: var(--border);
+    }
+
+    body.theme-dark .site-nav a {
+      color: #cbd5e1;
+    }
+
+    body.theme-dark .site-nav a:hover,
+    body.theme-dark .site-nav a:focus-visible {
+      color: var(--accent-dark);
+      background: var(--soft);
+    }
+
+    body.theme-dark .overview-card,
+    body.theme-dark .tool-card {
+      background: rgba(17, 24, 39, .9);
+      border-color: var(--border);
+    }
+
+    body.theme-dark .point,
+    body.theme-dark .tool-features span {
+      background: #172033;
+      border-color: #263244;
+    }
+
+    body.theme-dark .theme-toggle {
+      color: #e5e7eb;
+      background: #172033;
+      border-color: #334155;
+    }
+
+    body.theme-dark .directory-note {
+      background: rgba(17, 24, 39, .68);
+      border-color: #334155;
+    }
+
+    .theme-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 38px;
+      padding: 0;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: #fff;
+      color: #334155;
+      cursor: pointer;
+      font: inherit;
+      font-size: 16px;
+      line-height: 1;
+      transition: background .2s ease, color .2s ease, border-color .2s ease;
+    }
+
+    .theme-toggle:hover,
+    .theme-toggle:focus-visible {
+      background: var(--soft);
+      color: var(--accent-dark);
+      outline: none;
+    }
+
     @media (max-width: 800px) {
       .container { width: min(100% - 28px, 600px); }
 
@@ -329,6 +409,16 @@
         <a href="/about.html">About</a>
         <a href="/contact.html">Contact</a>
       </nav>
+
+      <button
+        class="theme-toggle"
+        id="themeToggle"
+        type="button"
+        aria-label="Switch to dark mode"
+        title="Switch to dark mode"
+      >
+        <span id="themeIcon" aria-hidden="true">🌙</span>
+      </button>
     </div>
   </header>
 
@@ -393,5 +483,31 @@
       </nav>
     </div>
   </footer>
+
+  <script>
+    (function () {
+      const body = document.body;
+      const button = document.getElementById("themeToggle");
+      const icon = document.getElementById("themeIcon");
+      const savedTheme = localStorage.getItem("fiyaznkp-theme");
+
+      function applyTheme(theme) {
+        const dark = theme === "dark";
+        body.classList.toggle("theme-dark", dark);
+        icon.textContent = dark ? "☀️" : "🌙";
+        button.setAttribute("aria-label", dark ? "Switch to light mode" : "Switch to dark mode");
+        button.setAttribute("title", dark ? "Switch to light mode" : "Switch to dark mode");
+      }
+
+      applyTheme(savedTheme === "dark" ? "dark" : "light");
+
+      button.addEventListener("click", function () {
+        const nextTheme = body.classList.contains("theme-dark") ? "light" : "dark";
+        localStorage.setItem("fiyaznkp-theme", nextTheme);
+        applyTheme(nextTheme);
+      });
+    })();
+  </script>
+
 </body>
 </html>
