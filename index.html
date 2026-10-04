@@ -5,36 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Fiyaz NKP - Free Online Tools</title>
-
-  <meta
-    name="description"
-    content="Fiyaz NKP provides free browser-based online tools for everyday writing, text formatting, and simple tasks."
-  >
-
+  <meta name="description" content="Fiyaz NKP provides free browser-based online tools for everyday writing, text formatting, and other simple digital tasks.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://fiyaznkp.com/">
 
   <meta property="og:title" content="Fiyaz NKP - Free Online Tools">
-  <meta
-    property="og:description"
-    content="Free browser-based tools for everyday writing, text formatting, and simple tasks."
-  >
+  <meta property="og:description" content="Free browser-based tools for everyday writing, text formatting, and other simple digital tasks.">
   <meta property="og:url" content="https://fiyaznkp.com/">
   <meta property="og:type" content="website">
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Fiyaz NKP - Free Online Tools">
-  <meta
-    name="twitter:description"
-    content="Free browser-based tools for everyday writing, text formatting, and simple tasks."
-  >
+  <meta name="twitter:description" content="Free browser-based tools for everyday writing, text formatting, and other simple digital tasks.">
 
   <!-- Google AdSense -->
-  <script
-    async
-    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6996551399751321"
-    crossorigin="anonymous"
-  ></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6996551399751321" crossorigin="anonymous"></script>
 
   <style>
     :root {
@@ -45,8 +30,8 @@
       --border: #e2e8f0;
       --accent: #2563eb;
       --accent-dark: #1d4ed8;
-      --soft-accent: #eff6ff;
-      --shadow: 0 16px 40px rgba(15, 23, 42, 0.07);
+      --soft: #eff6ff;
+      --shadow: 0 14px 34px rgba(15, 23, 42, .06);
     }
 
     * { box-sizing: border-box; }
@@ -57,17 +42,17 @@
       display: flex;
       flex-direction: column;
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background:
-        radial-gradient(circle at 50% -10%, rgba(37, 99, 235, 0.09), transparent 34%),
-        var(--bg);
       color: var(--text);
+      background:
+        radial-gradient(circle at 50% -15%, rgba(37, 99, 235, .09), transparent 35%),
+        var(--bg);
       line-height: 1.6;
     }
 
     a { color: inherit; text-decoration: none; }
 
     .container {
-      width: min(1120px, calc(100% - 40px));
+      width: min(1100px, calc(100% - 40px));
       margin: 0 auto;
     }
 
@@ -75,8 +60,8 @@
       position: sticky;
       top: 0;
       z-index: 10;
-      background: rgba(255, 255, 255, 0.9);
-      border-bottom: 1px solid rgba(226, 232, 240, 0.9);
+      background: rgba(255,255,255,.92);
+      border-bottom: 1px solid var(--border);
       backdrop-filter: blur(14px);
     }
 
@@ -93,7 +78,7 @@
       align-items: center;
       gap: 10px;
       font-weight: 800;
-      letter-spacing: -0.02em;
+      letter-spacing: -.02em;
     }
 
     .brand-mark {
@@ -105,7 +90,7 @@
       background: var(--accent);
       color: #fff;
       font-size: 16px;
-      box-shadow: 0 8px 18px rgba(37, 99, 235, 0.22);
+      box-shadow: 0 8px 18px rgba(37,99,235,.2);
     }
 
     .site-name { font-size: 18px; }
@@ -113,7 +98,7 @@
     .site-nav {
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 5px;
     }
 
     .site-nav a {
@@ -122,20 +107,19 @@
       color: #475569;
       font-size: 14px;
       font-weight: 600;
-      transition: background .2s ease, color .2s ease;
     }
 
     .site-nav a:hover,
     .site-nav a:focus-visible {
-      background: var(--soft-accent);
       color: var(--accent-dark);
+      background: var(--soft);
       outline: none;
     }
 
     main { flex: 1; }
 
     .hero {
-      padding: 82px 0 62px;
+      padding: 76px 0 52px;
       text-align: center;
     }
 
@@ -144,32 +128,30 @@
       margin: 0 auto;
     }
 
-    .hero-badge {
+    .eyebrow {
       display: inline-flex;
-      align-items: center;
       padding: 7px 12px;
-      margin-bottom: 20px;
       border: 1px solid #dbeafe;
       border-radius: 999px;
-      background: var(--soft-accent);
+      background: var(--soft);
       color: var(--accent-dark);
       font-size: 13px;
       font-weight: 700;
+      margin-bottom: 20px;
     }
 
-    .hero h1 {
+    h1 {
       margin: 0;
       font-size: clamp(42px, 6vw, 68px);
       line-height: 1.06;
-      letter-spacing: -0.045em;
-      font-weight: 800;
+      letter-spacing: -.045em;
     }
 
-    .hero h1 span { color: var(--accent); }
+    h1 span { color: var(--accent); }
 
     .hero p {
-      max-width: 690px;
-      margin: 24px auto 0;
+      max-width: 700px;
+      margin: 22px auto 0;
       color: var(--muted);
       font-size: clamp(17px, 2vw, 20px);
       line-height: 1.7;
@@ -180,114 +162,100 @@
       align-items: center;
       justify-content: center;
       min-height: 48px;
-      margin-top: 30px;
+      margin-top: 28px;
       padding: 0 22px;
       border-radius: 12px;
-      font-size: 15px;
-      font-weight: 700;
-      transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
-    }
-
-    .button-primary {
       background: var(--accent);
       color: #fff;
+      font-size: 15px;
+      font-weight: 700;
       box-shadow: var(--shadow);
+      transition: background .2s ease, transform .2s ease;
     }
 
-    .button-primary:hover,
-    .button-primary:focus-visible {
+    .button:hover,
+    .button:focus-visible {
       background: var(--accent-dark);
       transform: translateY(-1px);
       outline: none;
     }
 
-    .intro-section {
-      padding: 0 0 72px;
+    .overview {
+      padding: 18px 0 72px;
     }
 
-    .intro-grid {
+    .overview-card {
       display: grid;
       grid-template-columns: 1.05fr 1fr;
       gap: 28px;
-      align-items: stretch;
-    }
-
-    .intro-copy,
-    .info-card {
-      background: rgba(255, 255, 255, 0.82);
+      padding: 30px;
       border: 1px solid var(--border);
       border-radius: 18px;
-      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.04);
+      background: rgba(255,255,255,.88);
+      box-shadow: var(--shadow);
     }
 
-    .intro-copy {
-      padding: 30px;
-    }
-
-    .section-kicker {
+    .section-label {
       margin: 0 0 8px;
       color: var(--accent-dark);
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 800;
-      letter-spacing: 0.04em;
+      letter-spacing: .05em;
       text-transform: uppercase;
     }
 
-    .intro-copy h2 {
+    h2 {
       margin: 0;
       font-size: 28px;
       line-height: 1.2;
-      letter-spacing: -0.025em;
+      letter-spacing: -.025em;
     }
 
-    .intro-copy p {
+    .overview-copy p:last-child {
       margin: 14px 0 0;
       color: var(--muted);
-      font-size: 16px;
-    }
-
-    .info-card {
-      padding: 26px;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-    }
-
-    .info-item {
-      padding: 16px;
-      border-radius: 13px;
-      background: #f8fafc;
-      border: 1px solid #eef2f7;
-    }
-
-    .info-item strong {
-      display: block;
-      margin-bottom: 4px;
       font-size: 15px;
     }
 
-    .info-item span {
+    .points {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .point {
+      padding: 16px;
+      border: 1px solid #eef2f7;
+      border-radius: 13px;
+      background: #f8fafc;
+    }
+
+    .point strong {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+
+    .point span {
       color: var(--muted);
       font-size: 13px;
     }
 
     .site-footer {
       border-top: 1px solid var(--border);
-      background: rgba(255, 255, 255, 0.82);
+      background: rgba(255,255,255,.82);
     }
 
     .footer-inner {
       padding: 24px 0;
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
+      justify-content: center;
     }
 
     .footer-links {
       display: flex;
       flex-wrap: wrap;
-      justify-content: flex-end;
+      justify-content: center;
       gap: 16px;
     }
 
@@ -308,8 +276,8 @@
       .header-inner {
         min-height: auto;
         padding: 14px 0;
-        align-items: flex-start;
         flex-direction: column;
+        align-items: flex-start;
         gap: 10px;
       }
 
@@ -318,49 +286,19 @@
         flex-wrap: wrap;
       }
 
-      .site-nav a {
-        padding-left: 8px;
-        padding-right: 8px;
-      }
+      .hero { padding: 60px 0 42px; }
 
-      .hero {
-        padding: 64px 0 48px;
-      }
+      .overview { padding-bottom: 52px; }
 
-      .hero h1 {
-        font-size: clamp(38px, 12vw, 54px);
-      }
-
-      .intro-section {
-        padding-bottom: 54px;
-      }
-
-      .intro-grid {
+      .overview-card {
         grid-template-columns: 1fr;
-      }
-
-      .footer-inner {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .footer-links {
-        justify-content: flex-start;
+        padding: 24px;
       }
     }
 
     @media (max-width: 480px) {
-      .info-card {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-badge {
-        margin-bottom: 16px;
-      }
-
-      .hero p {
-        font-size: 16px;
-      }
+      .points { grid-template-columns: 1fr; }
+      .hero p { font-size: 16px; }
     }
   </style>
 </head>
@@ -374,7 +312,7 @@
       </a>
 
       <nav class="site-nav" aria-label="Main navigation">
-        <a href="/">Home</a>
+        <a href="/" aria-current="page">Home</a>
         <a href="/tools.html">Tools</a>
         <a href="/about.html">About</a>
         <a href="/contact.html">Contact</a>
@@ -383,57 +321,56 @@
   </header>
 
   <main>
-    <section class="hero" aria-labelledby="hero-title">
+    <section class="hero" aria-labelledby="home-title">
       <div class="container hero-content">
-        <div class="hero-badge">Free browser-based tools</div>
+        <div class="eyebrow">Free browser-based tools</div>
 
-        <h1 id="hero-title">
+        <h1 id="home-title">
           Simple tools for <span>everyday digital tasks</span>
         </h1>
 
         <p>
-          Free online utilities designed to help with common writing,
-          text and everyday digital tasks. Use them directly in your
-          browser without installing software.
+          Free online utilities for common writing, text and other practical
+          digital tasks. Use them directly in your browser without installing software.
         </p>
 
-        <a class="button button-primary" href="/tools.html">
-          Explore All Tools
-        </a>
+        <a class="button" href="/tools.html">Explore All Tools</a>
       </div>
     </section>
 
-    <section class="intro-section" aria-labelledby="about-tools-title">
-      <div class="container intro-grid">
-        <div class="intro-copy">
-          <p class="section-kicker">Built for everyday use</p>
-          <h2 id="about-tools-title">Useful tools without unnecessary complexity</h2>
-          <p>
-            The collection focuses on practical browser-based utilities
-            that are simple to access, easy to understand and useful for
-            everyday digital work.
-          </p>
-        </div>
-
-        <div class="info-card" aria-label="Key benefits">
-          <div class="info-item">
-            <strong>Free to use</strong>
-            <span>Access the available tools without a paid subscription.</span>
+    <section class="overview" aria-labelledby="overview-title">
+      <div class="container">
+        <div class="overview-card">
+          <div class="overview-copy">
+            <p class="section-label">What you can expect</p>
+            <h2>Practical tools, kept simple</h2>
+            <p>
+              The site is built around useful browser-based utilities that
+              focus on straightforward tasks, clear interfaces and quick access.
+              The collection will grow as additional tools are completed.
+            </p>
           </div>
 
-          <div class="info-item">
-            <strong>Browser-based</strong>
-            <span>Use the tools directly from a web browser.</span>
-          </div>
+          <div class="points">
+            <div class="point">
+              <strong>Free to use</strong>
+              <span>Available online without a paid subscription.</span>
+            </div>
 
-          <div class="info-item">
-            <strong>Simple workflow</strong>
-            <span>Designed to get common tasks done with fewer steps.</span>
-          </div>
+            <div class="point">
+              <strong>Browser-based</strong>
+              <span>Use the tools directly from your browser.</span>
+            </div>
 
-          <div class="info-item">
-            <strong>More tools ahead</strong>
-            <span>The collection can grow as new practical tools are added.</span>
+            <div class="point">
+              <strong>Simple interfaces</strong>
+              <span>Designed to keep common tasks clear and easy to follow.</span>
+            </div>
+
+            <div class="point">
+              <strong>Growing collection</strong>
+              <span>New practical tools can be added over time.</span>
+            </div>
           </div>
         </div>
       </div>
