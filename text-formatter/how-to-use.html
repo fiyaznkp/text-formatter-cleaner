@@ -16,7 +16,7 @@
 
   <meta
     name="description"
-    content="Learn how to use Text Formatter & Cleaner to change text case, clean formatting, and check basic text statistics."
+    content="Learn how to use Text Formatter & Cleaner to change text case, remove commas and extra spaces, copy results, and check word, character, sentence, and reading-time estimates."
   >
 
   <link
@@ -31,7 +31,7 @@
 
   <meta
     property="og:description"
-    content="Learn how to use the text formatting, cleaning, and text statistics features in Text Formatter & Cleaner."
+    content="A step-by-step guide to text case conversion, text cleaning, editing controls, and text statistics in Text Formatter & Cleaner."
   >
 
   <meta
@@ -166,6 +166,14 @@
 
   <style>
 
+    a:focus-visible,
+    button:focus-visible,
+    summary:focus-visible {
+      outline: 3px solid #6366f1;
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+
     body {
       font-family:
         'Inter',
@@ -197,7 +205,7 @@
 
         <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center text-white shadow-md">
 
-          <i class="fa-solid fa-font font-bold text-lg"></i>
+          <i class="fa-solid fa-font font-bold text-lg" aria-hidden="true"></i>
 
         </div>
 
@@ -213,7 +221,7 @@
 
           <div class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">
 
-            Simple tools for everyday text
+            Simple tool for everyday text
 
           </div>
 
@@ -301,10 +309,9 @@
 
           <p class="text-lg leading-8 text-slate-600 dark:text-slate-300">
 
-            Text Formatter & Cleaner provides simple tools for changing text
-            capitalization, cleaning common formatting problems, and checking
-            basic text statistics. Follow the steps below to get the most
-            from the tool.
+            Text Formatter & Cleaner helps you change text case, remove unwanted
+            spacing and commas, and check text statistics. Follow this guide
+            to learn how to use the main features.
 
           </p>
 
@@ -583,11 +590,11 @@
               <p class="text-sm leading-6 text-slate-500 dark:text-slate-400 mt-2">
 
                 Example:
-                <strong>the quick brown fox</strong>
+                <strong>the lord of the rings</strong>
 
                 becomes
 
-                <strong>The Quick Brown Fox</strong>.
+                <strong>The Lord of the Rings</strong>.
 
               </p>
 
