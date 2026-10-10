@@ -16,7 +16,7 @@
 
   <meta
     name="description"
-    content="Find answers to common questions about Text Formatter & Cleaner, including text case conversion, text cleaning, statistics, privacy, and how the online text tool works."
+    content="Get answers about Text Formatter & Cleaner, including text case conversion, removing commas and extra spaces, word and sentence counts, reading time, and privacy."
   >
 
   <link
@@ -64,6 +64,48 @@
     content="Answers to common questions about Text Formatter & Cleaner."
   >
 
+
+  <!-- FAQ structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is Text Formatter & Cleaner?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Text Formatter & Cleaner is a free online text formatting and cleaning tool. It provides features for changing text capitalization, cleaning common formatting problems, and checking basic text statistics."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Text Formatter & Cleaner free to use?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The main text formatting and cleaning features are available on the website without requiring an account."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does the sentence count show?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sentence count estimates the number of sentences detected in the text currently entered in the editor."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is my text uploaded to a server?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The main formatting operations are designed to run directly in the browser. For complete information about website analytics, browser storage, and other practices, please review the Privacy Policy."
+        }
+      }
+    ]
+  }
+  </script>
 
   <!-- Google Analytics -->
 
@@ -188,6 +230,14 @@
 
     }
 
+    a:focus-visible,
+    button:focus-visible,
+    details summary:focus-visible {
+      outline: 3px solid #60a5fa;
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+
   </style>
 
 </head>
@@ -229,7 +279,7 @@
 
           <div class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">
 
-            Simple tools for everyday text
+            Simple tool for everyday text
 
           </div>
 
@@ -383,9 +433,8 @@
 
               <div class="px-5 pb-5 text-sm leading-7 text-slate-600 dark:text-slate-300">
 
-                Yes. The main text formatting and cleaning tools are
-                available directly through the website without requiring
-                an account.
+                Yes. The main text formatting and cleaning features are available
+                on the website without requiring an account.
 
               </div>
 
@@ -747,6 +796,30 @@
 
                 Character count shows the total number of characters
                 currently present in the editor.
+
+              </div>
+
+            </details>
+
+
+            <!-- Sentence Count -->
+            <details class="group border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+
+              <summary class="flex items-center justify-between gap-4 p-5 font-semibold text-slate-900 dark:text-white">
+
+                <span>
+                  What does the sentence count show?
+                </span>
+
+                <i class="fa-solid fa-chevron-down text-sm text-slate-400 transition-transform group-open:rotate-180"></i>
+
+              </summary>
+
+
+              <div class="px-5 pb-5 text-sm leading-7 text-slate-600 dark:text-slate-300">
+
+                Sentence count estimates the number of sentences detected
+                in the text currently entered in the editor.
 
               </div>
 
