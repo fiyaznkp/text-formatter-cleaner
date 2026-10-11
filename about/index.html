@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,8 +19,10 @@
   <meta name="twitter:title" content="About — Fiyaz NKP">
   <meta name="twitter:description" content="Practical online tools designed to simplify everyday digital tasks.">
 
+  <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6996551399751321" crossorigin="anonymous"></script>
 
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -38,36 +39,47 @@
       --accent: #315cf5;
       --accent-hover: #2448d8;
       --accent-soft: #eaf0ff;
-      --header-bg: rgba(255,255,255,.9);
-      --shadow: 0 18px 55px rgba(22,39,82,.07);
+      --header-bg: rgba(255, 255, 255, 0.9);
+      --shadow: 0 18px 55px rgba(22, 39, 82, 0.07);
     }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
-      margin: 0;
-      min-height: 100vh;
       display: flex;
       flex-direction: column;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system,
-        BlinkMacSystemFont, "Segoe UI", sans-serif;
+      min-height: 100vh;
+      margin: 0;
+      background:
+        radial-gradient(ellipse at 50% -18%, rgba(49, 92, 245, 0.11), transparent 38%),
+        var(--bg);
       color: var(--text);
-      background: radial-gradient(
-        ellipse at 50% -18%,
-        rgba(49,92,245,.11),
-        transparent 38%
-      ), var(--bg);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
 
-    a { color: inherit; text-decoration: none; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
 
     .container {
       width: min(1120px, calc(100% - 40px));
       margin: 0 auto;
     }
+
+    /* Header and navigation */
 
     .site-header {
       position: sticky;
@@ -79,8 +91,8 @@
     }
 
     .header-inner {
-      min-height: 74px;
       display: flex;
+      min-height: 74px;
       align-items: center;
       justify-content: space-between;
       gap: 24px;
@@ -91,23 +103,26 @@
       align-items: center;
       gap: 11px;
       font-weight: 800;
-      letter-spacing: -.035em;
+      letter-spacing: -0.035em;
     }
 
     .brand-mark {
+      display: grid;
       width: 38px;
       height: 38px;
-      display: grid;
+      flex-shrink: 0;
       place-items: center;
       border-radius: 12px;
-      color: #fff;
+      background: linear-gradient(145deg, #4777ff, #2849d8);
+      box-shadow: 0 8px 20px rgba(49, 92, 245, 0.22);
+      color: #ffffff;
       font-size: 17px;
       font-weight: 800;
-      background: linear-gradient(145deg,#4777ff,#2849d8);
-      box-shadow: 0 8px 20px rgba(49,92,245,.22);
     }
 
-    .site-name { font-size: 18px; }
+    .site-name {
+      font-size: 18px;
+    }
 
     .site-nav {
       display: flex;
@@ -121,40 +136,46 @@
       color: var(--muted);
       font-size: 13px;
       font-weight: 650;
-      transition: background .2s,color .2s;
+      transition: background 0.2s, color 0.2s;
     }
 
     .site-nav a:hover,
     .site-nav a:focus-visible,
     .site-nav a[aria-current="page"] {
-      color: var(--accent);
-      background: var(--accent-soft);
       outline: none;
+      background: var(--accent-soft);
+      color: var(--accent);
     }
 
     .theme-toggle {
+      display: grid;
       width: 40px;
       height: 40px;
-      display: grid;
+      flex-shrink: 0;
       place-items: center;
       border: 1px solid var(--border);
       border-radius: 12px;
       background: var(--surface);
       color: var(--text);
       cursor: pointer;
-      font: inherit;
       font-size: 16px;
     }
 
     .theme-toggle:hover,
     .theme-toggle:focus-visible {
-      outline: 3px solid rgba(49,92,245,.18);
+      outline: 3px solid rgba(49, 92, 245, 0.18);
       border-color: var(--accent);
     }
 
-    main { flex: 1; }
+    main {
+      flex: 1;
+    }
 
-    .hero { padding: 76px 0 46px; }
+    /* Hero */
+
+    .hero {
+      padding: 76px 0 46px;
+    }
 
     .hero-content {
       max-width: 850px;
@@ -170,39 +191,46 @@
       padding: 7px 12px;
       border: 1px solid #dce6ff;
       border-radius: 999px;
-      background: rgba(234,240,255,.85);
+      background: rgba(234, 240, 255, 0.85);
       color: #3154c9;
       font-size: 12px;
       font-weight: 750;
-      letter-spacing: .025em;
+      letter-spacing: 0.025em;
     }
 
     .eyebrow-dot {
       width: 7px;
       height: 7px;
+      flex-shrink: 0;
       border-radius: 50%;
       background: #315cf5;
     }
 
     h1 {
       margin: 0;
-      font-size: clamp(40px,6vw,66px);
+      font-size: clamp(40px, 6vw, 66px);
       line-height: 1.08;
-      letter-spacing: -.06em;
+      letter-spacing: -0.06em;
       font-weight: 800;
     }
 
-    h1 span { color: var(--accent); }
+    h1 span {
+      color: var(--accent);
+    }
 
     .hero-copy {
       max-width: 690px;
       margin: 22px auto 0;
       color: var(--muted);
-      font-size: clamp(16px,2vw,19px);
+      font-size: clamp(16px, 2vw, 19px);
       line-height: 1.8;
     }
 
-    .section { padding: 0 0 36px; }
+    /* Purpose section */
+
+    .section {
+      padding: 0 0 36px;
+    }
 
     .content-card {
       padding: 34px;
@@ -217,15 +245,15 @@
       color: var(--accent);
       font-size: 11px;
       font-weight: 800;
-      letter-spacing: .12em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
     }
 
     h2 {
       margin: 0;
-      font-size: clamp(25px,3vw,34px);
+      font-size: clamp(25px, 3vw, 34px);
       line-height: 1.25;
-      letter-spacing: -.045em;
+      letter-spacing: -0.045em;
     }
 
     .content-card > p:not(.section-label) {
@@ -235,9 +263,15 @@
       line-height: 1.85;
     }
 
-    .values-section { padding: 0 0 70px; }
+    /* Values section */
 
-    .section-heading { margin-bottom: 22px; }
+    .values-section {
+      padding: 0 0 70px;
+    }
+
+    .section-heading {
+      margin-bottom: 22px;
+    }
 
     .section-heading > p {
       max-width: 650px;
@@ -248,7 +282,7 @@
 
     .values-grid {
       display: grid;
-      grid-template-columns: repeat(3,minmax(0,1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 16px;
     }
 
@@ -257,7 +291,7 @@
       border: 1px solid var(--border);
       border-radius: 18px;
       background: var(--surface);
-      transition: transform .2s,border-color .2s;
+      transition: transform 0.2s, border-color 0.2s;
     }
 
     .value-card:hover {
@@ -266,9 +300,9 @@
     }
 
     .value-icon {
+      display: grid;
       width: 42px;
       height: 42px;
-      display: grid;
       place-items: center;
       margin-bottom: 17px;
       border-radius: 13px;
@@ -281,7 +315,7 @@
     .value-card h3 {
       margin: 0;
       font-size: 16px;
-      letter-spacing: -.02em;
+      letter-spacing: -0.02em;
     }
 
     .value-card p {
@@ -291,7 +325,11 @@
       line-height: 1.8;
     }
 
-    .cta-section { padding: 0 0 76px; }
+    /* Call to action */
+
+    .cta-section {
+      padding: 0 0 76px;
+    }
 
     .cta-card {
       padding: 38px;
@@ -302,7 +340,9 @@
       text-align: center;
     }
 
-    .cta-card h2 { font-size: clamp(25px,3vw,32px); }
+    .cta-card h2 {
+      font-size: clamp(25px, 3vw, 32px);
+    }
 
     .cta-card p {
       max-width: 580px;
@@ -313,8 +353,8 @@
     }
 
     .button {
-      min-height: 48px;
       display: inline-flex;
+      min-height: 48px;
       align-items: center;
       justify-content: center;
       gap: 9px;
@@ -322,19 +362,21 @@
       border: 1px solid transparent;
       border-radius: 12px;
       background: var(--accent);
-      color: #fff;
+      box-shadow: 0 9px 22px rgba(49, 92, 245, 0.18);
+      color: #ffffff;
       font-size: 14px;
       font-weight: 750;
-      box-shadow: 0 9px 22px rgba(49,92,245,.18);
-      transition: transform .2s,background .2s;
+      transition: transform 0.2s, background 0.2s;
     }
 
     .button:hover,
     .button:focus-visible {
-      background: var(--accent-hover);
-      transform: translateY(-2px);
       outline: none;
+      transform: translateY(-2px);
+      background: var(--accent-hover);
     }
+
+    /* Footer */
 
     .site-footer {
       border-top: 1px solid var(--border);
@@ -342,14 +384,17 @@
     }
 
     .footer-inner {
-      padding: 25px 0;
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 12px;
+      padding: 25px 0;
     }
 
-    .footer-brand { font-size: 13px; font-weight: 800; }
+    .footer-brand {
+      font-size: 13px;
+      font-weight: 800;
+    }
 
     .footer-links {
       display: flex;
@@ -365,8 +410,8 @@
 
     .footer-links a:hover,
     .footer-links a:focus-visible {
-      color: var(--accent);
       outline: none;
+      color: var(--accent);
     }
 
     .copyright {
@@ -374,6 +419,8 @@
       font-size: 11px;
       text-align: center;
     }
+
+    /* Dark theme */
 
     body.theme-dark {
       color-scheme: dark;
@@ -386,28 +433,30 @@
       --accent: #7c9cff;
       --accent-hover: #a2b8ff;
       --accent-soft: #1b2a4c;
-      --header-bg: rgba(10,16,32,.92);
-      --shadow: 0 18px 55px rgba(0,0,0,.22);
-      background: radial-gradient(
-        ellipse at 50% -18%,
-        rgba(91,125,255,.13),
-        transparent 38%
-      ), var(--bg);
+      --header-bg: rgba(10, 16, 32, 0.92);
+      --shadow: 0 18px 55px rgba(0, 0, 0, 0.22);
+      background:
+        radial-gradient(ellipse at 50% -18%, rgba(91, 125, 255, 0.13), transparent 38%),
+        var(--bg);
     }
 
     body.theme-dark .eyebrow {
-      background: #17264a;
       border-color: #2b3d67;
+      background: #17264a;
       color: #b9c9ff;
     }
 
-    body.theme-dark .eyebrow-dot { background: #91aaff; }
+    body.theme-dark .eyebrow-dot {
+      background: #91aaff;
+    }
+
+    /* Responsive layout */
 
     @media (max-width: 850px) {
       .header-inner {
         min-height: auto;
-        padding: 14px 0;
         flex-wrap: wrap;
+        padding: 14px 0;
       }
 
       .site-nav {
@@ -416,33 +465,84 @@
         flex-wrap: wrap;
       }
 
-      .theme-toggle { margin-left: auto; }
+      .theme-toggle {
+        margin-left: auto;
+      }
 
-      .hero { padding-top: 60px; }
+      .hero {
+        padding-top: 60px;
+      }
 
-      .values-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+      .values-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
     }
 
     @media (max-width: 560px) {
-      .container { width: min(100% - 28px,520px); }
-      .site-name { font-size: 16px; }
-      .site-nav a { padding: 7px 9px; font-size: 12px; }
-      .hero { padding: 48px 0 36px; }
-      h1 { font-size: clamp(38px,10vw,52px); }
-      .hero-copy { font-size: 15px; }
-      .content-card { padding: 23px; border-radius: 20px; }
-      .values-grid { grid-template-columns: 1fr; }
-      .value-card { padding: 21px; }
-      .values-section { padding-bottom: 52px; }
-      .cta-section { padding-bottom: 55px; }
-      .cta-card { padding: 27px 20px; }
+      .container {
+        width: min(calc(100% - 28px), 520px);
+      }
+
+      .site-name {
+        font-size: 16px;
+      }
+
+      .site-nav a {
+        padding: 7px 9px;
+        font-size: 12px;
+      }
+
+      .hero {
+        padding: 48px 0 36px;
+      }
+
+      h1 {
+        font-size: clamp(38px, 10vw, 52px);
+      }
+
+      .hero-copy {
+        font-size: 15px;
+      }
+
+      .content-card {
+        padding: 23px;
+        border-radius: 20px;
+      }
+
+      .values-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .value-card {
+        padding: 21px;
+      }
+
+      .values-section {
+        padding-bottom: 52px;
+      }
+
+      .cta-section {
+        padding-bottom: 55px;
+      }
+
+      .cta-card {
+        padding: 27px 20px;
+      }
     }
 
+    /* Respect reduced-motion preferences */
+
     @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *,*::before,*::after {
-        transition-duration: .01ms !important;
-        animation-duration: .01ms !important;
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
       }
     }
   </style>
@@ -463,22 +563,30 @@
         <a href="/contact/">Contact</a>
       </nav>
 
-      <button class="theme-toggle" id="themeToggle" type="button"
-        aria-label="Switch to dark mode" title="Switch to dark mode">
+      <button
+        class="theme-toggle"
+        id="themeToggle"
+        type="button"
+        aria-label="Switch to dark mode"
+        title="Switch to dark mode"
+      >
         <span id="themeIcon" aria-hidden="true">🌙</span>
       </button>
     </div>
   </header>
 
   <main>
-    <section class="hero">
+    <!-- About hero -->
+    <section class="hero" aria-labelledby="about-title">
       <div class="container hero-content">
         <div class="eyebrow">
           <span class="eyebrow-dot" aria-hidden="true"></span>
-          ABOUT FIYAZ NKP
+          About Fiyaz NKP
         </div>
 
-        <h1>Making everyday digital tasks <span>simpler.</span></h1>
+        <h1 id="about-title">
+          Making everyday digital tasks <span>simpler.</span>
+        </h1>
 
         <p class="hero-copy">
           Fiyaz NKP is a growing collection of practical online tools
@@ -488,11 +596,13 @@
       </div>
     </section>
 
-    <section class="section">
+    <!-- Purpose -->
+    <section class="section" aria-labelledby="purpose-title">
       <div class="container">
         <article class="content-card">
-          <p class="section-label">OUR PURPOSE</p>
-          <h2>Useful tools, without the extra complexity</h2>
+          <p class="section-label">Our Purpose</p>
+
+          <h2 id="purpose-title">Useful tools, without the extra complexity</h2>
 
           <p>
             Everyday digital tasks should not have to be complicated.
@@ -517,11 +627,13 @@
       </div>
     </section>
 
-    <section class="values-section">
+    <!-- Values -->
+    <section class="values-section" aria-labelledby="values-title">
       <div class="container">
         <div class="section-heading">
-          <p class="section-label">WHAT MATTERS</p>
-          <h2>A practical approach to useful tools</h2>
+          <p class="section-label">What Matters</p>
+          <h2 id="values-title">A practical approach to useful tools</h2>
+
           <p>
             Every tool should have a clear purpose and make a task
             easier to complete.
@@ -559,14 +671,17 @@
       </div>
     </section>
 
-    <section class="cta-section">
+    <!-- Call to action -->
+    <section class="cta-section" aria-labelledby="cta-title">
       <div class="container">
         <div class="cta-card">
-          <h2>Explore the available tools</h2>
+          <h2 id="cta-title">Explore the available tools</h2>
+
           <p>
             Start with the tools currently available on Fiyaz NKP
             and discover practical ways to simplify everyday digital work.
           </p>
+
           <a class="button" href="/tools/">
             Explore Tools <span aria-hidden="true">→</span>
           </a>
@@ -594,11 +709,14 @@
     </div>
   </footer>
 
+  <!-- Theme toggle and current year -->
   <script>
     (function () {
       const body = document.body;
       const button = document.getElementById("themeToggle");
       const icon = document.getElementById("themeIcon");
+      const yearElement = document.getElementById("currentYear");
+
       let savedTheme = null;
 
       try {
@@ -609,12 +727,15 @@
 
       function applyTheme(theme) {
         const dark = theme === "dark";
+
         body.classList.toggle("theme-dark", dark);
         icon.textContent = dark ? "☀️" : "🌙";
+
         button.setAttribute(
           "aria-label",
           dark ? "Switch to light mode" : "Switch to dark mode"
         );
+
         button.setAttribute(
           "title",
           dark ? "Switch to light mode" : "Switch to dark mode"
@@ -631,14 +752,13 @@
         try {
           localStorage.setItem("fiyaznkp-theme", nextTheme);
         } catch (error) {
-          // Theme switching still works if storage is unavailable.
+          // Theme switching remains available if browser storage is unavailable.
         }
 
         applyTheme(nextTheme);
       });
 
-      document.getElementById("currentYear").textContent =
-        new Date().getFullYear();
+      yearElement.textContent = new Date().getFullYear();
     })();
   </script>
 </body>
