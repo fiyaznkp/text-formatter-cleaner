@@ -1,1 +1,730 @@
 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Contact — Fiyaz NKP</title>
+  <meta name="description" content="Contact Fiyaz NKP for questions, feedback, suggestions, or issues related to our online tools.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://fiyaznkp.com/contact/">
+
+  <meta property="og:title" content="Contact — Fiyaz NKP">
+  <meta property="og:description" content="Get in touch with Fiyaz NKP for feedback, questions, and tool-related support.">
+  <meta property="og:url" content="https://fiyaznkp.com/contact/">
+  <meta property="og:type" content="website">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Contact — Fiyaz NKP">
+  <meta name="twitter:description" content="Contact Fiyaz NKP with your questions and feedback.">
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6996551399751321" crossorigin="anonymous"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f7f9fd;
+      --surface: #ffffff;
+      --surface-soft: #f0f5ff;
+      --text: #111827;
+      --muted: #667085;
+      --border: #e5eaf2;
+      --accent: #315cf5;
+      --accent-hover: #2448d8;
+      --accent-soft: #eaf0ff;
+      --header-bg: rgba(255,255,255,.9);
+      --shadow: 0 18px 55px rgba(22,39,82,.07);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system,
+        BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background: radial-gradient(
+        ellipse at 50% -18%,
+        rgba(49,92,245,.11),
+        transparent 38%
+      ), var(--bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: var(--header-bg);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(16px);
+    }
+
+    .header-inner {
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      font-weight: 800;
+      letter-spacing: -.035em;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      color: #fff;
+      font-size: 17px;
+      font-weight: 800;
+      background: linear-gradient(145deg,#4777ff,#2849d8);
+      box-shadow: 0 8px 20px rgba(49,92,245,.22);
+    }
+
+    .site-name { font-size: 18px; }
+
+    .site-nav {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .site-nav a {
+      padding: 9px 12px;
+      border-radius: 10px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 650;
+      transition: background .2s,color .2s;
+    }
+
+    .site-nav a:hover,
+    .site-nav a:focus-visible,
+    .site-nav a[aria-current="page"] {
+      color: var(--accent);
+      background: var(--accent-soft);
+      outline: none;
+    }
+
+    .theme-toggle {
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--surface);
+      color: var(--text);
+      cursor: pointer;
+      font: inherit;
+      font-size: 16px;
+    }
+
+    .theme-toggle:hover,
+    .theme-toggle:focus-visible {
+      outline: 3px solid rgba(49,92,245,.18);
+      border-color: var(--accent);
+    }
+
+    main { flex: 1; }
+
+    .hero { padding: 68px 0 38px; }
+
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 21px;
+      padding: 7px 12px;
+      border: 1px solid #dce6ff;
+      border-radius: 999px;
+      background: rgba(234,240,255,.85);
+      color: #3154c9;
+      font-size: 12px;
+      font-weight: 750;
+      letter-spacing: .025em;
+    }
+
+    .eyebrow-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #315cf5;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(40px,6vw,64px);
+      line-height: 1.08;
+      letter-spacing: -.06em;
+      font-weight: 800;
+    }
+
+    h1 span { color: var(--accent); }
+
+    .hero-copy {
+      max-width: 650px;
+      margin: 20px auto 0;
+      color: var(--muted);
+      font-size: clamp(16px,2vw,18px);
+      line-height: 1.8;
+    }
+
+    .contact-section { padding: 10px 0 76px; }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .contact-info,
+    .contact-form-card {
+      padding: 30px;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .section-label {
+      margin: 0 0 10px;
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(24px,3vw,31px);
+      line-height: 1.25;
+      letter-spacing: -.045em;
+    }
+
+    .contact-info > p:not(.section-label) {
+      margin: 14px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.85;
+    }
+
+    .info-list {
+      display: grid;
+      gap: 16px;
+      margin-top: 28px;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 13px;
+    }
+
+    .info-icon {
+      flex: 0 0 40px;
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 17px;
+    }
+
+    .info-item h3 {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .info-item p {
+      margin: 4px 0 0;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    .contact-form-card h2 { font-size: 25px; }
+
+    .form-intro {
+      margin: 9px 0 23px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 17px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .field-full { grid-column: 1 / -1; }
+
+    .field label {
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      min-width: 0;
+      padding: 12px 13px;
+      border: 1px solid var(--border);
+      border-radius: 11px;
+      background: var(--bg);
+      color: var(--text);
+      font: inherit;
+      font-size: 13px;
+      outline: none;
+      transition: border-color .2s,box-shadow .2s;
+    }
+
+    .field input,
+    .field select { min-height: 46px; }
+
+    .field textarea {
+      min-height: 145px;
+      resize: vertical;
+      line-height: 1.7;
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(49,92,245,.12);
+    }
+
+    .field input::placeholder,
+    .field textarea::placeholder {
+      color: var(--muted);
+      opacity: .8;
+    }
+
+    .button {
+      min-height: 47px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 0 20px;
+      border: 1px solid transparent;
+      border-radius: 12px;
+      background: var(--accent);
+      color: #fff;
+      font: inherit;
+      font-size: 13px;
+      font-weight: 750;
+      cursor: pointer;
+      box-shadow: 0 9px 22px rgba(49,92,245,.18);
+      transition: transform .2s,background .2s;
+    }
+
+    .button:hover,
+    .button:focus-visible {
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+      outline: none;
+    }
+
+    .form-submit { margin-top: 19px; }
+
+    .form-notice {
+      margin: 13px 0 0;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.7;
+    }
+
+    .site-footer {
+      border-top: 1px solid var(--border);
+      background: var(--header-bg);
+    }
+
+    .footer-inner {
+      padding: 25px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .footer-brand { font-size: 13px; font-weight: 800; }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px 18px;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .footer-links a:hover,
+    .footer-links a:focus-visible {
+      color: var(--accent);
+      outline: none;
+    }
+
+    .copyright {
+      color: var(--muted);
+      font-size: 11px;
+      text-align: center;
+    }
+
+    body.theme-dark {
+      color-scheme: dark;
+      --bg: #0a1020;
+      --surface: #101a2d;
+      --surface-soft: #14213b;
+      --text: #edf2ff;
+      --muted: #9aa9c1;
+      --border: #26344c;
+      --accent: #7c9cff;
+      --accent-hover: #a2b8ff;
+      --accent-soft: #1b2a4c;
+      --header-bg: rgba(10,16,32,.92);
+      --shadow: 0 18px 55px rgba(0,0,0,.22);
+      background: radial-gradient(
+        ellipse at 50% -18%,
+        rgba(91,125,255,.13),
+        transparent 38%
+      ), var(--bg);
+    }
+
+    body.theme-dark .eyebrow {
+      background: #17264a;
+      border-color: #2b3d67;
+      color: #b9c9ff;
+    }
+
+    body.theme-dark .eyebrow-dot { background: #91aaff; }
+
+    @media (max-width: 850px) {
+      .header-inner {
+        min-height: auto;
+        padding: 14px 0;
+        flex-wrap: wrap;
+      }
+
+      .site-nav {
+        order: 3;
+        width: 100%;
+        flex-wrap: wrap;
+      }
+
+      .theme-toggle { margin-left: auto; }
+
+      .contact-layout { grid-template-columns: 1fr; }
+
+      .contact-info,
+      .contact-form-card { padding: 25px; }
+    }
+
+    @media (max-width: 560px) {
+      .container { width: min(100% - 28px,520px); }
+      .site-name { font-size: 16px; }
+      .site-nav a { padding: 7px 9px; font-size: 12px; }
+      .hero { padding: 48px 0 30px; }
+      h1 { font-size: clamp(38px,10vw,52px); }
+      .hero-copy { font-size: 15px; }
+      .contact-section { padding-bottom: 55px; }
+      .contact-info,
+      .contact-form-card { padding: 21px; border-radius: 18px; }
+      .form-grid { grid-template-columns: 1fr; }
+      .field-full { grid-column: auto; }
+      .form-submit { width: 100%; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *,*::before,*::after {
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/" aria-label="Fiyaz NKP home">
+        <span class="brand-mark" aria-hidden="true">F</span>
+        <span class="site-name">Fiyaz NKP</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/">Home</a>
+        <a href="/tools/">Tools</a>
+        <a href="/about/">About</a>
+        <a href="/contact/" aria-current="page">Contact</a>
+      </nav>
+
+      <button class="theme-toggle" id="themeToggle" type="button"
+        aria-label="Switch to dark mode" title="Switch to dark mode">
+        <span id="themeIcon" aria-hidden="true">🌙</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-content">
+        <div class="eyebrow">
+          <span class="eyebrow-dot" aria-hidden="true"></span>
+          GET IN TOUCH
+        </div>
+
+        <h1>Let's start a <span>conversation.</span></h1>
+
+        <p class="hero-copy">
+          Have a question about one of our tools, found an issue, or
+          have an idea for an improvement? We'd welcome your feedback.
+        </p>
+      </div>
+    </section>
+
+    <section class="contact-section">
+      <div class="container contact-layout">
+
+        <aside class="contact-info">
+          <p class="section-label">CONTACT INFORMATION</p>
+          <h2>How can we help?</h2>
+
+          <p>
+            Use the contact form to share a question, report a problem,
+            suggest a feature, or send feedback about Fiyaz NKP.
+          </p>
+
+          <div class="info-list">
+            <div class="info-item">
+              <div class="info-icon" aria-hidden="true">✉</div>
+              <div>
+                <h3>General enquiries</h3>
+                <p>Questions and feedback about the website and its tools.</p>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="info-icon" aria-hidden="true">⚙</div>
+              <div>
+                <h3>Tool support</h3>
+                <p>Let us know if a tool isn't behaving as expected.</p>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="info-icon" aria-hidden="true">✦</div>
+              <div>
+                <h3>Suggestions</h3>
+                <p>Share ideas for useful tools or improvements.</p>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        <section class="contact-form-card">
+          <h2>Send a message</h2>
+          <p class="form-intro">
+            Fill in the details below to prepare your message.
+          </p>
+
+          <form id="contactForm">
+            <div class="form-grid">
+              <div class="field">
+                <label for="name">Your name</label>
+                <input id="name" name="name" type="text"
+                  placeholder="Enter your name" autocomplete="name" required>
+              </div>
+
+              <div class="field">
+                <label for="email">Email address</label>
+                <input id="email" name="email" type="email"
+                  placeholder="you@example.com" autocomplete="email" required>
+              </div>
+
+              <div class="field field-full">
+                <label for="subject">Subject</label>
+                <select id="subject" name="subject" required>
+                  <option value="" disabled selected>Select a subject</option>
+                  <option value="General enquiry">General enquiry</option>
+                  <option value="Tool issue">Report a tool issue</option>
+                  <option value="Feature suggestion">Feature suggestion</option>
+                  <option value="Feedback">Website feedback</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+
+              <div class="field field-full">
+                <label for="message">Your message</label>
+                <textarea id="message" name="message"
+                  placeholder="How can we help you?" required></textarea>
+              </div>
+            </div>
+
+            <button class="button form-submit" type="submit">
+              Prepare Email <span aria-hidden="true">→</span>
+            </button>
+
+            <p class="form-notice" id="formNotice" aria-live="polite">
+              This form opens your email application with your message.
+              It does not send anything automatically.
+            </p>
+          </form>
+        </section>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">Fiyaz NKP</div>
+
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="/">Home</a>
+        <a href="/tools/">Tools</a>
+        <a href="/about/">About</a>
+        <a href="/contact/">Contact</a>
+        <a href="/privacy/">Privacy Policy</a>
+        <a href="/terms/">Terms of Use</a>
+      </nav>
+
+      <div class="copyright">
+        © <span id="currentYear">2026</span> Fiyaz NKP. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const body = document.body;
+      const button = document.getElementById("themeToggle");
+      const icon = document.getElementById("themeIcon");
+      let savedTheme = null;
+
+      try {
+        savedTheme = localStorage.getItem("fiyaznkp-theme");
+      } catch (error) {
+        savedTheme = null;
+      }
+
+      function applyTheme(theme) {
+        const dark = theme === "dark";
+        body.classList.toggle("theme-dark", dark);
+        icon.textContent = dark ? "☀️" : "🌙";
+        button.setAttribute(
+          "aria-label",
+          dark ? "Switch to light mode" : "Switch to dark mode"
+        );
+        button.setAttribute(
+          "title",
+          dark ? "Switch to light mode" : "Switch to dark mode"
+        );
+      }
+
+      applyTheme(savedTheme === "dark" ? "dark" : "light");
+
+      button.addEventListener("click", function () {
+        const nextTheme = body.classList.contains("theme-dark")
+          ? "light"
+          : "dark";
+
+        try {
+          localStorage.setItem("fiyaznkp-theme", nextTheme);
+        } catch (error) {
+          // Theme switching still works if storage is unavailable.
+        }
+
+        applyTheme(nextTheme);
+      });
+
+      document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
+
+      document.getElementById("contactForm").addEventListener(
+        "submit",
+        function (event) {
+          event.preventDefault();
+
+          const name = document.getElementById("name").value.trim();
+          const email = document.getElementById("email").value.trim();
+          const subject = document.getElementById("subject").value;
+          const message = document.getElementById("message").value.trim();
+
+          if (!name || !email || !subject || !message) {
+            return;
+          }
+
+          const emailSubject = encodeURIComponent(
+            "[Fiyaz NKP] " + subject
+          );
+
+          const emailBody = encodeURIComponent(
+            "Name: " + name + "\n" +
+            "Email: " + email + "\n\n" +
+            "Message:\n" + message
+          );
+
+          const recipient = "bestdeal4indians@gmail.com";
+
+          document.getElementById("formNotice").textContent =
+            "Opening your email application...";
+
+          window.location.href =
+            "mailto:" + recipient +
+            "?subject=" + emailSubject +
+            "&body=" + emailBody;
+        }
+      );
+    })();
+  </script>
+</body>
+</html>
