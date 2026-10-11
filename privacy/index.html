@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Privacy Policy | Fiyaz NKP</title>
-  <meta name="description" content="Learn how Fiyaz NKP handles information, browser storage, cookies, advertising, and contact enquiries.">
+  <meta name="description" content="Learn how Fiyaz NKP handles information, browser storage, advertising, and contact enquiries.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://fiyaznkp.com/privacy/">
 
@@ -17,7 +17,7 @@
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Privacy Policy | Fiyaz NKP">
-  <meta name="twitter:description" content="Learn about privacy, cookies, advertising, and information handling on Fiyaz NKP.">
+  <meta name="twitter:description" content="Learn how information may be handled on Fiyaz NKP.">
 
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6996551399751321" crossorigin="anonymous"></script>
 
@@ -35,14 +35,18 @@
       --muted: #667085;
       --border: #e5eaf2;
       --accent: #315cf5;
-      --accent-hover: #2448d8;
       --accent-soft: #eaf0ff;
       --header-bg: rgba(255,255,255,.9);
       --shadow: 0 18px 55px rgba(22,39,82,.07);
     }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
@@ -52,21 +56,28 @@
       font-family: Inter, ui-sans-serif, system-ui, -apple-system,
         BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--text);
-      background: radial-gradient(
-        ellipse at 50% -18%,
-        rgba(49,92,245,.11),
-        transparent 38%
-      ), var(--bg);
+      background:
+        radial-gradient(
+          ellipse at 50% -18%,
+          rgba(49,92,245,.11),
+          transparent 38%
+        ),
+        var(--bg);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
 
-    a { color: inherit; text-decoration: none; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
     .container {
       width: min(1120px, calc(100% - 40px));
       margin: 0 auto;
     }
+
+    /* Header */
 
     .site-header {
       position: sticky;
@@ -102,11 +113,13 @@
       color: #fff;
       font-size: 17px;
       font-weight: 800;
-      background: linear-gradient(145deg,#4777ff,#2849d8);
+      background: linear-gradient(145deg, #4777ff, #2849d8);
       box-shadow: 0 8px 20px rgba(49,92,245,.22);
     }
 
-    .site-name { font-size: 18px; }
+    .site-name {
+      font-size: 18px;
+    }
 
     .site-nav {
       display: flex;
@@ -120,12 +133,11 @@
       color: var(--muted);
       font-size: 13px;
       font-weight: 650;
-      transition: background .2s,color .2s;
+      transition: background .2s, color .2s;
     }
 
     .site-nav a:hover,
-    .site-nav a:focus-visible,
-    .site-nav a[aria-current="page"] {
+    .site-nav a:focus-visible {
       color: var(--accent);
       background: var(--accent-soft);
       outline: none;
@@ -136,6 +148,7 @@
       height: 40px;
       display: grid;
       place-items: center;
+      flex-shrink: 0;
       border: 1px solid var(--border);
       border-radius: 12px;
       background: var(--surface);
@@ -151,12 +164,18 @@
       border-color: var(--accent);
     }
 
-    main { flex: 1; }
+    main {
+      flex: 1;
+    }
 
-    .hero { padding: 65px 0 35px; }
+    /* Intro */
+
+    .hero {
+      padding: 58px 0 32px;
+    }
 
     .hero-content {
-      max-width: 820px;
+      max-width: 760px;
       margin: 0 auto;
       text-align: center;
     }
@@ -165,7 +184,7 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
       padding: 7px 12px;
       border: 1px solid #dce6ff;
       border-radius: 999px;
@@ -185,43 +204,50 @@
 
     h1 {
       margin: 0;
-      font-size: clamp(39px,5.5vw,60px);
-      line-height: 1.1;
-      letter-spacing: -.06em;
+      font-size: clamp(38px, 5.5vw, 56px);
+      line-height: 1.12;
+      letter-spacing: -.055em;
       font-weight: 800;
     }
 
-    h1 span { color: var(--accent); }
+    h1 span {
+      color: var(--accent);
+    }
 
     .hero-copy {
-      max-width: 680px;
-      margin: 18px auto 0;
+      max-width: 620px;
+      margin: 17px auto 0;
       color: var(--muted);
-      font-size: 16px;
+      font-size: 15px;
       line-height: 1.8;
     }
 
-    .policy-section { padding: 10px 0 76px; }
+    /* Policy layout */
+
+    .policy-section {
+      padding: 10px 0 72px;
+    }
 
     .policy-layout {
       display: grid;
-      grid-template-columns: 250px minmax(0,1fr);
+      grid-template-columns: 225px minmax(0, 1fr);
       gap: 24px;
       align-items: start;
     }
 
     .policy-nav,
     .policy-content {
+      min-width: 0;
       border: 1px solid var(--border);
-      border-radius: 20px;
+      border-radius: 18px;
       background: var(--surface);
       box-shadow: var(--shadow);
     }
 
     .policy-nav {
-      padding: 20px;
       position: sticky;
       top: 95px;
+      padding: 19px;
     }
 
     .policy-nav h2 {
@@ -246,11 +272,13 @@
       outline: none;
     }
 
-    .policy-content { padding: 32px; }
+    .policy-content {
+      padding: 30px;
+    }
 
     .policy-updated {
       display: inline-block;
-      margin-bottom: 24px;
+      margin-bottom: 25px;
       padding: 7px 11px;
       border: 1px solid var(--border);
       border-radius: 9px;
@@ -259,22 +287,22 @@
     }
 
     .policy-block {
-      padding: 0 0 24px;
-      margin: 0 0 24px;
+      padding-bottom: 22px;
+      margin-bottom: 22px;
       border-bottom: 1px solid var(--border);
-      scroll-margin-top: 105px;
+      scroll-margin-top: 100px;
     }
 
-    .policy-block:last-child {
-      margin-bottom: 0;
+    .policy-block:last-of-type {
       padding-bottom: 0;
+      margin-bottom: 0;
       border-bottom: 0;
     }
 
     .policy-block h2 {
-      margin: 0 0 11px;
-      font-size: 20px;
-      line-height: 1.35;
+      margin: 0 0 10px;
+      font-size: 19px;
+      line-height: 1.4;
       letter-spacing: -.025em;
     }
 
@@ -282,17 +310,21 @@
     .policy-block li {
       color: var(--muted);
       font-size: 13px;
-      line-height: 1.9;
+      line-height: 1.85;
     }
 
-    .policy-block p { margin: 9px 0 0; }
+    .policy-block p {
+      margin: 8px 0 0;
+    }
 
     .policy-block ul {
-      margin: 10px 0 0;
-      padding-left: 21px;
+      margin: 9px 0 0;
+      padding-left: 20px;
     }
 
-    .policy-block li { padding: 3px 0; }
+    .policy-block li {
+      padding: 3px 0;
+    }
 
     .policy-block a {
       color: var(--accent);
@@ -300,6 +332,8 @@
       text-underline-offset: 3px;
       overflow-wrap: anywhere;
     }
+
+    /* Footer */
 
     .site-footer {
       border-top: 1px solid var(--border);
@@ -314,7 +348,10 @@
       gap: 12px;
     }
 
-    .footer-brand { font-size: 13px; font-weight: 800; }
+    .footer-brand {
+      font-size: 13px;
+      font-weight: 800;
+    }
 
     .footer-links {
       display: flex;
@@ -340,6 +377,8 @@
       text-align: center;
     }
 
+    /* Dark theme */
+
     body.theme-dark {
       color-scheme: dark;
       --bg: #0a1020;
@@ -349,15 +388,16 @@
       --muted: #9aa9c1;
       --border: #26344c;
       --accent: #7c9cff;
-      --accent-hover: #a2b8ff;
       --accent-soft: #1b2a4c;
       --header-bg: rgba(10,16,32,.92);
       --shadow: 0 18px 55px rgba(0,0,0,.22);
-      background: radial-gradient(
-        ellipse at 50% -18%,
-        rgba(91,125,255,.13),
-        transparent 38%
-      ), var(--bg);
+      background:
+        radial-gradient(
+          ellipse at 50% -18%,
+          rgba(91,125,255,.13),
+          transparent 38%
+        ),
+        var(--bg);
     }
 
     body.theme-dark .eyebrow {
@@ -366,7 +406,11 @@
       color: #b9c9ff;
     }
 
-    body.theme-dark .eyebrow-dot { background: #91aaff; }
+    body.theme-dark .eyebrow-dot {
+      background: #91aaff;
+    }
+
+    /* Responsive */
 
     @media (max-width: 850px) {
       .header-inner {
@@ -381,40 +425,83 @@
         flex-wrap: wrap;
       }
 
-      .theme-toggle { margin-left: auto; }
+      .theme-toggle {
+        margin-left: auto;
+      }
 
-      .policy-layout { grid-template-columns: 1fr; }
+      .policy-layout {
+        grid-template-columns: 1fr;
+      }
 
       .policy-nav {
         position: static;
-        padding: 17px;
+        padding: 16px;
       }
 
       .policy-nav-links {
         display: grid;
-        grid-template-columns: repeat(2,minmax(0,1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 2px 8px;
       }
     }
 
     @media (max-width: 560px) {
-      .container { width: min(100% - 28px,520px); }
-      .site-name { font-size: 16px; }
-      .site-nav a { padding: 7px 9px; font-size: 12px; }
-      .hero { padding: 48px 0 30px; }
-      h1 { font-size: clamp(36px,9vw,48px); }
-      .hero-copy { font-size: 14px; }
-      .policy-section { padding-bottom: 55px; }
-      .policy-content { padding: 21px; border-radius: 17px; }
-      .policy-block h2 { font-size: 18px; }
+      .container {
+        width: min(100% - 28px, 520px);
+      }
+
+      .site-name {
+        font-size: 16px;
+      }
+
+      .site-nav a {
+        padding: 7px 9px;
+        font-size: 12px;
+      }
+
+      .hero {
+        padding: 43px 0 27px;
+      }
+
+      h1 {
+        font-size: clamp(36px, 9vw, 46px);
+      }
+
+      .hero-copy {
+        font-size: 14px;
+      }
+
+      .policy-section {
+        padding-bottom: 50px;
+      }
+
+      .policy-content {
+        padding: 21px;
+        border-radius: 16px;
+      }
+
+      .policy-block h2 {
+        font-size: 17px;
+      }
+
       .policy-block p,
-      .policy-block li { font-size: 12px; }
-      .policy-nav-links { grid-template-columns: 1fr; }
+      .policy-block li {
+        font-size: 12px;
+      }
+
+      .policy-nav-links {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *,*::before,*::after {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
         transition-duration: .01ms !important;
         animation-duration: .01ms !important;
       }
@@ -437,8 +524,13 @@
         <a href="/contact/">Contact</a>
       </nav>
 
-      <button class="theme-toggle" id="themeToggle" type="button"
-        aria-label="Switch to dark mode" title="Switch to dark mode">
+      <button
+        class="theme-toggle"
+        id="themeToggle"
+        type="button"
+        aria-label="Switch to dark mode"
+        title="Switch to dark mode"
+      >
         <span id="themeIcon" aria-hidden="true">🌙</span>
       </button>
     </div>
@@ -455,7 +547,7 @@
         <h1>Privacy <span>Policy</span></h1>
 
         <p class="hero-copy">
-          A clear overview of how information may be handled when you
+          This page explains how information may be handled when you
           visit Fiyaz NKP or use its online tools.
         </p>
       </div>
@@ -466,18 +558,15 @@
 
         <aside class="policy-nav">
           <h2>On this page</h2>
+
           <nav class="policy-nav-links" aria-label="Privacy policy sections">
-            <a href="#overview">Overview</a>
-            <a href="#information">Information</a>
+            <a href="#information">Information we handle</a>
             <a href="#tools">Online tools</a>
-            <a href="#storage">Cookies and storage</a>
-            <a href="#advertising">Advertising</a>
+            <a href="#cookies-advertising">Cookies and advertising</a>
             <a href="#third-party">Third-party services</a>
-            <a href="#security">Retention and security</a>
             <a href="#choices">Your choices</a>
             <a href="#children">Children's privacy</a>
-            <a href="#changes">Policy updates</a>
-            <a href="#contact">Contact</a>
+            <a href="#changes-contact">Updates and contact</a>
           </nav>
         </aside>
 
@@ -486,163 +575,151 @@
             Last updated: October 11, 2026
           </div>
 
-          <section class="policy-block" id="overview">
-            <h2>1. Overview</h2>
+          <section class="policy-block" id="information">
+            <h2>1. Information we handle</h2>
+
             <p>
               Fiyaz NKP, available at
               <a href="https://fiyaznkp.com/">fiyaznkp.com</a>,
-              provides online tools and related content. This policy
-              explains how information may be handled when you visit
-              the website, use its tools, or contact us.
+              provides online tools and related content.
+              The information involved depends on how you use
+              the website and its services.
             </p>
-          </section>
 
-          <section class="policy-block" id="information">
-            <h2>2. Information we handle</h2>
-            <p>
-              The information involved depends on how you use the website
-              and the services active on it.
-            </p>
             <ul>
               <li>
-                <strong>Contact messages:</strong> The current contact form
-                prepares an email in your email application. It does not
-                directly submit the message to our website server.
+                <strong>Contact enquiries:</strong>
+                The current contact form prepares an email in your
+                email application. It does not directly submit the
+                message to our website server.
               </li>
               <li>
-                <strong>Technical information:</strong> Hosting and other
-                providers may process information such as IP addresses,
-                browser details, request times, and diagnostic logs.
+                <strong>Technical information:</strong>
+                Hosting and other service providers may process
+                information such as IP addresses, browser details,
+                request times, and diagnostic logs.
               </li>
               <li>
-                <strong>Advertising information:</strong> Advertising
-                providers may use cookies or similar technologies, as
-                explained in the advertising section.
+                <strong>Advertising information:</strong>
+                Advertising services may use cookies or similar
+                technologies, as described below.
               </li>
             </ul>
+
             <p>
-              Please avoid entering sensitive or confidential information
-              into website forms or tools.
+              Please avoid including confidential or sensitive
+              information in contact messages or online tools
+              unless necessary.
             </p>
           </section>
 
           <section class="policy-block" id="tools">
-            <h2>3. Online tools</h2>
+            <h2>2. Online tools</h2>
+
             <p>
-              Some tools may process your input directly in your browser,
-              without needing to send it to our website server for the
-              tool's main function. This depends on how each tool works.
+              Some tools may process text directly in your browser
+              without sending it to our website server for their
+              main function. This depends on how each tool works.
             </p>
+
             <p>
-              Third-party scripts, browser extensions, and other services
-              may operate independently. Do not assume that every input
-              is confidential or that all processing happens locally.
+              Your device, browser extensions, hosting infrastructure,
+              and third-party scripts may operate independently.
+              Do not assume that every input is confidential or that
+              all processing happens locally.
             </p>
           </section>
 
-          <section class="policy-block" id="storage">
-            <h2>4. Cookies and browser storage</h2>
-            <p>
-              The website uses browser local storage to remember your
-              light or dark theme preference. This preference is stored
-              in your browser.
-            </p>
-            <p>
-              Third-party services, including advertising providers, may
-              use cookies or similar technologies for advertising,
-              measurement, security, or other service functions.
-            </p>
-            <p>
-              You can manage cookies through your browser settings.
-              Blocking cookies or local storage may affect some features.
-            </p>
-          </section>
+          <section class="policy-block" id="cookies-advertising">
+            <h2>3. Cookies, browser storage, and advertising</h2>
 
-          <section class="policy-block" id="advertising">
-            <h2>5. Advertising</h2>
+            <p>
+              The website uses browser local storage to remember
+              your light or dark theme preference.
+            </p>
+
             <p>
               Fiyaz NKP uses the Google AdSense advertising script.
-              Google and its partners may process information and use
-              cookies or similar technologies to deliver, measure, or
-              personalize advertisements, subject to applicable settings
-              and consent requirements.
+              Google and its advertising partners may use cookies or
+              similar technologies to deliver, measure, or personalize
+              advertisements, subject to applicable settings,
+              consent requirements, and law.
             </p>
+
             <p>
-              For more information, visit
-              <a href="https://policies.google.com/privacy"
-                target="_blank" rel="noopener noreferrer">Google's Privacy Policy</a>
-              and
+              You can manage cookies through your browser settings.
+              Where available, you can also review advertising
+              preferences through
               <a href="https://adssettings.google.com/"
                 target="_blank" rel="noopener noreferrer">Google Ads Settings</a>.
+              Blocking cookies or browser storage may affect some
+              website features or third-party services.
+            </p>
+
+            <p>
+              For more information about Google's data practices,
+              read
+              <a href="https://policies.google.com/privacy"
+                target="_blank" rel="noopener noreferrer">Google's Privacy Policy</a>.
             </p>
           </section>
 
           <section class="policy-block" id="third-party">
-            <h2>6. Third-party services</h2>
-            <p>
-              The website uses services such as GitHub Pages for hosting,
-              Google Fonts for typography, and Google AdSense for
-              advertising. These providers may process technical
-              information under their own policies.
-            </p>
-            <p>
-              External websites linked from this site have their own
-              privacy practices. Please review their policies before
-              sharing information with them.
-            </p>
-          </section>
+            <h2>4. Third-party services</h2>
 
-          <section class="policy-block" id="security">
-            <h2>7. Data retention and security</h2>
             <p>
-              If you contact us by email, your message may remain in
-              your email account and its backups until deleted. Third-party
-              providers manage information they hold according to their
-              own policies and retention practices.
+              The website uses GitHub Pages for hosting, Google Fonts
+              for typography, and Google AdSense for advertising.
+              These providers may process technical information
+              according to their own policies.
             </p>
+
             <p>
-              Reasonable steps may be taken to maintain the website, but
-              no online service or transmission method can be guaranteed
-              to be completely secure.
+              External websites linked from Fiyaz NKP operate
+              independently. Please review their privacy policies
+              before sharing information with them.
             </p>
           </section>
 
           <section class="policy-block" id="choices">
-            <h2>8. Your choices and rights</h2>
+            <h2>5. Your choices</h2>
+
             <p>
-              You can manage browser cookies and site data, adjust
-              available advertising settings, and contact us about
-              privacy concerns or information you have sent directly.
+              You can manage cookies and browser storage through
+              your browser settings and adjust available advertising
+              preferences. You can also contact us about privacy
+              concerns or information you have sent directly.
             </p>
+
             <p>
-              Depending on your location, applicable law may give you
-              additional rights concerning your personal information.
-              Some information is managed by third-party providers,
-              who may need to handle requests relating to their services.
+              Depending on your location, applicable law may provide
+              additional rights concerning personal information.
+              Requests involving information held by third-party
+              providers may need to be directed to those providers.
             </p>
           </section>
 
           <section class="policy-block" id="children">
-            <h2>9. Children's privacy</h2>
+            <h2>6. Children's privacy</h2>
+
             <p>
-              The website provides general-purpose online tools and is
-              not specifically directed at children. If you believe a
-              child has sent personal information directly to us, please
-              contact us so the concern can be reviewed.
+              Fiyaz NKP provides general-purpose online tools and is
+              not specifically directed at children. If you believe
+              a child has sent personal information directly to us,
+              please contact us so the concern can be reviewed.
             </p>
           </section>
 
-          <section class="policy-block" id="changes">
-            <h2>10. Changes to this policy</h2>
-            <p>
-              This policy may be updated when the website, its services,
-              or applicable requirements change. The latest version will
-              be published on this page with an updated revision date.
-            </p>
-          </section>
+          <section class="policy-block" id="changes-contact">
+            <h2>7. Updates and contact</h2>
 
-          <section class="policy-block" id="contact">
-            <h2>11. Contact</h2>
+            <p>
+              This policy may be updated when the website, its
+              services, or applicable requirements change.
+              The latest version will be published on this page
+              with a revised date.
+            </p>
+
             <p>
               For privacy questions, visit our
               <a href="/contact/">Contact page</a> or email
@@ -689,16 +766,16 @@
 
       function applyTheme(theme) {
         const dark = theme === "dark";
+
         body.classList.toggle("theme-dark", dark);
         icon.textContent = dark ? "☀️" : "🌙";
-        button.setAttribute(
-          "aria-label",
-          dark ? "Switch to light mode" : "Switch to dark mode"
-        );
-        button.setAttribute(
-          "title",
-          dark ? "Switch to light mode" : "Switch to dark mode"
-        );
+
+        const label = dark
+          ? "Switch to light mode"
+          : "Switch to dark mode";
+
+        button.setAttribute("aria-label", label);
+        button.setAttribute("title", label);
       }
 
       applyTheme(savedTheme === "dark" ? "dark" : "light");
