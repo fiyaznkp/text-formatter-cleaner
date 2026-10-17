@@ -179,6 +179,41 @@ html.dark a:focus-visible { outline: 2px solid #60a5fa; outline-offset: 4px; }
 @media (max-width: 640px) { html.dark article { padding: 1.25rem !important; } html.dark header { gap: 1rem; } }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; } }
 
+
+    /* Final shared Premium Graphite palette */
+    html { color-scheme: light; background: #F5F8FF; }
+    html.dark { color-scheme: dark; background: #121416; }
+    body { background: #F5F8FF !important; color: #273449 !important; }
+    html.dark body { background: #121416 !important; color: #F3F5F8 !important; }
+    article { background: #FFFFFF !important; border-color: #E2EAF7 !important; }
+    html.dark article { background: #1A1D21 !important; border-color: #303640 !important; }
+    article section > div.grid > div,
+    article .bg-slate-50 { background: #FFFFFF !important; border-color: #E2EAF7 !important; }
+    html.dark article section > div.grid > div,
+    html.dark article .bg-slate-50,
+    html.dark article .dark\:bg-slate-700\/50 { background: #20242A !important; border-color: #303640 !important; }
+    h1, h2, h3, .text-slate-900 { color: #111827 !important; }
+    p, li, .text-slate-600 { color: #273449 !important; }
+    .text-slate-500 { color: #475569 !important; }
+    html.dark h1, html.dark h2, html.dark h3, html.dark .text-slate-900, html.dark .dark\:text-white { color: #F3F5F8 !important; }
+    html.dark p, html.dark li, html.dark .text-slate-600, html.dark .dark\:text-slate-300 { color: #AAB3C0 !important; }
+    html.dark .text-slate-500, html.dark .dark\:text-slate-400 { color: #AAB3C0 !important; }
+    /* Neutral A logo in both themes */
+    a[href="/text-formatter/"] > div.w-10.h-10 { background: #E8EDF5 !important; color: #273449 !important; border: 1px solid #E2EAF7; box-shadow: none !important; }
+    a[href="/text-formatter/"] > div.w-10.h-10 span { color: #273449 !important; }
+    html.dark a[href="/text-formatter/"] > div.w-10.h-10 { background: #252A31 !important; color: #F3F5F8 !important; border-color: #303640 !important; }
+    html.dark a[href="/text-formatter/"] > div.w-10.h-10 span { color: #F3F5F8 !important; }
+    .theme-button { background: #FFFFFF; color: #334155; border-color: #E2EAF7; }
+    .theme-button:hover { background: #EEF2F8; }
+    html.dark .theme-button { background: #1A1D21; color: #D7DDE6; border-color: #303640; }
+    html.dark .theme-button:hover { background: #252A31; }
+    header, footer, footer .border-t { border-color: #E2EAF7 !important; }
+    html.dark header, html.dark footer, html.dark footer .border-t { border-color: #303640 !important; }
+    a.text-blue-600 { color: #2563EB !important; }
+    html.dark a.text-blue-600, html.dark a.dark\:text-blue-400 { color: #60A5FA !important; }
+    a:focus-visible, button:focus-visible { outline: 3px solid #2563EB; outline-offset: 3px; }
+    html.dark a:focus-visible, html.dark button:focus-visible { outline-color: #60A5FA; }
+    @media (max-width: 640px) { article { padding: 1.25rem !important; } }
   </style>
 
 </head>
@@ -202,7 +237,7 @@ html.dark a:focus-visible { outline: 2px solid #60a5fa; outline-offset: 4px; }
         class="flex items-center gap-3"
       >
 
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center text-white shadow-md">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center text-white shadow-none">
 
           <span class="font-bold text-xl" aria-hidden="true">A</span>
 
@@ -272,6 +307,16 @@ html.dark a:focus-visible { outline: 2px solid #60a5fa; outline-offset: 4px; }
         >
           Contact
         </a>
+
+        <button
+          id="themeToggle"
+          type="button"
+          aria-label="Switch to light mode"
+          title="Switch to light mode"
+          class="theme-button w-10 h-10 rounded-xl border flex items-center justify-center transition"
+        >
+          <i id="themeIcon" class="fa-solid fa-sun" aria-hidden="true"></i>
+        </button>
 
       </nav>
 
@@ -641,37 +686,34 @@ html.dark a:focus-visible { outline: 2px solid #60a5fa; outline-offset: 4px; }
   </div>
 
 
-  <!-- Theme initialization -->
-
+  <!-- Theme toggle: shared preference across Text Formatter pages -->
   <script>
+    (function () {
+      const toggle = document.getElementById('themeToggle');
+      const icon = document.getElementById('themeIcon');
 
-    let savedTheme = null;
+      function applyTheme(theme) {
+        const isDark = theme === 'dark';
+        document.documentElement.classList.toggle('dark', isDark);
+        document.documentElement.classList.toggle('light', !isDark);
+        if (icon && toggle) {
+          icon.className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+          toggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+          toggle.setAttribute('title', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+        }
+        try { localStorage.setItem('textFormatterTheme', theme); } catch (error) {}
+      }
 
-    try {
-      savedTheme = localStorage.getItem(
-        'textFormatterTheme'
-      );
-    } catch (error) {
-      savedTheme = null;
-    }
+      let saved = null;
+      try { saved = localStorage.getItem('textFormatterTheme'); } catch (error) {}
+      applyTheme(saved === 'light' ? 'light' : 'dark');
 
-
-    if (
-      savedTheme === 'light'
-    ) {
-
-      document.documentElement.classList.remove(
-        'dark'
-      );
-
-    } else {
-
-      document.documentElement.classList.add(
-        'dark'
-      );
-
-    }
-
+      if (toggle) {
+        toggle.addEventListener('click', function () {
+          applyTheme(document.documentElement.classList.contains('dark') ? 'light' : 'dark');
+        });
+      }
+    })();
   </script>
 
 
