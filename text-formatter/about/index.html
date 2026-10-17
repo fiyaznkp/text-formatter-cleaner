@@ -163,6 +163,22 @@
       border-radius: 3px;
     }
 
+  
+/* Premium Graphite site-wide theme — aligned with the finalized Text Formatter */
+html.dark { color-scheme: dark; background: #121416; }
+html.dark body { background: #121416 !important; color: #f3f5f8 !important; }
+html.dark body > div, html.dark main, html.dark header, html.dark footer { background-color: transparent; }
+html.dark article { background: #1a1d21 !important; border-color: #303640 !important; border-radius: 18px; box-shadow: 0 10px 28px rgba(0,0,0,.14); }
+html.dark article section > div.grid > div, html.dark article .bg-slate-50, html.dark article .dark\:bg-slate-700\/50 { background: #20242a !important; border: 1px solid #303640; border-radius: 14px; }
+html.dark h1, html.dark h2, html.dark h3, html.dark .text-slate-900, html.dark .dark\:text-white { color: #f3f5f8 !important; }
+html.dark p, html.dark li, html.dark .text-slate-600, html.dark .text-slate-500, html.dark .dark\:text-slate-300, html.dark .dark\:text-slate-400 { color: #aab3c0 !important; }
+html.dark a.text-blue-600, html.dark a.dark\:text-blue-400 { color: #60a5fa !important; }
+html.dark header, html.dark footer, html.dark footer .border-t { border-color: #303640 !important; }
+html.dark footer nav a:hover, html.dark header nav a:hover { color: #60a5fa !important; }
+html.dark a:focus-visible { outline: 2px solid #60a5fa; outline-offset: 4px; }
+@media (max-width: 640px) { html.dark article { padding: 1.25rem !important; } html.dark header { gap: 1rem; } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; } }
+
   </style>
 
 </head>
