@@ -239,6 +239,41 @@
       border-radius: 4px;
     }
 
+
+
+    /* Premium Graphite site-wide theme — consistent across Text Formatter pages */
+    html { color-scheme: light; }
+    html.dark { color-scheme: dark; background: #121416; }
+    html.dark body { background: #121416 !important; color: #f3f5f8 !important; }
+    html.dark body > div { background: transparent; }
+    html.dark article { background: #1a1d21 !important; border-color: #303640 !important; border-radius: 18px; box-shadow: 0 10px 28px rgba(0,0,0,.14); }
+    html.dark details { background: #20242a !important; border-color: #303640 !important; border-radius: 12px; }
+    html.dark details summary { color: #f3f5f8 !important; }
+    html.dark details > div { color: #aab3c0 !important; }
+    html.dark h1, html.dark h2, html.dark h3, html.dark .text-slate-900, html.dark .dark\\:text-white { color: #f3f5f8 !important; }
+    html.dark p, html.dark li, html.dark .text-slate-600, html.dark .text-slate-500, html.dark .dark\\:text-slate-300, html.dark .dark\\:text-slate-400 { color: #aab3c0 !important; }
+    html.dark header, html.dark footer, html.dark footer .border-t { border-color: #303640 !important; }
+    html.dark a.text-blue-600, html.dark a.dark\\:text-blue-400 { color: #60a5fa !important; }
+    html.dark .bg-gradient-to-tr { background: #20242a !important; box-shadow: none !important; border: 1px solid #303640; }
+    html.dark #themeToggle { background: #20242a !important; border-color: #303640 !important; color: #aab3c0 !important; }
+
+    html:not(.dark) body { background: #f5f8ff !important; color: #273449 !important; }
+    html:not(.dark) article { background: #ffffff !important; border-color: #e2eaf7 !important; border-radius: 18px; box-shadow: 0 8px 24px rgba(39,52,73,.045); }
+    html:not(.dark) details { background: #ffffff !important; border-color: #e2eaf7 !important; border-radius: 12px; }
+    html:not(.dark) details summary { color: #111827 !important; }
+    html:not(.dark) details > div { color: #475569 !important; }
+    html:not(.dark) h1, html:not(.dark) h2, html:not(.dark) h3, html:not(.dark) .text-slate-900 { color: #111827 !important; }
+    html:not(.dark) p, html:not(.dark) li, html:not(.dark) .text-slate-600, html:not(.dark) .text-slate-500 { color: #475569 !important; }
+    html:not(.dark) header, html:not(.dark) footer, html:not(.dark) footer .border-t { border-color: #e2eaf7 !important; }
+    html:not(.dark) a.text-blue-600 { color: #2563eb !important; }
+    html:not(.dark) .bg-gradient-to-tr { background: #ffffff !important; box-shadow: none !important; border: 1px solid #e2eaf7; }
+    html:not(.dark) .bg-gradient-to-tr i { color: #273449 !important; }
+    html:not(.dark) #themeToggle { background: #ffffff !important; border-color: #e2eaf7 !important; color: #475569 !important; }
+    html.dark a:focus-visible, html.dark button:focus-visible, html.dark details summary:focus-visible { outline-color: #60a5fa; }
+    html:not(.dark) a:focus-visible, html:not(.dark) button:focus-visible, html:not(.dark) details summary:focus-visible { outline-color: #2563eb; }
+    @media (max-width: 640px) { html.dark article, html:not(.dark) article { padding: 1.25rem !important; } }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; } }
+
   </style>
 
 </head>
