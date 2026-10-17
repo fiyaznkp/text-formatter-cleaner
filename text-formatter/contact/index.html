@@ -590,6 +590,131 @@
 
     }
 
+
+
+    /* ================= FINAL SITE-WIDE THEME ================= */
+    /* Matches the finalized Text Formatter Premium Graphite theme. */
+    html { color-scheme: dark; }
+    body {
+      background: #121416;
+      color: #f3f5f8;
+    }
+    .header-inner,
+    footer,
+    .copyright { border-color: #303640; }
+    .brand-logo {
+      background: #20242a;
+      box-shadow: none;
+      border: 1px solid #303640;
+    }
+    .brand-text-title,
+    .page-title,
+    .card h2,
+    .card h3,
+    .email-card h2,
+    .before-card h2,
+    .footer-title { color: #f3f5f8; }
+    .brand-text p,
+    .page-intro,
+    .card p,
+    .card li,
+    .email-card p,
+    .before-card > p,
+    .footer-description,
+    .footer-links a,
+    .copyright { color: #aab3c0; }
+    .contact-card,
+    .email-card {
+      background: #1a1d21;
+      border-color: #303640;
+      border-radius: 18px;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, .14);
+    }
+    .card-icon {
+      background: #20242a;
+      border: 1px solid #303640;
+      color: #d8dee8;
+    }
+    .theme-button {
+      background: #20242a;
+      border-color: #303640;
+      color: #e2e8f0;
+    }
+    .navigation a { color: #aab3c0; }
+    .navigation a:hover,
+    .navigation a.active,
+    .footer-links a:hover { color: #60a5fa; }
+    .email-button {
+      background: #3b82f6;
+      color: #ffffff;
+    }
+    .email-button:hover { background: #2563eb; }
+    .email-address { color: #aab3c0 !important; }
+    a:focus-visible,
+    button:focus-visible { outline-color: #60a5fa; }
+
+    /* Finalized light palette: off-white page, white cards, dark text. */
+    body.light {
+      background: #f5f8ff;
+      color: #273449;
+      color-scheme: light;
+    }
+    body.light .header-inner,
+    body.light footer,
+    body.light .copyright { border-color: #e2eaf7; }
+    body.light .brand-logo {
+      background: #ffffff;
+      border-color: #e2eaf7;
+      box-shadow: none;
+    }
+    body.light .brand-logo span { color: #273449; }
+    body.light .brand-text-title,
+    body.light .page-title,
+    body.light .card h2,
+    body.light .card h3,
+    body.light .email-card h2,
+    body.light .before-card h2,
+    body.light .footer-title { color: #111827; }
+    body.light .brand-text p,
+    body.light .page-intro,
+    body.light .card p,
+    body.light .card li,
+    body.light .email-card p,
+    body.light .before-card > p { color: #475569; }
+    body.light .contact-card,
+    body.light .email-card {
+      background: #ffffff;
+      border-color: #e2eaf7;
+      box-shadow: 0 5px 20px rgba(17, 24, 39, .04);
+    }
+    body.light .card-icon {
+      background: #f5f8ff;
+      border-color: #e2eaf7;
+      color: #273449;
+    }
+    body.light .navigation a { color: #475569; }
+    body.light .navigation a:hover,
+    body.light .navigation a.active,
+    body.light .footer-links a:hover { color: #2563eb; }
+    body.light .theme-button {
+      background: #ffffff;
+      border-color: #e2eaf7;
+      color: #273449;
+    }
+    body.light .footer-description,
+    body.light .footer-links a,
+    body.light .copyright,
+    body.light .email-address { color: #64748b !important; }
+    body.light .email-button { background: #2563eb; color: #ffffff; }
+    body.light .email-button:hover { background: #1d4ed8; }
+    body.light a:focus-visible,
+    body.light button:focus-visible { outline-color: #2563eb; }
+
+    @media (max-width: 640px) {
+      .contact-card { padding: 22px; }
+      .email-card { padding: 24px; }
+    }
+
   </style>
 
 </head>
