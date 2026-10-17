@@ -1378,7 +1378,82 @@ body:not(.light) .copyright-bar {
   color: #8f9baa !important;
 }
 
-</style>
+
+
+    /* HOME PAGE FINAL FIX — agreed neutral A logo and consistent themes */
+    .brand-logo {
+      background: #252a31 !important;
+      border: 1px solid #343b45 !important;
+      box-shadow: none !important;
+    }
+    .brand-logo span { color: #f3f5f8 !important; }
+    body.light .brand-logo {
+      background: #eef1f5 !important;
+      border-color: #dce2ea !important;
+      box-shadow: none !important;
+    }
+    body.light .brand-logo span { color: #273449 !important; }
+
+    /* In light mode every informational card stays white with readable text. */
+    body.light .steps > .step,
+    body.light article.step,
+    body.light .example-grid > .example-card,
+    body.light .use-case-grid > article,
+    body.light .faq-list > article,
+    body.light .example-card,
+    body.light .info-card,
+    body.light .short-info,
+    body.light .use-case,
+    body.light .faq-item {
+      background: #ffffff !important;
+      background-image: none !important;
+      border: 1px solid #e2eaf7 !important;
+      color: #273449 !important;
+      box-shadow: 0 8px 24px rgba(26,43,76,.055) !important;
+    }
+    body.light .step h3,
+    body.light .example-card h3,
+    body.light .use-case h3,
+    body.light .info-card h3,
+    body.light .faq-item h3,
+    body.light .short-info h3 { color: #111827 !important; }
+    body.light .step p,
+    body.light .example-card p,
+    body.light .use-case p,
+    body.light .info-card p,
+    body.light .faq-item p,
+    body.light .short-info p,
+    body.light .example-description { color: #475569 !important; }
+    body.light .step-number {
+      background: #e9edf3 !important;
+      color: #273449 !important;
+      border: 1px solid #dce2ea !important;
+    }
+    body.light .example-input,
+    body.light .example-output,
+    body.light .example-box,
+    body.light .before-after,
+    body.light pre {
+      background: #f5f8ff !important;
+      border: 1px solid #e2eaf7 !important;
+      color: #273449 !important;
+    }
+
+    /* Prevent the header/navigation from being clipped at intermediate widths. */
+    .site-header, .header-inner, .header-right { min-width: 0; }
+    .header-inner { flex-wrap: wrap; }
+    .header-right { flex: 1 1 auto; min-width: 0; }
+    .navigation { flex-wrap: wrap; }
+    @media (max-width: 900px) {
+      .header-inner { align-items: flex-start; }
+      .header-right { width: 100%; justify-content: space-between; }
+    }
+    @media (max-width: 600px) {
+      .header-right { align-items: flex-start; flex-direction: column; }
+      .navigation { gap: 12px; }
+    }
+
+  </style>
 
   <!-- Basic WebSite structured data -->
   <script type="application/ld+json">
