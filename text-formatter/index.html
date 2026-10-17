@@ -1032,7 +1032,353 @@
 
     }
 
-  </style>
+  
+
+    /* ==========================================
+       PREMIUM WORKSPACE REDESIGN — visual layer only
+       Original content, links, metadata and JavaScript are preserved.
+    ========================================== */
+    :root { color-scheme: light dark; }
+    html { scroll-padding-top: 24px; }
+    body { background: #121416; color: #eef2f7; }
+    body.light { background: #f5f7fb; color: #172033; }
+    .site-header { max-width: 1240px; padding: 22px 28px 12px; }
+    .header-inner { gap: 24px; padding-bottom: 18px; border-color: #2a2e35; }
+    .brand { gap: 12px; }
+    .brand-logo { width: 46px; height: 46px; border-radius: 13px; background: linear-gradient(145deg,#2563eb,#3b82f6); box-shadow: 0 7px 22px rgba(37,99,235,.25); }
+    .brand-logo span { font-size: 24px; }
+    .brand-text-title { font-size: 20px; letter-spacing: -.035em; }
+    .brand-text p { font-size: 12px; }
+    .navigation { gap: 17px; }
+    .navigation a { font-size: 13px; }
+    .sample-button,.theme-button { border-radius: 11px; }
+    .main-container { max-width: 1240px; padding: 38px 28px 68px; }
+    .page-heading { margin-bottom: 26px; padding: 4px 0 0; }
+    .page-heading::before { content: 'FREE ONLINE TEXT TOOL'; display: inline-flex; align-items: center; margin-bottom: 12px; color: #60a5fa; font-size: 11px; font-weight: 800; letter-spacing: .15em; }
+    .page-heading h1 { font-size: clamp(32px, 4vw, 43px); line-height: 1.12; letter-spacing: -.045em; }
+    .page-heading p { max-width: 720px; margin-top: 12px; font-size: 15px; line-height: 1.8; }
+    .toolbar { padding: 18px 20px; border-radius: 16px; background: #1a1d22; border-color: #303640; box-shadow: 0 12px 30px rgba(0,0,0,.12); }
+    .tool-row { gap: 9px; }
+    .tool-row + .tool-row { margin-top: 16px; padding-top: 16px; border-color: #303640; }
+    .tool-label { width: 58px; font-size: 10px; letter-spacing: .12em; }
+    .tool-button { min-height: 40px; padding: 10px 13px; border-radius: 10px; background: #252a32; border-color: #3b424d; color: #e6ebf2; font-size: 12px; }
+    .tool-button:hover { background: #303946; border-color: #60a5fa; color: #fff; transform: translateY(-1px); }
+    .editor { margin-top: 16px; border-radius: 16px; border-color: #343b45; background: #191c21; box-shadow: 0 18px 42px rgba(0,0,0,.18); }
+    .editor-top { min-height: 62px; padding: 11px 16px; border-color: #303640; }
+    .editor-button { background: #252a32; border-color: #3b424d; border-radius: 9px; padding: 10px 13px; font-size: 12px; }
+    .editor-button:hover:not(:disabled) { background: #323944; }
+    .clear-button { color: #ff727e; padding: 10px 12px; }
+    .copy-button { min-width: 98px; padding: 11px 18px; border-radius: 10px; background: #2563eb; box-shadow: 0 5px 15px rgba(37,99,235,.18); }
+    .copy-button:hover { background: #3b82f6; }
+    #mainText { min-height: 390px; padding: 22px 22px 24px; background: #191c21; color: #f1f5f9; font-size: 15px; line-height: 1.85; }
+    #mainText::placeholder { color: #8792a2; }
+    .statistics { grid-template-columns: repeat(4,minmax(0,1fr)); gap: 12px; margin-top: 14px; }
+    .stat-box { padding: 14px 16px; border-radius: 12px; background: #1a1d22; border-color: #303640; }
+    .stat-label { font-size: 10px; letter-spacing: .11em; }
+    .stat-value { margin-top: 7px; font-size: 23px; letter-spacing: -.03em; }
+    .content-section { margin-top: 52px; }
+    .section-heading { margin-bottom: 20px; }
+    .section-title { letter-spacing: -.025em; }
+    .short-info,.info-card,.use-case,.example-card,.faq-item { border-radius: 14px; }
+    .short-info,.info-card,.use-case,.example-card,.faq-item { transition: transform .18s ease,border-color .18s ease,box-shadow .18s ease; }
+    .short-info:hover,.info-card:hover,.use-case:hover,.example-card:hover,.faq-item:hover { transform: translateY(-2px); border-color: #46556b; }
+    footer { margin-top: 60px; }
+    body:not(.light) { background: #121416; color: #eef2f7; }
+    body:not(.light) .header-inner { border-color: #292e35; }
+    body:not(.light) .brand-text-title, body:not(.light) .page-heading h1, body:not(.light) .section-title, body:not(.light) .footer-title, body:not(.light) .short-info h3, body:not(.light) .info-card h3, body:not(.light) .faq-item h3 { color: #f1f5f9; }
+    body:not(.light) .brand-text p, body:not(.light) .page-heading p, body:not(.light) .section-description, body:not(.light) .footer-description, body:not(.light) .footer-links a, body:not(.light) .short-info p, body:not(.light) .info-card p, body:not(.light) .use-case p, body:not(.light) .faq-item p, body:not(.light) .example-description { color: #a5afbd; }
+    body:not(.light) .navigation a { color: #c1c9d4; }
+    body:not(.light) .navigation a:hover, body:not(.light) .navigation a.active { color: #60a5fa; }
+    body:not(.light) .sample-button, body:not(.light) .theme-button { background: #20242a; border-color: #363d47; color: #e5eaf1; }
+    body:not(.light) .sample-button:hover, body:not(.light) .theme-button:hover { background: #2b313a; border-color: #60a5fa; }
+    body:not(.light) .stat-value { color: #f1f5f9; }
+    body:not(.light) .content-divider, body:not(.light) .copyright { background: #2a3038; border-color: #2a3038; }
+    body.light .page-heading::before { color: #2563eb; }
+    body.light .toolbar, body.light .editor, body.light .stat-box, body.light .short-info, body.light .info-card, body.light .use-case, body.light .example-card, body.light .faq-item { background: #fff; border-color: #e3e9f2; box-shadow: 0 12px 32px rgba(26,43,76,.055); }
+    body.light .tool-button, body.light .editor-button { background: #f6f8fc; border-color: #dfe6f0; color: #273449; }
+    body.light .tool-button:hover, body.light .editor-button:hover:not(:disabled) { background: #edf3ff; border-color: #8bb5ff; color: #1d4ed8; }
+    body.light #mainText { background: #fff; color: #172033; }
+    body.light #mainText::placeholder { color: #9aa5b5; }
+    body.light .editor-top, body.light .tool-row + .tool-row { border-color: #e7ebf2; }
+    body.light .copy-button { background: #2563eb; color: #fff; }
+    a:focus-visible, button:focus-visible, textarea:focus-visible { outline: 3px solid rgba(96,165,250,.75); outline-offset: 3px; }
+    @media (max-width: 900px) {
+      .site-header { padding: 18px 20px 10px; }
+      .header-inner { align-items: flex-start; flex-wrap: wrap; }
+      .header-right { width: 100%; justify-content: space-between; flex-wrap: wrap; gap: 14px; }
+      .navigation { flex-wrap: wrap; gap: 13px; }
+      .main-container { padding: 30px 20px 52px; }
+      #mainText { min-height: 340px; }
+    }
+    @media (max-width: 600px) {
+      .site-header { padding: 14px 14px 8px; }
+      .header-inner { gap: 16px; }
+      .brand-logo { width: 40px; height: 40px; border-radius: 11px; }
+      .brand-text-title { font-size: 17px; white-space: normal; }
+      .brand-text p { font-size: 11px; }
+      .header-right { align-items: flex-start; }
+      .navigation { gap: 12px; }
+      .navigation a { font-size: 12px; }
+      .header-actions { margin-left: auto; }
+      .main-container { padding: 24px 14px 42px; }
+      .page-heading h1 { font-size: 31px; }
+      .page-heading p { font-size: 14px; }
+      .toolbar { padding: 14px; }
+      .tool-row { gap: 7px; }
+      .tool-label { width: 100%; margin-bottom: 2px; }
+      .tool-button { flex: 1 1 auto; justify-content: center; }
+      .editor-top { align-items: stretch; flex-wrap: wrap; padding: 10px; }
+      .editor-left,.editor-right { flex: 1; }
+      .editor-right { justify-content: flex-end; }
+      .editor-button { padding: 9px 10px; }
+      .copy-button { min-width: 0; }
+      #mainText { min-height: 300px; padding: 16px; font-size: 14px; }
+      .statistics { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 9px; }
+      .stat-box { padding: 12px; }
+      .stat-value { font-size: 21px; }
+      .content-section { margin-top: 40px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *,*::before,*::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+    }
+
+  
+/* Premium unified graphite theme: consistent backgrounds across all sections */
+:root{--premium-bg:#121416;--premium-surface:#1a1d21;--premium-border:#303640;--premium-text:#f3f5f8;--premium-muted:#aab3c0;--premium-blue:#3b82f6;--premium-blue-hover:#60a5fa;}
+body:not(.light){background:var(--premium-bg)!important;color:var(--premium-text)!important;}
+body:not(.light) header,body:not(.light) main,body:not(.light) footer,body:not(.light) section,body:not(.light) .container,body:not(.light) .content,body:not(.light) .page-container{background-color:transparent;}
+body:not(.light) .toolbar,body:not(.light) .editor,body:not(.light) .stat-box,body:not(.light) .short-info,body:not(.light) .info-card,body:not(.light) .use-case,body:not(.light) .example-card,body:not(.light) .faq-item,body:not(.light) .feature-card,body:not(.light) .feature,body:not(.light) .card,body:not(.light) .tool-card,body:not(.light) .content-card,body:not(.light) .step-card,body:not(.light) .example,body:not(.light) .how-to-card{background:var(--premium-surface)!important;color:var(--premium-text);border:1px solid var(--premium-border);border-radius:16px;box-shadow:0 8px 24px rgba(0,0,0,.12);}
+body:not(.light) h1,body:not(.light) h2,body:not(.light) h3,body:not(.light) h4,body:not(.light) .brand-text-title,body:not(.light) .page-heading h1,body:not(.light) .section-title,body:not(.light) .footer-title,body:not(.light) .short-info h3,body:not(.light) .info-card h3,body:not(.light) .faq-item h3,body:not(.light) .feature-card h3,body:not(.light) .feature h3{color:var(--premium-text)!important;}
+body:not(.light) p,body:not(.light) li,body:not(.light) .brand-text p,body:not(.light) .page-heading p,body:not(.light) .section-description,body:not(.light) .footer-description,body:not(.light) .short-info p,body:not(.light) .info-card p,body:not(.light) .faq-item p,body:not(.light) .feature-card p,body:not(.light) .feature p,body:not(.light) .muted,body:not(.light) .description{color:var(--premium-muted);}
+body:not(.light) #mainText,body:not(.light) textarea,body:not(.light) input,body:not(.light) select{background:#171a1e;color:var(--premium-text);border-color:#343b45;}
+body:not(.light) #mainText::placeholder,body:not(.light) textarea::placeholder,body:not(.light) input::placeholder{color:#909aa8;}
+body:not(.light) .tool-button,body:not(.light) .editor-button,body:not(.light) .sample-button,body:not(.light) .theme-button{background:#242a31;color:#e9edf3;border-color:#3a424d;border-radius:10px;}
+body:not(.light) .tool-button:hover,body:not(.light) .editor-button:hover:not(:disabled),body:not(.light) .sample-button:hover{background:#303741;border-color:#4b5665;}
+body:not(.light) .navigation a,body:not(.light) nav a,body:not(.light) .footer-links a{color:#b9c2ce;}
+body:not(.light) .navigation a:hover,body:not(.light) nav a:hover,body:not(.light) .navigation a.active{color:var(--premium-blue-hover);}
+body:not(.light) .feature-icon,body:not(.light) .icon-box{background:#202d43;color:var(--premium-blue-hover);}
+body:not(.light) hr,body:not(.light) .divider{border-color:var(--premium-border);}
+button:focus-visible,a:focus-visible,textarea:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid rgba(96,165,250,.65);outline-offset:3px;}
+@media(max-width:700px){body:not(.light) .toolbar,body:not(.light) .editor,body:not(.light) .info-card,body:not(.light) .short-info,body:not(.light) .faq-item,body:not(.light) .example-card{border-radius:12px;}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important;}}
+
+
+
+/* FINAL PAGE-WIDE GRAPHITE PASS: unify every section, example, card and footer */
+:root {
+  --pf-bg: #121416;
+  --pf-surface: #1a1d21;
+  --pf-surface-raised: #20242a;
+  --pf-border: #303640;
+  --pf-text: #f3f5f8;
+  --pf-muted: #aab3c0;
+  --pf-blue: #3b82f6;
+  --pf-blue-hover: #60a5fa;
+}
+body:not(.light) {
+  background: var(--pf-bg) !important;
+  color: var(--pf-text) !important;
+}
+body:not(.light) header,
+body:not(.light) main,
+body:not(.light) footer,
+body:not(.light) section,
+body:not(.light) .content-section,
+body:not(.light) .section-heading,
+body:not(.light) .footer-inner,
+body:not(.light) .container,
+body:not(.light) .page-container {
+  background-color: transparent !important;
+}
+/* Every visible content card uses the same graphite surface, not navy blue. */
+body:not(.light) .toolbar,
+body:not(.light) .editor,
+body:not(.light) .stat-box,
+body:not(.light) .short-info,
+body:not(.light) .info-card,
+body:not(.light) .use-case,
+body:not(.light) .example-card,
+body:not(.light) .faq-item,
+body:not(.light) .feature-card,
+body:not(.light) .feature,
+body:not(.light) .card,
+body:not(.light) .tool-card,
+body:not(.light) .content-card,
+body:not(.light) .step-card,
+body:not(.light) .how-to-card,
+body:not(.light) .use-case-grid > article,
+body:not(.light) .example-grid > article,
+body:not(.light) .faq-list > article {
+  background: var(--pf-surface) !important;
+  color: var(--pf-text) !important;
+  border: 1px solid var(--pf-border) !important;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.12);
+}
+/* Some steps and examples use nested blue sample boxes: keep them subdued. */
+body:not(.light) .example-output,
+body:not(.light) .example-box,
+body:not(.light) .before-after,
+body:not(.light) pre,
+body:not(.light) code,
+body:not(.light) .step-number {
+  border-color: #343b45;
+}
+body:not(.light) .example-output,
+body:not(.light) .example-box,
+body:not(.light) .before-after,
+body:not(.light) pre {
+  background: #171a1e !important;
+  color: #e6ebf2 !important;
+}
+body:not(.light) h1, body:not(.light) h2, body:not(.light) h3,
+body:not(.light) h4, body:not(.light) .brand-text-title,
+body:not(.light) .page-heading h1, body:not(.light) .section-title,
+body:not(.light) .footer-title, body:not(.light) .short-info h3,
+body:not(.light) .info-card h3, body:not(.light) .faq-item h3,
+body:not(.light) .feature-card h3, body:not(.light) .use-case h3,
+body:not(.light) .example-card h3 {
+  color: var(--pf-text) !important;
+}
+body:not(.light) p, body:not(.light) li,
+body:not(.light) .brand-text p, body:not(.light) .page-heading p,
+body:not(.light) .section-description, body:not(.light) .footer-description,
+body:not(.light) .short-info p, body:not(.light) .info-card p,
+body:not(.light) .faq-item p, body:not(.light) .feature-card p,
+body:not(.light) .use-case p, body:not(.light) .example-card p,
+body:not(.light) .muted, body:not(.light) .description {
+  color: var(--pf-muted);
+}
+body:not(.light) #mainText, body:not(.light) textarea,
+body:not(.light) input, body:not(.light) select {
+  background: #171a1e;
+  color: var(--pf-text);
+  border-color: #343b45;
+}
+body:not(.light) #mainText::placeholder,
+body:not(.light) textarea::placeholder,
+body:not(.light) input::placeholder { color: #909aa8; }
+body:not(.light) .tool-button,
+body:not(.light) .editor-button,
+body:not(.light) .sample-button,
+body:not(.light) .theme-button {
+  background: #242a31;
+  color: #e9edf3;
+  border-color: #3a424d;
+  border-radius: 10px;
+}
+body:not(.light) .tool-button:hover,
+body:not(.light) .editor-button:hover:not(:disabled),
+body:not(.light) .sample-button:hover {
+  background: #303741;
+  border-color: #4b5665;
+}
+body:not(.light) .navigation a,
+body:not(.light) nav a,
+body:not(.light) .footer-links a { color: #b9c2ce; }
+body:not(.light) .navigation a:hover,
+body:not(.light) nav a:hover,
+body:not(.light) .navigation a.active { color: var(--pf-blue-hover); }
+body:not(.light) .feature-icon,
+body:not(.light) .icon-box {
+  background: #20242a !important;
+  color: var(--pf-blue-hover) !important;
+}
+/* Footer should blend into the page; avoid the unrelated grey horizontal strip. */
+body:not(.light) footer,
+body:not(.light) footer .footer-inner,
+body:not(.light) footer .footer-links,
+body:not(.light) footer .copyright,
+body:not(.light) footer .footer-bottom {
+  background: transparent !important;
+  border-color: var(--pf-border) !important;
+}
+body:not(.light) hr,
+body:not(.light) .divider { border-color: var(--pf-border); }
+button:focus-visible, a:focus-visible, textarea:focus-visible,
+input:focus-visible, select:focus-visible {
+  outline: 3px solid rgba(96,165,250,.65);
+  outline-offset: 3px;
+}
+@media (max-width: 700px) {
+  body:not(.light) .toolbar, body:not(.light) .editor,
+  body:not(.light) .info-card, body:not(.light) .short-info,
+  body:not(.light) .faq-item, body:not(.light) .example-card,
+  body:not(.light) .use-case { border-radius: 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+  }
+}
+
+
+/* FINAL PATCH: target the actual classes used by the page's lower sections */
+body:not(.light) .steps > .step,
+body:not(.light) article.step,
+body:not(.light) .example-grid > .example-card,
+body:not(.light) .use-case-grid > article,
+body:not(.light) .faq-list > article,
+body:not(.light) .example-card,
+body:not(.light) .info-card,
+body:not(.light) .short-info,
+body:not(.light) .use-case,
+body:not(.light) .faq-item {
+  background-color: #1a1d21 !important;
+  background-image: none !important;
+  border: 1px solid #303640 !important;
+  color: #f3f5f8 !important;
+  box-shadow: 0 8px 24px rgba(0,0,0,.12) !important;
+}
+body:not(.light) .example-input,
+body:not(.light) .example-output,
+body:not(.light) .example-box,
+body:not(.light) .before-after {
+  background-color: #171a1e !important;
+  background-image: none !important;
+  border: 1px solid #343b45 !important;
+  color: #e6ebf2 !important;
+  border-radius: 12px;
+}
+body:not(.light) .step h3,
+body:not(.light) .example-card h3,
+body:not(.light) .use-case h3,
+body:not(.light) .info-card h3,
+body:not(.light) .faq-item h3 {
+  color: #f3f5f8 !important;
+}
+body:not(.light) .step p,
+body:not(.light) .example-card p,
+body:not(.light) .use-case p,
+body:not(.light) .info-card p,
+body:not(.light) .faq-item p,
+body:not(.light) .example-description {
+  color: #aab3c0 !important;
+}
+body:not(.light) .step-number {
+  background: #2563eb !important;
+  color: #fff !important;
+  border-color: transparent !important;
+}
+body:not(.light) footer,
+body:not(.light) .footer-inner,
+body:not(.light) .footer-bottom,
+body:not(.light) .copyright,
+body:not(.light) .copyright-bar {
+  background: transparent !important;
+  background-color: transparent !important;
+  border-color: #303640 !important;
+  box-shadow: none !important;
+}
+body:not(.light) .footer-bottom p,
+body:not(.light) .copyright,
+body:not(.light) .copyright-bar {
+  color: #8f9baa !important;
+}
+
+</style>
 
   <!-- Basic WebSite structured data -->
   <script type="application/ld+json">
