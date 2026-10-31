@@ -198,11 +198,20 @@ html.dark a:focus-visible { outline: 2px solid #60a5fa; outline-offset: 4px; }
     html.dark h1, html.dark h2, html.dark h3, html.dark .text-slate-900, html.dark .dark\:text-white { color: #F3F5F8 !important; }
     html.dark p, html.dark li, html.dark .text-slate-600, html.dark .dark\:text-slate-300 { color: #AAB3C0 !important; }
     html.dark .text-slate-500, html.dark .dark\:text-slate-400 { color: #AAB3C0 !important; }
-    /* Neutral A logo in both themes */
-    a[href="/text-formatter/"] > div.w-10.h-10 { background: #E8EDF5 !important; color: #273449 !important; border: 1px solid #E2EAF7; box-shadow: none !important; }
-    a[href="/text-formatter/"] > div.w-10.h-10 span { color: #273449 !important; }
-    html.dark a[href="/text-formatter/"] > div.w-10.h-10 { background: #252A31 !important; color: #F3F5F8 !important; border-color: #303640 !important; }
-    html.dark a[href="/text-formatter/"] > div.w-10.h-10 span { color: #F3F5F8 !important; }
+    /* Blue A logo — consistent with the Text Formatter homepage */
+    a[href="/text-formatter/"] > div.w-10.h-10 {
+      background: linear-gradient(145deg, #2563EB, #3B82F6) !important;
+      color: #FFFFFF !important;
+      border: 1px solid #2563EB !important;
+      box-shadow: 0 7px 22px rgba(37, 99, 235, 0.25) !important;
+    }
+    a[href="/text-formatter/"] > div.w-10.h-10 span { color: #FFFFFF !important; }
+    html.dark a[href="/text-formatter/"] > div.w-10.h-10 {
+      background: linear-gradient(145deg, #2563EB, #3B82F6) !important;
+      color: #FFFFFF !important;
+      border-color: #2563EB !important;
+    }
+    html.dark a[href="/text-formatter/"] > div.w-10.h-10 span { color: #FFFFFF !important; }
     .theme-button { background: #FFFFFF; color: #334155; border-color: #E2EAF7; }
     .theme-button:hover { background: #EEF2F8; }
     html.dark .theme-button { background: #1A1D21; color: #D7DDE6; border-color: #303640; }
