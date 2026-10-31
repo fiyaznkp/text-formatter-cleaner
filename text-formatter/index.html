@@ -3034,14 +3034,20 @@ body:not(.light) .copyright-bar {
       const characters =
         text.length;
 
+      const sentenceMatches =
+        trimmed.match(
+          /[^.!?]+[.!?]+(?=\s|$)/g
+        ) || [];
+
+      const remainingText =
+        trimmed.replace(
+          /[^.!?]+[.!?]+(?=\s|$)/g,
+          ''
+        ).trim();
+
       const sentences =
-        trimmed
-          ? (
-              trimmed.match(
-                /[^.!?]+[.!?]+/g
-              ) || [trimmed]
-            ).length
-          : 0;
+        sentenceMatches.length +
+        (remainingText ? 1 : 0);
 
       const seconds =
         Math.ceil(
@@ -3220,10 +3226,14 @@ body:not(.light) .copyright-bar {
 
       }
 
-      localStorage.setItem(
-        'textFormatterTheme',
-        theme
-      );
+      try {
+        localStorage.setItem(
+          'textFormatterTheme',
+          theme
+        );
+      } catch (error) {
+        // Theme switching still works when browser storage is unavailable.
+      }
 
     }
 
@@ -3342,10 +3352,15 @@ body:not(.light) .copyright-bar {
        INITIALIZATION
     ========================================== */
 
-    const savedTheme =
-      localStorage.getItem(
+    let savedTheme = null;
+
+    try {
+      savedTheme = localStorage.getItem(
         'textFormatterTheme'
       );
+    } catch (error) {
+      // Use the default dark theme when browser storage is unavailable.
+    }
 
     setTheme(
       savedTheme === 'light'
