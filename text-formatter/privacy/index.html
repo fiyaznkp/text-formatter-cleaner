@@ -270,8 +270,9 @@
     .text-slate-500 { color: #475569; }
     article a.text-blue-600, footer a.text-blue-600, nav a.text-blue-600 { color: #2563EB; }
     header, footer, header.border-b, footer.border-t, footer .border-t { border-color: #E2EAF7 !important; }
-    .site-brand-logo { background: #242930 !important; border: 1px solid #343A43; box-shadow: none !important; }
-    .site-brand-logo i { color: #F3F5F8 !important; }
+    /* Blue-gradient brand logo, consistent with the Text Formatter homepage */
+    .site-brand-logo { background: linear-gradient(135deg, #2563EB, #4F46E5) !important; border: 1px solid rgba(255,255,255,.14); box-shadow: 0 4px 12px rgba(37,99,235,.22) !important; }
+    .site-brand-logo i { color: #FFFFFF !important; }
     article .bg-slate-50 { background: #F8FAFD !important; border: 1px solid #E2EAF7; border-radius: 14px; }
     .bg-blue-100 { background: #EEF2F7 !important; }
     .text-blue-600 { color: #2563EB; }
@@ -288,7 +289,8 @@
     html.dark article .bg-slate-50, html.dark article .dark\:bg-slate-700\/50 { background: #20242A !important; border: 1px solid #303640; border-radius: 14px; }
     html.dark .bg-blue-100, html.dark .dark\:bg-blue-900\/40 { background: #252A31 !important; }
     html.dark .text-blue-600, html.dark .dark\:text-blue-400 { color: #60A5FA !important; }
-    html.dark .site-brand-logo { background: #242930 !important; border-color: #343A43 !important; }
+    html.dark .site-brand-logo { background: linear-gradient(135deg, #2563EB, #4F46E5) !important; border-color: rgba(255,255,255,.14) !important; }
+    html.dark .site-brand-logo i { color: #FFFFFF !important; }
     html.dark a:focus-visible, html.dark button:focus-visible { outline-color: #60A5FA; }
     @media (max-width: 640px) { article { padding: 1.25rem !important; } }
     @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; } }
