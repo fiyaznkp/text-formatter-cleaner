@@ -216,11 +216,21 @@
     html.dark body [class~="dark:text-slate-400"] { color: #AAB3C0 !important; }
     html.dark body strong { color: #F3F5F8 !important; }
 
-    /* Neutral A logo: charcoal in dark mode, pale neutral in light mode */
-    a[href="/text-formatter/"] > div.w-10.h-10 { background: #E8EDF5 !important; color: #273449 !important; box-shadow: none !important; }
-    a[href="/text-formatter/"] > div.w-10.h-10 i { color: #273449 !important; }
-    html.dark a[href="/text-formatter/"] > div.w-10.h-10 { background: #252A31 !important; color: #F3F5F8 !important; border: 1px solid #303640 !important; }
-    html.dark a[href="/text-formatter/"] > div.w-10.h-10 i { color: #F3F5F8 !important; }
+    /* Blue-gradient A logo — consistent with the Text Formatter homepage */
+    a[href="/text-formatter/"] > div.w-10.h-10 {
+      background: linear-gradient(135deg, #2563EB, #4F46E5) !important;
+      color: #FFFFFF !important;
+      border: none !important;
+      box-shadow: 0 4px 10px rgba(37, 99, 235, .22) !important;
+    }
+    a[href="/text-formatter/"] > div.w-10.h-10 i { color: #FFFFFF !important; }
+    html.dark a[href="/text-formatter/"] > div.w-10.h-10 {
+      background: linear-gradient(135deg, #2563EB, #4F46E5) !important;
+      color: #FFFFFF !important;
+      border: none !important;
+      box-shadow: 0 4px 10px rgba(37, 99, 235, .22) !important;
+    }
+    html.dark a[href="/text-formatter/"] > div.w-10.h-10 i { color: #FFFFFF !important; }
 
     /* Neutral step markers */
     article ol li > span:first-child { background: #E8EDF5 !important; color: #273449 !important; }
