@@ -269,6 +269,16 @@
     html:not(.dark) .bg-gradient-to-tr { background: #ffffff !important; box-shadow: none !important; border: 1px solid #e2eaf7; }
     html:not(.dark) .bg-gradient-to-tr i { color: #273449 !important; }
     html:not(.dark) #themeToggle { background: #ffffff !important; border-color: #e2eaf7 !important; color: #475569 !important; }
+
+    /* Keep the Text Formatter homepage logo consistent across all subpages and themes */
+    a[href="/text-formatter/"] > div.w-10.h-10 {
+      background: linear-gradient(135deg, #2563eb, #4f46e5) !important;
+      border: 0 !important;
+      box-shadow: 0 4px 10px rgba(37, 99, 235, 0.22) !important;
+    }
+    a[href="/text-formatter/"] > div.w-10.h-10 span {
+      color: #ffffff !important;
+    }
     html.dark a:focus-visible, html.dark button:focus-visible, html.dark details summary:focus-visible { outline-color: #60a5fa; }
     html:not(.dark) a:focus-visible, html:not(.dark) button:focus-visible, html:not(.dark) details summary:focus-visible { outline-color: #2563eb; }
     @media (max-width: 640px) { html.dark article, html:not(.dark) article { padding: 1.25rem !important; } }
@@ -299,7 +309,7 @@
 
         <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center text-white shadow-md">
 
-          <i class="fa-solid fa-font font-bold text-lg"></i>
+          <span class="font-bold text-lg">A</span>
 
         </div>
 
