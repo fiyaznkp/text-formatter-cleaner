@@ -136,6 +136,8 @@ header{position:relative;top:auto;min-height:68px;padding:12px 28px;background:v
 /* About page layout, using the homepage design system */
 .about-content{max-width:1320px;margin:0 auto;padding:30px 28px 0}.about-hero{padding:0 0 24px}.about-hero .eyebrow{font-size:11px;font-weight:800;letter-spacing:1.6px;color:var(--blue);margin-bottom:10px}.about-hero h1{font-size:clamp(30px,3vw,40px);letter-spacing:-1.35px;line-height:1.16;margin:0 0 12px;color:var(--text)}.about-hero p{font-size:15px;line-height:1.75;color:var(--muted);max-width:850px;margin:0}.about-panel{background:var(--panel);border:1px solid var(--line);border-radius:17px;padding:24px 25px;margin:0 0 18px;box-shadow:var(--shadow)}.about-panel h2{font-size:21px;letter-spacing:-.45px;margin:0 0 11px;color:var(--text)}.about-panel>p{font-size:14px;line-height:1.8;color:var(--muted);margin:0;max-width:1050px}.about-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:18px}.about-card{border:1px solid var(--line);border-radius:14px;background:var(--soft);padding:19px}.about-card h3{font-size:15px;margin:0 0 8px;color:var(--text)}.about-card p{font-size:13px;line-height:1.7;color:var(--muted);margin:0}.about-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:18px}.about-step{border:1px solid var(--line);border-radius:14px;padding:18px;background:var(--soft)}.about-step b{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--blue);color:#fff;margin-bottom:12px}.about-step h3{font-size:15px;margin:0 0 7px}.about-step p{font-size:13px;line-height:1.7;color:var(--muted);margin:0}.about-note{border-left:3px solid var(--blue);padding:12px 15px;background:var(--soft);border-radius:0 10px 10px 0;margin-top:16px;color:var(--muted);font-size:13px;line-height:1.7}.about-sidebar-link{display:flex;align-items:center;gap:11px;padding:13px 12px;border-radius:11px;text-decoration:none;color:var(--muted);font-size:13px;font-weight:600}.about-sidebar-link:hover,.about-sidebar-link.active{background:var(--soft);color:var(--blue)}
 @media(max-width:900px){.about-grid,.about-steps{grid-template-columns:repeat(2,minmax(0,1fr))}.about-content{padding:22px 20px 0}}@media(max-width:760px){.about-content{padding:18px 14px 0}.about-panel{padding:17px}.about-hero h1{font-size:29px}.about-hero p{font-size:13px}.about-grid,.about-steps{grid-template-columns:1fr}.about-panel h2{font-size:19px}}
+
+.footer-brand{font-size:17px;font-weight:700;color:var(--text);margin-bottom:7px}.footer-description{font-size:13px;color:var(--muted);margin:0 0 18px}
 </style>
 </head>
 <body>
@@ -205,7 +207,12 @@ header{position:relative;top:auto;min-height:68px;padding:12px 28px;background:v
 </section>
 
 </div>
-<footer class="footer" style="text-align:center"><div class="footer-title">Text Formatter</div><p class="footer-desc">A simple online tool for formatting, cleaning and organizing text.</p><nav aria-label="Footer navigation" class="footerlinks" style="justify-content:center;border-top:0;padding-top:0"><a href="/text-formatter/">Home</a><a href="/text-formatter/about/">About</a><a href="/text-formatter/how-to-use/">How to Use</a><a href="/text-formatter/faq/">FAQ</a><a href="/text-formatter/privacy/">Privacy Policy</a><a href="/text-formatter/terms/">Terms</a><a href="/text-formatter/contact/">Contact</a></nav><div class="copyright" style="border-top:1px solid var(--line)">© 2026 Text Formatter. A Fiyaz Tools product.</div></footer>
+<footer class="footer" style="text-align:center">
+<div class="footer-brand">Text Formatter</div>
+<p class="footer-description">A simple online tool for formatting, cleaning and organizing text.</p>
+<nav aria-label="Footer navigation" class="footerlinks"><a href="/text-formatter/">Home</a><a href="/text-formatter/about/">About</a><a href="/text-formatter/how-to-use/">How to Use</a><a href="/text-formatter/faq/">FAQ</a><a href="/text-formatter/privacy/">Privacy Policy</a><a href="/text-formatter/terms/">Terms</a><a href="/text-formatter/contact/">Contact</a></nav>
+<div class="copyright">© 2026 Text Formatter. A Fiyaz Tools product.</div>
+</footer>
 </main></div>
 <script>
 const themeToggle=document.getElementById('themeToggle');
