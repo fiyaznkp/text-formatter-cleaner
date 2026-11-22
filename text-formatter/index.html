@@ -147,6 +147,8 @@ header{position:relative;top:auto;min-height:68px;padding:12px 28px;background:v
 @media(max-width:600px){.editorial-section{margin-top:30px}.editorial-section .editorial-heading{font-size:25px}.editorial-section .editorial-lead{font-size:14px}.editorial-cards{grid-template-columns:1fr;gap:12px}.editorial-card{padding:19px}}
 
 .editorial-section[hidden]{display:none!important}
+
+.footer-brand{font-size:17px;font-weight:700;color:var(--text);margin-bottom:7px}.footer-description{font-size:13px;color:var(--muted);margin:0 0 18px}
 </style></head><body class="dark"><div class="app"><aside><div class="brand"><div class="logo">A</div><div><strong>Text Formatter</strong><small>Simple tool for everyday text</small></div></div><nav aria-label="Tool sections" class="nav"><button class="navitem active" data-section="formatter"><span class="navicon">Aa</span>Text Formatter</button><button class="navitem" data-section="find"><span class="navicon">⌕</span>Find, Remove &amp; Replace</button><button class="navitem" data-section="lines"><span class="navicon">☷</span>Clean Text</button><button class="navitem" data-section="lists"><span class="navicon">≡</span>Format Lists</button></nav></aside><main><header>
 <nav aria-label="Main website navigation" class="top-navigation">
 <a class="active" href="/text-formatter/">Home</a>
@@ -264,7 +266,12 @@ header{position:relative;top:auto;min-height:68px;padding:12px 28px;background:v
     <article class="editorial-card"><h3>Text checking</h3><p>Review approximate word, character and sentence counts when preparing text to meet a length requirement.</p></article>
   </div>
 </section>
-<footer class="footer" style="text-align:center"><div class="footer-title">Text Formatter</div><p class="footer-desc">A simple online tool for formatting, cleaning and organizing text.</p><nav aria-label="Footer navigation" class="footerlinks" style="justify-content:center;border-top:0;padding-top:0"><a href="/text-formatter/">Home</a><a href="/text-formatter/about/">About</a><a href="/text-formatter/how-to-use/">How to Use</a><a href="/text-formatter/faq/">FAQ</a><a href="/text-formatter/privacy/">Privacy Policy</a><a href="/text-formatter/terms/">Terms</a><a href="/text-formatter/contact/">Contact</a></nav><div class="copyright" style="border-top:1px solid var(--line)">© 2026 Text Formatter. A Fiyaz Tools product.</div></footer></div></main></div><div aria-live="polite" class="toast" id="toast" role="status"></div>
+<footer class="footer" style="text-align:center">
+<div class="footer-brand">Text Formatter</div>
+<p class="footer-description">A simple online tool for formatting, cleaning and organizing text.</p>
+<nav aria-label="Footer navigation" class="footerlinks"><a href="/text-formatter/">Home</a><a href="/text-formatter/about/">About</a><a href="/text-formatter/how-to-use/">How to Use</a><a href="/text-formatter/faq/">FAQ</a><a href="/text-formatter/privacy/">Privacy Policy</a><a href="/text-formatter/terms/">Terms</a><a href="/text-formatter/contact/">Contact</a></nav>
+<div class="copyright">© 2026 Text Formatter. A Fiyaz Tools product.</div>
+</footer></div></main></div><div aria-live="polite" class="toast" id="toast" role="status"></div>
 <script>
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)], editor=$('#mainText');
 let undoStack=[],redoStack=[],committed=editor.value,inputTimer=null,previewValue=null,toastTimer=null,findMatchesList=[],findIndex=-1;
