@@ -1,1209 +1,162 @@
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Use Text Formatter</title>
+<meta name="description" content="Learn how to format, find, clean and organize text with Text Formatter.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://fiyaznkp.com/text-formatter/how-to-use/">
+<meta property="og:title" content="How to Use Text Formatter">
+<meta property="og:description" content="A practical guide to formatting, finding, cleaning and organizing text with Text Formatter.">
+<meta property="og:url" content="https://fiyaznkp.com/text-formatter/how-to-use/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="How to Use Text Formatter">
+<meta name="twitter:description" content="Learn the main features of Text Formatter with this step-by-step guide.">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4PBH582QW4"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-4PBH582QW4');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#2868ee;--bg:#111315;--panel:#191d22;--soft:#20262d;--text:#f3f5f8;--muted:#aeb9c8;--line:#303943;--shadow:0 12px 34px rgba(0,0,0,.16)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,Arial,sans-serif}body:not(.dark){--bg:#f5f7fb;--panel:#fff;--soft:#f1f4f8;--text:#172033;--muted:#66758a;--line:#dfe5ed;--shadow:0 10px 30px rgba(23,32,51,.055)}
+a{color:inherit}a:focus-visible,button:focus-visible{outline:3px solid #60a5fa;outline-offset:3px}
+.app{min-height:100vh;display:grid;grid-template-columns:248px minmax(0,1fr)}
+aside{position:sticky;top:0;height:100vh;align-self:start;display:flex;flex-direction:column;gap:22px;padding:22px 15px;background:var(--panel);border-right:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:11px;padding:3px 9px 18px;border-bottom:1px solid var(--line);text-decoration:none}.logo{width:43px;height:43px;flex-shrink:0;border-radius:13px;background:linear-gradient(135deg,#2563eb,#60a5fa);display:grid;place-items:center;color:#fff;font-weight:800;font-size:23px}.brand strong{display:block;font-size:17px}.brand small{display:block;color:var(--muted);font-size:11px;margin-top:3px}
+.nav{display:grid;gap:5px}.navitem{display:flex;align-items:center;gap:11px;padding:13px 12px;border-radius:11px;text-decoration:none;color:var(--muted);font-size:13px;font-weight:600}.navitem:hover{background:var(--soft);color:var(--text)}.navicon{width:23px;text-align:center}
+main{min-width:0;display:flex;flex-direction:column}header.topbar{min-height:68px;background:var(--panel);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:12px 28px;gap:16px}
+.top-navigation{display:flex;align-items:center;gap:clamp(10px,1.5vw,22px);overflow-x:auto}.top-navigation a{font-size:13px;font-weight:600;color:var(--muted);text-decoration:none;white-space:nowrap;padding:8px 2px;border-bottom:2px solid transparent}.top-navigation a:hover,.top-navigation a.active{color:var(--blue);border-bottom-color:var(--blue)}
+.iconbtn{border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:10px;padding:9px 12px;font-size:16px;cursor:pointer}
+.content{width:100%;max-width:1500px;margin:0 auto;padding:30px 28px 0}.hero{margin:0 0 24px}.eyebrow{font-size:11px;font-weight:800;letter-spacing:1.6px;color:var(--blue);margin-bottom:10px}h1{font-size:clamp(30px,3vw,40px);letter-spacing:-1.35px;line-height:1.16;margin:0 0 12px}.hero p{font-size:15px;line-height:1.75;color:var(--muted);max-width:900px;margin:0}
+.note{margin-top:18px;padding:15px 17px;border-left:3px solid var(--blue);background:var(--soft);border-radius:0 10px 10px 0;color:var(--muted);font-size:13px;line-height:1.7}
+.section{margin:30px 0 38px}.section h2{font-size:22px;line-height:1.3;margin:0 0 8px;letter-spacing:-.35px}.lead{font-size:15px;line-height:1.7;color:var(--muted);margin:0 0 18px;max-width:1000px}
+.steps,.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.steps{grid-template-columns:repeat(4,minmax(0,1fr))}
+.card,.step{min-width:0;border:1px solid var(--line);border-radius:16px;background:var(--panel);padding:19px 20px;box-shadow:var(--shadow)}.step-num{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--blue);color:#fff;font-weight:700;margin-bottom:13px}
+.card h3,.step h3{font-size:16px;line-height:1.4;margin:0 0 8px;color:var(--text)}.card p,.step p{font-size:13px;line-height:1.7;color:var(--muted);margin:0}.example{margin-top:13px;padding:12px 13px;border:1px solid var(--line);border-radius:11px;background:var(--soft);font-size:13px;line-height:1.7;color:var(--text)}.example small{display:block;color:var(--muted);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;margin-bottom:4px}
+.cards.two{grid-template-columns:repeat(2,minmax(0,1fr))}.tips{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.tip{padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:var(--soft);font-size:13px;line-height:1.7;color:var(--muted)}.tip b{color:var(--text)}
 
-  <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
-  <title>
-    How to Use Text Formatter & Cleaner
-  </title>
-
-  <meta
-    name="description"
-    content="Learn how to use Text Formatter & Cleaner to change text case, remove commas and extra spaces, copy results, and check word, character, sentence, and reading-time estimates."
-  >
-
-  <link
-    rel="canonical"
-    href="https://fiyaznkp.com/text-formatter/how-to-use/"
-  >
-
-  <meta
-    property="og:title"
-    content="How to Use Text Formatter & Cleaner"
-  >
-
-  <meta
-    property="og:description"
-    content="A step-by-step guide to text case conversion, text cleaning, editing controls, and text statistics in Text Formatter & Cleaner."
-  >
-
-  <meta
-    property="og:url"
-    content="https://fiyaznkp.com/text-formatter/how-to-use/"
-  >
-
-  <meta
-    property="og:type"
-    content="website"
-  >
-
-  <meta
-    name="twitter:card"
-    content="summary"
-  >
-
-  <meta
-    name="twitter:title"
-    content="How to Use Text Formatter & Cleaner"
-  >
-
-  <meta
-    name="twitter:description"
-    content="Learn how to use Text Formatter & Cleaner's text formatting and cleaning features."
-  >
-
-
-  <!-- Google Analytics -->
-
-  <script
-    async
-    src="https://www.googletagmanager.com/gtag/js?id=G-4PBH582QW4"
-  ></script>
-
-  <script>
-
-    window.dataLayer =
-      window.dataLayer || [];
-
-    function gtag(){
-      dataLayer.push(arguments);
-    }
-
-    gtag('js', new Date());
-
-    gtag(
-      'config',
-      'G-4PBH582QW4'
-    );
-
-  </script>
-
-
-  <!-- Theme initialization -->
-  <script>
-    let savedTheme = null;
-
-    try {
-      savedTheme = localStorage.getItem('textFormatterTheme');
-    } catch (error) {
-      savedTheme = null;
-    }
-
-    if (savedTheme === 'light') {
-      document.documentElement.classList.remove('dark');
-    } else if (savedTheme === 'dark') {
-      document.documentElement.classList.add('dark');
-    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      document.documentElement.classList.add('dark');
-    }
-  </script>
-
-  <!-- Tailwind CSS -->
-
-  <script src="https://cdn.tailwindcss.com"></script>
-
-
-  <!-- Font Awesome -->
-
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-  >
-
-
-  <!-- Google Font -->
-
-  <link
-    rel="preconnect"
-    href="https://fonts.googleapis.com"
-  >
-
-  <link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-  >
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet"
-  >
-
-
-  <script>
-
-    tailwind.config = {
-
-      darkMode: 'class',
-
-      theme: {
-
-        extend: {
-
-          fontFamily: {
-
-            sans: [
-              'Inter',
-              'sans-serif'
-            ],
-
-          }
-
-        }
-
-      }
-
-    };
-
-  </script>
-
-
-  <style>
-
-    a:focus-visible,
-    button:focus-visible,
-    summary:focus-visible {
-      outline: 3px solid #6366f1;
-      outline-offset: 3px;
-      border-radius: 4px;
-    }
-
-    body {
-      font-family:
-        'Inter',
-        sans-serif;
-    }
-
-  
-
-    /* Premium Graphite theme — corrected dark-mode contrast and surfaces */
-    html { color-scheme: light; background: #F5F8FF; }
-    html.dark { color-scheme: dark; background: #121416; }
-    body { background: #F5F8FF !important; color: #273449 !important; }
-    html.dark body { background: #121416 !important; color: #F3F5F8 !important; }
-
-    /* Main page surface */
-    body > div > main article,
-    article { background: #FFFFFF !important; border: 1px solid #E2EAF7 !important; border-radius: 18px; box-shadow: 0 8px 24px rgba(17,24,39,.04); }
-    html.dark body > div > main article,
-    html.dark article { background: #1A1D21 !important; border-color: #303640 !important; box-shadow: 0 10px 28px rgba(0,0,0,.14); }
-
-    /* Inner example/statistic cards — attribute selectors avoid escaped-class bugs */
-    article [class~="bg-slate-50"] { background: #FFFFFF !important; border: 1px solid #E2EAF7; border-radius: 14px; }
-    html.dark article [class~="bg-slate-50"],
-    html.dark article [class~="dark:bg-slate-700/50"] { background: #20242A !important; border: 1px solid #303640 !important; border-radius: 14px; }
-
-    /* Light-mode typography */
-    h1, h2, h3, .text-slate-900 { color: #111827 !important; }
-    p, li, .text-slate-600 { color: #273449 !important; }
-    .text-slate-500 { color: #475569 !important; }
-
-    /* Explicit dark-mode overrides for every major text type */
-    html.dark body h1, html.dark body h2, html.dark body h3,
-    html.dark body .text-slate-900,
-    html.dark body [class~="dark:text-white"] { color: #F3F5F8 !important; }
-    html.dark body p, html.dark body li,
-    html.dark body .text-slate-600,
-    html.dark body [class~="dark:text-slate-300"] { color: #AAB3C0 !important; }
-    html.dark body .text-slate-500,
-    html.dark body [class~="dark:text-slate-400"] { color: #AAB3C0 !important; }
-    html.dark body strong { color: #F3F5F8 !important; }
-
-    /* Blue-gradient A logo — consistent with the Text Formatter homepage */
-    a[href="/text-formatter/"] > div.w-10.h-10 {
-      background: linear-gradient(135deg, #2563EB, #4F46E5) !important;
-      color: #FFFFFF !important;
-      border: none !important;
-      box-shadow: 0 4px 10px rgba(37, 99, 235, .22) !important;
-    }
-    a[href="/text-formatter/"] > div.w-10.h-10 i { color: #FFFFFF !important; }
-    html.dark a[href="/text-formatter/"] > div.w-10.h-10 {
-      background: linear-gradient(135deg, #2563EB, #4F46E5) !important;
-      color: #FFFFFF !important;
-      border: none !important;
-      box-shadow: 0 4px 10px rgba(37, 99, 235, .22) !important;
-    }
-    html.dark a[href="/text-formatter/"] > div.w-10.h-10 i { color: #FFFFFF !important; }
-
-    /* Neutral step markers */
-    article ol li > span:first-child { background: #E8EDF5 !important; color: #273449 !important; }
-    html.dark article ol li > span:first-child { background: #292E36 !important; color: #F3F5F8 !important; }
-
-    /* Restrained blue accents for links and focus only */
-    a.text-blue-600 { color: #2563EB !important; }
-    a:hover { text-decoration-color: currentColor; }
-    html.dark body a.text-blue-600,
-    html.dark body [class~="dark:text-blue-400"] { color: #60A5FA !important; }
-    a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px solid #2563EB; outline-offset: 3px; border-radius: 4px; }
-    html.dark a:focus-visible, html.dark button:focus-visible, html.dark summary:focus-visible { outline-color: #60A5FA; }
-
-    /* Header/footer dividers */
-    header, footer, footer .border-t { border-color: #E2EAF7 !important; }
-    html.dark header, html.dark footer, html.dark footer .border-t { border-color: #303640 !important; }
-    @media (max-width: 640px) { article { padding: 1.25rem !important; } }
-  </style>
-
+.footer-brand{font-size:17px;font-weight:700;color:var(--text);margin-bottom:7px}.footer-description{font-size:13px;color:var(--muted);margin:0 0 18px}.footer{margin-top:auto;padding:28px;background:var(--panel);border-top:1px solid var(--line);color:var(--muted);text-align:center}.footerlinks{display:flex;flex-wrap:wrap;justify-content:center;gap:18px;margin:0 0 17px}.footerlinks a{font-size:11px;color:var(--muted);text-decoration:none}.copyright{font-size:10px;padding-top:12px;border-top:1px solid var(--line)}
+@media(max-width:1100px){.steps,.cards{grid-template-columns:repeat(2,minmax(0,1fr))}header.topbar{flex-wrap:wrap}.top-navigation{order:2;width:100%}}
+@media(max-width:900px){.app{grid-template-columns:1fr}aside{position:relative;height:auto;display:flex;flex-direction:row;align-items:center;gap:16px;padding:12px 16px;border-right:0;border-bottom:1px solid var(--line)}.brand{border:0;padding:0;flex-shrink:0}.nav{display:flex;overflow-x:auto;gap:5px}.navitem{white-space:nowrap;padding:9px 11px;font-size:11px}header.topbar{min-height:60px;padding:10px 16px}.content{padding:22px 20px 0}}
+@media(max-width:600px){aside{align-items:flex-start;flex-direction:column;gap:9px}.nav{width:100%}.content{padding:18px 14px 0}.steps,.cards,.cards.two,.tips{grid-template-columns:1fr}.card,.step{padding:18px}.section h2{font-size:19px}.lead,.hero p{font-size:13px}.footer{padding:24px 14px}.top-navigation{gap:13px}.top-navigation a{font-size:10px}}
+</style>
 </head>
-
-
-<body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100 min-h-screen">
-
-
-  <div class="w-full max-w-5xl mx-auto px-4 py-6 sm:px-6 lg:px-8">
-
-
-    <!-- Header -->
-
-    <header class="flex flex-col sm:flex-row items-center justify-between gap-4 mb-8 pb-6 border-b border-slate-200 dark:border-slate-800">
-
-
-      <!-- Logo / Home -->
-
-      <a
-        href="/text-formatter/"
-        class="flex items-center gap-3"
-      >
-
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center text-white shadow-md">
-
-          <i class="fa-solid fa-font font-bold text-lg" aria-hidden="true"></i>
-
-        </div>
-
-
-        <div>
-
-          <div class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">
-
-            Text Formatter & Cleaner
-
-          </div>
-
-
-          <div class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">
-
-            Simple tool for everyday text
-
-          </div>
-
-        </div>
-
-      </a>
-
-
-      <!-- Navigation -->
-
-      <nav class="flex flex-wrap items-center justify-center gap-4 text-sm">
-
-
-        <a
-          href="/text-formatter/"
-          class="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition"
-        >
-          Home
-        </a>
-
-
-        <a
-          href="/text-formatter/about/"
-          class="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition"
-        >
-          About
-        </a>
-
-
-        <a
-          href="/text-formatter/how-to-use/"
-          class="font-semibold text-blue-600 dark:text-blue-400"
-        >
-          How to Use
-        </a>
-
-
-        <a
-          href="/text-formatter/faq/"
-          class="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition"
-        >
-          FAQ
-        </a>
-
-
-        <a
-          href="/text-formatter/contact/"
-          class="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition"
-        >
-          Contact
-        </a>
-
-        <button
-          id="themeToggle"
-          type="button"
-          aria-label="Toggle dark mode"
-          title="Toggle dark mode"
-          class="w-9 h-9 rounded-lg border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition flex items-center justify-center"
-        >
-          <i id="themeIcon" class="fa-solid fa-moon"></i>
-        </button>
-
-      </nav>
-
-    </header>
-
-
-    <!-- Main Content -->
-
-    <main>
-
-      <article class="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6 sm:p-8 lg:p-10 shadow-sm">
-
-
-        <!-- Page Introduction -->
-
-        <header class="mb-10">
-
-          <h1 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-4">
-
-            How to Use Text Formatter & Cleaner
-
-          </h1>
-
-
-          <p class="text-lg leading-8 text-slate-600 dark:text-slate-300">
-
-            Text Formatter & Cleaner helps you change text case, remove unwanted
-            spacing and commas, and check text statistics. Follow this guide
-            to learn how to use the main features.
-
-          </p>
-
-        </header>
-
-
-        <!-- Getting Started -->
-
-        <section class="mb-10">
-
-          <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">
-
-            Getting Started
-
-          </h2>
-
-
-          <ol class="space-y-4 text-slate-600 dark:text-slate-300">
-
-
-            <li class="flex gap-3">
-
-              <span class="flex-shrink-0 w-7 h-7 rounded-full bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400 flex items-center justify-center font-semibold text-sm">
-
-                1
-
-              </span>
-
-
-              <span class="leading-7">
-
-                Open the
-
-                <a
-                  href="/text-formatter/"
-                  class="text-blue-600 dark:text-blue-400 hover:underline font-medium"
-                >
-                  Home
-                </a>
-
-                page.
-
-              </span>
-
-            </li>
-
-
-            <li class="flex gap-3">
-
-              <span class="flex-shrink-0 w-7 h-7 rounded-full bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400 flex items-center justify-center font-semibold text-sm">
-
-                2
-
-              </span>
-
-
-              <span class="leading-7">
-
-                Type your text into the editor or paste text from another
-                application.
-
-              </span>
-
-            </li>
-
-
-            <li class="flex gap-3">
-
-              <span class="flex-shrink-0 w-7 h-7 rounded-full bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400 flex items-center justify-center font-semibold text-sm">
-
-                3
-
-              </span>
-
-
-              <span class="leading-7">
-
-                Choose the formatting or cleaning operation you need.
-
-              </span>
-
-            </li>
-
-
-            <li class="flex gap-3">
-
-              <span class="flex-shrink-0 w-7 h-7 rounded-full bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400 flex items-center justify-center font-semibold text-sm">
-
-                4
-
-              </span>
-
-
-              <span class="leading-7">
-
-                Review the result and use the Copy button when you are ready
-                to use the formatted text.
-
-              </span>
-
-            </li>
-
-
-          </ol>
-
-        </section>
-
-
-        <!-- Case Conversion -->
-
-        <section class="mb-10">
-
-          <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-5">
-
-            Text Case Conversion
-
-          </h2>
-
-
-          <div class="space-y-4">
-
-
-            <!-- Sentence Case -->
-
-            <div class="rounded-xl bg-slate-50 dark:bg-slate-700/50 p-5">
-
-              <h3 class="font-semibold text-slate-900 dark:text-white mb-2">
-
-                Sentence Case
-
-              </h3>
-
-
-              <p class="text-sm leading-6 text-slate-600 dark:text-slate-300">
-
-                Use Sentence Case when you want the beginning of sentences
-                capitalized while converting the remaining letters to
-                lowercase.
-
-              </p>
-
-
-              <p class="text-sm leading-6 text-slate-500 dark:text-slate-400 mt-2">
-
-                Example:
-                <strong>hello WORLD. THIS IS TEXT.</strong>
-
-                becomes
-
-                <strong>Hello world. This is text.</strong>
-
-              </p>
-
-            </div>
-
-
-            <!-- lowercase -->
-
-            <div class="rounded-xl bg-slate-50 dark:bg-slate-700/50 p-5">
-
-              <h3 class="font-semibold text-slate-900 dark:text-white mb-2">
-
-                lowercase
-
-              </h3>
-
-
-              <p class="text-sm leading-6 text-slate-600 dark:text-slate-300">
-
-                Use lowercase to convert all alphabetic characters in the
-                text to small letters.
-
-              </p>
-
-
-              <p class="text-sm leading-6 text-slate-500 dark:text-slate-400 mt-2">
-
-                Example:
-                <strong>Hello WORLD</strong>
-
-                becomes
-
-                <strong>hello world</strong>.
-
-              </p>
-
-            </div>
-
-
-            <!-- UPPERCASE -->
-
-            <div class="rounded-xl bg-slate-50 dark:bg-slate-700/50 p-5">
-
-              <h3 class="font-semibold text-slate-900 dark:text-white mb-2">
-
-                UPPERCASE
-
-              </h3>
-
-
-              <p class="text-sm leading-6 text-slate-600 dark:text-slate-300">
-
-                Use UPPERCASE to convert all alphabetic characters to capital
-                letters.
-
-              </p>
-
-
-              <p class="text-sm leading-6 text-slate-500 dark:text-slate-400 mt-2">
-
-                Example:
-                <strong>Hello world</strong>
-
-                becomes
-
-                <strong>HELLO WORLD</strong>.
-
-              </p>
-
-            </div>
-
-
-            <!-- Capitalized Case -->
-
-            <div class="rounded-xl bg-slate-50 dark:bg-slate-700/50 p-5">
-
-              <h3 class="font-semibold text-slate-900 dark:text-white mb-2">
-
-                Capitalized Case
-
-              </h3>
-
-
-              <p class="text-sm leading-6 text-slate-600 dark:text-slate-300">
-
-                Use Capitalized Case to capitalize the first letter of each
-                word.
-
-              </p>
-
-
-              <p class="text-sm leading-6 text-slate-500 dark:text-slate-400 mt-2">
-
-                Example:
-                <strong>hello world from text formatter</strong>
-
-                becomes
-
-                <strong>Hello World From Text Formatter</strong>.
-
-              </p>
-
-            </div>
-
-
-            <!-- Title Case -->
-
-            <div class="rounded-xl bg-slate-50 dark:bg-slate-700/50 p-5">
-
-              <h3 class="font-semibold text-slate-900 dark:text-white mb-2">
-
-                Title Case
-
-              </h3>
-
-
-              <p class="text-sm leading-6 text-slate-600 dark:text-slate-300">
-
-                Use Title Case when preparing headings or titles. Common
-                short connecting words may remain lowercase according to
-                the tool's title-case rules.
-
-              </p>
-
-
-              <p class="text-sm leading-6 text-slate-500 dark:text-slate-400 mt-2">
-
-                Example:
-                <strong>the lord of the rings</strong>
-
-                becomes
-
-                <strong>The Lord of the Rings</strong>.
-
-              </p>
-
-            </div>
-
-
-          </div>
-
-        </section>
-
-
-        <!-- Cleaning -->
-
-        <section class="mb-10">
-
-          <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-5">
-
-            Cleaning Text
-
-          </h2>
-
-
-          <div class="space-y-4">
-
-
-            <!-- Remove Commas -->
-
-            <div class="rounded-xl bg-slate-50 dark:bg-slate-700/50 p-5">
-
-              <h3 class="font-semibold text-slate-900 dark:text-white mb-2">
-
-                Remove Commas
-
-              </h3>
-
-
-              <p class="text-sm leading-6 text-slate-600 dark:text-slate-300">
-
-                Use Remove Commas to remove comma characters from your text.
-                This can be useful when preparing lists or text copied from
-                another source.
-
-              </p>
-
-
-              <p class="text-sm leading-6 text-slate-500 dark:text-slate-400 mt-2">
-
-                Example:
-                <strong>John, Mary, David</strong>
-
-                becomes
-
-                <strong>John Mary David</strong>.
-
-              </p>
-
-            </div>
-
-
-            <!-- Extra Spaces -->
-
-            <div class="rounded-xl bg-slate-50 dark:bg-slate-700/50 p-5">
-
-              <h3 class="font-semibold text-slate-900 dark:text-white mb-2">
-
-                Remove Extra Spaces
-
-              </h3>
-
-
-              <p class="text-sm leading-6 text-slate-600 dark:text-slate-300">
-
-                Use Remove Extra Spaces to reduce repeated spaces and tabs.
-                The operation keeps the text's line structure while cleaning
-                unnecessary spacing.
-
-              </p>
-
-
-              <p class="text-sm leading-6 text-slate-500 dark:text-slate-400 mt-2">
-
-                Example:
-                <strong>Hello&nbsp;&nbsp;&nbsp;&nbsp;world</strong>
-
-                becomes
-
-                <strong>Hello world</strong>.
-
-              </p>
-
-            </div>
-
-
-          </div>
-
-        </section>
-
-
-        <!-- Statistics -->
-
-        <section class="mb-10">
-
-          <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-5">
-
-            Text Statistics
-
-          </h2>
-
-
-          <p class="leading-7 text-slate-600 dark:text-slate-300 mb-4">
-
-            The editor automatically updates basic statistics while you type
-            or paste text.
-
-          </p>
-
-
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-
-
-            <div class="rounded-xl bg-slate-50 dark:bg-slate-700/50 p-5">
-
-              <h3 class="font-semibold text-slate-900 dark:text-white mb-2">
-
-                Words
-
-              </h3>
-
-
-              <p class="text-sm leading-6 text-slate-600 dark:text-slate-300">
-
-                Shows the number of words detected in the text.
-
-              </p>
-
-            </div>
-
-
-            <div class="rounded-xl bg-slate-50 dark:bg-slate-700/50 p-5">
-
-              <h3 class="font-semibold text-slate-900 dark:text-white mb-2">
-
-                Characters
-
-              </h3>
-
-
-              <p class="text-sm leading-6 text-slate-600 dark:text-slate-300">
-
-                Shows the total number of characters in the editor.
-
-              </p>
-
-            </div>
-
-
-            <div class="rounded-xl bg-slate-50 dark:bg-slate-700/50 p-5">
-
-              <h3 class="font-semibold text-slate-900 dark:text-white mb-2">
-
-                Sentences
-
-              </h3>
-
-
-              <p class="text-sm leading-6 text-slate-600 dark:text-slate-300">
-
-                Provides an estimate of the number of sentences in the text.
-
-              </p>
-
-            </div>
-
-
-            <div class="rounded-xl bg-slate-50 dark:bg-slate-700/50 p-5">
-
-              <h3 class="font-semibold text-slate-900 dark:text-white mb-2">
-
-                Reading Time
-
-              </h3>
-
-
-              <p class="text-sm leading-6 text-slate-600 dark:text-slate-300">
-
-                Provides an estimated reading time based on the text's word
-                count.
-
-              </p>
-
-            </div>
-
-
-          </div>
-
-        </section>
-
-
-        <!-- Editing Controls -->
-
-        <section class="mb-10">
-
-          <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-5">
-
-            Editing Controls
-
-          </h2>
-
-
-          <div class="space-y-4">
-
-
-            <div class="rounded-xl bg-slate-50 dark:bg-slate-700/50 p-5">
-
-              <h3 class="font-semibold text-slate-900 dark:text-white mb-2">
-
-                Copy
-
-              </h3>
-
-
-              <p class="text-sm leading-6 text-slate-600 dark:text-slate-300">
-
-                Click Copy after completing your formatting or cleaning
-                operation to copy the current text to your clipboard.
-
-              </p>
-
-            </div>
-
-
-            <div class="rounded-xl bg-slate-50 dark:bg-slate-700/50 p-5">
-
-              <h3 class="font-semibold text-slate-900 dark:text-white mb-2">
-
-                Clear
-
-              </h3>
-
-
-              <p class="text-sm leading-6 text-slate-600 dark:text-slate-300">
-
-                Click Clear when you want to remove the current text from
-                the editor.
-
-              </p>
-
-            </div>
-
-
-            <div class="rounded-xl bg-slate-50 dark:bg-slate-700/50 p-5">
-
-              <h3 class="font-semibold text-slate-900 dark:text-white mb-2">
-
-                Undo and Redo
-
-              </h3>
-
-
-              <p class="text-sm leading-6 text-slate-600 dark:text-slate-300">
-
-                Use Undo to reverse a recent change and Redo to restore a
-                change that was undone. Keyboard shortcuts are also supported
-                for common undo and redo actions.
-
-              </p>
-
-            </div>
-
-
-            <div class="rounded-xl bg-slate-50 dark:bg-slate-700/50 p-5">
-
-              <h3 class="font-semibold text-slate-900 dark:text-white mb-2">
-
-                Sample Text
-
-              </h3>
-
-
-              <p class="text-sm leading-6 text-slate-600 dark:text-slate-300">
-
-                Use Sample Text when you want to quickly load example content
-                into the editor and test the available formatting features.
-
-              </p>
-
-            </div>
-
-
-            <div class="rounded-xl bg-slate-50 dark:bg-slate-700/50 p-5">
-
-              <h3 class="font-semibold text-slate-900 dark:text-white mb-2">
-
-                Light and Dark Mode
-
-              </h3>
-
-
-              <p class="text-sm leading-6 text-slate-600 dark:text-slate-300">
-
-                Use the theme button to switch between light and dark
-                appearance. Your selected theme can be saved in your browser
-                for future visits.
-
-              </p>
-
-            </div>
-
-
-          </div>
-
-        </section>
-
-
-        <!-- Tips -->
-
-        <section>
-
-          <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-5">
-
-            Tips for Faster Text Formatting
-
-          </h2>
-
-
-          <ul class="list-disc pl-6 space-y-3 text-slate-600 dark:text-slate-300">
-
-
-            <li>
-
-              Paste the complete block of text into the editor before choosing
-              a formatting operation.
-
-            </li>
-
-
-            <li>
-
-              Use the case conversion buttons when you need to standardize
-              capitalization across a larger block of text.
-
-            </li>
-
-
-            <li>
-
-              Use Remove Extra Spaces after copying text from documents or
-              other sources that contain inconsistent spacing.
-
-            </li>
-
-
-            <li>
-
-              Check the statistics displayed below the editor when you need
-              a quick estimate of the text length.
-
-            </li>
-
-
-            <li>
-
-              Use Undo if a conversion produces a result you do not want.
-
-            </li>
-
-
-          </ul>
-
-        </section>
-
-
-      </article>
-
-    </main>
-
-
-    <!-- Footer -->
-
-    <footer class="border-t border-slate-200 dark:border-slate-800 mt-10 pt-8 pb-4">
-
-
-      <div class="text-center">
-
-
-        <div class="font-bold text-slate-900 dark:text-white mb-2">
-
-          Text Formatter & Cleaner
-
-        </div>
-
-
-        <p class="text-sm text-slate-500 dark:text-slate-400 mb-5">
-
-          A simple online tool for formatting and cleaning text.
-
-        </p>
-
-
-        <nav class="flex flex-wrap items-center justify-center gap-x-5 gap-y-3 text-sm mb-6">
-
-
-          <a
-            href="/text-formatter/"
-            class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition"
-          >
-            Home
-          </a>
-
-
-          <a
-            href="/text-formatter/about/"
-            class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition"
-          >
-            About
-          </a>
-
-
-          <a
-            href="/text-formatter/how-to-use/"
-            class="text-blue-600 dark:text-blue-400 font-medium"
-          >
-            How to Use
-          </a>
-
-
-          <a
-            href="/text-formatter/faq/"
-            class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition"
-          >
-            FAQ
-          </a>
-
-
-          <a
-            href="/text-formatter/privacy/"
-            class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition"
-          >
-            Privacy Policy
-          </a>
-
-
-          <a
-            href="/text-formatter/terms/"
-            class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition"
-          >
-            Terms
-          </a>
-
-
-          <a
-            href="/text-formatter/contact/"
-            class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition"
-          >
-            Contact
-          </a>
-
-
-        </nav>
-
-
-        <div class="border-t border-slate-200 dark:border-slate-800 pt-5">
-
-
-          <p class="text-xs text-slate-500 dark:text-slate-500">
-
-            © 2026 Text Formatter & Cleaner.
-            All rights reserved.
-
-          </p>
-
-
-        </div>
-
-
-      </div>
-
-    </footer>
-
-
-  </div>
-
-
-  <!-- Theme Toggle -->
-  <script>
-    (function () {
-      const themeToggle = document.getElementById('themeToggle');
-      const themeIcon = document.getElementById('themeIcon');
-
-      function getCurrentTheme() {
-        return document.documentElement.classList.contains('dark')
-          ? 'dark'
-          : 'light';
-      }
-
-      function updateThemeIcon() {
-        if (!themeIcon || !themeToggle) return;
-
-        const isDark = getCurrentTheme() === 'dark';
-
-        themeIcon.className = isDark
-          ? 'fa-solid fa-sun'
-          : 'fa-solid fa-moon';
-
-        themeToggle.setAttribute(
-          'aria-label',
-          isDark ? 'Switch to light mode' : 'Switch to dark mode'
-        );
-
-        themeToggle.setAttribute(
-          'title',
-          isDark ? 'Switch to light mode' : 'Switch to dark mode'
-        );
-      }
-
-      function setTheme(theme) {
-        document.documentElement.classList.toggle('dark', theme === 'dark');
-
-        try {
-          localStorage.setItem('textFormatterTheme', theme);
-        } catch (error) {
-          // Ignore storage errors and keep the theme for the current page.
-        }
-
-        updateThemeIcon();
-      }
-
-      updateThemeIcon();
-
-      if (themeToggle) {
-        themeToggle.addEventListener('click', function () {
-          const nextTheme =
-            getCurrentTheme() === 'dark' ? 'light' : 'dark';
-
-          setTheme(nextTheme);
-        });
-      }
-    })();
-  </script>
-
-
+<body class="dark">
+<div class="app">
+<aside>
+<a class="brand" href="/text-formatter/"><div class="logo">A</div><div><strong>Text Formatter</strong><small>Simple tool for everyday text</small></div></a>
+<nav class="nav" aria-label="Tool sections">
+<a class="navitem" href="/text-formatter/"><span class="navicon">Aa</span>Text Formatter</a>
+<a class="navitem" href="/text-formatter/#find"><span class="navicon">⌕</span>Find, Remove &amp; Replace</a>
+<a class="navitem" href="/text-formatter/#lines"><span class="navicon">☷</span>Clean Text</a>
+<a class="navitem" href="/text-formatter/#lists"><span class="navicon">≡</span>Format Lists</a>
+</nav>
+</aside>
+<main>
+<header class="topbar">
+<nav class="top-navigation" aria-label="Main website navigation">
+<a href="/text-formatter/">Home</a><a href="/text-formatter/about/">About</a><a class="active" href="/text-formatter/how-to-use/">How to Use</a><a href="/text-formatter/faq/">FAQ</a><a href="/text-formatter/contact/">Contact</a>
+</nav>
+<button class="iconbtn" id="themeToggle" type="button" aria-label="Switch theme" title="Switch theme">☾</button>
+</header>
+<div class="content">
+<section class="hero">
+<div class="eyebrow">HOW TO USE</div>
+<h1>How to Use Text Formatter</h1>
+<p>Learn how to format, find, clean and organize text with the tools available in Text Formatter. This guide walks through the main sections and explains when to use each feature.</p>
+<div class="note">Start by entering or pasting your text into the editor on the <a href="/text-formatter/" style="color:var(--blue);font-weight:700;text-decoration:none">Home page</a>. Then choose the tool that matches your task. Review your result before copying or downloading it.</div>
+</section>
+
+<section class="section">
+<h2>Getting started</h2><p class="lead">The basic workflow is the same for most tasks.</p>
+<div class="steps">
+<article class="step"><div class="step-num">1</div><h3>Enter your text</h3><p>Open the home page and type into the editor or paste text from another application.</p></article>
+<article class="step"><div class="step-num">2</div><h3>Choose a tool</h3><p>Select Text Formatter, Find &amp; Replace, Clean Text or Format Lists from the tool navigation.</p></article>
+<article class="step"><div class="step-num">3</div><h3>Apply an action</h3><p>Choose the operation you need. Some tools let you set options before applying a change.</p></article>
+<article class="step"><div class="step-num">4</div><h3>Review and export</h3><p>Check the updated text, make further edits if needed, then copy the result or download it as a TXT file.</p></article>
+</div>
+</section>
+
+<section class="section">
+<h2>1. Text formatting</h2><p class="lead">Use Text Formatter to change capitalization or make simple text adjustments.</p>
+<div class="cards">
+<article class="card"><h3>Sentence case</h3><p>Capitalize the beginning of sentences and convert the remaining letters to lowercase.</p><div class="example"><small>Example</small>hello WORLD. THIS IS TEXT.<br><b>Hello world. This is text.</b></div></article>
+<article class="card"><h3>lowercase</h3><p>Convert alphabetic characters to lowercase letters.</p><div class="example"><small>Example</small>HELLO World<br><b>hello world</b></div></article>
+<article class="card"><h3>UPPERCASE</h3><p>Convert alphabetic characters to capital letters.</p><div class="example"><small>Example</small>Hello world<br><b>HELLO WORLD</b></div></article>
+<article class="card"><h3>Capitalized Case</h3><p>Capitalize the first letter of each word.</p><div class="example"><small>Example</small>hello from text formatter<br><b>Hello From Text Formatter</b></div></article>
+<article class="card"><h3>Title Case</h3><p>Prepare headings and titles using the tool's title-case rules.</p><div class="example"><small>Example</small>the lord of the rings<br><b>The Lord of the Rings</b></div></article>
+<article class="card"><h3>Remove commas and extra spaces</h3><p>Remove comma characters or reduce repeated spaces when tidying text copied from another source.</p><div class="example"><small>Example</small>John, &nbsp; &nbsp; Mary<br><b>John Mary</b></div></article>
+</div>
+</section>
+
+<section class="section">
+<h2>2. Find, Remove &amp; Replace</h2><p class="lead">Use this section to locate matching words or phrases, move between matches, remove them or replace them with new text.</p>
+<div class="cards two">
+<article class="card"><h3>Find a word or phrase</h3><p>Enter a word, phrase or sentence and select Find matches. Use Previous and Next to move through the matches.</p></article>
+<article class="card"><h3>Remove matches</h3><p>Select Remove from my text to delete the matching occurrences from the editor. Review the result to make sure the removal has not affected the meaning.</p></article>
+<article class="card"><h3>Replace text</h3><p>Enter the text to find and the replacement wording, then select Replace in my text to update the matching occurrences.</p></article>
+<article class="card"><h3>Review each change</h3><p>Use Clear to reset the Find and Replace fields when you want to start a new search.</p></article>
+</div>
+</section>
+
+<section class="section">
+<h2>3. Clean Text</h2><p class="lead">Use Clean Text to filter characters, tidy lines, remove duplicates or extract specific information from your text.</p>
+<div class="cards">
+<article class="card"><h3>Keep selected content</h3><p>Keep only numbers, only words, letters and numbers, or numbers with decimals. These options remove other content that does not match the selected type.</p></article>
+<article class="card"><h3>Remove unwanted content</h3><p>Remove numbers, special characters or decimal points when you need a simpler text result.</p></article>
+<article class="card"><h3>Clean spacing and lines</h3><p>Trim spaces at the beginning and end of lines, replace tabs with spaces, remove duplicate words, remove duplicate lines or remove empty lines.</p></article>
+<article class="card"><h3>Extract information</h3><p>Extract numbers, email addresses or URLs from a larger block of text. The extracted items can then be reviewed and reused separately.</p></article>
+</div>
+<div class="note">The Clean Text section includes frequently used tools and additional options under More cleaning tools. Check the result after each operation, especially when removing or filtering content.</div>
+</section>
+
+<section class="section">
+<h2>4. Format Lists</h2><p class="lead">Use Format Lists to turn plain lines into a clear list or remove bullet markers from existing text.</p>
+<div class="cards">
+<article class="card"><h3>Remove bullets</h3><p>Remove existing bullet markers from the beginning of list lines to return the content to plain text.</p></article>
+<article class="card"><h3>Add bullets</h3><p>Add bullet markers to separate lines to create a bulleted list.</p></article>
+<article class="card"><h3>Add numbers</h3><p>Add sequential numbering to separate lines to create a numbered list.</p></article>
+</div>
+</section>
+
+<section class="section">
+<h2>5. Text statistics and editing controls</h2><p class="lead">The editor provides useful information and controls while you work.</p>
+<div class="cards two">
+<article class="card"><h3>Text statistics</h3><p>View the word count, character count, sentence count, line count and estimated reading time. The statistics update as you edit your text.</p></article>
+<article class="card"><h3>Copy and download</h3><p>Select Copy to copy the current editor text to your clipboard, or use Download .TXT to save it as a text file.</p></article>
+<article class="card"><h3>Clear</h3><p>Select Clear when you want to remove the current text from the editor. Make sure you no longer need the text before clearing it.</p></article>
+<article class="card"><h3>Undo and redo</h3><p>Use Undo to reverse a recent change and Redo to restore a change that was undone.</p></article>
+<article class="card"><h3>Load sample</h3><p>Select Load sample to place example content in the editor and try the available formatting and cleaning tools.</p></article>
+<article class="card"><h3>Light and dark mode</h3><p>Use the theme button in the top navigation to switch between light and dark appearance. Your selected theme is saved in your browser for future visits.</p></article>
+</div>
+</section>
+
+<section class="section">
+<h2>Tips for better results</h2>
+<div class="tips">
+<div class="tip"><b>Enter the complete text first.</b> Paste the block of text into the editor before choosing a formatting or cleaning operation.</div>
+<div class="tip"><b>Choose the right tool.</b> Use Find &amp; Replace for targeted wording changes, Clean Text for removing or extracting content, and Format Lists for organizing lines.</div>
+<div class="tip"><b>Review the result.</b> Check punctuation, spacing and meaning after applying an operation, especially when removing or replacing content.</div>
+<div class="tip"><b>Use Undo if needed.</b> If a conversion or cleanup produces an unwanted result, use Undo before trying another option.</div>
+</div>
+</section>
+
+</div>
+<footer class="footer">
+<div class="footer-brand">Text Formatter</div>
+<p class="footer-description">A simple online tool for formatting, cleaning and organizing text.</p>
+<nav class="footerlinks" aria-label="Footer navigation"><a href="/text-formatter/">Home</a><a href="/text-formatter/about/">About</a><a href="/text-formatter/how-to-use/">How to Use</a><a href="/text-formatter/faq/">FAQ</a><a href="/text-formatter/privacy/">Privacy Policy</a><a href="/text-formatter/terms/">Terms</a><a href="/text-formatter/contact/">Contact</a></nav>
+<div class="copyright">© 2026 Text Formatter. A Fiyaz Tools product.</div>
+</footer>
+</main>
+</div>
+<script>
+const themeToggle=document.getElementById('themeToggle');
+function setTheme(dark){document.body.classList.toggle('dark',dark);themeToggle.textContent=dark?'☀':'☾';themeToggle.setAttribute('aria-label',dark?'Switch to light mode':'Switch to dark mode');themeToggle.setAttribute('title',dark?'Switch to light mode':'Switch to dark mode');try{localStorage.setItem('fiyaz-theme',dark?'dark':'light')}catch(e){}}
+try{const saved=localStorage.getItem('fiyaz-theme');setTheme(saved?saved==='dark':true)}catch(e){setTheme(true)}
+themeToggle.addEventListener('click',()=>setTheme(!document.body.classList.contains('dark')));
+</script>
 </body>
-
 </html>
